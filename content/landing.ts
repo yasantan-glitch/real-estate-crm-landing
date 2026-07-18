@@ -168,6 +168,19 @@ export const solution = {
   ],
 };
 
+/**
+ * "Ürünü görün" section — a real screenshot of the product's geographic
+ * analysis screen. Copy must only describe what is actually visible in
+ * public/screenshots/geo-analysis-screenshot.webp (honesty constraint).
+ */
+export const productPreview = {
+  eyebrow: "Ürünü görün",
+  title: "Portföyünüz, şehir haritasının üzerinde.",
+  text: "Coğrafi analiz ekranı portföylerinizi harita üzerinde kümeleyerek gösterir; yarıçap veya çokgen çizerek bölge seçer, seçtiğiniz alandaki portföy sayısını ve fiyat aralığını anında görürsünüz. Bu bir tasarım taslağı değil — sistemin coğrafi analiz ekranından alınmış gerçek bir görüntü.",
+  imageAlt:
+    "CRM'in coğrafi analiz ekranı: şehir haritası üzerinde konumlandırılmış portföy noktaları; küme, yarıçap ve çokgen seçim araçları; seçili alandaki toplam portföy sayısı ile ortalama, en düşük ve en yüksek fiyatları gösteren alan analizi paneli",
+};
+
 export const pipelineStages = {
   eyebrow: "Satış süreci",
   title: "Her fırsatın nerede olduğunu görün.",
