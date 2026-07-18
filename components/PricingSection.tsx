@@ -12,10 +12,10 @@ export default function PricingSection() {
             return (
               <div
                 key={tier.name}
-                className={`flex flex-col border bg-white p-7 ${
+                className={`flex flex-col border p-7 ${
                   highlighted
-                    ? "order-first border-slate-200 border-t-2 border-t-accent lg:order-none"
-                    : "border-slate-200"
+                    ? "order-first border-accent/30 border-t-2 border-t-accent bg-accent/5 lg:order-none"
+                    : "border-slate-200 bg-white"
                 }`}
               >
                 {tier.badge && (
