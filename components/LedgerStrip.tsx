@@ -31,7 +31,7 @@ export default function LedgerStrip({ rows, variant, caption, labels }: Props) {
   return (
     <div
       className={`w-full border-y font-mono ${
-        isDark ? "border-white/15 bg-brand text-white" : "border-slate-200 bg-white text-brand"
+        isDark ? "border-white/15 bg-brand-soft text-white" : "border-slate-200 bg-white text-brand"
       }`}
     >
       {/*

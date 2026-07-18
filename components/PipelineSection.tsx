@@ -9,7 +9,7 @@ import { ledgerLabels, pipelineStages } from "@/content/landing";
  */
 export default function PipelineSection() {
   return (
-    <section id="surec" className="scroll-mt-16 bg-brand">
+    <section id="surec" className="scroll-mt-16 bg-brand-soft">
       <div className="section">
         <SectionHeading
           eyebrow={pipelineStages.eyebrow}

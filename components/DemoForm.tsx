@@ -87,7 +87,7 @@ export default function DemoForm() {
     ) : null;
 
   return (
-    <section id="demo" className="scroll-mt-16 bg-brand">
+    <section id="demo" className="scroll-mt-16 bg-brand-soft">
       <div className="section grid gap-12 md:grid-cols-2">
         <div className="flex flex-col">
           <p className="eyebrow items-start">
