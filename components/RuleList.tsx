@@ -18,8 +18,8 @@ type Props = {
 };
 
 const DENSITY = {
-  default: { row: "py-5", title: "text-base", text: "text-sm" },
-  compact: { row: "py-3.5", title: "text-sm", text: "text-[13px]" },
+  default: { row: "py-5", title: "text-lg", text: "text-base" },
+  compact: { row: "py-3.5", title: "text-base", text: "text-sm" },
 } as const;
 
 export default function RuleList({ items, density = "default" }: Props) {
