@@ -63,7 +63,10 @@ export default function LedgerStrip({ rows, variant, caption, labels }: Props) {
         </thead>
         <tbody className={`divide-y ${isDark ? "divide-white/15" : "divide-slate-200"}`}>
           {rows.map((row) => (
-            <tr key={row.code}>
+            <tr
+              key={row.code}
+              className={`transition-colors ${isDark ? "hover:bg-white/[0.03]" : "hover:bg-surface"}`}
+            >
               <td className="whitespace-nowrap py-2 pl-1 pr-2 align-top sm:px-4">{row.code}</td>
               <td className="py-2 pr-2 align-top sm:px-4">
                 <span>{row.propertyType}</span>
