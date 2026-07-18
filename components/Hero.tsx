@@ -1,5 +1,5 @@
 import LedgerStrip from "./LedgerStrip";
-import { hero, heroLedger } from "@/content/landing";
+import { hero, heroLedger, ledgerLabels } from "@/content/landing";
 
 export default function Hero() {
   return (
@@ -28,7 +28,7 @@ export default function Hero() {
         </div>
 
         <div className="mt-12 md:mt-16">
-          <LedgerStrip rows={heroLedger.rows} variant="light" caption={heroLedger.tableCaption} />
+          <LedgerStrip rows={heroLedger.rows} variant="light" caption={heroLedger.tableCaption} labels={ledgerLabels} />
         </div>
       </div>
     </section>

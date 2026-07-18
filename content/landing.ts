@@ -4,7 +4,16 @@
  * Editing the site's message = editing this file.
  */
 
-import type { LedgerRow } from "@/types/ledger";
+import type { LedgerLabels, LedgerRow } from "@/types/ledger";
+
+/** Column headers shared by every LedgerStrip table on the page. */
+export const ledgerLabels = {
+  code: "Kod",
+  portfolio: "Portföy",
+  consultant: "Danışman",
+  status: "Durum",
+  detail: "Detay",
+} satisfies LedgerLabels;
 
 export const nav = {
   links: [

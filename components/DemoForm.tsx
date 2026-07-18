@@ -75,13 +75,13 @@ export default function DemoForm() {
   }
 
   const inputClass = (name: FieldName) =>
-    `w-full rounded-lg border bg-white px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-accent ${
-      errors[name] ? "border-red-400" : "border-slate-300"
+    `w-full rounded-md border bg-white/[0.06] px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent ${
+      errors[name] ? "border-red-400" : "border-white/20"
     }`;
 
   const FieldError = ({ name }: { name: FieldName }) =>
     errors[name] ? (
-      <p className="mt-1 text-xs text-red-600" role="alert">
+      <p className="mt-1 text-xs text-red-300" role="alert">
         {errors[name]}
       </p>
     ) : null;
@@ -89,14 +89,14 @@ export default function DemoForm() {
   return (
     <section id="demo" className="scroll-mt-16 bg-brand">
       <div className="section grid gap-12 md:grid-cols-2">
-        <div>
-          <p className="eyebrow">
-            <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
+        <div className="flex flex-col">
+          <p className="eyebrow items-start">
+            <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
             {demoForm.eyebrow}
           </p>
           <h2 className="h2 !text-white">{demoForm.title}</h2>
           <p className="mt-4 text-base leading-relaxed text-slate-300">{demoForm.intro}</p>
-          <div className="mt-8 space-y-2 text-sm text-slate-300">
+          <div className="mt-10 space-y-2 border-t border-white/15 pt-6 text-sm text-slate-300 md:mt-auto">
             <p>
               E-posta:{" "}
               <a href={`mailto:${siteConfig.contactEmail}`} className="text-white underline underline-offset-2">
@@ -112,21 +112,19 @@ export default function DemoForm() {
           </div>
         </div>
 
-        <div className="rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+        <div>
           {status === "success" ? (
             <div className="flex h-full flex-col items-center justify-center py-10 text-center" role="status">
-              <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-green-600" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
+              <span className="mb-4 text-2xl text-accent" aria-hidden="true">
+                ✓
               </span>
-              <p className="max-w-sm text-sm leading-relaxed text-slate-700">{demoForm.success}</p>
+              <p className="max-w-sm text-sm leading-relaxed text-slate-200">{demoForm.success}</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} noValidate>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="fullName" className="mb-1.5 block text-xs font-semibold text-brand">
+                  <label htmlFor="fullName" className="mb-1.5 block text-xs font-semibold text-slate-200">
                     {demoForm.labels.fullName} *
                   </label>
                   <input id="fullName" name="fullName" type="text" autoComplete="name"
@@ -135,7 +133,7 @@ export default function DemoForm() {
                   <FieldError name="fullName" />
                 </div>
                 <div>
-                  <label htmlFor="company" className="mb-1.5 block text-xs font-semibold text-brand">
+                  <label htmlFor="company" className="mb-1.5 block text-xs font-semibold text-slate-200">
                     {demoForm.labels.company} *
                   </label>
                   <input id="company" name="company" type="text" autoComplete="organization"
@@ -144,7 +142,7 @@ export default function DemoForm() {
                   <FieldError name="company" />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="mb-1.5 block text-xs font-semibold text-brand">
+                  <label htmlFor="phone" className="mb-1.5 block text-xs font-semibold text-slate-200">
                     {demoForm.labels.phone} *
                   </label>
                   <input id="phone" name="phone" type="tel" autoComplete="tel"
@@ -153,7 +151,7 @@ export default function DemoForm() {
                   <FieldError name="phone" />
                 </div>
                 <div>
-                  <label htmlFor="email" className="mb-1.5 block text-xs font-semibold text-brand">
+                  <label htmlFor="email" className="mb-1.5 block text-xs font-semibold text-slate-200">
                     {demoForm.labels.email} *
                   </label>
                   <input id="email" name="email" type="email" autoComplete="email"
@@ -162,7 +160,7 @@ export default function DemoForm() {
                   <FieldError name="email" />
                 </div>
                 <div>
-                  <label htmlFor="city" className="mb-1.5 block text-xs font-semibold text-brand">
+                  <label htmlFor="city" className="mb-1.5 block text-xs font-semibold text-slate-200">
                     {demoForm.labels.city} *
                   </label>
                   <input id="city" name="city" type="text"
@@ -171,7 +169,7 @@ export default function DemoForm() {
                   <FieldError name="city" />
                 </div>
                 <div>
-                  <label htmlFor="agentCount" className="mb-1.5 block text-xs font-semibold text-brand">
+                  <label htmlFor="agentCount" className="mb-1.5 block text-xs font-semibold text-slate-200">
                     {demoForm.labels.agentCount} *
                   </label>
                   <select id="agentCount" name="agentCount"
@@ -184,7 +182,7 @@ export default function DemoForm() {
                   <FieldError name="agentCount" />
                 </div>
                 <div className="sm:col-span-2">
-                  <label htmlFor="message" className="mb-1.5 block text-xs font-semibold text-brand">
+                  <label htmlFor="message" className="mb-1.5 block text-xs font-semibold text-slate-200">
                     {demoForm.labels.message}
                   </label>
                   <textarea id="message" name="message" rows={3}
@@ -194,7 +192,7 @@ export default function DemoForm() {
               </div>
 
               {status === "error" && (
-                <p className="mt-4 rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">
+                <p className="mt-4 border border-red-400/40 bg-red-500/10 px-4 py-3 text-sm text-red-300" role="alert">
                   {demoForm.error}
                 </p>
               )}
@@ -202,7 +200,7 @@ export default function DemoForm() {
               <button type="submit" disabled={status === "submitting"} className="btn-primary mt-6 w-full disabled:opacity-60">
                 {status === "submitting" ? demoForm.submitting : demoForm.submit}
               </button>
-              <p className="mt-3 text-center text-xs text-slate-400">{demoForm.kvkkNote}</p>
+              <p className="mt-3 text-center text-xs text-slate-500">{demoForm.kvkkNote}</p>
             </form>
           )}
         </div>

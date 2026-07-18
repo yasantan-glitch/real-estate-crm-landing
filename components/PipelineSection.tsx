@@ -1,6 +1,6 @@
 import SectionHeading from "./SectionHeading";
 import LedgerStrip from "./LedgerStrip";
-import { pipelineStages } from "@/content/landing";
+import { ledgerLabels, pipelineStages } from "@/content/landing";
 
 /**
  * Full-bleed black signature section (docs/plans/landing-page-redesign-plan.md
@@ -18,7 +18,7 @@ export default function PipelineSection() {
           dark
         />
         <div className="mt-10">
-          <LedgerStrip rows={pipelineStages.rows} variant="dark" caption={pipelineStages.tableCaption} />
+          <LedgerStrip rows={pipelineStages.rows} variant="dark" caption={pipelineStages.tableCaption} labels={ledgerLabels} />
         </div>
       </div>
     </section>

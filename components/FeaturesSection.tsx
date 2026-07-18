@@ -1,17 +1,18 @@
 import SectionHeading from "./SectionHeading";
+import RuleList from "./RuleList";
 import { features } from "@/content/landing";
 
 export default function FeaturesSection() {
+  const midpoint = Math.ceil(features.items.length / 2);
+  const columns = [features.items.slice(0, midpoint), features.items.slice(midpoint)];
+
   return (
     <section id="ozellikler" className="scroll-mt-16 bg-white">
       <div className="section">
         <SectionHeading eyebrow={features.eyebrow} title={features.title} />
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {features.items.map((item) => (
-            <div key={item.title} className="rounded-xl border border-slate-200 bg-white p-5 transition-shadow hover:shadow-card">
-              <h3 className="font-display text-sm font-semibold text-brand">{item.title}</h3>
-              <p className="mt-1.5 text-[13px] leading-relaxed text-slate-600">{item.text}</p>
-            </div>
+        <div className="mt-10 grid gap-x-16 md:grid-cols-2">
+          {columns.map((column) => (
+            <RuleList key={column[0].title} items={column} density="compact" />
           ))}
         </div>
       </div>

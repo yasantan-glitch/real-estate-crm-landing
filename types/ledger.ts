@@ -6,6 +6,15 @@ export type LedgerStatus = {
   tone: LedgerStatusTone;
 };
 
+/** Column-header labels; Turkish values live in content/landing.ts (`ledgerLabels`). */
+export type LedgerLabels = {
+  code: string;
+  portfolio: string;
+  consultant: string;
+  status: string;
+  detail: string;
+};
+
 export type LedgerRow = {
   /** Portfolio/reference code, e.g. "PF-2041". */
   code: string;

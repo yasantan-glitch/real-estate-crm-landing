@@ -11,10 +11,10 @@ export default function Header() {
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
         <a href="#" className="flex items-center gap-2">
-          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-brand font-display text-sm font-bold text-white">
+          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-brand text-sm font-bold text-white">
             {siteConfig.productName.replace(/[\[\]]/g, "").charAt(0) || "C"}
           </span>
-          <span className="font-display text-lg font-semibold text-brand">
+          <span className="text-lg font-semibold text-brand">
             {siteConfig.productName}
           </span>
         </a>

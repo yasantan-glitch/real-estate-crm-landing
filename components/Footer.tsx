@@ -10,10 +10,10 @@ export default function Footer() {
       <div className="section grid gap-10 !py-14 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center rounded-md bg-brand font-display text-sm font-bold text-white">
+            <span className="flex h-8 w-8 items-center justify-center rounded-md bg-brand text-sm font-bold text-white">
               {siteConfig.productName.replace(/[\[\]]/g, "").charAt(0) || "C"}
             </span>
-            <span className="font-display text-lg font-semibold text-brand">{siteConfig.productName}</span>
+            <span className="text-lg font-semibold text-brand">{siteConfig.productName}</span>
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-600">{footer.tagline}</p>
           <div className="mt-4 space-y-1 text-sm text-slate-600">
@@ -24,7 +24,7 @@ export default function Footer() {
 
         {footer.columns.map((col) => (
           <nav key={col.title} aria-label={col.title}>
-            <h3 className="font-display text-sm font-semibold text-brand">{col.title}</h3>
+            <h3 className="text-sm font-semibold text-brand">{col.title}</h3>
             <ul className="mt-4 space-y-2.5">
               {col.links.map((link) => (
                 <li key={link.label}>

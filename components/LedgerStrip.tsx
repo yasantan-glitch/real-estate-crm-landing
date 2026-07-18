@@ -8,13 +8,14 @@
  * site's Turkish copy.
  */
 
-import type { LedgerRow, LedgerStatusTone } from "@/types/ledger";
+import type { LedgerLabels, LedgerRow, LedgerStatusTone } from "@/types/ledger";
 
 type Props = {
   rows: LedgerRow[];
   variant: "light" | "dark";
   /** Accessible table summary; not rendered visually (avoids duplicating a section heading). */
   caption: string;
+  labels: LedgerLabels;
 };
 
 const STATUS_MARK: Record<LedgerStatusTone, string> = {
@@ -24,7 +25,7 @@ const STATUS_MARK: Record<LedgerStatusTone, string> = {
   closed: "✓",
 };
 
-export default function LedgerStrip({ rows, variant, caption }: Props) {
+export default function LedgerStrip({ rows, variant, caption, labels }: Props) {
   const isDark = variant === "dark";
 
   return (
@@ -44,19 +45,19 @@ export default function LedgerStrip({ rows, variant, caption }: Props) {
         <thead>
           <tr className={`border-b ${isDark ? "border-white/15" : "border-slate-200"}`}>
             <th scope="col" className="whitespace-nowrap py-2 pl-1 pr-2 font-medium uppercase tracking-[0.14em] sm:px-4">
-              Kod
+              {labels.code}
             </th>
             <th scope="col" className="py-2 pr-2 font-medium uppercase tracking-[0.14em] sm:px-4">
-              Portföy
+              {labels.portfolio}
             </th>
             <th scope="col" className="hidden py-2 pr-2 font-medium uppercase tracking-[0.14em] sm:table-cell sm:px-4">
-              Danışman
+              {labels.consultant}
             </th>
             <th scope="col" className="whitespace-nowrap py-2 pr-2 font-medium uppercase tracking-[0.14em] sm:px-4">
-              Durum
+              {labels.status}
             </th>
             <th scope="col" className="py-2 pr-1 text-right font-medium uppercase tracking-[0.14em] sm:px-4">
-              Detay
+              {labels.detail}
             </th>
           </tr>
         </thead>
