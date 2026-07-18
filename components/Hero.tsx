@@ -11,7 +11,7 @@ export default function Hero() {
               <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
               {hero.eyebrow}
             </p>
-            <h1 className="font-display text-4xl font-light leading-tight tracking-tight text-brand sm:text-5xl md:text-6xl">
+            <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-brand sm:text-5xl md:text-6xl">
               {hero.headline}
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600">
