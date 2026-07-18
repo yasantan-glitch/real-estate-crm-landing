@@ -29,27 +29,33 @@ export default function LedgerStrip({ rows, variant, caption }: Props) {
 
   return (
     <div
-      className={`w-full overflow-x-auto border-y font-mono ${
+      className={`w-full border-y font-mono ${
         isDark ? "border-white/15 bg-brand text-white" : "border-slate-200 bg-white text-brand"
       }`}
     >
-      <table className="w-full min-w-[560px] border-collapse text-left text-[11px] sm:text-xs">
+      {/*
+       * Column priority: Durum and Detay must stay visible at phone widths —
+       * they carry the section's message (status / stage / price). Danışman is
+       * the demoted column (hidden below `sm`), and no horizontal scrolling is
+       * required to read a row.
+       */}
+      <table className="w-full border-collapse text-left text-[11px] sm:text-xs">
         <caption className="sr-only">{caption}</caption>
         <thead>
           <tr className={`border-b ${isDark ? "border-white/15" : "border-slate-200"}`}>
-            <th scope="col" className="whitespace-nowrap px-3 py-2.5 font-medium uppercase tracking-[0.14em] sm:px-4">
+            <th scope="col" className="whitespace-nowrap py-2 pl-1 pr-2 font-medium uppercase tracking-[0.14em] sm:px-4">
               Kod
             </th>
-            <th scope="col" className="whitespace-nowrap px-3 py-2.5 font-medium uppercase tracking-[0.14em] sm:px-4">
+            <th scope="col" className="py-2 pr-2 font-medium uppercase tracking-[0.14em] sm:px-4">
               Portföy
             </th>
-            <th scope="col" className="whitespace-nowrap px-3 py-2.5 font-medium uppercase tracking-[0.14em] sm:px-4">
+            <th scope="col" className="hidden py-2 pr-2 font-medium uppercase tracking-[0.14em] sm:table-cell sm:px-4">
               Danışman
             </th>
-            <th scope="col" className="whitespace-nowrap px-3 py-2.5 font-medium uppercase tracking-[0.14em] sm:px-4">
+            <th scope="col" className="whitespace-nowrap py-2 pr-2 font-medium uppercase tracking-[0.14em] sm:px-4">
               Durum
             </th>
-            <th scope="col" className="whitespace-nowrap px-3 py-2.5 text-right font-medium uppercase tracking-[0.14em] sm:px-4">
+            <th scope="col" className="py-2 pr-1 text-right font-medium uppercase tracking-[0.14em] sm:px-4">
               Detay
             </th>
           </tr>
@@ -57,19 +63,19 @@ export default function LedgerStrip({ rows, variant, caption }: Props) {
         <tbody className={`divide-y ${isDark ? "divide-white/15" : "divide-slate-200"}`}>
           {rows.map((row) => (
             <tr key={row.code}>
-              <td className="whitespace-nowrap px-3 py-2.5 sm:px-4">{row.code}</td>
-              <td className="px-3 py-2.5 sm:px-4">
+              <td className="whitespace-nowrap py-2 pl-1 pr-2 align-top sm:px-4">{row.code}</td>
+              <td className="py-2 pr-2 align-top sm:px-4">
                 <span>{row.propertyType}</span>
                 <span className={isDark ? "block text-white/60" : "block text-muted"}>{row.district}</span>
               </td>
-              <td className="whitespace-nowrap px-3 py-2.5 sm:px-4">{row.consultant}</td>
-              <td className="whitespace-nowrap px-3 py-2.5 sm:px-4">
+              <td className="hidden py-2 pr-2 align-top sm:table-cell sm:px-4">{row.consultant}</td>
+              <td className="whitespace-nowrap py-2 pr-2 align-top sm:px-4">
                 <span aria-hidden="true" className={row.status.tone === "matched" ? "text-accent" : undefined}>
                   {STATUS_MARK[row.status.tone]}
                 </span>{" "}
                 {row.status.label}
               </td>
-              <td className="whitespace-nowrap px-3 py-2.5 text-right sm:px-4">
+              <td className="py-2 pr-1 text-right align-top sm:px-4">
                 {row.detailLabel && <span className="sr-only">{row.detailLabel}: </span>}
                 {row.detail}
               </td>

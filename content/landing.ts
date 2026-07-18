@@ -34,6 +34,57 @@ export const hero = {
     "Gayrimenkul ofislerinin saha ihtiyaçlarına göre tasarlandı. Kurulum ve eğitim desteğiyle birlikte sunulur.",
 };
 
+export const heroLedger = {
+  tableCaption: "Örnek portföy kayıtları: kod, tür, bölge, danışman, durum ve fiyat",
+  rows: [
+    {
+      code: "PF-2041",
+      propertyType: "3+1 Daire",
+      district: "Konyaaltı",
+      consultant: "A. Yılmaz",
+      status: { label: "Eşleşti", tone: "matched" },
+      detail: "8.500.000 ₺",
+      detailLabel: "Fiyat",
+    },
+    {
+      code: "PF-2036",
+      propertyType: "2+1 Daire",
+      district: "Muratpaşa",
+      consultant: "S. Demir",
+      status: { label: "Aktif", tone: "inProgress" },
+      detail: "6.250.000 ₺",
+      detailLabel: "Fiyat",
+    },
+    {
+      code: "PF-2029",
+      propertyType: "Villa",
+      district: "Döşemealtı",
+      consultant: "E. Kaya",
+      status: { label: "Yeni", tone: "pending" },
+      detail: "24.900.000 ₺",
+      detailLabel: "Fiyat",
+    },
+    {
+      code: "PF-2018",
+      propertyType: "2+1 Kiralık",
+      district: "Lara",
+      consultant: "S. Demir",
+      status: { label: "Aktif", tone: "inProgress" },
+      detail: "45.000 ₺/ay",
+      detailLabel: "Fiyat",
+    },
+    {
+      code: "PF-2007",
+      propertyType: "Dükkan",
+      district: "Kepez",
+      consultant: "A. Yılmaz",
+      status: { label: "Kapandı", tone: "closed" },
+      detail: "12.400.000 ₺",
+      detailLabel: "Fiyat",
+    },
+  ] satisfies LedgerRow[],
+};
+
 export const problems = {
   eyebrow: "Tanıdık geliyor mu?",
   title: "Ofis büyüyor, takip zorlaşıyor.",
