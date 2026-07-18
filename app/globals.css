@@ -5,17 +5,21 @@
 /*
  * THEME — change brand colors here (and mirror in config/site.ts).
  * Values are space-separated RGB so Tailwind can apply alpha.
+ *
+ * Ledger system: white background, near-black ink, one controlled red accent.
+ * `brand` / `brand-soft` now carry the ink/near-black roles (text + dark
+ * panels) instead of navy — mapping keys are unchanged so components that
+ * reference bg-brand / text-brand pick up the new palette automatically.
+ * Font variables (--font-display / --font-body / --font-mono) are supplied
+ * by next/font/google in app/layout.tsx, not declared here.
  */
 :root {
-  --color-brand: 15 27 45;        /* dark navy #0F1B2D */
-  --color-brand-soft: 30 48 76;   /* lighter navy for panels */
-  --color-accent: 242 84 45;      /* orange-red #F2542D */
-  --color-accent-hover: 214 66 31;
-  --color-surface: 246 248 250;   /* light gray section bg */
-  --color-muted: 100 116 139;     /* slate-500 for secondary text */
-
-  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-brand: 10 10 10;        /* near-black ink #0A0A0A */
+  --color-brand-soft: 24 24 27;   /* soft black for panels #18181B */
+  --color-accent: 215 25 32;      /* controlled red #D71920 */
+  --color-accent-hover: 168 20 25; /* pressed state #A81419 */
+  --color-surface: 250 250 250;   /* near-white section bg #FAFAFA */
+  --color-muted: 113 113 122;     /* zinc-500 for secondary text */
 }
 
 html {

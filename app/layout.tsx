@@ -1,7 +1,34 @@
 import type { Metadata } from "next";
+import { Fraunces, Inter, IBM_Plex_Mono } from "next/font/google";
 import Script from "next/script";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
+
+/**
+ * Self-hosted via next/font/google (no runtime Google Fonts request).
+ * Job split: Fraunces = selected large editorial headings only, Inter = all
+ * body/UI/nav/form/button copy, IBM Plex Mono = ledger/data/status elements only.
+ */
+const fraunces = Fraunces({
+  subsets: ["latin", "latin-ext"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
@@ -44,15 +71,11 @@ export default function RootLayout({
   const { googleAnalyticsId, googleTagManagerId, metaPixelId } = siteConfig;
 
   return (
-    <html lang="tr">
+    <html
+      lang="tr"
+      className={`${fraunces.variable} ${inter.variable} ${plexMono.variable}`}
+    >
       <head>
-        {/* Fonts loaded at runtime so the build has no external dependency */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Sora:wght@600;700&display=swap&subset=latin-ext"
-          rel="stylesheet"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
