@@ -9,7 +9,7 @@ export default function FAQ() {
         <div className="mt-10 divide-y divide-slate-200 border-t border-slate-200">
           {faq.items.map((item) => (
             <details key={item.q} className="group py-4">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-brand [&::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-brand transition-colors hover:text-accent [&::-webkit-details-marker]:hidden">
                 {item.q}
                 <svg
                   className="shrink-0 text-accent transition-transform group-open:rotate-45"
