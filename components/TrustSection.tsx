@@ -6,11 +6,11 @@ export default function TrustSection() {
     <section className="bg-white">
       <div className="section">
         <SectionHeading eyebrow={trust.eyebrow} title={trust.title} />
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
+        <div className="mt-10 grid gap-8 md:grid-cols-3 md:gap-10">
           {trust.items.map((item) => (
-            <div key={item.title} className="rounded-xl border-l-4 border-accent bg-surface p-6">
-              <h3 className="font-display text-base font-semibold text-brand">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.text}</p>
+            <div key={item.title} className="border-t border-slate-200 pt-5">
+              <h3 className="text-base font-semibold text-brand">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">{item.text}</p>
             </div>
           ))}
         </div>

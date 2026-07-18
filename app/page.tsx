@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ProblemSection from "@/components/ProblemSection";
 import SolutionSection from "@/components/SolutionSection";
+import PipelineSection from "@/components/PipelineSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import AudienceSection from "@/components/AudienceSection";
 import PricingSection from "@/components/PricingSection";
@@ -19,6 +20,7 @@ export default function HomePage() {
         <Hero />
         <ProblemSection />
         <SolutionSection />
+        <PipelineSection />
         <FeaturesSection />
         <AudienceSection />
         <PricingSection />

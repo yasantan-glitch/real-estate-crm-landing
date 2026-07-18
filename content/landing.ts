@@ -4,6 +4,8 @@
  * Editing the site's message = editing this file.
  */
 
+import type { LedgerRow } from "@/types/ledger";
+
 export const nav = {
   links: [
     { href: "#ozellikler", label: "Özellikler" },
@@ -104,6 +106,61 @@ export const solution = {
       text: "Satış kapandığında komisyon, paylaşım ve danışman hakedişleri sistemde hesaplanır.",
     },
   ],
+};
+
+export const pipelineStages = {
+  eyebrow: "Satış süreci",
+  title: "Her fırsatın nerede olduğunu görün.",
+  intro:
+    "İlk temastan kapanışa kadar her fırsat pipeline'da ilerler. Hangi aşamada olduğu, kimde olduğu ve ne zaman hareket ettiği tek bakışta görünür.",
+  tableCaption: "Aktif fırsatların satış pipeline aşamasına göre listesi",
+  rows: [
+    {
+      code: "PF-2087",
+      propertyType: "3+1 Daire",
+      district: "Konyaaltı",
+      consultant: "A. Yılmaz",
+      status: { label: "Yeni", tone: "pending" },
+      detail: "İlk Temas",
+      detailLabel: "Aşama",
+    },
+    {
+      code: "PF-1994",
+      propertyType: "Villa",
+      district: "Döşemealtı",
+      consultant: "E. Kaya",
+      status: { label: "Aktif", tone: "inProgress" },
+      detail: "Yer Gösterme",
+      detailLabel: "Aşama",
+    },
+    {
+      code: "PF-2050",
+      propertyType: "Dükkan",
+      district: "Muratpaşa",
+      consultant: "S. Demir",
+      status: { label: "Aktif", tone: "inProgress" },
+      detail: "Pazarlık",
+      detailLabel: "Aşama",
+    },
+    {
+      code: "PF-1932",
+      propertyType: "2+1 Kiralık",
+      district: "Lara",
+      consultant: "A. Yılmaz",
+      status: { label: "Aktif", tone: "inProgress" },
+      detail: "Pazarlık",
+      detailLabel: "Aşama",
+    },
+    {
+      code: "PF-1861",
+      propertyType: "4+1 Villa",
+      district: "Konyaaltı",
+      consultant: "E. Kaya",
+      status: { label: "Kapandı", tone: "closed" },
+      detail: "Kapanış",
+      detailLabel: "Aşama",
+    },
+  ] satisfies LedgerRow[],
 };
 
 export const features = {
