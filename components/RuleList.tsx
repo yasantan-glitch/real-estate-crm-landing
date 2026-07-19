@@ -15,6 +15,14 @@ type RuleListItem = {
 type Props = {
   items: RuleListItem[];
   density?: "default" | "compact";
+  /**
+   * Prefix each row with a zero-padded two-digit position (01, 02 …) in
+   * IBM Plex Mono — the system's data/label face — as a quiet scan aid for
+   * dense lists. Derived from array position, so it needs no data changes;
+   * additive and independent of the optional `index` field. Decorative
+   * (aria-hidden): row titles stay the semantic structure.
+   */
+  numbered?: boolean;
 };
 
 const DENSITY = {
@@ -22,19 +30,25 @@ const DENSITY = {
   compact: { row: "py-3.5", title: "text-base", text: "text-sm" },
 } as const;
 
-export default function RuleList({ items, density = "default" }: Props) {
+export default function RuleList({ items, density = "default", numbered = false }: Props) {
   const hasIndex = items.some((item) => item.index !== undefined);
   const sizing = DENSITY[density];
 
   return (
     <ul className="divide-y divide-slate-200">
-      {items.map((item) => (
+      {items.map((item, i) => (
         <li key={item.title} className={sizing.row}>
           <div className="flex items-baseline gap-3">
-            {hasIndex && (
-              <span className="w-6 shrink-0 text-xs text-muted" aria-hidden={item.index === undefined}>
-                {item.index}
+            {numbered ? (
+              <span className="w-6 shrink-0 font-mono text-xs tabular-nums text-muted" aria-hidden="true">
+                {String(i + 1).padStart(2, "0")}
               </span>
+            ) : (
+              hasIndex && (
+                <span className="w-6 shrink-0 text-xs text-muted" aria-hidden={item.index === undefined}>
+                  {item.index}
+                </span>
+              )
             )}
             <div className="min-w-0">
               <h3 className={`font-semibold text-brand ${sizing.title}`}>{item.title}</h3>

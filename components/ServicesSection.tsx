@@ -18,7 +18,7 @@ export default function ServicesSection() {
           <SectionHeading eyebrow={services.eyebrow} title={services.title} intro={services.intro} />
           <div className="mt-8 grid gap-x-12 md:grid-cols-2">
             {columns.map((column) => (
-              <RuleList key={column[0].title} items={column} density="compact" />
+              <RuleList key={column[0].title} items={column} density="compact" numbered />
             ))}
           </div>
         </div>

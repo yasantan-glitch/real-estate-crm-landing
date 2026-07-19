@@ -12,7 +12,7 @@ export default function FeaturesSection() {
         <SectionHeading eyebrow={features.eyebrow} title={features.title} />
         <div className="mt-10 grid gap-x-16 md:grid-cols-2">
           {columns.map((column) => (
-            <RuleList key={column[0].title} items={column} density="compact" />
+            <RuleList key={column[0].title} items={column} density="compact" numbered />
           ))}
         </div>
       </div>

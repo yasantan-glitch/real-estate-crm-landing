@@ -18,15 +18,19 @@ export default function PricingSection() {
                     : "border-slate-200 bg-white"
                 }`}
               >
-                {tier.badge && (
-                  <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.14em] text-accent">
-                    {tier.badge}
-                  </p>
-                )}
+                {/* Badge slot reserved at lg so tier names align across the
+                    row even though only the recommended tier carries a badge. */}
+                <p
+                  className={`text-[11px] font-medium uppercase tracking-[0.14em] text-accent ${
+                    tier.badge ? "mb-4 h-4" : "hidden lg:mb-4 lg:block lg:h-4"
+                  }`}
+                >
+                  {tier.badge}
+                </p>
                 <h3 className="text-xl font-semibold text-brand">{tier.name}</h3>
-                <p className="mt-1 text-sm text-slate-500">{tier.target}</p>
-                <p className="mt-4 text-sm font-semibold text-brand">{tier.price}</p>
-                <ul className="mt-5 flex flex-1 flex-col gap-2.5">
+                <p className="mt-1.5 text-sm text-slate-500">{tier.target}</p>
+                <p className="mt-5 text-base font-semibold text-brand">{tier.price}</p>
+                <ul className="mt-6 flex flex-1 flex-col gap-3 border-t border-slate-200 pt-6">
                   {tier.features.map((f) => (
                     <li key={f} className="flex items-start gap-2.5 text-sm text-slate-700">
                       <span className="text-accent" aria-hidden="true">

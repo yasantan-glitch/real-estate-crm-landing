@@ -14,6 +14,7 @@ export default function SolutionSection() {
       <div className="section">
         <EditorialSplit
           reverse
+          stickyFraming
           framing={
             <SectionHeading
               eyebrow={solution.eyebrow}

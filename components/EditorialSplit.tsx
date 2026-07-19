@@ -11,12 +11,34 @@ type Props = {
   framing: ReactNode;
   rows: ReactNode;
   reverse?: boolean;
+  /**
+   * Opt-in: from `lg:` up, pin the framing (text) column within its row so
+   * short copy tracks a taller rows column instead of leaving dead space
+   * below it. Tracks the TEXT column specifically, so it stays correct under
+   * `reverse`. Off by default — other consumers and the mobile/tablet stacked
+   * layout are unaffected. `lg:self-start` gives the column travel room within
+   * the row; `lg:top-24` (96px) clears the sticky Header (h-16 / 64px, z-40)
+   * with a 32px gap and never overlaps it (header sits above at z-40).
+   */
+  stickyFraming?: boolean;
 };
 
-export default function EditorialSplit({ framing, rows, reverse = false }: Props) {
+export default function EditorialSplit({
+  framing,
+  rows,
+  reverse = false,
+  stickyFraming = false,
+}: Props) {
+  const framingClasses = [
+    reverse ? "md:order-2" : "",
+    stickyFraming ? "lg:sticky lg:top-24 lg:self-start" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
     <div className="grid gap-10 md:grid-cols-2 md:gap-16">
-      <div className={reverse ? "md:order-2" : undefined}>{framing}</div>
+      <div className={framingClasses || undefined}>{framing}</div>
       <div className={reverse ? "md:order-1" : undefined}>{rows}</div>
     </div>
   );

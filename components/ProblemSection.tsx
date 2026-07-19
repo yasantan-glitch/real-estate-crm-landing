@@ -8,6 +8,7 @@ export default function ProblemSection() {
     <section className="bg-surface">
       <div className="section">
         <EditorialSplit
+          stickyFraming
           framing={
             <SectionHeading
               eyebrow={problems.eyebrow}
