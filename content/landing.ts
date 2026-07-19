@@ -540,4 +540,5 @@ export const footer = {
     { href: "#", label: "Kullanım Koşulları" },
   ],
   rights: "Tüm hakları saklıdır.",
+  designCredit: "Web sitesi tasarımı: Tan Yasan",
 };

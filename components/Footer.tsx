@@ -1,12 +1,14 @@
+import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { footer } from "@/content/landing";
 
 export default function Footer() {
   const year = new Date().getFullYear();
   const socials = Object.entries(siteConfig.socialLinks).filter(([, url]) => url);
+  const [creditPrefix, creditSuffix] = footer.designCredit.split("Tan Yasan");
 
   return (
-    <footer className="border-t border-slate-200 bg-white">
+    <footer className="border-t border-slate-200 bg-surface">
       <div className="section grid gap-10 !py-14 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2">
@@ -55,6 +57,16 @@ export default function Footer() {
               </a>
             ))}
           </div>
+        </div>
+        <div className="mx-auto flex max-w-6xl items-center justify-center gap-2 px-5 pb-5 text-xs text-muted sm:px-8">
+          <Image src="/logos/tanyasan-logo.avif" alt="Tan Yasan logosu" width={375} height={111} className="h-5 w-auto" />
+          <p>
+            {creditPrefix}
+            <a href="https://tanyasan.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand">
+              Tan Yasan
+            </a>
+            {creditSuffix}
+          </p>
         </div>
       </div>
     </footer>
