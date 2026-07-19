@@ -17,8 +17,9 @@ type Props = {
    * below it. Tracks the TEXT column specifically, so it stays correct under
    * `reverse`. Off by default — other consumers and the mobile/tablet stacked
    * layout are unaffected. `lg:self-start` gives the column travel room within
-   * the row; `lg:top-24` (96px) clears the sticky Header (h-16 / 64px, z-40)
-   * with a 32px gap and never overlaps it (header sits above at z-40).
+   * the row; `lg:top-28` (112px) clears the sticky Header (h-20 + 2px border
+   * = 82px, z-40) with a 30px gap and never overlaps it (header sits above
+   * at z-40).
    */
   stickyFraming?: boolean;
 };
@@ -31,7 +32,7 @@ export default function EditorialSplit({
 }: Props) {
   const framingClasses = [
     reverse ? "md:order-2" : "",
-    stickyFraming ? "lg:sticky lg:top-24 lg:self-start" : "",
+    stickyFraming ? "lg:sticky lg:top-28 lg:self-start" : "",
   ]
     .filter(Boolean)
     .join(" ");

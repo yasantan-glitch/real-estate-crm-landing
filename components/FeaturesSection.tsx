@@ -7,7 +7,7 @@ export default function FeaturesSection() {
   const columns = [features.items.slice(0, midpoint), features.items.slice(midpoint)];
 
   return (
-    <section id="ozellikler" className="scroll-mt-16 bg-white">
+    <section id="ozellikler" className="scroll-mt-24 bg-white">
       <div className="section">
         <SectionHeading eyebrow={features.eyebrow} title={features.title} />
         <div className="mt-10 grid gap-x-16 md:grid-cols-2">

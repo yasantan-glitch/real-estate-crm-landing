@@ -12,7 +12,7 @@ export default function ServicesSection() {
   const columns = [services.items.slice(0, midpoint), services.items.slice(midpoint)];
 
   return (
-    <section id="hizmetler" className="scroll-mt-16 bg-white">
+    <section id="hizmetler" className="scroll-mt-24 bg-white">
       <div className="section">
         <div className="max-w-4xl">
           <SectionHeading eyebrow={services.eyebrow} title={services.title} intro={services.intro} />

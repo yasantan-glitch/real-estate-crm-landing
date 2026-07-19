@@ -3,7 +3,7 @@ import { faq } from "@/content/landing";
 
 export default function FAQ() {
   return (
-    <section id="sss" className="scroll-mt-16 bg-surface">
+    <section id="sss" className="scroll-mt-24 bg-surface">
       <div className="section">
         <SectionHeading eyebrow={faq.eyebrow} title={faq.title} />
         <div className="mt-10 divide-y divide-slate-200 border-t border-slate-200">

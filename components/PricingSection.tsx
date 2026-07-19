@@ -3,7 +3,7 @@ import { pricing } from "@/content/landing";
 
 export default function PricingSection() {
   return (
-    <section id="paketler" className="scroll-mt-16 bg-surface">
+    <section id="paketler" className="scroll-mt-24 bg-surface">
       <div className="section">
         <SectionHeading eyebrow={pricing.eyebrow} title={pricing.title} intro={pricing.note} />
         <div className="mt-10 grid gap-5 lg:grid-cols-3">

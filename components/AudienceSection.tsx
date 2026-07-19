@@ -7,7 +7,7 @@ export default function AudienceSection() {
   const columns = [audience.items.slice(0, midpoint), audience.items.slice(midpoint)];
 
   return (
-    <section id="kimler-icin" className="scroll-mt-16 bg-surface">
+    <section id="kimler-icin" className="scroll-mt-24 bg-surface">
       <div className="section">
         <SectionHeading eyebrow={audience.eyebrow} title={audience.title} />
         <div className="mt-10 grid gap-x-16 md:grid-cols-2">
