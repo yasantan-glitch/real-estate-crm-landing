@@ -169,16 +169,39 @@ export const solution = {
 };
 
 /**
- * "Ürünü görün" section — a real screenshot of the product's geographic
- * analysis screen. Copy must only describe what is actually visible in
- * public/screenshots/geo-analysis-screenshot.webp (honesty constraint).
+ * "Ürünü görün" section — real screenshots of the product, shown in a
+ * visitor-controlled carousel. Each slide's alt text must only describe what
+ * is actually visible in its image (honesty constraint). Slide dimensions are
+ * the source files' true pixel sizes, consumed by next/image.
  */
 export const productPreview = {
   eyebrow: "Ürünü görün",
   title: "Portföyünüz, şehir haritasının üzerinde.",
-  text: "Coğrafi analiz ekranı portföylerinizi harita üzerinde kümeleyerek gösterir; yarıçap veya çokgen çizerek bölge seçer, seçtiğiniz alandaki portföy sayısını ve fiyat aralığını anında görürsünüz. Bu bir tasarım taslağı değil — sistemin coğrafi analiz ekranından alınmış gerçek bir görüntü.",
-  imageAlt:
-    "CRM'in coğrafi analiz ekranı: şehir haritası üzerinde konumlandırılmış portföy noktaları; küme, yarıçap ve çokgen seçim araçları; seçili alandaki toplam portföy sayısı ile ortalama, en düşük ve en yüksek fiyatları gösteren alan analizi paneli",
+  text: "Coğrafi analiz ekranı portföylerinizi harita üzerinde kümeleyerek gösterir; yarıçap veya çokgen çizerek bölge seçer, seçtiğiniz alandaki portföy sayısını ve fiyat aralığını anında görürsünüz. Yanında ana panel ve raporlar: göstergeler, son aktiviteler ve müşteri kaynak dağılımı. Bunlar tasarım taslağı değil — sistemden alınmış gerçek görüntüler.",
+  carouselLabel: "Ürün ekran görüntüleri",
+  previousLabel: "Önceki görsel",
+  nextLabel: "Sonraki görsel",
+  slideLabel: "Görsel",
+  slides: [
+    {
+      src: "/screenshots/product-preview-1.webp",
+      width: 3340,
+      height: 1532,
+      alt: "CRM'in coğrafi analiz ekranı: Antalya haritası üzerinde kümelenmiş portföy noktaları; yarıçap ve çokgen seçim araçları; seçili alandaki toplam portföy sayısı ile ortalama, en düşük ve en yüksek fiyatları gösteren alan analizi paneli",
+    },
+    {
+      src: "/screenshots/product-preview-2.webp",
+      width: 3344,
+      height: 1528,
+      alt: "CRM ana paneli: Portföy, Toplam Müşteri, Takip Bekleyen, Aktif Talepler, Aylık Gelir ve Beklenen Ciro kartları; son aktiviteler tablosu ve hedef ilerleme göstergesi",
+    },
+    {
+      src: "/screenshots/product-preview-3.webp",
+      width: 3344,
+      height: 1528,
+      alt: "CRM raporlar ekranı: müşteri kazanım kaynaklarını — Eski Müşteri, Sosyal Medya, Referans, Portal, Ofis Ziyareti ve Diğer — oranlarıyla gösteren pasta grafik",
+    },
+  ],
 };
 
 export const pipelineStages = {
