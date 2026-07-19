@@ -1,18 +1,18 @@
 /**
- * Central brand-agnostic configuration.
+ * Central brand configuration — the single source of truth for brand values.
  * Everything brand-related (name, domain, contacts, colors, tracking IDs,
  * form endpoint) is changed HERE and only here. Components never hardcode
  * brand values.
  */
 export const siteConfig = {
-  // --- Brand (placeholders until final brand is decided) ---
-  productName: "[CRM_PRODUCT_NAME]",
-  companyName: "[COMPANY_NAME]",
-  domain: "[DOMAIN_NAME]",
+  // --- Brand ---
+  productName: "Emlak CRM Pro",
+  companyName: "Emlak CRM Pro",
+  domain: "www.emlakcrmpro.com",
 
   // --- Contact ---
-  contactEmail: "demo@example.com",
-  contactPhone: "+90 000 000 00 00",
+  contactEmail: "crm@emlakcrmpro.com",
+  contactPhone: "+90 530 691 3612",
 
   // --- Social ---
   socialLinks: {
@@ -23,8 +23,8 @@ export const siteConfig = {
   },
 
   // --- Theme (mirrors the CSS variables in app/globals.css) ---
-  primaryColor: "#0F1B2D", // dark navy
-  accentColor: "#F2542D", // orange-red
+  primaryColor: "#0A0A0A", // near-black ink
+  accentColor: "#D71920", // controlled red
 
   // --- Demo form ---
   // Default: internal API route. Override with NEXT_PUBLIC_DEMO_FORM_ENDPOINT
@@ -38,7 +38,7 @@ export const siteConfig = {
   metaPixelId: process.env.NEXT_PUBLIC_META_PIXEL_ID || "",
 
   // --- SEO (Turkish public copy; works without a final brand name) ---
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://example.com",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://www.emlakcrmpro.com",
   seo: {
     title:
       "Gayrimenkul Ofisleri İçin CRM | Portföy, Müşteri ve Danışman Yönetimi",
