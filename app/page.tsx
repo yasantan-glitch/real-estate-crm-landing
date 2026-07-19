@@ -9,6 +9,7 @@ import AudienceSection from "@/components/AudienceSection";
 import PricingSection from "@/components/PricingSection";
 import ServicesSection from "@/components/ServicesSection";
 import TrustSection from "@/components/TrustSection";
+import ReferencesSection from "@/components/ReferencesSection";
 import DemoForm from "@/components/DemoForm";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
@@ -28,6 +29,7 @@ export default function HomePage() {
         <PricingSection />
         <ServicesSection />
         <TrustSection />
+        <ReferencesSection />
         <DemoForm />
         <FAQ />
       </main>

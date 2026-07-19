@@ -409,6 +409,21 @@ export const trust = {
   ],
 };
 
+export const references = {
+  eyebrow: "Referanslarımız",
+  title: "Sahada kullanılıyor.",
+  intro:
+    "Sistemi kendi ofisimizde günlük operasyonda kullanıyoruz. Referans listesi büyüdükçe burada paylaşacağız.",
+  logos: [
+    {
+      src: "/logos/poyraz-gayrimenkul-logo.svg",
+      alt: "Realty World Poyraz Gayrimenkul",
+      width: 729,
+      height: 171,
+    },
+  ],
+};
+
 export const faq = {
   eyebrow: "Sık sorulan sorular",
   title: "Aklınızdaki sorular",
