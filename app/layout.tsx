@@ -1,32 +1,17 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, IBM_Plex_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
 /**
  * Self-hosted via next/font/google (no runtime Google Fonts request).
- * Job split: Fraunces = selected large editorial headings only, Inter = all
- * body/UI/nav/form/button copy, IBM Plex Mono = ledger/data/status elements only.
+ * Single site-wide face: both --font-display and --font-body point at it.
  */
-const fraunces = Fraunces({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin", "latin-ext"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600"],
-  variable: "--font-body",
-  display: "swap",
-});
-
-const plexMono = IBM_Plex_Mono({
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-sans",
   display: "swap",
 });
 
@@ -71,10 +56,7 @@ export default function RootLayout({
   const { googleAnalyticsId, googleTagManagerId, metaPixelId } = siteConfig;
 
   return (
-    <html
-      lang="tr"
-      className={`${fraunces.variable} ${inter.variable} ${plexMono.variable}`}
-    >
+    <html lang="tr" className={plusJakartaSans.variable}>
       <head>
         <script
           type="application/ld+json"
