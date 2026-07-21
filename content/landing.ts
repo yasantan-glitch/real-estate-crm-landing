@@ -313,6 +313,13 @@ export const audience = {
   ],
 };
 
+export type PricingTierPrice = {
+  originalPrice: string;
+  discountedPrice: string;
+  discountNote: string;
+  customQuoteNote?: string;
+};
+
 export const pricing = {
   eyebrow: "Paketler",
   title: "Ofisinizin ölçeğine göre paket seçin.",
@@ -323,7 +330,11 @@ export const pricing = {
       name: "Başlangıç",
       badge: null,
       target: "Bireysel danışmanlar ve küçük ofisler için",
-      price: "Demo sonrası fiyatlandırılır",
+      price: {
+        originalPrice: "3.500 TL/ay",
+        discountedPrice: "2.400 TL/ay",
+        discountNote: "İlk 3 ay kampanya fiyatı",
+      } satisfies PricingTierPrice,
       features: [
         "1-5 kullanıcı",
         "Subdomain kullanımı",
@@ -335,7 +346,11 @@ export const pricing = {
       name: "Profesyonel",
       badge: "En çok tercih edilen kurgu",
       target: "Büyüyen emlak ofisleri için",
-      price: "Aylık paket modeli",
+      price: {
+        originalPrice: "7.500 TL/ay",
+        discountedPrice: "4.900 TL/ay",
+        discountNote: "İlk 3 ay kampanya fiyatı",
+      } satisfies PricingTierPrice,
       features: [
         "5-15 kullanıcı",
         "Subdomain kullanımı",
@@ -347,7 +362,12 @@ export const pricing = {
       name: "Kurumsal",
       badge: null,
       target: "Broker ekipleri ve franchise yapıları için",
-      price: "İhtiyaca göre tekliflendirilir",
+      price: {
+        originalPrice: "12.000 TL/ay",
+        discountedPrice: "9.900 TL/ay",
+        discountNote: "İlk 3 ay kampanya fiyatı",
+        customQuoteNote: "Özel ihtiyaçlar için: İhtiyaca göre tekliflendirilir",
+      } satisfies PricingTierPrice,
       features: [
         "15+ kullanıcı (özel anlaşma)",
         "Özel domain desteği",

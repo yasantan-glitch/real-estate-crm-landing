@@ -29,7 +29,17 @@ export default function PricingSection() {
                 </p>
                 <h3 className="text-xl font-semibold text-brand">{tier.name}</h3>
                 <p className="mt-1.5 text-sm text-slate-500">{tier.target}</p>
-                <p className="mt-5 text-base font-semibold text-brand">{tier.price}</p>
+                <div className="mt-5">
+                  <p className="text-sm text-slate-400">
+                    <span className="sr-only">Önceki fiyat: </span>
+                    <span className="line-through">{tier.price.originalPrice}</span>
+                  </p>
+                  <p className="mt-1 text-2xl font-bold text-brand">{tier.price.discountedPrice}</p>
+                  <p className="mt-1 text-xs text-slate-500">{tier.price.discountNote}</p>
+                  {tier.price.customQuoteNote ? (
+                    <p className="mt-1.5 text-xs italic text-slate-400">{tier.price.customQuoteNote}</p>
+                  ) : null}
+                </div>
                 <ul className="mt-6 flex flex-1 flex-col gap-3 border-t border-slate-200 pt-6">
                   {tier.features.map((f) => (
                     <li key={f} className="flex items-start gap-2.5 text-sm text-slate-700">
