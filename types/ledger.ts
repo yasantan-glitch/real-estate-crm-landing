@@ -10,6 +10,7 @@ export type LedgerStatus = {
 export type LedgerLabels = {
   code: string;
   portfolio: string;
+  district: string;
   consultant: string;
   status: string;
   detail: string;

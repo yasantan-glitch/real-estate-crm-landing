@@ -1,11 +1,9 @@
 /**
- * Signature visual primitive (see docs/plans/landing-page-redesign-plan.md §3/§5).
- * Renders CRM listing/pipeline rows as a hairline-ruled ledger table instead of
- * a KPI-tile dashboard mockup. Pure presentation — no data fetching, no client JS.
- *
- * `rows` is caller-supplied so this stays copy-agnostic; real row data lives in
- * content/landing.ts (e.g. `pipelineStages.rows`) alongside the rest of the
- * site's Turkish copy.
+ * Signature visual primitive — a white card framing a short list of CRM
+ * listing/pipeline rows, styled after a browser-chrome preview panel (dark
+ * header strip + three dots). Pure presentation — no data fetching, no
+ * client JS. `rows` is caller-supplied so this stays copy-agnostic; real row
+ * data lives in content/landing.ts (e.g. `heroLedger.rows`).
  */
 
 import type { LedgerLabels, LedgerRow, LedgerStatusTone } from "@/types/ledger";
@@ -13,80 +11,71 @@ import type { LedgerLabels, LedgerRow, LedgerStatusTone } from "@/types/ledger";
 type Props = {
   rows: LedgerRow[];
   variant: "light" | "dark";
-  /** Accessible table summary; not rendered visually (avoids duplicating a section heading). */
+  /** Full accessible label for the row list; the header strip shows a short version derived from it. */
   caption: string;
   labels: LedgerLabels;
 };
 
-const STATUS_MARK: Record<LedgerStatusTone, string> = {
-  pending: "○",
-  inProgress: "◆",
-  matched: "●",
-  closed: "✓",
+const STATUS_STYLE: Record<LedgerStatusTone, string> = {
+  inProgress: "bg-accent-tint text-accent",
+  pending: "bg-zinc-100 text-zinc-700",
+  matched: "bg-zinc-200 text-zinc-500",
+  closed: "bg-zinc-200 text-zinc-500",
 };
 
 export default function LedgerStrip({ rows, variant, caption, labels }: Props) {
   const isDark = variant === "dark";
+  const headerLabel = caption.split(":")[0];
 
   return (
     <div
-      className={`w-full border-y font-mono ${
-        isDark ? "border-white/15 bg-brand-soft text-white" : "border-slate-200 bg-white text-brand"
+      className={`rounded-3xl border p-1.5 shadow-pop ${
+        isDark ? "border-zinc-800 bg-brand-soft" : "border-line bg-white"
       }`}
     >
-      {/*
-       * Column priority: Durum and Detay must stay visible at phone widths —
-       * they carry the section's message (status / stage / price). Danışman is
-       * the demoted column (hidden below `sm`), and no horizontal scrolling is
-       * required to read a row.
-       */}
-      <table className="w-full border-collapse text-left text-[11px] sm:text-xs">
-        <caption className="sr-only">{caption}</caption>
-        <thead>
-          <tr className={`border-b ${isDark ? "border-white/15" : "border-slate-200"}`}>
-            <th scope="col" className="whitespace-nowrap py-2 pl-1 pr-2 font-medium uppercase tracking-[0.14em] sm:px-4">
-              {labels.code}
-            </th>
-            <th scope="col" className="py-2 pr-2 font-medium uppercase tracking-[0.14em] sm:px-4">
-              {labels.portfolio}
-            </th>
-            <th scope="col" className="hidden py-2 pr-2 font-medium uppercase tracking-[0.14em] sm:table-cell sm:px-4">
-              {labels.consultant}
-            </th>
-            <th scope="col" className="whitespace-nowrap py-2 pr-2 font-medium uppercase tracking-[0.14em] sm:px-4">
-              {labels.status}
-            </th>
-            <th scope="col" className="py-2 pr-1 text-right font-medium uppercase tracking-[0.14em] sm:px-4">
-              {labels.detail}
-            </th>
-          </tr>
-        </thead>
-        <tbody className={`divide-y ${isDark ? "divide-white/15" : "divide-slate-200"}`}>
-          {rows.map((row) => (
-            <tr
-              key={row.code}
-              className={`transition-colors ${isDark ? "hover:bg-white/[0.03]" : "hover:bg-surface"}`}
-            >
-              <td className="whitespace-nowrap py-2 pl-1 pr-2 align-top sm:px-4">{row.code}</td>
-              <td className="py-2 pr-2 align-top sm:px-4">
-                <span>{row.propertyType}</span>
-                <span className={isDark ? "block text-white/60" : "block text-muted"}>{row.district}</span>
-              </td>
-              <td className="hidden py-2 pr-2 align-top sm:table-cell sm:px-4">{row.consultant}</td>
-              <td className="whitespace-nowrap py-2 pr-2 align-top sm:px-4">
-                <span aria-hidden="true" className={row.status.tone === "matched" ? "text-accent" : undefined}>
-                  {STATUS_MARK[row.status.tone]}
-                </span>{" "}
-                {row.status.label}
-              </td>
-              <td className="py-2 pr-1 text-right align-top sm:px-4">
-                {row.detailLabel && <span className="sr-only">{row.detailLabel}: </span>}
+      <div className="flex items-center justify-between rounded-[18px] bg-brand px-5 py-4">
+        <span className="text-[13px] font-bold text-white">{headerLabel}</span>
+        <span className="flex gap-1.5" aria-hidden="true">
+          <span className="h-2 w-2 rounded-full bg-accent" />
+          <span className="h-2 w-2 rounded-full bg-zinc-600" />
+          <span className="h-2 w-2 rounded-full bg-zinc-700" />
+        </span>
+      </div>
+      <ul className="px-1 py-2" aria-label={caption}>
+        {rows.map((row) => (
+          <li
+            key={row.code}
+            className={`flex items-center justify-between gap-3 border-b px-3 py-3.5 last:border-b-0 ${
+              isDark ? "border-white/10" : "border-zinc-100"
+            }`}
+          >
+            <span className="sr-only">
+              {labels.code}: {row.code}
+            </span>
+            <div className="min-w-0">
+              <p className={`text-sm font-bold ${isDark ? "text-white" : "text-brand"}`}>
+                <span className="sr-only">{labels.portfolio}: </span>
+                {row.propertyType}
+              </p>
+              <p className={`text-xs ${isDark ? "text-white/50" : "text-slate-400"}`}>
+                <span className="sr-only">{labels.district}: </span>{row.district} · <span className="sr-only">{labels.consultant}: </span>{row.consultant}
+              </p>
+            </div>
+            <div className="flex-shrink-0 text-right">
+              <p className={`text-[13.5px] font-bold ${isDark ? "text-white" : "text-brand"}`}>
+                <span className="sr-only">{(row.detailLabel ?? labels.detail)}: </span>
                 {row.detail}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+              </p>
+              <span
+                className={`mt-1 inline-block rounded-full px-2.5 py-0.5 text-[11px] font-bold ${STATUS_STYLE[row.status.tone]}`}
+              >
+                <span className="sr-only">{labels.status}: </span>
+                {row.status.label}
+              </span>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
