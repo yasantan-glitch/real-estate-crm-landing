@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { nav } from "@/content/landing";
 
@@ -77,9 +78,14 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-4 sm:px-8">
-        <a href="#" className="flex items-center gap-2 text-xl font-extrabold tracking-tight text-brand">
-          <span className="h-2.5 w-2.5 shrink-0 rounded-[3px] bg-accent" aria-hidden="true" />
-          {siteConfig.productName}
+        <a href="#" className="flex shrink-0 items-center">
+          <Image
+            src="/logos/EmlakCRM-Logo.png"
+            alt={siteConfig.productName}
+            width={1996}
+            height={384}
+            className="h-8 w-auto shrink-0"
+          />
         </a>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Ana menü">
@@ -94,7 +100,10 @@ export default function Header() {
           ))}
         </nav>
 
-        <a href="#demo" className="btn-primary hidden !px-6 !py-[11px] !text-[14.5px] md:inline-flex">
+        <a
+          href="#demo"
+          className="btn-primary hidden !px-4 !py-2 !text-[13px] text-center md:!px-6 md:!py-[11px] md:!text-[14.5px] md:inline-flex"
+        >
           {nav.cta}
         </a>
 

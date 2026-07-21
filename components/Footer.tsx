@@ -10,9 +10,14 @@ export default function Footer() {
     <footer className="border-t border-zinc-800 bg-brand">
       <div className="section grid gap-10 !py-14 md:grid-cols-4">
         <div className="md:col-span-2">
-          <div className="flex items-center gap-2">
-            <span className="h-[9px] w-[9px] shrink-0 rounded-[3px] bg-accent" aria-hidden="true" />
-            <span className="text-lg font-extrabold text-white">{siteConfig.productName}</span>
+          <div className="flex items-center">
+            <Image
+              src="/logos/EmlakCRM-Logo-Beyaz.png"
+              alt={siteConfig.productName}
+              width={1996}
+              height={384}
+              className="h-7 w-auto"
+            />
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-zinc-500">{footer.tagline}</p>
           <div className="mt-4 space-y-1 text-sm text-zinc-500">
@@ -68,7 +73,7 @@ export default function Footer() {
             href="https://www.tanyasan.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="order-3 text-[12.5px] text-zinc-500 hover:text-accent sm:justify-self-end"
+            className="order-3 text-center text-[12.5px] text-zinc-500 hover:text-accent sm:justify-self-end"
           >
             {footer.designCredit}
           </a>
