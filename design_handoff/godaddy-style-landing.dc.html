@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #ffffff; font-family: 'Plus Jakarta Sans', sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #D71920; text-decoration: none; }
+  a:hover { color: #A81419; }
+  * { box-sizing: border-box; }
+  ::selection { background: #FCEBEC; color: #D71920; }
+</style>
+</helmet>
+
+<div style="width:100%;background:#fff;color:#1E293B;line-height:1.5;">
+
+  <header style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid #E5E5E7;">
+    <div style="max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <div style="display:flex;align-items:center;gap:8px;font-weight:800;font-size:20px;letter-spacing:-0.02em;color:#0A0A0A;">
+        <span style="width:10px;height:10px;border-radius:3px;background:#D71920;display:inline-block;"></span>
+        Emlak CRM Pro
+      </div>
+      <nav style="display:flex;align-items:center;gap:32px;">
+        <sc-for list="{{ navLinks }}" as="link" hint-placeholder-count="5">
+          <a href="{{ link.href }}" style="font-size:14.5px;font-weight:600;color:#334155;">{{ link.label }}</a>
+        </sc-for>
+      </nav>
+      <a href="#demo" style="display:inline-flex;align-items:center;justify-content:center;background:#D71920;color:#fff;font-weight:700;font-size:14.5px;padding:11px 24px;border-radius:999px;white-space:nowrap;box-shadow:0 6px 16px -6px rgba(215,25,32,0.5);" style-hover="background:#A81419;">Demo Talep Et</a>
+    </div>
+  </header>
+
+  <section style="max-width:1200px;margin:0 auto;padding:64px 24px 40px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;">
+    <div>
+      <div style="display:inline-flex;align-items:center;gap:8px;background:#FCEBEC;color:#D71920;font-weight:700;font-size:12.5px;letter-spacing:0.06em;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:20px;">
+        <span style="width:6px;height:6px;border-radius:50%;background:#D71920;"></span>
+        Gayrimenkul ofisleri için web tabanlı CRM
+      </div>
+      <h1 style="font-size:52px;font-weight:800;letter-spacing:-0.03em;line-height:1.06;color:#0A0A0A;margin:0 0 20px;">Emlak ofisinizin tamamı,<br/>tek CRM panelinde.</h1>
+      <p style="font-size:18px;line-height:1.6;color:#475569;max-width:520px;margin:0 0 32px;">Portföylerinizi, müşterilerinizi, talepleri, danışman performansını ve satış sürecini tek ekrandan yönetin. Excel tabloları ve WhatsApp mesajları arasında kaybolan işleri sisteme bağlayın.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:24px;">
+        <a href="#demo" style="background:#D71920;color:#fff;font-weight:700;font-size:16px;padding:15px 30px;border-radius:999px;box-shadow:0 10px 24px -8px rgba(215,25,32,0.55);" style-hover="background:#A81419;">Demo Talep Et</a>
+        <a href="#paketler" style="background:#fff;color:#0A0A0A;font-weight:700;font-size:16px;padding:15px 30px;border-radius:999px;border:1.5px solid #D4D4D8;" style-hover="border-color:#0A0A0A;background:#F7F7F8;">Paketleri İncele</a>
+      </div>
+      <p style="font-size:13.5px;color:#94A3B8;max-width:440px;margin:0;">Gayrimenkul ofislerinin saha ihtiyaçlarına göre tasarlandı. Kurulum ve eğitim desteğiyle birlikte sunulur.</p>
+    </div>
+
+    <div style="background:#fff;border:1px solid #E5E5E7;border-radius:24px;box-shadow:0 1px 2px rgba(15,23,42,0.05),0 30px 60px -20px rgba(15,23,42,0.18);padding:6px;">
+      <div style="background:#0A0A0A;border-radius:18px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;">
+        <span style="color:#fff;font-weight:700;font-size:13px;">Örnek portföy kayıtları</span>
+        <span style="display:flex;gap:6px;"><span style="width:8px;height:8px;border-radius:50%;background:#D71920;"></span><span style="width:8px;height:8px;border-radius:50%;background:#52525B;"></span><span style="width:8px;height:8px;border-radius:50%;background:#3F3F46;"></span></span>
+      </div>
+      <div style="padding:8px 4px 12px;">
+        <sc-for list="{{ heroRows }}" as="row" hint-placeholder-count="5">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border-bottom:1px solid #F1F1F2;">
+            <div style="min-width:0;">
+              <div style="font-weight:700;font-size:14px;color:#0A0A0A;">{{ row.propertyType }}</div>
+              <div style="font-size:12.5px;color:#94A3B8;">{{ row.district }} · {{ row.consultant }}</div>
+            </div>
+            <div style="text-align:right;flex-shrink:0;">
+              <div style="font-weight:700;font-size:13.5px;color:#0A0A0A;">{{ row.detail }}</div>
+              <span style="display:inline-block;margin-top:4px;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;background:{{ row.statusStyle.bg }};color:{{ row.statusStyle.color }};">{{ row.status.label }}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#F7F7F8;border-top:1px solid #E5E5E7;border-bottom:1px solid #E5E5E7;">
+    <div style="max-width:1200px;margin:0 auto;padding:28px 24px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;">
+      <span style="font-size:13.5px;color:#64748B;font-weight:600;">Sahada kullanılıyor:</span>
+      <span style="font-weight:800;font-size:15px;color:#0A0A0A;letter-spacing:-0.01em;">Realty World Poyraz Gayrimenkul</span>
+    </div>
+  </section>
+
+  <section id="problem" style="max-width:1200px;margin:0 auto;padding:96px 24px 80px;">
+    <div style="max-width:640px;margin:0 auto 56px;text-align:center;">
+      <div style="color:#D71920;font-weight:700;font-size:12.5px;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Tanıdık geliyor mu?</div>
+      <h2 style="font-size:36px;font-weight:800;letter-spacing:-0.02em;color:#0A0A0A;margin:0 0 16px;">Ofis büyüyor, takip zorlaşıyor.</h2>
+      <p style="font-size:16.5px;color:#64748B;margin:0;">Çoğu emlak ofisi işini Excel, WhatsApp ve not defterleriyle yönetmeye çalışıyor. Sonuç: kaybolan müşteri, unutulan talep, ölçülemeyen performans.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
+      <sc-for list="{{ problems }}" as="item" hint-placeholder-count="7">
+        <div style="background:#fff;border:1px solid #E5E5E7;border-radius:18px;padding:26px;box-shadow:0 1px 2px rgba(15,23,42,0.04);transition:transform .2s,box-shadow .2s;" style-hover="transform:translateY(-4px);box-shadow:0 20px 36px -16px rgba(15,23,42,0.16);">
+          <h3 style="font-size:16.5px;font-weight:700;color:#0A0A0A;margin:0 0 8px;">{{ item.title }}</h3>
+          <p style="font-size:14.5px;color:#64748B;margin:0;line-height:1.55;">{{ item.text }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="background:#0A0A0A;">
+    <div style="max-width:1200px;margin:0 auto;padding:88px 24px;">
+      <div style="max-width:640px;margin:0 auto 56px;text-align:center;">
+        <div style="color:#F87171;font-weight:700;font-size:12.5px;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Çözüm</div>
+        <h2 style="font-size:36px;font-weight:800;letter-spacing:-0.02em;color:#fff;margin:0 0 16px;">Dağınık operasyonu tek panelde toplayın.</h2>
+        <p style="font-size:16.5px;color:#A1A1AA;margin:0;">Sistem, bir emlak ofisinin günlük akışına göre kurgulandı: portföy girilir, talep eşleşir, randevu atanır, satış pipeline'da ilerler, komisyon otomatik hesaplanır.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:#27272A;border:1px solid #27272A;border-radius:20px;overflow:hidden;">
+        <sc-for list="{{ solutions }}" as="item" hint-placeholder-count="7">
+          <div style="background:#18181B;padding:28px;">
+            <div style="width:34px;height:34px;border-radius:10px;background:#D71920;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+              <span style="width:8px;height:8px;background:#fff;border-radius:2px;"></span>
+            </div>
+            <h3 style="font-size:16px;font-weight:700;color:#fff;margin:0 0 8px;">{{ item.title }}</h3>
+            <p style="font-size:14px;color:#A1A1AA;margin:0;line-height:1.55;">{{ item.text }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:96px 24px;">
+    <div style="max-width:820px;margin:0 auto 48px;text-align:center;">
+      <div style="color:#D71920;font-weight:700;font-size:12.5px;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Ürünü görün</div>
+      <h2 style="font-size:30px;font-weight:800;letter-spacing:-0.02em;color:#0A0A0A;margin:0 0 16px;min-height:1.2em;white-space:nowrap;transition:opacity .5s ease;opacity:{{ activeSlide.fadeOpacity }};">{{ activeSlide.title }}</h2>
+      <p style="font-size:16.5px;color:#64748B;margin:0;max-width:640px;margin-left:auto;margin-right:auto;transition:opacity .5s ease;opacity:{{ activeSlide.fadeOpacity }};">{{ activeSlide.text }}</p>
+    </div>
+    <div style="border:1px solid #E5E5E7;border-radius:24px;padding:8px;box-shadow:0 1px 2px rgba(15,23,42,0.05),0 30px 70px -24px rgba(15,23,42,0.2);">
+      <div style="border-radius:18px;overflow:hidden;height:520px;position:relative;background:#F4F4F5;">
+        <sc-for list="{{ slides }}" as="slide" hint-placeholder-count="3">
+          <img src="{{ slide.src }}" alt="{{ slide.alt }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:opacity 1s ease;opacity:{{ slide.imgOpacity }};" />
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;gap:10px;margin-top:22px;">
+      <sc-for list="{{ slides }}" as="slide" hint-placeholder-count="3">
+        <button onclick="{{ slide.onSelect }}" style="width:{{ slide.dotWidth }};height:8px;border-radius:999px;border:none;background:{{ slide.dotColor }};cursor:pointer;padding:0;transition:width .2s,background .2s;"></button>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="ozellikler" style="background:#F7F7F8;border-top:1px solid #E5E5E7;border-bottom:1px solid #E5E5E7;">
+    <div style="max-width:1200px;margin:0 auto;padding:96px 24px;">
+      <div style="max-width:640px;margin:0 auto 56px;text-align:center;">
+        <div style="color:#D71920;font-weight:700;font-size:12.5px;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Özellikler</div>
+        <h2 style="font-size:36px;font-weight:800;letter-spacing:-0.02em;color:#0A0A0A;margin:0;">Sahadan gelen ihtiyaçlar için tasarlandı.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px;">
+        <sc-for list="{{ features }}" as="item" hint-placeholder-count="16">
+          <div style="background:#fff;border:1px solid #E5E5E7;border-radius:16px;padding:22px;display:flex;gap:14px;align-items:flex-start;">
+            <span style="flex-shrink:0;width:24px;height:24px;border-radius:50%;background:#FCEBEC;display:flex;align-items:center;justify-content:center;margin-top:2px;">
+              <span style="width:8px;height:5px;border-left:2px solid #D71920;border-bottom:2px solid #D71920;transform:rotate(-45deg) translate(1px,-1px);display:inline-block;"></span>
+            </span>
+            <div>
+              <h3 style="font-size:15px;font-weight:700;color:#0A0A0A;margin:0 0 4px;">{{ item.title }}</h3>
+              <p style="font-size:13.5px;color:#64748B;margin:0;line-height:1.5;">{{ item.text }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="kimler-icin" style="max-width:1200px;margin:0 auto;padding:96px 24px;">
+    <div style="max-width:640px;margin:0 auto 56px;text-align:center;">
+      <div style="color:#D71920;font-weight:700;font-size:12.5px;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Kimler için</div>
+      <h2 style="font-size:36px;font-weight:800;letter-spacing:-0.02em;color:#0A0A0A;margin:0;">Tek danışmandan franchise yapısına.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
+      <sc-for list="{{ audience }}" as="item" hint-placeholder-count="6">
+        <div style="border:1px solid #E5E5E7;border-radius:18px;padding:26px;transition:border-color .2s,transform .2s;" style-hover="border-color:#D71920;transform:translateY(-3px);">
+          <h3 style="font-size:16.5px;font-weight:700;color:#0A0A0A;margin:0 0 8px;">{{ item.title }}</h3>
+          <p style="font-size:14.5px;color:#64748B;margin:0;line-height:1.55;">{{ item.text }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="paketler" style="background:#0A0A0A;">
+    <div style="max-width:1200px;margin:0 auto;padding:96px 24px 110px;">
+      <div style="max-width:640px;margin:0 auto 56px;text-align:center;">
+        <div style="color:#F87171;font-weight:700;font-size:12.5px;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Paketler</div>
+        <h2 style="font-size:36px;font-weight:800;letter-spacing:-0.02em;color:#fff;margin:0 0 16px;">Ofisinizin ölçeğine göre paket seçin.</h2>
+        <p style="font-size:15.5px;color:#A1A1AA;margin:0;">Fiyatlar demo sonrası, kullanıcı sayısı ve ihtiyaca göre tekliflendirilir. CRM özellikleri her pakette aynıdır; farklılık kullanıcı sayısı ve destek seviyesindedir.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;align-items:start;">
+        <sc-for list="{{ pricingTiers }}" as="tier" hint-placeholder-count="3">
+          <div style="position:relative;background:{{ tier.cardBg }};border:{{ tier.cardBorder }};border-radius:24px;padding:32px;box-shadow:{{ tier.cardShadow }};transform:{{ tier.cardScale }};">
+            <sc-if value="{{ tier.badge }}" hint-placeholder-val="{{ false }}">
+              <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#D71920;color:#fff;font-size:12px;font-weight:700;padding:6px 16px;border-radius:999px;white-space:nowrap;">{{ tier.badge }}</div>
+            </sc-if>
+            <div style="font-size:13px;font-weight:700;color:{{ tier.mutedColor }};margin-bottom:6px;">{{ tier.target }}</div>
+            <h3 style="font-size:22px;font-weight:800;color:{{ tier.textColor }};margin:0 0 18px;">{{ tier.name }}</h3>
+            <div style="display:inline-block;background:#FCEBEC;color:#D71920;font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:14px;">{{ tier.price.discountNote }}</div>
+            <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:4px;">
+              <span style="font-size:15px;color:{{ tier.mutedColor }};text-decoration:line-through;">{{ tier.price.originalPrice }}</span>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:20px;">
+              <span style="font-size:38px;font-weight:800;color:{{ tier.textColor }};letter-spacing:-0.02em;">{{ tier.price.discountedPrice }}</span>
+            </div>
+            <sc-if value="{{ tier.price.customQuoteNote }}" hint-placeholder-val="{{ false }}">
+              <div style="font-size:12.5px;color:{{ tier.mutedColor }};margin:-12px 0 20px;">{{ tier.price.customQuoteNote }}</div>
+            </sc-if>
+            <a href="#demo" style="display:block;text-align:center;background:{{ tier.btnBg }};color:{{ tier.btnColor }};font-weight:700;font-size:15px;padding:14px;border-radius:999px;margin-bottom:24px;">Demo ve Teklif Al</a>
+            <div style="height:1px;background:{{ tier.dividerColor }};margin-bottom:20px;"></div>
+            <sc-for list="{{ tier.features }}" as="feat" hint-placeholder-count="4">
+              <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+                <span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:{{ tier.checkBg }};display:flex;align-items:center;justify-content:center;margin-top:1px;">
+                  <span style="width:7px;height:4px;border-left:2px solid {{ tier.checkColor }};border-bottom:2px solid {{ tier.checkColor }};transform:rotate(-45deg) translate(0.5px,-0.5px);display:inline-block;"></span>
+                </span>
+                <span style="font-size:14px;color:{{ tier.featureColor }};line-height:1.4;">{{ feat }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="hizmetler" style="max-width:1200px;margin:0 auto;padding:96px 24px;">
+    <div style="max-width:680px;margin:0 auto 56px;text-align:center;">
+      <div style="color:#D71920;font-weight:700;font-size:12.5px;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Ek profesyonel hizmetler</div>
+      <h2 style="font-size:36px;font-weight:800;letter-spacing:-0.02em;color:#0A0A0A;margin:0 0 16px;">CRM'in yanında, pazarlama tarafını da kuralım.</h2>
+      <p style="font-size:15.5px;color:#64748B;margin:0;">Bu hizmetler abonelikten bağımsız, ihtiyaç halinde alınan opsiyonel hizmetlerdir.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;">
+      <sc-for list="{{ services }}" as="item" hint-placeholder-count="11">
+        <div style="border:1px solid #E5E5E7;border-radius:16px;padding:22px;background:#F7F7F8;">
+          <h3 style="font-size:15px;font-weight:700;color:#0A0A0A;margin:0 0 6px;">{{ item.title }}</h3>
+          <p style="font-size:13.5px;color:#64748B;margin:0;line-height:1.5;">{{ item.text }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="background:#F7F7F8;border-top:1px solid #E5E5E7;border-bottom:1px solid #E5E5E7;">
+    <div style="max-width:1200px;margin:0 auto;padding:88px 24px;">
+      <div style="max-width:640px;margin:0 auto 48px;text-align:center;">
+        <div style="color:#D71920;font-weight:700;font-size:12.5px;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Neden bu sistem</div>
+        <h2 style="font-size:36px;font-weight:800;letter-spacing:-0.02em;color:#0A0A0A;margin:0;">Satış vaadi değil, saha gerçeği.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+        <sc-for list="{{ trustItems }}" as="item" hint-placeholder-count="3">
+          <div style="background:#fff;border:1px solid #E5E5E7;border-radius:20px;padding:30px;box-shadow:0 1px 2px rgba(15,23,42,0.04);">
+            <h3 style="font-size:17px;font-weight:800;color:#0A0A0A;margin:0 0 10px;">{{ item.title }}</h3>
+            <p style="font-size:14.5px;color:#64748B;margin:0;line-height:1.6;">{{ item.text }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="sss" style="max-width:840px;margin:0 auto;padding:96px 24px;">
+    <div style="max-width:520px;margin:0 auto 48px;text-align:center;">
+      <div style="color:#D71920;font-weight:700;font-size:12.5px;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Sık sorulan sorular</div>
+      <h2 style="font-size:32px;font-weight:800;letter-spacing:-0.02em;color:#0A0A0A;margin:0;">Aklınızdaki sorular</h2>
+    </div>
+    <div>
+      <sc-for list="{{ faqItems }}" as="item" hint-placeholder-count="12">
+        <div style="border-bottom:1px solid #E5E5E7;">
+          <button onclick="{{ item.onToggle }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;background:none;border:none;text-align:left;padding:20px 4px;cursor:pointer;font-family:inherit;">
+            <span style="font-size:15.5px;font-weight:700;color:#0A0A0A;">{{ item.q }}</span>
+            <span style="flex-shrink:0;width:26px;height:26px;border-radius:50%;background:#F4F4F5;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#D71920;transform:{{ item.iconRotate }};transition:transform .2s;">+</span>
+          </button>
+          <sc-if value="{{ item.open }}" hint-placeholder-val="{{ false }}">
+            <p style="font-size:14.5px;color:#64748B;line-height:1.6;margin:0 4px 20px;max-width:680px;">{{ item.a }}</p>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="demo" style="background:#0A0A0A;">
+    <div style="max-width:1200px;margin:0 auto;padding:96px 24px;display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center;">
+      <div>
+        <div style="color:#F87171;font-weight:700;font-size:12.5px;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Demo talebi</div>
+        <h2 style="font-size:34px;font-weight:800;letter-spacing:-0.02em;color:#fff;margin:0 0 16px;">Sistemi ofisiniz üzerinde görün.</h2>
+        <p style="font-size:15.5px;color:#A1A1AA;margin:0 0 20px;">Formu doldurun; sizinle iletişime geçelim ve ofisinizin akışına göre canlı bir demo planlayalım.</p>
+        <p style="font-size:12.5px;color:#71717A;margin:0;">Gönderdiğiniz bilgiler yalnızca demo süreci için kullanılır; üçüncü taraflarla paylaşılmaz.</p>
+      </div>
+      <div style="background:#fff;border-radius:24px;padding:32px;box-shadow:0 30px 70px -24px rgba(0,0,0,0.5);">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+          <input placeholder="Adınız ve soyadınız" style="padding:13px 16px;border:1.5px solid #E5E5E7;border-radius:10px;font-size:14px;font-family:inherit;" />
+          <input placeholder="Ofisinizin adı" style="padding:13px 16px;border:1.5px solid #E5E5E7;border-radius:10px;font-size:14px;font-family:inherit;" />
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+          <input placeholder="05xx xxx xx xx" style="padding:13px 16px;border:1.5px solid #E5E5E7;border-radius:10px;font-size:14px;font-family:inherit;" />
+          <input placeholder="ornek@ofisiniz.com" style="padding:13px 16px;border:1.5px solid #E5E5E7;border-radius:10px;font-size:14px;font-family:inherit;" />
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+          <input placeholder="Örn. Antalya" style="padding:13px 16px;border:1.5px solid #E5E5E7;border-radius:10px;font-size:14px;font-family:inherit;" />
+          <select style="padding:13px 16px;border:1.5px solid #E5E5E7;border-radius:10px;font-size:14px;font-family:inherit;color:#71717A;">
+            <option>Danışman Sayısı</option>
+          </select>
+        </div>
+        <textarea placeholder="Kısaca ihtiyacınızı yazabilirsiniz (opsiyonel)" style="width:100%;padding:13px 16px;border:1.5px solid #E5E5E7;border-radius:10px;font-size:14px;font-family:inherit;margin-bottom:20px;min-height:80px;resize:vertical;"></textarea>
+        <button style="width:100%;background:#D71920;color:#fff;font-weight:700;font-size:15.5px;padding:15px;border:none;border-radius:999px;cursor:pointer;font-family:inherit;">Demo Talep Et</button>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#0A0A0A;border-top:1px solid #27272A;">
+    <div style="max-width:1200px;margin:0 auto;padding:56px 24px 32px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;">
+      <div>
+        <div style="display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px;color:#fff;margin-bottom:12px;">
+          <span style="width:9px;height:9px;border-radius:3px;background:#D71920;display:inline-block;"></span>
+          Emlak CRM Pro
+        </div>
+        <p style="font-size:13.5px;color:#71717A;max-width:320px;line-height:1.6;margin:0;">Gayrimenkul ofisleri için portföy, müşteri, danışman ve satış yönetimini tek panelde toplayan web tabanlı CRM.</p>
+      </div>
+      <sc-for list="{{ footerColumns }}" as="col" hint-placeholder-count="2">
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:14px;">{{ col.title }}</div>
+          <sc-for list="{{ col.links }}" as="link" hint-placeholder-count="3">
+            <div style="margin-bottom:10px;"><a href="{{ link.href }}" style="font-size:13.5px;color:#A1A1AA;">{{ link.label }}</a></div>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+    <div style="max-width:1200px;margin:0 auto;padding:20px 24px;border-top:1px solid #27272A;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;">
+      <span style="font-size:12.5px;color:#52525B;">© 2026 Emlak CRM Pro. Tüm hakları saklıdır.</span>
+      <a href="https://www.tanyasan.com" target="_blank" rel="noopener" style="justify-self:center;display:inline-flex;">
+        <img src="./assets/tanyasan-logo.avif" alt="Tan Yasan" style="height:22px;width:auto;display:block;" />
+      </a>
+      <a href="https://www.tanyasan.com" target="_blank" rel="noopener" style="justify-self:end;font-size:12.5px;color:#52525B;">Web Tasarım by Tan Yasan</a>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { faqOpen: 0, slide: 0 };
+    this.toggleFaq = this.toggleFaq.bind(this);
+    this.setSlide = this.setSlide.bind(this);
+  }
+
+  toggleFaq(i) {
+    this.setState(s => ({ faqOpen: s.faqOpen === i ? -1 : i }));
+  }
+
+  setSlide(i) {
+    this.setState({ slide: i });
+  }
+
+  componentDidMount() {
+    this._slideTimer = setInterval(() => {
+      this.setState(s => ({ slide: (s.slide + 1) % 3 }));
+    }, 5000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this._slideTimer);
+  }
+
+  renderVals() {
+    const navLinks = [
+      { href: "#ozellikler", label: "Özellikler" },
+      { href: "#kimler-icin", label: "Kimler İçin" },
+      { href: "#paketler", label: "Paketler" },
+      { href: "#hizmetler", label: "Ek Hizmetler" },
+      { href: "#sss", label: "SSS" },
+    ];
+
+    const toneStyle = (tone) => {
+      if (tone === "inProgress") return { bg: "#FCEBEC", color: "#D71920" };
+      if (tone === "pending") return { bg: "#F4F4F5", color: "#3F3F46" };
+      return { bg: "#EDEDEE", color: "#71717A" };
+    };
+
+    const heroRows = [
+      { propertyType: "3+1 Daire", district: "Konyaaltı", consultant: "A. Yılmaz", detail: "8.500.000 ₺", status: { label: "Eşleşti", tone: "matched" } },
+      { propertyType: "2+1 Daire", district: "Muratpaşa", consultant: "S. Demir", detail: "6.250.000 ₺", status: { label: "Aktif", tone: "inProgress" } },
+      { propertyType: "Villa", district: "Döşemealtı", consultant: "E. Kaya", detail: "24.900.000 ₺", status: { label: "Yeni", tone: "pending" } },
+      { propertyType: "2+1 Kiralık", district: "Lara", consultant: "S. Demir", detail: "45.000 ₺/ay", status: { label: "Aktif", tone: "inProgress" } },
+      { propertyType: "Dükkan", district: "Kepez", consultant: "A. Yılmaz", detail: "12.400.000 ₺", status: { label: "Kapandı", tone: "closed" } },
+    ].map(r => ({ ...r, statusStyle: toneStyle(r.status.tone) }));
+
+    const problems = [
+      { title: "Excel'de kaybolan müşteri kayıtları", text: "Hangi müşteri hangi danışmanda, en son ne konuşuldu? Tabloya bakan bilmiyor." },
+      { title: "WhatsApp'ta unutulan portföyler", text: "Portföy bilgileri mesaj geçmişinde kayboluyor; aynı daire iki kez, iki fiyatla paylaşılıyor." },
+      { title: "Takip edilmeyen talepler", text: "\"3+1, en fazla 8 milyon\" diyen müşteri aradıktan iki hafta sonra başka ofisten alıyor." },
+      { title: "Ölçülemeyen danışman performansı", text: "Kim kaç portföy aldı, kaç sunum yaptı, kaç satış kapattı? Ay sonunda net cevap yok." },
+      { title: "Manuel müşteri-portföy eşleştirme", text: "Uygun daire ofiste var ama kimse hatırlamıyor; eşleştirme hafızaya emanet." },
+      { title: "Dağınık randevu ve görevler", text: "Yer gösterme randevuları telefon ajandalarında; ofis genelini kimse göremiyor." },
+      { title: "Karmaşık komisyon takibi", text: "Paylaşımlı satışlarda kim ne kadar alacak? Hesap her ay yeniden tartışılıyor." },
+    ];
+
+    const solutions = [
+      { title: "Merkezi portföy yönetimi", text: "Tüm portföyler; durum, fiyat, belge ve sorumlu danışman bilgisiyle tek yerde." },
+      { title: "Müşteri ve talep takibi", text: "Her müşterinin talebi, bütçesi ve görüşme geçmişi kayıt altında. Hiçbir talep unutulmaz." },
+      { title: "Danışman bazlı performans", text: "Portföy, görüşme, sunum ve satış rakamları danışman bazında raporlanır." },
+      { title: "Satış pipeline görünürlüğü", text: "Her fırsatın hangi aşamada olduğu tek bakışta." },
+      { title: "Broker kontrol paneli", text: "Ofisin tüm operasyonu tek ekranda: portföy, talep, ciro, görev." },
+      { title: "Talep-portföy eşleştirme", text: "Yeni portföy girildiğinde uygun talepler otomatik listelenir." },
+      { title: "Raporlama ve komisyon takibi", text: "Komisyon, paylaşım ve danışman hakedişleri sistemde hesaplanır." },
+    ];
+
+    const features = [
+      { title: "Portföy Yönetimi", text: "Satılık/kiralık tüm portföyler; durum, belge ve fotoğraflarla." },
+      { title: "Müşteri Yönetimi", text: "Alıcı, satıcı ve kiracı kayıtları; segment ve görüşme geçmişi." },
+      { title: "Talep Yönetimi", text: "Müşteri talepleri kriter bazlı kaydedilir ve takip edilir." },
+      { title: "Müşteri-Portföy Eşleştirme", text: "Talep kriterlerine uyan portföyler otomatik listelenir." },
+      { title: "Randevu ve Görev Takibi", text: "Yer gösterme, arama ve görevler ofis takviminde." },
+      { title: "Satış Pipeline", text: "Fırsatlar aşama aşama ilerler; hiçbir satış askıda kalmaz." },
+      { title: "Broker Paneli", text: "Ofisin tüm göstergeleri yönetici ekranında." },
+      { title: "Danışman Performans Raporları", text: "Kişi bazlı portföy, görüşme ve satış metrikleri." },
+      { title: "Muhasebe ve Komisyon Takibi", text: "Hakediş, paylaşım ve tahsilat kayıtları tek modülde." },
+      { title: "Rol ve Yetki Yönetimi", text: "Broker, asistan ve danışman için ayrı yetki seviyeleri." },
+      { title: "Bildirimler", text: "Yeni talep, eşleşme ve görevlerde anlık uyarı." },
+      { title: "Raporlama", text: "Excel ve PDF çıktılarıyla dönemsel ofis raporları." },
+      { title: "PDF Portföy Sunumu", text: "Müşteriye gönderilecek şık portföy sunumları tek tıkla." },
+      { title: "Firma Bazlı Kullanım", text: "Her ofis kendi izole verisiyle çalışır." },
+      { title: "Subdomain Modeli", text: "ofisiniz.[alan-adı] formatında hızlı açılış." },
+      { title: "Özel Domain Opsiyonu", text: "Kurumsal pakette kendi alan adınızla kullanım." },
+    ];
+
+    const audience = [
+      { title: "Bireysel danışmanlar", text: "Portföy ve müşteri takibini tek başına, profesyonel bir sistemle yönetin." },
+      { title: "Küçük emlak ofisleri", text: "Excel ve deftere veda edin; 2-3 kişilik ekip aynı veriyi paylaşsın." },
+      { title: "Büyüyen gayrimenkul ekipleri", text: "Yeni danışman eklemek dakikalar sürsün; süreçler standarda otursun." },
+      { title: "Brokerlar", text: "Ofisin tamamını — portföy, talep, ciro, performans — tek panelden izleyin." },
+      { title: "Franchise yapıları", text: "Çoklu ofis desteği ve rol yönetimiyle şubeler tek çatı altında." },
+      { title: "İnşaat firması satış ekipleri", text: "Proje bazlı stok, talep ve satış sürecini aynı pipeline üzerinde yönetin." },
+    ];
+
+    const rawTiers = [
+      { name: "Başlangıç", badge: null, target: "Bireysel danışmanlar ve küçük ofisler için",
+        price: { originalPrice: "3.500 TL/ay", discountedPrice: "2.400 TL/ay", discountNote: "İlk 3 ay kampanya fiyatı" },
+        features: ["1-5 kullanıcı", "Subdomain kullanımı", "E-posta destek", "Kendi kendine kurulum"] },
+      { name: "Profesyonel", badge: "En çok tercih edilen kurgu", target: "Büyüyen emlak ofisleri için",
+        price: { originalPrice: "7.500 TL/ay", discountedPrice: "4.900 TL/ay", discountNote: "İlk 3 ay kampanya fiyatı" },
+        features: ["5-15 kullanıcı", "Subdomain kullanımı", "Öncelikli destek", "Rehberli kurulum desteği"] },
+      { name: "Kurumsal", badge: null, target: "Broker ekipleri ve franchise yapıları için",
+        price: { originalPrice: "12.000 TL/ay", discountedPrice: "9.900 TL/ay", discountNote: "İlk 3 ay kampanya fiyatı", customQuoteNote: "Özel ihtiyaçlar için: İhtiyaca göre tekliflendirilir" },
+        features: ["15+ kullanıcı (özel anlaşma)", "Özel domain desteği", "Premium destek", "Kapsamlı eğitim ve onboarding", "Talep halinde çoklu ofis desteği", "Talebe özel geliştirme opsiyonu"] },
+    ];
+
+    const pricingTiers = rawTiers.map(t => {
+      const featured = !!t.badge;
+      return {
+        ...t,
+        cardBg: featured ? "#D71920" : "#18181B",
+        cardBorder: featured ? "1px solid #D71920" : "1px solid #27272A",
+        cardShadow: featured ? "0 30px 60px -20px rgba(215,25,32,0.5)" : "0 1px 2px rgba(0,0,0,0.2)",
+        cardScale: featured ? "scale(1.04)" : "none",
+        textColor: "#fff",
+        mutedColor: featured ? "rgba(255,255,255,0.75)" : "#A1A1AA",
+        btnBg: featured ? "#0A0A0A" : "#D71920",
+        btnColor: "#fff",
+        dividerColor: featured ? "rgba(255,255,255,0.25)" : "#27272A",
+        checkBg: featured ? "rgba(255,255,255,0.2)" : "#3F3F46",
+        checkColor: "#fff",
+        featureColor: featured ? "rgba(255,255,255,0.92)" : "#D4D4D8",
+      };
+    });
+
+    const services = [
+      { title: "CRM kurulum danışmanlığı", text: "Ofis akışınıza göre kurulum ve yapılandırma." },
+      { title: "Veri aktarım desteği", text: "Excel ve eski sistemlerdeki kayıtların CRM'e taşınması." },
+      { title: "Google Ads kurulumu", text: "Bölgesel arama reklamlarıyla yeni talep üretimi." },
+      { title: "Meta Ads kurulumu", text: "Instagram ve Facebook'ta portföy ve marka reklamları." },
+      { title: "SEO başlangıç paketi", text: "Ofis web sitenizin aramalarda görünürlüğü." },
+      { title: "Kurumsal kimlik tasarımı", text: "Ofisiniz için tutarlı görsel kimlik." },
+      { title: "Logo revizyonu", text: "Mevcut logonuzun profesyonel yenilenmesi." },
+      { title: "Web sitesi kurulumu", text: "Portföylerinizi sergileyen modern ofis sitesi." },
+      { title: "Hosting/domain danışmanlığı", text: "Alan adı ve barındırma tarafında doğru kurulum." },
+      { title: "CRM eğitim paketi", text: "Danışman ekibiniz için uygulamalı kullanım eğitimi." },
+      { title: "Dijital pazarlama danışmanlığı", text: "İlan sitesi bağımlılığını azaltan bütünleşik strateji." },
+    ];
+
+    const trustItems = [
+      { title: "Saha ihtiyacına göre tasarlandı", text: "Özellik listesi bir emlak ofisinin günlük operasyonundan çıktı: portföy, talep, yer gösterme, komisyon." },
+      { title: "Tek panel yaklaşımı", text: "Portföy, müşteri ve danışman yönetimini tek panelde toplamak için geliştirildi; ek programa ihtiyaç kalmaz." },
+      { title: "Demo ve pilot kullanıma hazır", text: "Altyapı, pilot kullanım ve canlı demo sunumları için hazırdır. Görmeden karar vermeyin: demo talep edin." },
+    ];
+
+    const rawFaq = [
+      { q: "Bu CRM kimler için uygundur?", a: "Bireysel danışmanlardan franchise yapılara kadar; portföy, müşteri ve satış süreci yöneten tüm gayrimenkul ekipleri için uygundur." },
+      { q: "Kurulum ne kadar sürer?", a: "Standart kurulum genellikle birkaç iş günü içinde tamamlanır. Veri aktarımı ve ekip eğitimi dahil edildiğinde ofisin büyüklüğüne göre süre planlanır." },
+      { q: "Kendi domainimle kullanabilir miyim?", a: "Evet. Kurumsal pakette sistemi kendi alan adınız üzerinde kullanabilirsiniz." },
+      { q: "Subdomain modeli var mı?", a: "Evet. Ofisiniz için ayrılmış bir subdomain üzerinden hızlıca yayına alınırsınız; ek teknik kurulum gerekmez." },
+      { q: "Kullanıcı sayısı artırılabilir mi?", a: "Evet. Ekibiniz büyüdükçe pakete yeni kullanıcı eklenebilir; paketler arası geçiş yapılabilir." },
+      { q: "Eğitim veriliyor mu?", a: "Evet. Kurulum sonrasında ekip için kullanım eğitimi verilir; Kurumsal pakette onboarding süreci standarttır." },
+      { q: "Verilerim güvende mi?", a: "Her ofis kendi izole veri alanında çalışır; erişim rol ve yetki sistemiyle sınırlandırılır. Veriler düzenli olarak yedeklenir." },
+      { q: "Mobil uyumlu mu?", a: "Evet. Sistem web tabanlıdır ve telefon, tablet ve bilgisayarda tarayıcı üzerinden çalışır." },
+      { q: "Danışman performansı takip edilebilir mi?", a: "Evet. Portföy sayısı, görüşme, yer gösterme ve kapanan satışlar danışman bazında raporlanır." },
+      { q: "Portföy PDF çıktısı alınabilir mi?", a: "Evet. Portföyler için müşteriye gönderilebilecek PDF sunumlar tek tıkla oluşturulur." },
+      { q: "Demo talep ettikten sonra süreç nasıl ilerler?", a: "Formu doldurduktan sonra sizinle iletişime geçilir, ofisinizin ihtiyacı dinlenir ve canlı bir demo planlanır." },
+    ];
+
+    const faqItems = rawFaq.map((f, i) => ({
+      ...f,
+      idx: i,
+      open: this.state.faqOpen === i,
+      iconRotate: this.state.faqOpen === i ? "rotate(45deg)" : "rotate(0deg)",
+      onToggle: () => this.toggleFaq(i),
+    }));
+
+    const rawSlides = [
+      { src: "./assets/product-preview-1.webp", alt: "CRM'in coğrafi analiz ekranı: Antalya haritası üzerinde kümelenmiş portföy noktaları ve alan analizi paneli", title: "Portföyünüz, şehir haritasının üzerinde.", text: "Coğrafi analiz ekranı portföylerinizi harita üzerinde kümeleyerek gösterir; yarıçap veya çokgen çizerek bölge seçer, seçtiğiniz alandaki portföy sayısını ve fiyat aralığını anında görürsünüz." },
+      { src: "./assets/product-preview-2.webp", alt: "CRM ana paneli: Portföy, Toplam Müşteri, Takip Bekleyen, Aktif Talepler, Aylık Gelir ve Beklenen Ciro kartları; son aktiviteler tablosu", title: "Ofisin tamamı, tek bakışta.", text: "Ana panel; portföy, müşteri, aktif talep ve aylık gelir göstergelerini, son aktiviteler ve hedef ilerlemesiyle birlikte tek ekranda toplar." },
+      { src: "./assets/product-preview-3.webp", alt: "CRM raporlar ekranı: müşteri kazanım kaynaklarını gösteren pasta grafik", title: "Müşteri kaynaklarınızı görün.", text: "Raporlar ekranı; eski müşteri, sosyal medya, referans, portal ve ofis ziyareti gibi kazanım kaynaklarını oranlarıyla gösterir." },
+    ];
+    const slides = rawSlides.map((s, i) => ({
+      ...s,
+      onSelect: () => this.setSlide(i),
+      dotWidth: this.state.slide === i ? "28px" : "8px",
+      dotColor: this.state.slide === i ? "#D71920" : "#D4D4D8",
+      imgOpacity: this.state.slide === i ? 1 : 0,
+    }));
+    const activeSlide = { ...rawSlides[this.state.slide], fadeOpacity: 1 };
+
+    const footerColumns = [
+      { title: "Ürün", links: [
+        { href: "#ozellikler", label: "Özellikler" },
+        { href: "#paketler", label: "Paketler" },
+        { href: "#kimler-icin", label: "Kimler İçin" },
+        { href: "#sss", label: "SSS" },
+      ]},
+      { title: "Hizmetler", links: [
+        { href: "#hizmetler", label: "Ek Profesyonel Hizmetler" },
+        { href: "#demo", label: "Demo Talep Et" },
+      ]},
+    ];
+
+    return {
+      navLinks, heroRows, problems, solutions, features, audience,
+      pricingTiers, services, trustItems, faqItems, footerColumns,
+      slides, activeSlide,
+    };
+  }
+}
+</script>
+</body>
+</html>
