@@ -21,19 +21,12 @@ copying raw HTML/inline styles into the app.
 pricing-card pattern are final as shown. Copy is verbatim from the existing
 `content/landing.ts` — no text changed.
 
-## Decision needed: typography
-The mockup uses a single font family (Plus Jakarta Sans, weights 400–800)
-site-wide for a cleaner GoDaddy-like feel. The current codebase instead
-loads three fonts via `next/font/google` in `app/layout.tsx`: **Fraunces**
-(display headings only), **Inter** (body/UI), **IBM Plex Mono** (ledger/data
-elements). Two options:
-1. Keep the existing 3-font system (swap Fraunces headings for bold Inter
-   weights to match the mockup's single-family look), **no font loading
-   changes needed** — recommended, least risky.
-2. Replace with Plus Jakarta Sans site-wide via `next/font/google` (update
-   `--font-display` and `--font-body` variables in `layout.tsx`) for an exact
-   match to the mockup.
-Flag this to the user before implementing; don't decide silently.
+## Typography — decided
+Use **Plus Jakarta Sans** (weights 400–800) site-wide, exactly as in the
+mockup, replacing the current 3-font setup in `app/layout.tsx` (Fraunces +
+Inter + IBM Plex Mono). Load it via `next/font/google` and point both
+`--font-display` and `--font-body` CSS variables at it; IBM Plex Mono can be
+dropped unless another part of the app still needs a monospace face.
 
 ## Screens / Sections
 The page is a single scrolling document. In source order:
