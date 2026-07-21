@@ -5,19 +5,19 @@ export default function Hero() {
   return (
     <section className="bg-white">
       <div className="section !py-14 md:!py-20">
-        <div className="lg:grid lg:grid-cols-12 lg:items-center lg:gap-8">
-          <div className="max-w-3xl lg:col-span-7 lg:max-w-none">
-            <p className="eyebrow items-start">
-              <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+        <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-accent-tint px-4 py-2 text-xs font-bold uppercase tracking-[0.06em] text-accent">
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
               {hero.eyebrow}
             </p>
-            <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-brand sm:text-5xl md:text-6xl">
+            <h1 className="font-display text-4xl font-extrabold leading-[1.06] tracking-tight text-brand sm:text-5xl md:text-[52px]">
               {hero.headline}
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600">
               {hero.subheadline}
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3.5 sm:flex-row sm:flex-wrap">
               <a href="#demo" className="btn-primary">
                 {hero.ctaPrimary}
               </a>
@@ -25,10 +25,10 @@ export default function Hero() {
                 {hero.ctaSecondary}
               </a>
             </div>
-            <p className="mt-6 max-w-md text-sm text-slate-500">{hero.trustNote}</p>
+            <p className="mt-6 max-w-md text-[13.5px] text-slate-400">{hero.trustNote}</p>
           </div>
 
-          <div className="mt-12 md:mt-16 lg:col-span-5 lg:mt-0">
+          <div>
             <LedgerStrip rows={heroLedger.rows} variant="light" caption={heroLedger.tableCaption} labels={ledgerLabels} />
           </div>
         </div>

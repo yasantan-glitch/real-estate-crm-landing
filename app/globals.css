@@ -6,20 +6,24 @@
  * THEME — change brand colors here (and mirror in config/site.ts).
  * Values are space-separated RGB so Tailwind can apply alpha.
  *
- * Ledger system: white background, near-black ink, one controlled red accent.
- * `brand` / `brand-soft` now carry the ink/near-black roles (text + dark
- * panels) instead of navy — mapping keys are unchanged so components that
- * reference bg-brand / text-brand pick up the new palette automatically.
- * Font variables (--font-display / --font-body / --font-mono) are supplied
- * by next/font/google in app/layout.tsx, not declared here.
+ * GoDaddy-style box system: white background, near-black ink, one controlled
+ * red accent. `brand` / `brand-soft` carry the ink/near-black roles (text +
+ * dark panels) — mapping keys are unchanged so components that reference
+ * bg-brand / text-brand pick up the new palette automatically. Most other
+ * grays used across the site (borders, muted text) match Tailwind's default
+ * slate/zinc scale exactly and don't need a variable.
+ * Font variable (--font-sans) is supplied by next/font/google in
+ * app/layout.tsx, not declared here.
  */
 :root {
   --color-brand: 10 10 10;        /* near-black ink #0A0A0A */
   --color-brand-soft: 24 24 27;   /* soft black for panels #18181B */
   --color-accent: 215 25 32;      /* controlled red #D71920 */
   --color-accent-hover: 168 20 25; /* pressed state #A81419 */
+  --color-accent-tint: 252 235 236; /* light red tint for badges/pills #FCEBEC */
   --color-surface: 244 244 245;   /* near-white section bg #F4F4F5 */
   --color-muted: 113 113 122;     /* zinc-500 for secondary text */
+  --color-line: 229 229 231;      /* light card/section border #E5E5E7 */
 }
 
 html {
@@ -48,27 +52,31 @@ body {
 }
 
 .eyebrow {
-  @apply mb-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-accent;
+  @apply mb-3 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.08em] text-accent;
+}
+
+.eyebrow-on-dark {
+  @apply text-red-400;
 }
 
 .h2 {
-  @apply font-display text-3xl font-semibold tracking-tight text-brand md:text-4xl;
+  @apply font-display text-3xl font-extrabold tracking-tight text-brand md:text-4xl;
 }
 
 .card {
-  @apply rounded-xl border border-slate-200 bg-white p-6 shadow-card;
+  @apply rounded-2xl border border-line bg-white p-6 shadow-card;
 }
 
 .btn {
-  @apply inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+  @apply inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-bold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
 }
 
 .btn-primary {
-  @apply btn bg-accent text-white hover:bg-accent-hover;
+  @apply btn bg-accent text-white shadow-[0_10px_24px_-8px_rgba(215,25,32,0.55)] hover:bg-accent-hover;
 }
 
 .btn-secondary {
-  @apply btn border border-slate-300 bg-white text-brand hover:border-brand hover:bg-surface;
+  @apply btn border-[1.5px] border-zinc-300 bg-white text-brand hover:border-brand hover:bg-surface;
 }
 
 .btn-dark {

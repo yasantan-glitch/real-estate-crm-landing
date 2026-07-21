@@ -177,11 +177,7 @@ export const solution = {
  */
 export const productPreview = {
   eyebrow: "Ürünü görün",
-  title: "Portföyünüz, şehir haritasının üzerinde.",
-  text: "Coğrafi analiz ekranı portföylerinizi harita üzerinde kümeleyerek gösterir; yarıçap veya çokgen çizerek bölge seçer, seçtiğiniz alandaki portföy sayısını ve fiyat aralığını anında görürsünüz. Yanında ana panel ve raporlar: göstergeler, son aktiviteler ve müşteri kaynak dağılımı. Bunlar tasarım taslağı değil — sistemden alınmış gerçek görüntüler.",
   carouselLabel: "Ürün ekran görüntüleri",
-  previousLabel: "Önceki görsel",
-  nextLabel: "Sonraki görsel",
   slideLabel: "Görsel",
   slides: [
     {
@@ -189,18 +185,24 @@ export const productPreview = {
       width: 3340,
       height: 1532,
       alt: "CRM'in coğrafi analiz ekranı: Antalya haritası üzerinde kümelenmiş portföy noktaları; yarıçap ve çokgen seçim araçları; seçili alandaki toplam portföy sayısı ile ortalama, en düşük ve en yüksek fiyatları gösteren alan analizi paneli",
+      title: "Portföyünüz, şehir haritasının üzerinde.",
+      text: "Coğrafi analiz ekranı portföylerinizi harita üzerinde kümeleyerek gösterir; yarıçap veya çokgen çizerek bölge seçer, seçtiğiniz alandaki portföy sayısını ve fiyat aralığını anında görürsünüz.",
     },
     {
       src: "/screenshots/product-preview-2.webp",
       width: 3344,
       height: 1528,
       alt: "CRM ana paneli: Portföy, Toplam Müşteri, Takip Bekleyen, Aktif Talepler, Aylık Gelir ve Beklenen Ciro kartları; son aktiviteler tablosu ve hedef ilerleme göstergesi",
+      title: "Ofisin tamamı, tek bakışta.",
+      text: "Ana panel; portföy, müşteri, aktif talep ve aylık gelir göstergelerini, son aktiviteler ve hedef ilerlemesiyle birlikte tek ekranda toplar.",
     },
     {
       src: "/screenshots/product-preview-3.webp",
       width: 3344,
       height: 1528,
       alt: "CRM raporlar ekranı: müşteri kazanım kaynaklarını — Eski Müşteri, Sosyal Medya, Referans, Portal, Ofis Ziyareti ve Diğer — oranlarıyla gösteren pasta grafik",
+      title: "Müşteri kaynaklarınızı görün.",
+      text: "Raporlar ekranı; eski müşteri, sosyal medya, referans, portal ve ofis ziyareti gibi kazanım kaynaklarını oranlarıyla gösterir.",
     },
   ],
 };

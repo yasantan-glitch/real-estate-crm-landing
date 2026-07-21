@@ -1,26 +1,22 @@
 /**
  * Optional add-on services — deliberately quieter than the CRM product
- * sections: compact rows inside a narrower column so it reads as an
- * appendix, not a second feature list.
+ * sections: a simple bordered card grid that reads as an appendix.
  */
 import SectionHeading from "./SectionHeading";
-import RuleList from "./RuleList";
 import { services } from "@/content/landing";
 
 export default function ServicesSection() {
-  const midpoint = Math.ceil(services.items.length / 2);
-  const columns = [services.items.slice(0, midpoint), services.items.slice(midpoint)];
-
   return (
     <section id="hizmetler" className="scroll-mt-24 bg-white">
       <div className="section">
-        <div className="max-w-4xl">
-          <SectionHeading eyebrow={services.eyebrow} title={services.title} intro={services.intro} />
-          <div className="mt-8 grid gap-x-12 md:grid-cols-2">
-            {columns.map((column) => (
-              <RuleList key={column[0].title} items={column} density="compact" numbered />
-            ))}
-          </div>
+        <SectionHeading eyebrow={services.eyebrow} title={services.title} intro={services.intro} center />
+        <div className="mt-14 grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(250px,1fr))]">
+          {services.items.map((item) => (
+            <div key={item.title} className="rounded-2xl border border-line bg-surface p-[22px]">
+              <h3 className="text-[15px] font-bold text-brand">{item.title}</h3>
+              <p className="mt-1.5 text-[13.5px] leading-relaxed text-slate-500">{item.text}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
