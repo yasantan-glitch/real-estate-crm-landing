@@ -75,56 +75,57 @@ export default function DemoForm() {
   }
 
   const inputClass = (name: FieldName) =>
-    `w-full rounded-md border bg-white/[0.06] px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent ${
-      errors[name] ? "border-red-400" : "border-white/20"
+    `w-full rounded-[10px] border-[1.5px] bg-white px-4 py-3 text-sm text-brand placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-accent ${
+      errors[name] ? "border-red-400" : "border-line"
     }`;
 
   const FieldError = ({ name }: { name: FieldName }) =>
     errors[name] ? (
-      <p className="mt-1 text-xs text-red-300" role="alert">
+      <p className="mt-1 text-xs text-red-400" role="alert">
         {errors[name]}
       </p>
     ) : null;
 
   return (
-    <section id="demo" className="scroll-mt-24 bg-brand-soft">
-      <div className="section grid gap-12 md:grid-cols-2">
-        <div className="flex flex-col">
-          <p className="eyebrow items-start">
-            <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+    <section id="demo" className="scroll-mt-24 bg-brand">
+      <div className="section grid gap-14 md:grid-cols-2">
+        <div className="flex flex-col justify-center">
+          <p className="eyebrow eyebrow-on-dark items-start">
+            <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-red-400" aria-hidden="true" />
             {demoForm.eyebrow}
           </p>
-          <h2 className="h2 !text-white">{demoForm.title}</h2>
-          <p className="mt-4 text-base leading-relaxed text-slate-300">{demoForm.intro}</p>
-          <div className="mt-10 space-y-2 border-t border-white/15 pt-6 text-sm text-slate-300 md:mt-auto">
+          <h2 className="h2 !text-[34px] !text-white">{demoForm.title}</h2>
+          <p className="mt-4 max-w-md text-[15.5px] leading-relaxed text-zinc-400">{demoForm.intro}</p>
+          <p className="mt-5 text-xs text-zinc-500">{demoForm.kvkkNote}</p>
+          <div className="mt-8 space-y-1.5 border-t border-white/15 pt-6 text-sm text-zinc-400">
             <p>
               E-posta:{" "}
-              <a href={`mailto:${siteConfig.contactEmail}`} className="text-white underline underline-offset-2">
+              <a href={`mailto:${siteConfig.contactEmail}`} className="text-white underline underline-offset-2 hover:text-red-400">
                 {siteConfig.contactEmail}
               </a>
             </p>
             <p>
               Telefon:{" "}
-              <a href={`tel:${siteConfig.contactPhone.replace(/\s/g, "")}`} className="text-white underline underline-offset-2">
+              <a href={`tel:${siteConfig.contactPhone.replace(/\s/g, "")}`} className="text-white underline underline-offset-2 hover:text-red-400">
                 {siteConfig.contactPhone}
               </a>
             </p>
           </div>
         </div>
 
-        <div>
+        <div className="rounded-[24px] bg-white p-8 shadow-[0_30px_70px_-24px_rgba(0,0,0,0.5)]">
           {status === "success" ? (
             <div className="flex h-full flex-col items-center justify-center py-10 text-center" role="status">
               <span className="mb-4 text-2xl text-accent" aria-hidden="true">
                 ✓
               </span>
-              <p className="max-w-sm text-sm leading-relaxed text-slate-200">{demoForm.success}</p>
+              <p className="max-w-sm text-sm leading-relaxed text-slate-600">{demoForm.success}</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} noValidate>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="fullName" className="mb-1.5 block text-xs font-semibold text-slate-200">
+                  <label htmlFor="fullName" className="mb-1.5 block text-xs font-semibold text-slate-600">
                     {demoForm.labels.fullName} *
                   </label>
                   <input id="fullName" name="fullName" type="text" autoComplete="name"
@@ -133,7 +134,7 @@ export default function DemoForm() {
                   <FieldError name="fullName" />
                 </div>
                 <div>
-                  <label htmlFor="company" className="mb-1.5 block text-xs font-semibold text-slate-200">
+                  <label htmlFor="company" className="mb-1.5 block text-xs font-semibold text-slate-600">
                     {demoForm.labels.company} *
                   </label>
                   <input id="company" name="company" type="text" autoComplete="organization"
@@ -142,7 +143,7 @@ export default function DemoForm() {
                   <FieldError name="company" />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="mb-1.5 block text-xs font-semibold text-slate-200">
+                  <label htmlFor="phone" className="mb-1.5 block text-xs font-semibold text-slate-600">
                     {demoForm.labels.phone} *
                   </label>
                   <input id="phone" name="phone" type="tel" autoComplete="tel"
@@ -151,7 +152,7 @@ export default function DemoForm() {
                   <FieldError name="phone" />
                 </div>
                 <div>
-                  <label htmlFor="email" className="mb-1.5 block text-xs font-semibold text-slate-200">
+                  <label htmlFor="email" className="mb-1.5 block text-xs font-semibold text-slate-600">
                     {demoForm.labels.email} *
                   </label>
                   <input id="email" name="email" type="email" autoComplete="email"
@@ -160,7 +161,7 @@ export default function DemoForm() {
                   <FieldError name="email" />
                 </div>
                 <div>
-                  <label htmlFor="city" className="mb-1.5 block text-xs font-semibold text-slate-200">
+                  <label htmlFor="city" className="mb-1.5 block text-xs font-semibold text-slate-600">
                     {demoForm.labels.city} *
                   </label>
                   <input id="city" name="city" type="text"
@@ -169,7 +170,7 @@ export default function DemoForm() {
                   <FieldError name="city" />
                 </div>
                 <div>
-                  <label htmlFor="agentCount" className="mb-1.5 block text-xs font-semibold text-slate-200">
+                  <label htmlFor="agentCount" className="mb-1.5 block text-xs font-semibold text-slate-600">
                     {demoForm.labels.agentCount} *
                   </label>
                   <select id="agentCount" name="agentCount"
@@ -182,7 +183,7 @@ export default function DemoForm() {
                   <FieldError name="agentCount" />
                 </div>
                 <div className="sm:col-span-2">
-                  <label htmlFor="message" className="mb-1.5 block text-xs font-semibold text-slate-200">
+                  <label htmlFor="message" className="mb-1.5 block text-xs font-semibold text-slate-600">
                     {demoForm.labels.message}
                   </label>
                   <textarea id="message" name="message" rows={3}
@@ -192,7 +193,7 @@ export default function DemoForm() {
               </div>
 
               {status === "error" && (
-                <p className="mt-4 border border-red-400/40 bg-red-500/10 px-4 py-3 text-sm text-red-300" role="alert">
+                <p className="mt-4 border border-red-400/40 bg-red-50 px-4 py-3 text-sm text-red-600" role="alert">
                   {demoForm.error}
                 </p>
               )}
@@ -200,7 +201,6 @@ export default function DemoForm() {
               <button type="submit" disabled={status === "submitting"} className="btn-primary mt-6 w-full disabled:opacity-60">
                 {status === "submitting" ? demoForm.submitting : demoForm.submit}
               </button>
-              <p className="mt-3 text-center text-xs text-slate-500">{demoForm.kvkkNote}</p>
             </form>
           )}
         </div>
