@@ -10,6 +10,7 @@ import type { LedgerLabels, LedgerRow } from "@/types/ledger";
 export const ledgerLabels = {
   code: "Kod",
   portfolio: "Portföy",
+  district: "Bölge",
   consultant: "Danışman",
   status: "Durum",
   detail: "Detay",
