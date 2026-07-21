@@ -316,7 +316,7 @@ export const audience = {
 export const pricing = {
   eyebrow: "Paketler",
   title: "Ofisinizin ölçeğine göre paket seçin.",
-  note: "Fiyatlar demo sonrası, kullanıcı sayısı ve ihtiyaca göre tekliflendirilir. Aylık abonelik modeliyle çalışır.",
+  note: "Fiyatlar demo sonrası, kullanıcı sayısı ve ihtiyaca göre tekliflendirilir. Aylık abonelik modeliyle çalışır. CRM özellikleri her pakette aynıdır; farklılık kullanıcı sayısı ve destek seviyesindedir.",
   cta: "Demo ve Teklif Al",
   tiers: [
     {
@@ -325,13 +325,10 @@ export const pricing = {
       target: "Bireysel danışmanlar ve küçük ofisler için",
       price: "Demo sonrası fiyatlandırılır",
       features: [
-        "1-3 kullanıcı",
-        "Portföy yönetimi",
-        "Müşteri yönetimi",
-        "Temel talep takibi",
-        "Temel raporlar",
+        "1-5 kullanıcı",
         "Subdomain kullanımı",
         "E-posta destek",
+        "Kendi kendine kurulum",
       ],
     },
     {
@@ -341,14 +338,9 @@ export const pricing = {
       price: "Aylık paket modeli",
       features: [
         "5-15 kullanıcı",
-        "Gelişmiş portföy yönetimi",
-        "Talep eşleştirme",
-        "Randevu ve görev yönetimi",
-        "Satış pipeline",
-        "Danışman performans raporları",
-        "PDF portföy sunumları",
-        "Komisyon takibi",
+        "Subdomain kullanımı",
         "Öncelikli destek",
+        "Rehberli kurulum desteği",
       ],
     },
     {
@@ -357,14 +349,12 @@ export const pricing = {
       target: "Broker ekipleri ve franchise yapıları için",
       price: "İhtiyaca göre tekliflendirilir",
       features: [
-        "Çoklu kullanıcı desteği",
-        "Çoklu ofis desteği",
-        "Rol ve yetki yönetimi",
-        "Gelişmiş raporlama",
+        "15+ kullanıcı (özel anlaşma)",
         "Özel domain desteği",
-        "Eğitim ve onboarding",
-        "Özel geliştirme opsiyonu",
         "Premium destek",
+        "Kapsamlı eğitim ve onboarding",
+        "Talep halinde çoklu ofis desteği",
+        "Talebe özel geliştirme opsiyonu",
       ],
     },
   ],
