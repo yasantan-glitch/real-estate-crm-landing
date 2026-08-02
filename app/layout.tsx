@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import { siteConfig } from "@/config/site";
+import { pricing } from "@/content/landing";
 import "./globals.css";
 
 /**
@@ -39,6 +40,11 @@ export const metadata: Metadata = {
 };
 
 // SoftwareApplication structured data (brand values come from config)
+// Offer price is derived from the lowest tier's discounted price in
+// content/landing.ts (pricing.tiers[0] = "Başlangıç") — no hardcoded price here.
+const entryTier = pricing.tiers[0];
+const entryTierPriceDigits = entryTier.price.discountedPrice.replace(/[^0-9]/g, "");
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -46,7 +52,12 @@ const jsonLd = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: siteConfig.seo.description,
-  offers: { "@type": "Offer", priceCurrency: "TRY", price: "0", description: "Demo sonrası fiyatlandırılır" },
+  offers: {
+    "@type": "Offer",
+    price: entryTierPriceDigits,
+    priceCurrency: "TRY",
+    description: `${entryTier.name} paketi, aylık abonelik — ${entryTier.price.discountNote}`,
+  },
   publisher: { "@type": "Organization", name: siteConfig.companyName },
 };
 
