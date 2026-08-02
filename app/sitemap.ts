@@ -1,7 +1,10 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
+import { getAllPosts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const posts = getAllPosts();
+
   return [
     {
       url: siteConfig.siteUrl,
@@ -9,6 +12,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
-    // Future pages: /ozellikler, /paketler, /demo-talep, /blog, /iletisim ...
+    {
+      url: `${siteConfig.siteUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    ...posts.map((post) => ({
+      url: `${siteConfig.siteUrl}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    // Future pages: /ozellikler, /paketler, /demo-talep, /iletisim ...
   ];
 }
