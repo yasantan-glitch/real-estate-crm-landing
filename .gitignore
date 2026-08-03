@@ -5,3 +5,9 @@ out
 .vercel
 *.tsbuildinfo
 next-env.d.ts
+
+# Local Claude launcher scripts
+scripts/claude-free.ps1
+scripts/claude-paid.ps1
+scripts/claude-free.sh
+scripts/claude-paid.sh
