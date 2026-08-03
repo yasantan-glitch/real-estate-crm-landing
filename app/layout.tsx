@@ -30,13 +30,36 @@ export const metadata: Metadata = {
     siteName: siteConfig.productName,
     locale: "tr_TR",
     type: "website",
+    images: [
+      {
+        url: `${siteConfig.siteUrl}/og-default.png`,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.productName,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.seo.ogTitle,
     description: siteConfig.seo.ogDescription,
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/manifest.json",
 };
 
 // SoftwareApplication structured data (brand values come from config)
@@ -49,8 +72,9 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: siteConfig.productName,
+  url: siteConfig.siteUrl,
   applicationCategory: "BusinessApplication",
-  operatingSystem: "Web",
+  operatingSystem: "Cloud",
   description: siteConfig.seo.description,
   offers: {
     "@type": "Offer",

@@ -27,6 +27,16 @@ export async function generateMetadata({
   return {
     title: `${post.title} | ${siteConfig.productName}`,
     description: post.excerpt,
+    openGraph: {
+      images: [
+        {
+          url: `${siteConfig.siteUrl}/og-default.png`,
+          width: 1200,
+          height: 630,
+          alt: siteConfig.productName,
+        },
+      ],
+    },
   };
 }
 
@@ -48,8 +58,31 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: { "@type": "Person", name: siteConfig.companyName },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.companyName,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteConfig.siteUrl}/logos/EmlakCRM-Logo.png`,
+      },
+    },
+    description: post.excerpt,
+    url: `${siteConfig.siteUrl}/blog/${post.slug}`,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <main>
         <section className="bg-white">
