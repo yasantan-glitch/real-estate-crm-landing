@@ -79,9 +79,14 @@ export default function DemoForm() {
       errors[name] ? "border-red-400" : "border-line"
     }`;
 
+  const errorAria = (name: FieldName) =>
+    errors[name]
+      ? { "aria-invalid": "true" as const, "aria-describedby": `${name}-error` }
+      : { "aria-invalid": "false" as const };
+
   const FieldError = ({ name }: { name: FieldName }) =>
     errors[name] ? (
-      <p className="mt-1 text-xs text-red-400" role="alert">
+      <p id={`${name}-error`} className="mt-1 text-xs text-red-400" role="alert">
         {errors[name]}
       </p>
     ) : null;
@@ -130,7 +135,8 @@ export default function DemoForm() {
                   </label>
                   <input id="fullName" name="fullName" type="text" autoComplete="name"
                     placeholder={demoForm.placeholders.fullName}
-                    value={form.fullName} onChange={set("fullName")} className={inputClass("fullName")} />
+                    value={form.fullName} onChange={set("fullName")} className={inputClass("fullName")}
+                    aria-required="true" {...errorAria("fullName")} />
                   <FieldError name="fullName" />
                 </div>
                 <div>
@@ -139,7 +145,8 @@ export default function DemoForm() {
                   </label>
                   <input id="company" name="company" type="text" autoComplete="organization"
                     placeholder={demoForm.placeholders.company}
-                    value={form.company} onChange={set("company")} className={inputClass("company")} />
+                    value={form.company} onChange={set("company")} className={inputClass("company")}
+                    aria-required="true" {...errorAria("company")} />
                   <FieldError name="company" />
                 </div>
                 <div>
@@ -148,7 +155,8 @@ export default function DemoForm() {
                   </label>
                   <input id="phone" name="phone" type="tel" autoComplete="tel"
                     placeholder={demoForm.placeholders.phone}
-                    value={form.phone} onChange={set("phone")} className={inputClass("phone")} />
+                    value={form.phone} onChange={set("phone")} className={inputClass("phone")}
+                    aria-required="true" {...errorAria("phone")} />
                   <FieldError name="phone" />
                 </div>
                 <div>
@@ -157,7 +165,8 @@ export default function DemoForm() {
                   </label>
                   <input id="email" name="email" type="email" autoComplete="email"
                     placeholder={demoForm.placeholders.email}
-                    value={form.email} onChange={set("email")} className={inputClass("email")} />
+                    value={form.email} onChange={set("email")} className={inputClass("email")}
+                    aria-required="true" {...errorAria("email")} />
                   <FieldError name="email" />
                 </div>
                 <div>
@@ -166,7 +175,8 @@ export default function DemoForm() {
                   </label>
                   <input id="city" name="city" type="text"
                     placeholder={demoForm.placeholders.city}
-                    value={form.city} onChange={set("city")} className={inputClass("city")} />
+                    value={form.city} onChange={set("city")} className={inputClass("city")}
+                    aria-required="true" {...errorAria("city")} />
                   <FieldError name="city" />
                 </div>
                 <div>
@@ -174,7 +184,8 @@ export default function DemoForm() {
                     {demoForm.labels.agentCount} *
                   </label>
                   <select id="agentCount" name="agentCount"
-                    value={form.agentCount} onChange={set("agentCount")} className={inputClass("agentCount")}>
+                    value={form.agentCount} onChange={set("agentCount")} className={inputClass("agentCount")}
+                    aria-required="true" {...errorAria("agentCount")}>
                     <option value="">{demoForm.placeholders.agentCount}</option>
                     {demoForm.agentCountOptions.map((opt) => (
                       <option key={opt} value={opt}>{opt}</option>
@@ -188,7 +199,8 @@ export default function DemoForm() {
                   </label>
                   <textarea id="message" name="message" rows={3}
                     placeholder={demoForm.placeholders.message}
-                    value={form.message} onChange={set("message")} className={inputClass("message")} />
+                    value={form.message} onChange={set("message")} className={inputClass("message")}
+                    {...errorAria("message")} />
                 </div>
               </div>
 
