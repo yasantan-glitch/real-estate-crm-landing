@@ -23,6 +23,7 @@ export const nav = {
     { href: "#paketler", label: "Paketler" },
     { href: "#hizmetler", label: "Ek Hizmetler" },
     { href: "#sss", label: "SSS" },
+    { href: "/blog", label: "Blog" },
   ],
   cta: "Demo Talep Et",
 };
@@ -538,6 +539,7 @@ export const footer = {
         { href: "#paketler", label: "Paketler" },
         { href: "#kimler-icin", label: "Kimler İçin" },
         { href: "#sss", label: "SSS" },
+        { href: "/blog", label: "Blog" },
       ],
     },
     {
