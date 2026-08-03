@@ -32,7 +32,7 @@ export default function FAQ() {
                     +
                   </span>
                 </button>
-                {isOpen && <p className="max-w-[680px] pb-5 text-[14.5px] leading-relaxed text-slate-500">{item.a}</p>}
+                {isOpen && <p className="max-w-[680px] pb-5 text-[14.5px] leading-relaxed text-slate-600">{item.a}</p>}
               </div>
             );
           })}

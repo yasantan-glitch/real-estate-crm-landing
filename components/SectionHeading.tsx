@@ -16,7 +16,7 @@ export default function SectionHeading({ eyebrow, title, intro, dark, center }: 
       </p>
       <h2 className={dark ? "h2 !text-white" : "h2"}>{title}</h2>
       {intro && (
-        <p className={`mt-4 text-base leading-relaxed ${dark ? "text-zinc-400" : "text-slate-500"}`}>
+        <p className={`mt-4 text-base leading-relaxed ${dark ? "text-zinc-400" : "text-slate-600"}`}>
           {intro}
         </p>
       )}

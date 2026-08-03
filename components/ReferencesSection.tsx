@@ -9,7 +9,7 @@ export default function ReferencesSection() {
         <span className="sr-only">
           {references.eyebrow}. {references.intro}
         </span>
-        <span className="text-[13.5px] font-semibold text-slate-500">{references.title}</span>
+        <span className="text-[13.5px] font-semibold text-slate-600">{references.title}</span>
         {references.logos.map((logo) => (
           <Image
             key={logo.src}

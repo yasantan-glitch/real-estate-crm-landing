@@ -14,7 +14,7 @@ export default function ServicesSection() {
           {services.items.map((item) => (
             <div key={item.title} className="rounded-2xl border border-line bg-surface p-[22px]">
               <h3 className="text-[15px] font-bold text-brand">{item.title}</h3>
-              <p className="mt-1.5 text-[13.5px] leading-relaxed text-slate-500">{item.text}</p>
+              <p className="mt-1.5 text-[13.5px] leading-relaxed text-slate-600">{item.text}</p>
             </div>
           ))}
         </div>

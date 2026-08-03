@@ -10,7 +10,7 @@ export default function TrustSection() {
           {trust.items.map((item) => (
             <div key={item.title} className="rounded-[20px] border border-line bg-white p-[30px] shadow-card">
               <h3 className="text-[17px] font-extrabold text-brand">{item.title}</h3>
-              <p className="mt-2.5 text-[14.5px] leading-relaxed text-slate-500">{item.text}</p>
+              <p className="mt-2.5 text-[14.5px] leading-relaxed text-slate-600">{item.text}</p>
             </div>
           ))}
         </div>

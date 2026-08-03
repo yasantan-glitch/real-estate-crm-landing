@@ -13,7 +13,7 @@ export default function AudienceSection() {
               className="rounded-[18px] border border-line p-6 transition-[border-color,transform] duration-200 hover:-translate-y-[3px] hover:border-accent"
             >
               <h3 className="text-[16.5px] font-bold text-brand">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-500">{item.text}</p>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.text}</p>
             </div>
           ))}
         </div>

@@ -38,7 +38,7 @@ export default function BlogPage() {
             />
 
             {posts.length === 0 ? (
-              <p className="mt-14 text-center text-sm text-slate-500">
+              <p className="mt-14 text-center text-sm text-slate-600">
                 Henüz yayınlanmış bir yazı yok. Yakında burada olacak.
               </p>
             ) : (
@@ -55,7 +55,7 @@ export default function BlogPage() {
                     <h2 className="mt-3 text-[16.5px] font-bold text-brand transition-colors group-hover:text-accent">
                       {post.title}
                     </h2>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-500">
+                    <p className="mt-2 text-sm leading-relaxed text-slate-600">
                       {post.excerpt}
                     </p>
                   </Link>

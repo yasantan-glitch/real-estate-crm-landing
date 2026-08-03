@@ -16,7 +16,7 @@ export default function FeaturesSection() {
               </span>
               <div>
                 <h3 className="text-[15px] font-bold text-brand">{item.title}</h3>
-                <p className="mt-1 text-[13.5px] leading-relaxed text-slate-500">{item.text}</p>
+                <p className="mt-1 text-[13.5px] leading-relaxed text-slate-600">{item.text}</p>
               </div>
             </div>
           ))}

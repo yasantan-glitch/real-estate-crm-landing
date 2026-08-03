@@ -34,7 +34,7 @@ export default function ProductPreviewSection() {
             {eyebrow}
           </p>
           <h2 className="h2 sm:whitespace-nowrap !text-[30px]">{active.title}</h2>
-          <p className="mx-auto mt-4 max-w-[640px] text-base leading-relaxed text-slate-500">{active.text}</p>
+          <p className="mx-auto mt-4 max-w-[640px] text-base leading-relaxed text-slate-600">{active.text}</p>
         </div>
 
         <div
