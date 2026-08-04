@@ -14,9 +14,9 @@ export default function Hero() {
             <h1 className="font-display text-4xl font-extrabold leading-[1.06] tracking-tight text-brand sm:text-5xl md:text-[52px]">
               {hero.headline}
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600">
+            <h2 className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600">
               {hero.subheadline}
-            </p>
+            </h2>
             <div className="mt-8 flex flex-col gap-3.5 sm:flex-row sm:flex-wrap">
               <a href="#demo" className="btn-primary">
                 {hero.ctaPrimary}
