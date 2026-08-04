@@ -4,7 +4,6 @@ import { footer } from "@/content/landing";
 
 export default function Footer() {
   const year = new Date().getFullYear();
-  const socials = Object.entries(siteConfig.socialLinks).filter(([, url]) => url);
 
   return (
     <footer className="border-t border-zinc-800 bg-brand">
@@ -52,11 +51,6 @@ export default function Footer() {
               {footer.legal.map((l) => (
                 <a key={l.label} href={l.href} className="hover:text-accent">
                   {l.label}
-                </a>
-              ))}
-              {socials.map(([name, url]) => (
-                <a key={name} href={url} className="capitalize hover:text-accent" target="_blank" rel="noopener noreferrer">
-                  {name}
                 </a>
               ))}
             </div>
