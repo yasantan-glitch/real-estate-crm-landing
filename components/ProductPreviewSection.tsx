@@ -51,7 +51,7 @@ export default function ProductPreviewSection() {
                 alt={slide.alt}
                 width={slide.width}
                 height={slide.height}
-                sizes="(min-width: 1024px) 1152px, 100vw"
+                sizes="(min-width: 1152px) 1070px, (min-width: 640px) calc(100vw - 82px), calc(100vw - 58px)"
                 priority={i === 0}
                 className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out ${
                   i === index ? "opacity-100" : "opacity-0"
