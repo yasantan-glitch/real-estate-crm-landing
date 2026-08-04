@@ -565,3 +565,7 @@ export const footer = {
   rights: "Tüm hakları saklıdır.",
   designCredit: "Web sitesi tasarımı: Tan Yasan",
 };
+
+export const blogPage = {
+  title: "Emlak CRM Pro Blog",
+};

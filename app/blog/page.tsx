@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SectionHeading from "@/components/SectionHeading";
 import { siteConfig } from "@/config/site";
+import { blogPage } from "@/content/landing";
 import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
@@ -31,6 +32,9 @@ export default function BlogPage() {
       <main>
         <section className="bg-white">
           <div className="section">
+            <h1 className="mb-6 text-center font-display text-2xl font-extrabold tracking-tight text-brand md:text-3xl">
+              {blogPage.title}
+            </h1>
             <SectionHeading
               eyebrow="Blog"
               title="Emlak CRM ve portföy yönetimi üzerine yazılar"
