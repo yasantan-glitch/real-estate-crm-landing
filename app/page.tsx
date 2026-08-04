@@ -12,6 +12,7 @@ import TrustSection from "@/components/TrustSection";
 import DemoForm from "@/components/DemoForm";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
+import MobileStickyCtaBar from "@/components/MobileStickyCtaBar";
 
 export default function HomePage() {
   return (
@@ -32,6 +33,7 @@ export default function HomePage() {
         <FAQ />
       </main>
       <Footer />
+      <MobileStickyCtaBar />
     </>
   );
 }

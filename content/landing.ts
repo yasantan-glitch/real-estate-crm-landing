@@ -28,6 +28,14 @@ export const nav = {
   cta: "Demo Talep Et",
 };
 
+/** Mobile-only sticky bar shown after the hero scrolls out of view. Reuses the header CTA copy/target. */
+export const stickyCta = {
+  href: "#demo",
+  label: nav.cta,
+  /** Accessible name for the bar landmark itself. */
+  regionLabel: "Hızlı demo talebi",
+};
+
 export const hero = {
   eyebrow: "Gayrimenkul ofisleri için web tabanlı CRM",
   // Alternative slogans — swap headline freely:

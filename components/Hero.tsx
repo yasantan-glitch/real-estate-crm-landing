@@ -3,7 +3,7 @@ import { hero, heroLedger, ledgerLabels } from "@/content/landing";
 
 export default function Hero() {
   return (
-    <section className="bg-white">
+    <section id="hero" className="bg-white">
       <div className="section !py-14 md:!py-20">
         <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
