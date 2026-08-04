@@ -42,7 +42,7 @@ export default function BlogPage() {
                 Henüz yayınlanmış bir yazı yok. Yakında burada olacak.
               </p>
             ) : (
-              <div className="mt-14 grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]">
+              <div className="mt-14 grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]">
                 {posts.map((post) => (
                   <Link
                     key={post.slug}
