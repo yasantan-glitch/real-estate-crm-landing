@@ -18,8 +18,8 @@ export default function Footer() {
               className="h-7 w-auto"
             />
           </div>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-zinc-500">{footer.tagline}</p>
-          <div className="mt-4 space-y-1 text-sm text-zinc-500">
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-zinc-400">{footer.tagline}</p>
+          <div className="mt-4 space-y-1 text-sm text-zinc-400">
             <p>{siteConfig.contactEmail}</p>
             <p>{siteConfig.contactPhone}</p>
           </div>
@@ -42,7 +42,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-zinc-800">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-3 px-5 py-5 text-xs text-zinc-500 sm:grid-cols-3 sm:px-8">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-3 px-5 py-5 text-xs text-zinc-400 sm:grid-cols-3 sm:px-8">
           <div className="order-1 flex flex-col items-center gap-2 sm:flex-row sm:items-center sm:gap-5 sm:justify-self-start">
             <p>
               © {year} {siteConfig.companyName}. {footer.rights}
@@ -67,7 +67,7 @@ export default function Footer() {
             href="https://www.tanyasan.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="order-3 text-center text-[12.5px] text-zinc-500 hover:text-accent sm:justify-self-end"
+            className="order-3 text-center text-[12.5px] text-zinc-400 hover:text-accent sm:justify-self-end"
           >
             {footer.designCredit}
           </a>
