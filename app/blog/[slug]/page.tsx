@@ -30,7 +30,7 @@ export async function generateMetadata({
     openGraph: {
       images: [
         {
-          url: `${siteConfig.siteUrl}/og-default.png`,
+          url: `${siteConfig.siteUrl}/api/og?title=${encodeURIComponent(post.title)}&type=blog`,
           width: 1200,
           height: 630,
           alt: siteConfig.productName,

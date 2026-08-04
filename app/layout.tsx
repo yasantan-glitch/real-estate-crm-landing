@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${siteConfig.siteUrl}/og-default.png`,
+        url: `${siteConfig.siteUrl}/api/og?title=${encodeURIComponent(siteConfig.seo.ogTitle)}&type=home`,
         width: 1200,
         height: 630,
         alt: siteConfig.productName,
