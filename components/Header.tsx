@@ -101,7 +101,7 @@ export default function Header() {
         </nav>
 
         <a
-          href="#demo"
+          href="/#demo"
           className="btn-primary hidden !px-4 !py-2 !text-[13px] text-center md:!px-6 md:!py-[11px] md:!text-[14.5px] md:inline-flex"
         >
           {nav.cta}
