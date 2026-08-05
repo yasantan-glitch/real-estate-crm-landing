@@ -23,12 +23,12 @@ export default function PricingSection() {
                     {tier.badge}
                   </div>
                 )}
-                <p className={`text-[13px] font-bold ${featured ? "text-white/75" : "text-zinc-400"}`}>{tier.target}</p>
+                <p className={`text-[13px] font-bold ${featured ? "text-white/95" : "text-zinc-400"}`}>{tier.target}</p>
                 <h3 className="mb-[18px] mt-1.5 text-[22px] font-extrabold text-white">{tier.name}</h3>
                 <p className="mb-3.5 inline-block rounded-full bg-accent-tint px-3 py-1 text-xs font-bold text-accent">
                   {tier.price.discountNote}
                 </p>
-                <p className={`text-[15px] ${featured ? "text-white/75" : "text-zinc-400"}`}>
+                <p className={`text-[15px] ${featured ? "text-white/95" : "text-zinc-400"}`}>
                   <span className="sr-only">Önceki fiyat: </span>
                   <span className="line-through">{tier.price.originalPrice}</span>
                 </p>
@@ -62,7 +62,7 @@ export default function PricingSection() {
                           <path d="M0.7 3l1.8 1.8L6.3 1" />
                         </svg>
                       </span>
-                      <span className={`text-sm leading-tight ${featured ? "text-white/90" : "text-zinc-300"}`}>{f}</span>
+                      <span className={`text-sm leading-tight ${featured ? "text-white/95" : "text-zinc-300"}`}>{f}</span>
                     </li>
                   ))}
                 </ul>

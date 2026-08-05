@@ -19,8 +19,8 @@ type Props = {
 const STATUS_STYLE: Record<LedgerStatusTone, string> = {
   inProgress: "bg-accent-tint text-accent",
   pending: "bg-zinc-100 text-zinc-700",
-  matched: "bg-zinc-200 text-zinc-500",
-  closed: "bg-zinc-200 text-zinc-500",
+  matched: "bg-zinc-200 text-zinc-600",
+  closed: "bg-zinc-200 text-zinc-600",
 };
 
 export default function LedgerStrip({ rows, variant, caption, labels }: Props) {
@@ -57,7 +57,7 @@ export default function LedgerStrip({ rows, variant, caption, labels }: Props) {
                 <span className="sr-only">{labels.portfolio}: </span>
                 {row.propertyType}
               </p>
-              <p className={`text-xs ${isDark ? "text-white/50" : "text-slate-400"}`}>
+              <p className={`text-xs ${isDark ? "text-white/50" : "text-slate-500"}`}>
                 <span className="sr-only">{labels.district}: </span>{row.district} · <span className="sr-only">{labels.consultant}: </span>{row.consultant}
               </p>
             </div>

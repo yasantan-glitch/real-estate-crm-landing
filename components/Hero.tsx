@@ -25,7 +25,7 @@ export default function Hero() {
                 {hero.ctaSecondary}
               </a>
             </div>
-            <p className="mt-6 max-w-md text-[13.5px] text-slate-400">{hero.trustNote}</p>
+            <p className="mt-6 max-w-md text-[13.5px] text-slate-500">{hero.trustNote}</p>
           </div>
 
           <div>

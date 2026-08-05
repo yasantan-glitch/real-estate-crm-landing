@@ -75,7 +75,7 @@ export default function DemoForm() {
   }
 
   const inputClass = (name: FieldName) =>
-    `w-full rounded-[10px] border-[1.5px] bg-white px-4 py-3 text-sm text-brand placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-accent ${
+    `w-full rounded-[10px] border-[1.5px] bg-white px-4 py-3 text-sm text-brand placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent ${
       errors[name] ? "border-red-400" : "border-line"
     }`;
 
@@ -101,7 +101,7 @@ export default function DemoForm() {
           </p>
           <h2 className="h2 !text-[34px] !text-white">{demoForm.title}</h2>
           <p className="mt-4 max-w-md text-[15.5px] leading-relaxed text-zinc-400">{demoForm.intro}</p>
-          <p className="mt-5 text-xs text-zinc-500">{demoForm.kvkkNote}</p>
+          <p className="mt-5 text-xs text-zinc-400">{demoForm.kvkkNote}</p>
           <div className="mt-8 space-y-1.5 border-t border-white/15 pt-6 text-sm text-zinc-400">
             <p>
               E-posta:{" "}
