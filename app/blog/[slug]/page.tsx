@@ -24,10 +24,16 @@ export async function generateMetadata({
     return {};
   }
 
+  const canonicalUrl = `${siteConfig.siteUrl}/blog/${post.slug}`;
+
   return {
     title: `${post.title} | ${siteConfig.productName}`,
     description: post.excerpt,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
+      url: canonicalUrl,
       images: [
         {
           url: `${siteConfig.siteUrl}/api/og?title=${encodeURIComponent(post.title)}&type=blog`,
