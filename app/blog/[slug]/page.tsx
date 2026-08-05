@@ -56,6 +56,11 @@ function formatDate(dateString: string) {
   });
 }
 
+/** "2026-08-02" -> "2026-08-02T00:00:00+03:00" (string concat, not a Date object, to avoid UTC conversion shifting the day). */
+function toIsoDateTime(dateString: string) {
+  return `${dateString}T00:00:00+03:00`;
+}
+
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
@@ -68,9 +73,14 @@ export default async function BlogPostPage({ params }: PageProps) {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
-    datePublished: post.date,
-    dateModified: post.date,
-    author: { "@type": "Person", name: siteConfig.companyName },
+    image: `${siteConfig.siteUrl}/api/og?title=${encodeURIComponent(post.title)}&type=blog`,
+    datePublished: toIsoDateTime(post.date),
+    dateModified: toIsoDateTime(post.date),
+    author: {
+      "@type": "Person",
+      name: siteConfig.companyName,
+      url: siteConfig.siteUrl,
+    },
     publisher: {
       "@type": "Organization",
       name: siteConfig.companyName,
