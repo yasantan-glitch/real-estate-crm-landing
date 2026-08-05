@@ -47,38 +47,40 @@ body {
 }
 
 /* Shared section rhythm */
-.section {
-  @apply mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 md:py-24;
-}
+@layer components {
+  .section {
+    @apply mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 md:py-24;
+  }
 
-.eyebrow {
-  @apply mb-3 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.08em] text-accent;
-}
+  .eyebrow {
+    @apply mb-3 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.08em] text-accent;
+  }
 
-.eyebrow-on-dark {
-  @apply text-red-400;
-}
+  .eyebrow-on-dark {
+    @apply text-red-400;
+  }
 
-.h2 {
-  @apply font-display text-3xl font-extrabold tracking-tight text-brand md:text-4xl;
-}
+  .h2 {
+    @apply font-display text-3xl font-extrabold tracking-tight text-brand md:text-4xl;
+  }
 
-.card {
-  @apply rounded-2xl border border-line bg-white p-6 shadow-card;
-}
+  .card {
+    @apply rounded-2xl border border-line bg-white p-6 shadow-card;
+  }
 
-.btn {
-  @apply inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-bold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
-}
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-bold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+  }
 
-.btn-primary {
-  @apply btn bg-accent text-white shadow-[0_10px_24px_-8px_rgba(215,25,32,0.55)] hover:bg-accent-hover;
-}
+  .btn-primary {
+    @apply btn bg-accent text-white shadow-[0_10px_24px_-8px_rgba(215,25,32,0.55)] hover:bg-accent-hover;
+  }
 
-.btn-secondary {
-  @apply btn border-[1.5px] border-zinc-300 bg-white text-brand hover:border-brand hover:bg-surface;
-}
+  .btn-secondary {
+    @apply btn border-[1.5px] border-zinc-300 bg-white text-brand hover:border-brand hover:bg-surface;
+  }
 
-.btn-dark {
-  @apply btn bg-brand text-white hover:bg-brand-soft;
+  .btn-dark {
+    @apply btn bg-brand text-white hover:bg-brand-soft;
+  }
 }
