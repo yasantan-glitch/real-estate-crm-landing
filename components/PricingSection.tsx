@@ -6,7 +6,7 @@ export default function PricingSection() {
     <section id="paketler" className="scroll-mt-24 bg-brand">
       <div className="section !pb-[110px]">
         <SectionHeading eyebrow={pricing.eyebrow} title={pricing.title} intro={pricing.note} dark center />
-        <div className="mt-14 grid items-start gap-6 [grid-template-columns:repeat(auto-fit,minmax(300px,1fr))]">
+        <div className="mt-14 grid items-start gap-6 [grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))]">
           {pricing.tiers.map((tier) => {
             const featured = Boolean(tier.badge);
             return (
