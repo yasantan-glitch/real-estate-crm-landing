@@ -7,10 +7,27 @@ import { siteConfig } from "@/config/site";
 import { blogPage } from "@/content/landing";
 import { getAllPosts } from "@/lib/blog";
 
+const blogCanonicalUrl = `${siteConfig.siteUrl}/blog`;
+
 export const metadata: Metadata = {
   title: `Blog | ${siteConfig.productName}`,
   description:
     "Emlak ofisleri için CRM, portföy yönetimi ve satış süreçleri üzerine yazılar.",
+  alternates: {
+    canonical: blogCanonicalUrl,
+  },
+  openGraph: {
+    url: blogCanonicalUrl,
+    siteName: siteConfig.productName,
+    images: [
+      {
+        url: `${siteConfig.siteUrl}/api/og?title=${encodeURIComponent("Blog")}&type=blog`,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.productName,
+      },
+    ],
+  },
 };
 
 /** "2026-08-02" -> "2 Ağustos 2026" (parsed as local calendar date, not UTC, to avoid off-by-one day shifts). */
