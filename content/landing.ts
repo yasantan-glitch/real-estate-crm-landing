@@ -559,8 +559,8 @@ export const footer = {
     },
   ],
   legal: [
-    { href: "#", label: "Gizlilik Politikası" },
-    { href: "#", label: "Kullanım Koşulları" },
+    { href: "/kvkk", label: "Gizlilik Politikası" },
+    { href: "/kullanim-kosullari", label: "Kullanım Koşulları" },
   ],
   rights: "Tüm hakları saklıdır.",
   designCredit: "Web sitesi tasarımı: Tan Yasan",
