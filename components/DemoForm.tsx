@@ -15,6 +15,12 @@ type FieldName =
 
 type FormState = Record<FieldName, string>;
 
+declare global {
+  interface Window {
+    dataLayer?: Record<string, unknown>[];
+  }
+}
+
 const initialState: FormState = {
   fullName: "",
   company: "",
@@ -67,6 +73,8 @@ export default function DemoForm() {
         body: JSON.stringify({ ...form, source: "landing-page" }),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "demo_form_submit" });
       setStatus("success");
       setForm(initialState);
     } catch {
