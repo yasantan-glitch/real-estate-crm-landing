@@ -44,7 +44,7 @@ export const hero = {
   // "Brokerın kontrol paneli: satışın her adımı görünür."
   // "WhatsApp'ta kaybolan müşteri, kaybolan satıştır."
   // "Danışman bazlı portföy, müşteri ve satış performansını tek panelden takip edin."
-  headline: "Emlak ofisinizin tamamı, tek CRM panelinde.",
+  headline: "Emlak CRM: Ofisinizin tamamı tek panelde.",
   subheadline:
     "Portföylerinizi, müşterilerinizi, talepleri, danışman performansını ve satış sürecini tek ekrandan yönetin. Excel tabloları ve WhatsApp mesajları arasında kaybolan işleri sisteme bağlayın.",
   ctaPrimary: "Demo Talep Et",

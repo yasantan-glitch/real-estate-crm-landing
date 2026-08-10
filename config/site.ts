@@ -32,10 +32,9 @@ export const siteConfig = {
   // --- SEO (Turkish public copy; works without a final brand name) ---
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://www.emlakcrmpro.com",
   seo: {
-    title:
-      "Gayrimenkul Ofisleri İçin CRM | Portföy, Müşteri ve Danışman Yönetimi",
+    title: "Emlak CRM | Portföy, Müşteri ve Danışman Yönetim Yazılımı",
     description:
-      "Emlak ofisiniz için web tabanlı CRM: portföy yönetimi, müşteri ve talep takibi, danışman performans raporları, satış pipeline ve komisyon takibi tek panelde. Demo talep edin.",
+      "Emlak CRM ile portföyünüzü, müşterilerinizi, taleplerinizi ve danışman performansını tek panelden yönetin. Satış pipeline ve komisyon takibi dahil. Demo talep edin.",
     ogTitle: "Gayrimenkul Ofisiniz İçin Akıllı CRM Sistemi",
     ogDescription:
       "Portföy, müşteri, talep, danışman ve satış süreçlerinizi tek CRM panelinden yönetin. Excel ve WhatsApp karmaşasına son verin.",
