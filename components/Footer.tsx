@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="md:col-span-2">
           <div className="flex items-center">
             <Image
-              src="/logos/EmlakCRM-Logo-Beyaz.png"
+              src="/logos/EmlakCRM-Logo-Beyaz.svg"
               alt={siteConfig.productName}
               width={1996}
               height={384}

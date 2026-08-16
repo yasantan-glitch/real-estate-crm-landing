@@ -80,7 +80,7 @@ export default function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-4 sm:px-8">
         <a href="#" className="flex shrink-0 items-center">
           <Image
-            src="/logos/EmlakCRM-Logo.png"
+            src="/logos/EmlakCRM-Logo.svg"
             alt={siteConfig.productName}
             width={1996}
             height={384}

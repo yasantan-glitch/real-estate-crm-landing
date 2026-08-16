@@ -11,8 +11,8 @@ const bold = fs.readFileSync(
 const extraBold = fs.readFileSync(
   path.join(process.cwd(), "public/fonts/PlusJakartaSans-ExtraBold.ttf")
 );
-const logoDataUrl = `data:image/png;base64,${fs
-  .readFileSync(path.join(process.cwd(), "public/logos/EmlakCRM-Logo-Beyaz.png"))
+const logoDataUrl = `data:image/svg+xml;base64,${fs
+  .readFileSync(path.join(process.cwd(), "public/logos/EmlakCRM-Logo-Beyaz.svg"))
   .toString("base64")}`;
 
 export async function GET(req: NextRequest) {

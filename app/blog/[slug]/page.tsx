@@ -86,7 +86,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       name: siteConfig.companyName,
       logo: {
         "@type": "ImageObject",
-        url: `${siteConfig.siteUrl}/logos/EmlakCRM-Logo.png`,
+        url: `${siteConfig.siteUrl}/logos/EmlakCRM-Logo.svg`,
       },
     },
     description: post.excerpt,
