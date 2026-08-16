@@ -42,7 +42,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-zinc-800">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-3 px-5 pt-5 pb-16 text-xs text-zinc-400 sm:grid-cols-3 sm:px-8 md:pb-5">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-3 px-5 pt-5 pb-24 text-xs text-zinc-400 sm:grid-cols-3 sm:px-8 md:pb-5">
           <div className="order-1 flex flex-col items-center gap-2 sm:flex-row sm:items-center sm:gap-5 sm:justify-self-start">
             <p>
               © {year} {siteConfig.companyName}. {footer.rights}
