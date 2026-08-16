@@ -15,8 +15,8 @@ export const siteConfig = {
   contactPhone: "+90 530 691 3612",
 
   // --- Theme (mirrors the CSS variables in app/globals.css) ---
-  primaryColor: "#0A0A0A", // near-black ink
-  accentColor: "#D71920", // controlled red
+  primaryColor: "#1A1A1A", // warm charcoal ink
+  accentColor: "#E8603C", // terracotta
 
   // --- Demo form ---
   // Default: internal API route. Override with NEXT_PUBLIC_DEMO_FORM_ENDPOINT

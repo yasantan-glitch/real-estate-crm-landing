@@ -6,24 +6,22 @@
  * THEME — change brand colors here (and mirror in config/site.ts).
  * Values are space-separated RGB so Tailwind can apply alpha.
  *
- * GoDaddy-style box system: white background, near-black ink, one controlled
- * red accent. `brand` / `brand-soft` carry the ink/near-black roles (text +
- * dark panels) — mapping keys are unchanged so components that reference
- * bg-brand / text-brand pick up the new palette automatically. Most other
- * grays used across the site (borders, muted text) match Tailwind's default
- * slate/zinc scale exactly and don't need a variable.
+ * "Saha Enerjisi" palette: warm cream surfaces, charcoal ink, one energetic
+ * terracotta accent. `brand` / `brand-soft` carry the ink/near-black roles
+ * (text + dark panels) — mapping keys are unchanged so components that
+ * reference bg-brand / text-brand pick up the new palette automatically.
  * Font variable (--font-sans) is supplied by next/font/google in
  * app/layout.tsx, not declared here.
  */
 :root {
-  --color-brand: 10 10 10;        /* near-black ink #0A0A0A */
-  --color-brand-soft: 24 24 27;   /* soft black for panels #18181B */
-  --color-accent: 215 25 32;      /* controlled red #D71920 */
-  --color-accent-hover: 168 20 25; /* pressed state #A81419 */
-  --color-accent-tint: 252 235 236; /* light red tint for badges/pills #FCEBEC */
-  --color-surface: 244 244 245;   /* near-white section bg #F4F4F5 */
-  --color-muted: 113 113 122;     /* zinc-500 for secondary text */
-  --color-line: 229 229 231;      /* light card/section border #E5E5E7 */
+  --color-brand: 26 26 26;        /* warm charcoal ink #1A1A1A */
+  --color-brand-soft: 38 34 31;   /* warm dark panel #26221F */
+  --color-accent: 232 96 60;      /* terracotta #E8603C */
+  --color-accent-hover: 214 83 47; /* pressed state #D6532F */
+  --color-accent-tint: 253 231 219; /* light terracotta tint for badges/pills #FDE7DB */
+  --color-surface: 255 248 240;   /* cream section bg #FFF8F0 */
+  --color-muted: 120 113 108;     /* warm stone-500 for secondary text */
+  --color-line: 231 221 209;      /* warm light card/section border #E7DDD1 */
 }
 
 html {
@@ -57,7 +55,7 @@ body {
   }
 
   .eyebrow-on-dark {
-    @apply text-red-400;
+    @apply text-orange-300;
   }
 
   .h2 {
@@ -73,7 +71,7 @@ body {
   }
 
   .btn-primary {
-    @apply btn bg-accent text-white shadow-[0_10px_24px_-8px_rgba(215,25,32,0.55)] hover:bg-accent-hover;
+    @apply btn bg-accent text-white shadow-[0_10px_24px_-8px_rgba(232,96,60,0.55)] hover:bg-accent-hover;
   }
 
   .btn-secondary {

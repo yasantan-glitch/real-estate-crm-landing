@@ -14,7 +14,7 @@ export default function PricingSection() {
                 key={tier.name}
                 className={`relative rounded-[24px] border p-8 ${
                   featured
-                    ? "scale-[1.04] border-accent bg-accent shadow-[0_30px_60px_-20px_rgba(215,25,32,0.5)]"
+                    ? "scale-[1.04] border-accent bg-accent shadow-[0_30px_60px_-20px_rgba(232,96,60,0.5)]"
                     : "border-zinc-800 bg-brand-soft shadow-[0_1px_2px_rgba(0,0,0,0.2)]"
                 }`}
               >
