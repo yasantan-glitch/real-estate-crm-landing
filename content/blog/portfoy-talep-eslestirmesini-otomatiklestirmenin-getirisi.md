@@ -6,7 +6,7 @@ excerpt: "Portföy ile müşteri talebini eşleştirmek çoğu ofiste hâlâ dan
 keywords: ["portföy talep eşleştirme", "emlak crm otomatik eşleştirme", "müşteri portföy eşleştirme sistemi"]
 ---
 
-Bir emlak ofisinde en sık tekrarlanan ama en az sistemleştirilen iş, portföy ile müşteri talebinin eşleştirilmesidir. "3+1, en fazla 8 milyon, Konyaaltı" diyen bir müşteri var; ofiste tam da bu kriterlere uyan bir portföy girildi — ama bu iki bilgiyi birbirine bağlayan çoğu zaman tek bir şey vardır: bir danışmanın hafızası. Danışman o gün izinliyse, o müşteriyi unutmuşsa ya da portföyü girenle talebi alan farklı kişilerse, eşleşme hiç gerçekleşmez. Bu yazıda, bu eşleştirmeyi manuel yapmanın gerçek maliyetini ve otomatikleştirmenin ofise ne kazandırdığını ele alıyoruz.
+Bir emlak ofisinde en sık tekrarlanan ama en az sistemleştirilen iş, portföy ile müşteri talebinin eşleştirilmesidir. "3+1, en fazla 8 milyon, Konyaaltı" diyen bir müşteri var; ofiste tam da bu kriterlere uyan bir portföy girildi — ama bu iki bilgiyi birbirine bağlayan çoğu zaman tek bir şey vardır: bir danışmanın hafızası. Danışman o gün izinliyse, o müşteriyi unutmuşsa ya da portföyü girenle talebi alan farklı kişilerse, eşleşme hiç gerçekleşmez. Bu yazıda, bu eşleştirmeyi manuel yapmanın gerçek maliyetini ve otomatikleştirmenin ofise ne kazandırdığını ele alıyoruz. Bu otomasyon, [emlak CRM'in temel iş modeli](/blog/emlak-ofisi-icin-crm-nasil-secilir)ni oluşturan parçalardan biridir.
 
 ## Manuel eşleştirmenin gizli maliyeti: kaçırılan fırsat
 
@@ -18,7 +18,7 @@ Küçük bir ofiste, iki-üç danışman birbirinin portföyünü ve müşterisi
 
 ## Otomatik eşleştirme ne değiştirir?
 
-Sistem, yeni bir portföy girildiğinde bu portföyün kriterlerine uyan tüm aktif talepleri otomatik olarak listelediğinde, eşleşme artık kimsenin hafızasına bağlı kalmaz. Danışman portföyü girer girmez "bu kritere uyan 3 talep var" bilgisini görür ve hemen harekete geçebilir. Bu, sadece bir kolaylık değil, doğrudan satış hızını etkileyen bir değişikliktir — çünkü emlak sektöründe hız, çoğu zaman satışı kazanan ile kaybeden arasındaki farktır.
+Sistem, yeni bir portföy girildiğinde bu portföyün kriterlerine uyan tüm aktif talepleri otomatik olarak listelediğinde, eşleşme artık kimsenin hafızasına bağlı kalmaz. Danışman portföyü girer girmez "bu kritere uyan 3 talep var" bilgisini görür ve hemen harekete geçebilir. Bu, sadece bir kolaylık değil, doğrudan satış hızını etkileyen bir değişikliktir — çünkü emlak sektöründe hız, çoğu zaman satışı kazanan ile kaybeden arasındaki farktır. Nitekim CRM'e geçiş sürecinde de [geçişin ilk haftalarında hızlı fark yaratan alan](/blog/excelden-whatsapptan-crme-gecis) genellikle bu tür otomatik takip mekanizmalarıdır.
 
 ## Danışmanlar arası bilgi paylaşımını normalleştirir
 
@@ -26,7 +26,7 @@ Otomatik eşleştirme, aynı zamanda ofis içi rekabetin gizli bir yan etkisini 
 
 ## Zaman kazancı: danışmanın asıl işine odaklanması
 
-Manuel eşleştirme sürecinde danışmanın zamanının önemli bir kısmı, "elimde hangi talepler var, hangisi bu portföye uyar" diye eski notları veya WhatsApp geçmişini taramakla geçer. Bu iş otomatikleştiğinde, danışmanın zamanı görüşme yapmaya, yer göstermeye ve pazarlığı ilerletmeye kalır — yani doğrudan satışa dönüşen faaliyetlere. Otomasyonun asıl getirisi burada ortaya çıkar: idari işe giden zaman azalır, satışa giden zaman artar.
+Manuel eşleştirme sürecinde danışmanın zamanının önemli bir kısmı, "elimde hangi talepler var, hangisi bu portföye uyar" diye eski notları veya WhatsApp geçmişini taramakla geçer. Bu iş otomatikleştiğinde, danışmanın zamanı görüşme yapmaya, yer göstermeye ve pazarlığı ilerletmeye kalır — yani doğrudan satışa dönüşen faaliyetlere. Otomasyonun asıl getirisi burada ortaya çıkar: idari işe giden zaman azalır, satışa giden zaman artar. Bu artış, [danışman görüşme sayısı ve satış hızı](/blog/emlak-danismani-performansi-nasil-olculur) gibi performans göstergelerinde doğrudan gözlemlenebilir bir iyileşmeye dönüşür.
 
 ## Broker için görünürlük: hangi talepler karşılıksız kalıyor?
 

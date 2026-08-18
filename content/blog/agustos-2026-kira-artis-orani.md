@@ -18,4 +18,4 @@ Mevcut kirası 20.000 TL olan bir sözleşmede: zam tutarı 6.380 TL, yeni kira 
 
 ## Emlak ofisi için ne anlama gelir?
 
-Portföyünüzdeki her kiralık mülkün sözleşme yenileme tarihini manuel takip etmek, portföy sayısı arttıkça imkânsızlaşıyor. Emlak CRM'in portföy modülünde her mülke yenileme tarihi girip otomatik hatırlatma kurabilir, TÜİK açıklaması geldiğinde mal sahibi ve kiracı müşterilerinize siz aramadan önce doğru rakamla ulaşabilirsiniz.
+Portföyünüzdeki [her kiralık mülkün yenileme tarihi otomatik takip](/blog/excelden-whatsapptan-crme-gecis) edilmediğinde, portföy sayısı arttıkça bu süreç manuel olarak imkânsızlaşıyor. [Portföy yönetimi emlak mantığına göre kurgulanmış](/blog/emlak-ofisi-icin-crm-nasil-secilir) bir CRM'in portföy modülünde her mülke yenileme tarihi girip otomatik hatırlatma kurabilir, TÜİK açıklaması geldiğinde mal sahibi ve kiracı müşterilerinize siz aramadan önce doğru rakamla ulaşabilirsiniz.
