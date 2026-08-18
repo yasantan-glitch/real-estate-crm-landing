@@ -24,8 +24,8 @@ Emlak sektöründe alıcı, satıcı ve kiracıların farklı şehirlerde olmas�
 
 ## Pratik uygulama: taraflar farklı şehirlerdeyse
 
-Taraflardan biri farklı şehirde veya yurt dışındaysa, ön sözleşme e-imza ile imzalanabilir, ardından tapu işlemi için noterden düzenlenecek bir vekâletname ile süreç tamamlanabilir. Bu, sürecin hızını korurken yasal geçerliliği de sağlar.
+Taraflardan biri farklı şehirde veya yurt dışındaysa, ön sözleşme e-imza ile imzalanabilir; [devir işlemlerinde vekâletname](/blog/kentsel-donusumde-muvafakatname-nedir) kullanılarak tapu işlemi noterden düzenlenecek bir belgeyle tamamlanabilir. Bu, sürecin hızını korurken yasal geçerliliği de sağlar.
 
 ## Emlak ofisi için pratik öneri
 
-Sözleşme sürecini dijitalleştirmek, hem taraflara profesyonel bir izlenim verir hem de kağıt üzerinde kaybolan imzasız/eksik sözleşme riskini azaltır. Sözleşme durumunu (taslak, gönderildi, imzalandı) CRM üzerinden takip etmek, hangi işlemin hangi aşamada olduğunu ekip içinde netleştirir.
+Sözleşme sürecini dijitalleştirmek, hem taraflara profesyonel bir izlenim verir hem de kağıt üzerinde kaybolan [imzasız/eksik sözleşme riskini azaltır](/blog/kapora-dolandiriciligi-uyari-isaretleri). [Sözleşme durumunu CRM üzerinden takip etmek](/blog/excelden-whatsapptan-crme-gecis) — taslak, gönderildi, imzalandı gibi aşamalarla — hangi işlemin hangi aşamada olduğunu ekip içinde netleştirir.

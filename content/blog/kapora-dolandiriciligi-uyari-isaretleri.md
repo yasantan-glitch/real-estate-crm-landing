@@ -19,6 +19,6 @@ Emlak sektöründe kapora dolandırıcılığı, hem alıcı/kiracıyı hem de a
 
 ## Ofis olarak nasıl korunursunuz?
 
-Her mülk için tapu kaydını ve satıcı kimliğini portföye eklemeden önce doğrulayın. Kapora ödemelerini her zaman resmi bir sözleşmeye bağlayın, sözlü anlaşmaya güvenmeyin. Danışmanlarınıza şüpheli durumları raporlama alışkanlığı kazandırın; erken fark edilen bir sahte ilan, hem müşterinizi hem ofis itibarınızı korur.
+Her mülk için tapu kaydını ve satıcı kimliğini portföye eklemeden önce doğrulayın. Kapora ödemelerini her zaman resmi bir sözleşmeye bağlayın, sözlü anlaşmaya güvenmeyin — [sözleşme sürecini dijitalleştirmek riskleri azaltır](/blog/emlak-sozlesmelerinde-e-imza) ve tarafların kimliğini doğrulamayı kolaylaştırır. Danışmanlarınıza şüpheli durumları raporlama alışkanlığı kazandırın; erken fark edilen bir sahte ilan, hem müşterinizi hem ofis itibarınızı korur.
 
-Portföy kayıtlarınızda mülk sahibi bilgilerini ve doğrulama durumunu tek bir sistemde tutmak, ekip içinde tutarlılığı sağlar — kimin hangi mülkü ne zaman doğruladığı net olur.
+[Portföyleri belge ve doğrulama durumu ile takip etmek](/blog/kentsel-donusumde-muvafakatname-nedir), ekip içinde tutarlılığı sağlar — kimin hangi mülkü ne zaman doğruladığı net olur.
