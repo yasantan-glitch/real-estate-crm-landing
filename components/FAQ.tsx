@@ -16,22 +16,24 @@ export default function FAQ() {
             const isOpen = openIndex === i;
             return (
               <div key={item.q} className="border-b border-line">
-                <button
-                  type="button"
-                  onClick={() => setOpenIndex(isOpen ? -1 : i)}
-                  aria-expanded={isOpen}
-                  className="group flex w-full items-center justify-between gap-4 py-5 text-left"
-                >
-                 <span className="text-[15.5px] font-bold text-brand transition-colors group-hover:text-accent">{item.q}</span>
-                  <span
-                    className={`flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-full bg-surface text-base font-bold text-accent transition-transform duration-200 ${
-                      isOpen ? "rotate-45" : ""
-                    }`}
-                    aria-hidden="true"
+                <h3>
+                  <button
+                    type="button"
+                    onClick={() => setOpenIndex(isOpen ? -1 : i)}
+                    aria-expanded={isOpen}
+                    className="group flex w-full items-center justify-between gap-4 py-5 text-left"
                   >
-                    +
-                  </span>
-                </button>
+                   <span className="text-[15.5px] font-bold text-brand transition-colors group-hover:text-accent">{item.q}</span>
+                    <span
+                      className={`flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-full bg-surface text-base font-bold text-accent transition-transform duration-200 ${
+                        isOpen ? "rotate-45" : ""
+                      }`}
+                      aria-hidden="true"
+                    >
+                      +
+                    </span>
+                  </button>
+                </h3>
                 {isOpen && <p className="max-w-[680px] pb-5 text-[14.5px] leading-relaxed text-slate-600">{item.a}</p>}
               </div>
             );
