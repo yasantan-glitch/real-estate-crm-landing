@@ -6,7 +6,7 @@ excerpt: "Danışman performansını sadece satış sayısıyla ölçmek yanılt
 keywords: ["emlak danışmanı performans takibi", "danışman performans raporu emlak", "emlak ofisi performans yönetimi"]
 ---
 
-"Bu ay kim ne kadar sattı?" sorusu çoğu emlak ofisinde cevabı net olan tek performans sorusudur. Oysa bir danışmanın gerçek performansı sadece kapanan satışlardan ibaret değildir: kaç yeni portföy aldı, kaç müşteri görüşmesi yaptı, kaç yer gösterme randevusuna çıktı, taleplere ne kadar hızlı geri döndü? Bu soruların cevabı elde yoksa, ofis yönetimi sezgiyle karar veriyor demektir — kim gerçekten iyi çalışıyor, kim şanslı bir satışla öne çıkmış, ayırt etmek zorlaşır. Bu yazıda emlak danışmanı performansını ölçerken bakılması gereken temel metrikleri ve bunları sistematik şekilde takip etmenin yollarını ele alıyoruz.
+"Bu ay kim ne kadar sattı?" sorusu çoğu emlak ofisinde cevabı net olan tek performans sorusudur. Oysa bir danışmanın gerçek performansı sadece kapanan satışlardan ibaret değildir: kaç yeni portföy aldı, kaç müşteri görüşmesi yaptı, kaç yer gösterme randevusuna çıktı, taleplere ne kadar hızlı geri döndü? Bu soruların cevabı elde yoksa, ofis yönetimi sezgiyle karar veriyor demektir — kim gerçekten iyi çalışıyor, kim şanslı bir satışla öne çıkmış, ayırt etmek zorlaşır. Bu yazıda emlak danışmanı performansını ölçerken bakılması gereken temel metrikleri ve bunları sistematik şekilde takip etmenin yollarını ele alıyoruz. Bu ölçümün sağlıklı yapılabilmesi, aslında [CRM seçerken bakılması gereken kriterler](/blog/emlak-ofisi-icin-crm-nasil-secilir)den biridir.
 
 ## Sadece satış sayısına bakmak neden yanıltıcı?
 
@@ -18,7 +18,7 @@ Bir danışmanın ay içinde kaç yeni portföy aldığı, o danışmanın sahad
 
 ## Görüşme ve sunum sıklığı: satışın öncü göstergesi
 
-Kaç müşteri görüşmesi yapıldığı, kaç portföy sunumu gerçekleştirildiği, bir danışmanın pipeline'ını ne kadar aktif beslediğini gösterir. Bu sayılar düşükse, o danışmanın önümüzdeki ay kapanış yapması da zor olur. Görüşme ve sunum verilerini düzenli izlemek, ofis yönetiminin "neden bu ay satış düştü" sorusuna geçmişe bakarak değil, önceden hazırlanarak cevap vermesini sağlar.
+Kaç müşteri görüşmesi yapıldığı, kaç portföy sunumu gerçekleştirildiği, bir danışmanın pipeline'ını ne kadar aktif beslediğini gösterir. Bu sayılar düşükse, o danışmanın önümüzdeki ay kapanış yapması da zor olur. Görüşme ve sunum verilerini düzenli izlemek, ofis yönetiminin "neden bu ay satış düştü" sorusuna geçmişe bakarak değil, önceden hazırlanarak cevap vermesini sağlar. Nitekim [eşleştirme kalitesi ve hızı arttıkça görüşme sayısı](/blog/portfoy-talep-eslestirmesini-otomatiklestirmenin-getirisi) da doğal olarak yükselir, çünkü danışman zamanını manuel arama yerine doğru fırsatlara ayırabilir.
 
 ## Talebe geri dönüş hızı: kaybedilen fırsatların gerçek nedeni
 
@@ -30,7 +30,7 @@ Bir fırsatın ilk temastan kapanışa kadar hangi aşamada ne kadar süre kald�
 
 ## Komisyon ve hakediş şeffaflığı: motivasyonun temeli
 
-Paylaşımlı satışlarda kimin ne kadar hakedişi olduğu net değilse, performans değerlendirmesi güven sorununa dönüşür. Danışmanlar kendi hakedişlerini sistem üzerinden görebildiklerinde, hem motivasyon artar hem de "bu satışta payım neydi" tartışmaları ortadan kalkar. Şeffaf bir komisyon takibi, performans ölçümünün en çok göz ardı edilen ama en kritik parçalarından biridir.
+Paylaşımlı satışlarda kimin ne kadar hakedişi olduğu net değilse, performans değerlendirmesi güven sorununa dönüşür. Danışmanlar kendi hakedişlerini sistem üzerinden görebildiklerinde, hem motivasyon artar hem de "bu satışta payım neydi" tartışmaları ortadan kalkar. Şeffaf bir [komisyon ve hakediş şeffaflığı](/blog/gayrimenkul-ofisinde-komisyon-takibi) yaklaşımı, performans ölçümünün en çok göz ardı edilen ama en kritik parçalarından biridir.
 
 ## Bu verileri Excel'de tutmak neden sürdürülemez?
 

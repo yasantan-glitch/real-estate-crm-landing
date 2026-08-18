@@ -10,7 +10,7 @@ keywords: ["excel'den crm'e geçiş", "emlak ofisi crm kurulumu", "whatsapp yeri
 
 ## Adım 1: Mevcut veriyi toparlayın, temizleyin
 
-Geçişten önce elinizdeki Excel tablolarını ve WhatsApp'taki dağınık kayıtları tek bir yerde toplayın. Bu aşamada mükemmeliyetçi olmaya gerek yok; amaç, hangi portföylerin güncel, hangi müşteri kayıtlarının hâlâ geçerli olduğunu görmek. Yıllardır kullanılmayan, satılmış ama sistemden düşürülmemiş kayıtları bu aşamada ayıklamak, CRM'e geçtiğinizde temiz bir başlangıç yapmanızı sağlar.
+Bu adıma geçmeden önce [doğru CRM'i seçmek](/blog/emlak-ofisi-icin-crm-nasil-secilir) sürecin temelini oluşturur. Geçişten önce elinizdeki Excel tablolarını ve WhatsApp'taki dağınık kayıtları tek bir yerde toplayın. Bu aşamada mükemmeliyetçi olmaya gerek yok; amaç, hangi portföylerin güncel, hangi müşteri kayıtlarının hâlâ geçerli olduğunu görmek. Yıllardır kullanılmayan, satılmış ama sistemden düşürülmemiş kayıtları bu aşamada ayıklamak, CRM'e geçtiğinizde temiz bir başlangıç yapmanızı sağlar.
 
 ## Adım 2: Veri aktarımını planlayın, tek seferde değil kademeli yapın
 
@@ -30,11 +30,11 @@ Geçişin ilk haftalarında "şu bilgiyi nereye gireceğim", "bu raporu nasıl a
 
 ## Adım 6: Randevu ve görev takibini önce oturtun
 
-WhatsApp'tan CRM'e geçişte en hızlı fark yaratan alan genelde randevu ve görev takibidir. Yer gösterme randevuları, arama görevleri artık telefon ajandasında değil, ofis genelinin görebildiği bir takvimde toplanınca, kimin ne yaptığı ve hangi işin unutulduğu anında görünür hale gelir. Bu erken kazanım, ekibin sisteme olan güvenini artıran somut bir örnek olur.
+WhatsApp'tan CRM'e geçişte en hızlı fark yaratan alan genelde [randevu ve görev takibi](/blog/portfoy-talep-eslestirmesini-otomatiklestirmenin-getirisi)dir. Yer gösterme randevuları, arama görevleri artık telefon ajandasında değil, ofis genelinin görebildiği bir takvimde toplanınca, kimin ne yaptığı ve hangi işin unutulduğu anında görünür hale gelir. Bu erken kazanım, ekibin sisteme olan güvenini artıran somut bir örnek olur.
 
 ## Adım 7: Danışman performansını ilk aydan itibaren izleyin
 
-CRM'e geçişin en büyük faydalarından biri, portföy, görüşme ve satış rakamlarının artık kişi bazında otomatik raporlanmasıdır. Bu raporları geçişin ilk ayından itibaren düzenli takip etmek, hem yönetim için hem de danışmanlar için "sistem gerçekten işe yarıyor" hissini pekiştirir.
+CRM'e geçişin en büyük faydalarından biri, [danışman performansını izleyen](/blog/emlak-danismani-performansi-nasil-olculur) bir raporlama sisteminin, portföy, görüşme ve satış rakamlarını artık kişi bazında otomatik olarak sunmasıdır. Bu raporları geçişin ilk ayından itibaren düzenli takip etmek, hem yönetim için hem de danışmanlar için "sistem gerçekten işe yarıyor" hissini pekiştirir.
 
 ## Sonuç: Geçiş bir teknoloji projesi değil, bir alışkanlık değişimi
 

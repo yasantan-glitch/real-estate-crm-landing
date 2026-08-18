@@ -14,11 +14,11 @@ Genel amaçlı CRM'ler "ürün" ya da "fırsat" kavramı üzerinden çalışır;
 
 ## 2. Müşteri-portföy eşleştirmesi otomatik mi, yoksa hâlâ hafızaya mı emanet?
 
-Bir müşteri "3+1, en fazla 8 milyon, Konyaaltı" diyorsa, sisteme yeni bir portföy girildiğinde bu kritere uyan taleplerin otomatik listelenmesi gerekir. Bu eşleştirme manuel yapılıyorsa, işin özü hâlâ danışmanın hafızasında kalıyor demektir — CRM sadece kayıt tutan bir deftere dönüşür, gerçek bir iş ortağı olmaz.
+Bir müşteri "3+1, en fazla 8 milyon, Konyaaltı" diyorsa, sisteme yeni bir portföy girildiğinde [müşteri-portföy eşleştirmesini otomatik](/blog/portfoy-talep-eslestirmesini-otomatiklestirmenin-getirisi) şekilde bu kritere uyan taleplerin listelenmesi gerekir. Bu eşleştirme manuel yapılıyorsa, işin özü hâlâ danışmanın hafızasında kalıyor demektir — CRM sadece kayıt tutan bir deftere dönüşür, gerçek bir iş ortağı olmaz.
 
 ## 3. Danışman bazlı performans gerçek rakamlarla ölçülebiliyor mu?
 
-Ay sonunda "kim kaç portföy aldı, kaç sunum yaptı, kaç satış kapattı" sorusuna net cevap veremiyorsanız, performans yönetimi hâlâ tahmine dayanıyor demektir. İyi bir emlak CRM'i bu verileri danışman bazında otomatik raporlamalı; broker'ın ayrı bir Excel tablosu tutmasına gerek kalmamalı.
+Ay sonunda "kim kaç portföy aldı, kaç sunum yaptı, kaç satış kapattı" sorusuna net cevap veremiyorsanız, performans yönetimi hâlâ tahmine dayanıyor demektir. İyi bir emlak CRM'i, [danışman performansını doğru şekilde ölçebilen](/blog/emlak-danismani-performansi-nasil-olculur) bir yapıyla bu verileri danışman bazında otomatik raporlamalı; broker'ın ayrı bir Excel tablosu tutmasına gerek kalmamalı.
 
 ## 4. Satış pipeline'ı emlak sürecine uygun mu?
 
@@ -26,7 +26,7 @@ Ay sonunda "kim kaç portföy aldı, kaç sunum yaptı, kaç satış kapattı" s
 
 ## 5. Komisyon ve hakediş hesaplaması sisteme dahil mi?
 
-Paylaşımlı satışlarda "kim ne kadar alacak" sorusu her ay yeniden tartışılan bir konu olmamalı. Satış kapandığında komisyon, paylaşım oranı ve danışman hakedişinin sistem üzerinden otomatik hesaplanması, hem zaman kazandırır hem de ofis içi anlaşmazlıkları azaltır. Bu özelliği sonradan eklenen bir "entegrasyon" olarak sunan sistemlerden çok, bunu çekirdek özellik olarak barındıran sistemleri tercih etmek daha sağlıklı.
+Paylaşımlı satışlarda "kim ne kadar alacak" sorusu her ay yeniden tartışılan bir konu olmamalı. Satış kapandığında komisyon, paylaşım oranı ve danışman hakedişinin sistem üzerinden otomatik hesaplanması, hem zaman kazandırır hem de ofis içi anlaşmazlıkları azaltır. Bu özelliği sonradan eklenen bir "entegrasyon" olarak sunan sistemlerden çok, [komisyon hesaplaması sisteme dahil](/blog/gayrimenkul-ofisinde-komisyon-takibi) olan ve bunu çekirdek özellik olarak barındıran sistemleri tercih etmek daha sağlıklı.
 
 ## 6. Kurulum ve öğrenme eğrisi ofis temposuna uygun mu?
 
