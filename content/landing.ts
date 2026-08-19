@@ -569,3 +569,60 @@ export const footer = {
 export const blogPage = {
   title: "Emlak CRM Pro Blog",
 };
+
+export const contact = {
+  seo: {
+    title: "İletişim — Emlak CRM Pro Danışmanlarına Ulaşın",
+    description:
+      "Emlak CRM Pro'ya demo, fiyat teklifi, teknik destek veya sorularınız için ulaşın. Telefon, e-posta, WhatsApp — tercih ettiğiniz kanaldan iletişime geçin.",
+  },
+  eyebrow: "İletişim",
+  title: "Bizimle konuşun — doğru çözüm için",
+  intro:
+    "Sorunuz hangi konuda olursa olsun, size en hızlı dönecek kanalı aşağıda bulabilirsiniz.",
+  directChannels: {
+    phoneLabel: "Telefon",
+    emailLabel: "E-posta",
+    whatsappLabel: "WhatsApp",
+    whatsappNote: "Yazılı destek için en hızlı kanal.",
+  },
+  categories: [
+    {
+      title: "Satış & Demo",
+      text: "Paket seçimi, fiyat teklifi ve kurulum süreci hakkında konuşmak veya canlı bir demo planlamak için.",
+      ctaLabel: "Demo Talep Et",
+      href: "/#demo",
+    },
+    {
+      title: "Destek",
+      text: "Kullanım sorunları, hata bildirimi veya teknik sorularınız için — mevcut kullanıcılara öncelikli destek.",
+      ctaLabel: "WhatsApp'tan Yazın",
+      href: "whatsapp" as const,
+    },
+  ],
+  serviceArea: {
+    title: "Hizmet bölgesi",
+    text: "Türkiye genelinde çevrimiçi destek veriyoruz; sistem web tabanlı olduğu için ofisinizin bulunduğu şehir fark etmez.",
+  },
+  faq: {
+    title: "İletişimle ilgili sık sorulanlar",
+    items: [
+      {
+        q: "Demo talebimden sonra ne kadar sürede dönüş alırım?",
+        a: "Formu doldurduktan sonra ekibimiz en kısa sürede sizinle iletişime geçer ve ofisinizin ihtiyacına göre bir demo zamanı planlanır.",
+      },
+      {
+        q: "Teknik bir sorunum var, hangi kanaldan yazmalıyım?",
+        a: "WhatsApp veya e-posta üzerinden Destek kanalından ulaşabilirsiniz; talebiniz ilgili ekibe yönlendirilir.",
+      },
+      {
+        q: "Fiyat teklifi almak için önce demo görmem gerekiyor mu?",
+        a: "Hayır, doğrudan Satış & Demo kanalından fiyat sorabilirsiniz; ancak sistemi görmeden karar vermemenizi öneririz.",
+      },
+      {
+        q: "Hangi bölgelere hizmet veriyorsunuz?",
+        a: "Türkiye genelinde hizmet veriyoruz. Sistem tarayıcı üzerinden çalıştığı için kurulum ve destek tamamen çevrimiçi ilerler; ofisinize gelmemiz gerekmez.",
+      },
+    ],
+  },
+};
