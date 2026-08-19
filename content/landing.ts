@@ -392,6 +392,81 @@ export const pricing = {
   ],
 };
 
+export const pricingPage = {
+  seo: {
+    title: "Fiyatlandırma — Emlak CRM Pro Paketleri",
+    description:
+      "Emlak CRM Pro paket fiyatlarını karşılaştırın: Başlangıç, Profesyonel ve Kurumsal. Ofis büyüklüğünüze uygun paketi seçin, demo talep edin.",
+  },
+  eyebrow: "Fiyatlandırma",
+  title: "Şeffaf fiyatlandırma — ofisinizin ölçeğine göre",
+  intro:
+    "Üç paket, aynı CRM özellikleri. Farklılık kullanıcı sayısı ve destek seviyesindedir. Aşağıda ofis büyüklüğünüze göre önerilen paketi ve tüm paketlerin karşılaştırmasını bulabilirsiniz.",
+  guide: {
+    eyebrow: "Hangi paket size uygun?",
+    title: "Ofis büyüklüğünüze göre öneri",
+    items: [
+      {
+        officeType: "Bireysel danışman",
+        text: "Portföy ve müşteri takibinizi tek başınıza, profesyonel bir sistemle yönetin.",
+        recommendedTier: "Başlangıç",
+      },
+      {
+        officeType: "Küçük ofis (2-5 kişi)",
+        text: "Excel ve deftere veda edin; ekibiniz aynı veriyi tek panelden paylaşsın.",
+        recommendedTier: "Başlangıç",
+      },
+      {
+        officeType: "Büyüyen ofis (5-15 kişi)",
+        text: "Yeni danışman eklemek dakikalar sürsün; öncelikli destekle süreçler standarda otursun.",
+        recommendedTier: "Profesyonel",
+      },
+      {
+        officeType: "Broker / Franchise yapısı",
+        text: "Ofisin tamamını — portföy, talep, ciro, performans — tek panelden izleyin; kendi domaininizle kullanın.",
+        recommendedTier: "Kurumsal",
+      },
+    ],
+  },
+  comparison: {
+    eyebrow: "Karşılaştırma",
+    title: "Paketleri yan yana görün",
+    launchPriceLabel: "Lansman fiyatı",
+    rowLabels: ["Kullanıcı sayısı", "Domain", "Destek", "Kurulum"],
+  },
+  faq: {
+    eyebrow: "Sık sorulan sorular",
+    title: "Fiyatlandırma hakkında merak edilenler",
+    items: [
+      {
+        q: "Lansman fiyatı ne kadar sürer, değişir mi?",
+        a: "Gösterilen fiyatlar sistemin güncel lansman fiyatlarıdır ve kalıcıdır; belirli bir kampanya süresine bağlı değildir.",
+      },
+      {
+        q: "Paket değişimi veya kullanıcı sayısı artırma mümkün mü?",
+        a: "Evet. Ekibiniz büyüdükçe pakete yeni kullanıcı eklenebilir; paketler arası geçiş yapılabilir.",
+      },
+      {
+        q: "Ödeme nasıl yapılıyor?",
+        a: "Sistem aylık abonelik modeliyle çalışır.",
+      },
+      {
+        q: "Veri güvenliği ve yedekleme nasıl sağlanıyor?",
+        a: "Her ofis kendi izole veri alanında çalışır; erişim rol ve yetki sistemiyle sınırlandırılır. Veriler düzenli olarak yedeklenir.",
+      },
+    ],
+  },
+  services: {
+    quoteNote: "Talep üzerine teklif",
+  },
+  cta: {
+    title: "Ofisiniz için doğru paketi birlikte belirleyelim.",
+    text: "Formu doldurun, ihtiyacınıza göre paket önerisiyle birlikte canlı bir demo planlayalım.",
+    label: "Paket Seç & Demo Planla",
+    href: "/#demo",
+  },
+};
+
 export const services = {
   eyebrow: "Ek profesyonel hizmetler",
   title: "CRM'in yanında, pazarlama tarafını da kuralım.",
