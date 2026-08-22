@@ -28,10 +28,6 @@ export default function PricingSection() {
                 <p className="mb-3.5 inline-block rounded-full bg-accent-tint px-3 py-1 text-xs font-bold text-accent">
                   {tier.price.discountNote}
                 </p>
-                <p className={`text-[15px] ${featured ? "text-white/95" : "text-zinc-400"}`}>
-                  <span className="sr-only">Önceki fiyat: </span>
-                  <span className="line-through">{tier.price.originalPrice}</span>
-                </p>
                 <p className="mb-5 mt-1 text-[38px] font-extrabold tracking-tight text-white">
                   {tier.price.discountedPrice}
                 </p>

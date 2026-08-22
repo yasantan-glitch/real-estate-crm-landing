@@ -345,7 +345,7 @@ export const pricing = {
       price: {
         originalPrice: "3.500 TL/ay",
         discountedPrice: "2.400 TL/ay",
-        discountNote: "İlk 3 ay kampanya fiyatı",
+        discountNote: "Lansman fiyatı",
       } satisfies PricingTierPrice,
       features: [
         "1-5 kullanıcı",
@@ -361,7 +361,7 @@ export const pricing = {
       price: {
         originalPrice: "7.500 TL/ay",
         discountedPrice: "4.900 TL/ay",
-        discountNote: "İlk 3 ay kampanya fiyatı",
+        discountNote: "Lansman fiyatı",
       } satisfies PricingTierPrice,
       features: [
         "5-15 kullanıcı",
@@ -377,7 +377,7 @@ export const pricing = {
       price: {
         originalPrice: "12.000 TL/ay",
         discountedPrice: "9.900 TL/ay",
-        discountNote: "İlk 3 ay kampanya fiyatı",
+        discountNote: "Lansman fiyatı",
         customQuoteNote: "Özel ihtiyaçlar için: İhtiyaca göre tekliflendirilir",
       } satisfies PricingTierPrice,
       features: [

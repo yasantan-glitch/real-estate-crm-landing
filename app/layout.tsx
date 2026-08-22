@@ -80,7 +80,7 @@ const jsonLd = {
     "@type": "Offer",
     price: entryTierPriceDigits,
     priceCurrency: "TRY",
-    description: `${entryTier.name} paketi, aylık abonelik — ${entryTier.price.discountNote}`,
+    description: `${entryTier.name} paketi, aylık abonelik — Lansman fiyatı`,
   },
   publisher: { "@type": "Organization", name: siteConfig.companyName },
 };
