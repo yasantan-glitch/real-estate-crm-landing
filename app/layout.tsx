@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
   title: siteConfig.seo.title,
   description: siteConfig.seo.description,
+  verification: {
+    google: "nL1YlfEBKv61qq2YPr53hHbtx4Q1CunLVhnsPO3RSLo",
+  },
   alternates: {
     canonical: "/", // canonical resolves against metadataBase (final domain later)
   },
