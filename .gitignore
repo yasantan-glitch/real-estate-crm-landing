@@ -11,3 +11,5 @@ scripts/claude-free.ps1
 scripts/claude-paid.ps1
 scripts/claude-free.sh
 scripts/claude-paid.sh
+
+.DS_Store

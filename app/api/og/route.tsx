@@ -41,7 +41,7 @@ export async function GET(req: NextRequest) {
             left: 0,
             width: "8px",
             height: "630px",
-            background: "#E8603C",
+            background: "#F99D1C",
             display: "flex",
           }}
         />
@@ -53,7 +53,7 @@ export async function GET(req: NextRequest) {
             width: "520px",
             height: "520px",
             borderRadius: "9999px",
-            background: "#E8603C",
+            background: "#F99D1C",
             opacity: 0.1,
             display: "flex",
           }}
@@ -92,7 +92,7 @@ export async function GET(req: NextRequest) {
               display: "flex",
               alignSelf: "flex-start",
               alignItems: "center",
-              background: "#E8603C",
+              background: "#F99D1C",
               color: "#FFFFFF",
               fontSize: 22,
               fontWeight: 700,

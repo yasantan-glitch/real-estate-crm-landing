@@ -16,9 +16,9 @@
 :root {
   --color-brand: 26 26 26;        /* warm charcoal ink #1A1A1A */
   --color-brand-soft: 38 34 31;   /* warm dark panel #26221F */
-  --color-accent: 232 96 60;      /* terracotta #E8603C */
-  --color-accent-hover: 214 83 47; /* pressed state #D6532F */
-  --color-accent-tint: 253 231 219; /* light terracotta tint for badges/pills #FDE7DB */
+  --color-accent: 249 157 28;     /* amber #F99D1C */
+  --color-accent-hover: 214 130 15; /* pressed/darker amber #D6820F */
+  --color-accent-tint: 253 232 200; /* light amber tint for badges/pills #FDE8C8 */
   --color-surface: 255 248 240;   /* cream section bg #FFF8F0 */
   --color-muted: 120 113 108;     /* warm stone-500 for secondary text */
   --color-line: 231 221 209;      /* warm light card/section border #E7DDD1 */

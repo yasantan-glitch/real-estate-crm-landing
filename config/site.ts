@@ -16,7 +16,7 @@ export const siteConfig = {
 
   // --- Theme (mirrors the CSS variables in app/globals.css) ---
   primaryColor: "#1A1A1A", // warm charcoal ink
-  accentColor: "#E8603C", // terracotta
+  accentColor: "#F99D1C", // amber
 
   // --- Demo form ---
   // Default: internal API route. Override with NEXT_PUBLIC_DEMO_FORM_ENDPOINT
