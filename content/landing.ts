@@ -294,6 +294,50 @@ export const features = {
   ],
 };
 
+export const featuresPage = {
+  seo: {
+    title: "Emlak CRM Pro Özellikleri — Saha Testli Çözümler",
+    description:
+      "Portföy yönetimi, müşteri takibi, satış pipeline, danışman performansı raporları ve komisyon takibi. Gayrimenkul ofisinin tüm operasyonu tek panelde.",
+  },
+  eyebrow: "Özellikler",
+  title: "Emlak CRM'in Özellikleri: Ofisinizin Her Operasyonu Tek Panelde",
+  intro:
+    "Sistemin her modülü, bir emlak ofisinin günlük akışından çıktı. Aşağıda her özelliğin ne işe yaradığını ve ofisinizde hangi sorunu çözdüğünü bulabilirsiniz.",
+  sections: [
+    {
+      title: "Merkezi Portföy Yönetimi",
+      text: "Tüm mülk kayıtlarını (satılık, kiralık, arsa) durum, fiyat, belge ve alanlarıyla organize edin. Portföy girildiğinde sistem uygun talepleri tarar ve size öneri olarak sunar — eşleşmeyi siz onaylarsınız, hiçbir potansiyel fırsat gözden kaçmaz.",
+    },
+    {
+      title: "Müşteri Kayıtları ve Talep Takibi",
+      text: "Alıcı, satıcı ve kiracı profilleri; her müşterinin bütçesi, tercihleri ve görüşme geçmişi kayıt altında kalır. Yeni bir portföy girildiğinde uygun taleplerle eşleşme önerileri otomatik olarak listelenir, hiçbir talep unutulmaz.",
+    },
+    {
+      title: "Satış Pipeline ve Fırsatların Yönetimi",
+      text: "İlk temastan kapanışa; her fırsat pipeline'da aşama aşama (İlk Temas → Yer Gösterme → Pazarlık → Kapanış) ilerler. Hangi dairenin kimde, ne kadar süredir beklemede olduğu, ne zaman hareket ettiği tek bakışta.",
+    },
+    {
+      title: "Danışman Bazlı Performans Raporları",
+      text: "Her danışmanın portföy sayısı, yapılan görüşme, yer gösterme, kapanan satış ve ortalama satış değeri rapor biçiminde. Performans adil, ölçülür ve veriye dayalı.",
+    },
+    {
+      title: "Broker ve Yönetici Kontrol Paneli",
+      text: "Ofisin tamamının (portföy sayısı, aktif talepler, aylık ciro, beklenen gelir, danışman görüşmeleri) güncel görünümü tek ekranda. Görev takibi ve riskli satışları yönetici ekranından izleyin.",
+    },
+    {
+      title: "Muhasebe, Komisyon ve Hakediş Takibi",
+      text: "Satış kapandığında paylaşımlı satışlar, danışman hakedişleri ve tahsilat sisteme işlenir; yetki seviyesine göre onay akışıyla kayıt altına alınır. Ay sonu hesaplar şeffaf, tartışmasız.",
+    },
+  ],
+  cta: {
+    title: "Bu özellikleri ofisinizde görün.",
+    text: "Formu doldurun, ihtiyacınıza göre canlı bir demo planlayalım.",
+    label: "Demo Talep Et",
+    href: "/#demo",
+  },
+};
+
 export const audience = {
   eyebrow: "Kimler için",
   title: "Tek danışmandan franchise yapısına.",
