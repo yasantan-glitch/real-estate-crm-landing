@@ -338,6 +338,32 @@ export const featuresPage = {
   },
 };
 
+export const demoPage = {
+  seo: {
+    title: "Emlak CRM Pro Demo Talep — Ofisiniz için Özel Sunum",
+    description:
+      "Emlak CRM Pro'nun canlı demosunu talep edin. Ofisinizin ihtiyacına göre kişiselleştirilmiş sunum, kurulum ve fiyat teklifi. Hızlı ve ücretsiz.",
+  },
+  eyebrow: "Demo talebi",
+  title: "Sistemi Çalışırken Görmek İstiyoruz",
+  intro:
+    "Formu doldurun; sürecin nasıl ilerlediğini aşağıda bulabilirsiniz.",
+  sections: [
+    {
+      title: "Demo Süreci Nasıl İşliyor",
+      text: "Formu doldurduktan sonra ekibimiz sizinle iletişime geçer, ofisinizin işletme akışını dinler ve ihtiyacınıza göre kişiselleştirilmiş bir canlı demo planlar. Demo sırasında sistemin tüm modüllerini görebilir, sorularınızı sorabilirsiniz.",
+    },
+    {
+      title: "Kurulum Süreci",
+      text: "Standart kurulum birkaç iş günü içinde tamamlanır. Veri aktarımı ve ekip eğitimi, ofisinizin büyüklüğü ve ihtiyaçlarına göre birlikte planlanır.",
+    },
+    {
+      title: "Fiyat Teklifi ve Paket Seçimi",
+      text: "Demo sonrasında, ofisinizin danışman sayısı ve ihtiyacını göz önüne alarak en uygun paketi öneriyoruz ve yazılı tekliflendirme yapıyoruz. Sorularınız cevaplandıktan sonra imzalama ve kurulum adımlarına geçilir.",
+    },
+  ],
+};
+
 export const audience = {
   eyebrow: "Kimler için",
   title: "Tek danışmandan franchise yapısına.",
