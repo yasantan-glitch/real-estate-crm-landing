@@ -326,7 +326,6 @@ export const audience = {
 };
 
 export type PricingTierPrice = {
-  originalPrice: string;
   discountedPrice: string;
   discountNote: string;
   customQuoteNote?: string;
@@ -343,7 +342,6 @@ export const pricing = {
       badge: null,
       target: "Bireysel danışmanlar ve küçük ofisler için",
       price: {
-        originalPrice: "3.500 TL/ay",
         discountedPrice: "2.400 TL/ay",
         discountNote: "Lansman fiyatı",
       } satisfies PricingTierPrice,
@@ -359,7 +357,6 @@ export const pricing = {
       badge: "En çok tercih edilen kurgu",
       target: "Büyüyen emlak ofisleri için",
       price: {
-        originalPrice: "7.500 TL/ay",
         discountedPrice: "4.900 TL/ay",
         discountNote: "Lansman fiyatı",
       } satisfies PricingTierPrice,
@@ -375,7 +372,6 @@ export const pricing = {
       badge: null,
       target: "Broker ekipleri ve franchise yapıları için",
       price: {
-        originalPrice: "12.000 TL/ay",
         discountedPrice: "9.900 TL/ay",
         discountNote: "Lansman fiyatı",
         customQuoteNote: "Özel ihtiyaçlar için: İhtiyaca göre tekliflendirilir",
