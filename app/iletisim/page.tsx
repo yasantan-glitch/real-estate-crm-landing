@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { siteConfig } from "@/config/site";
 import { contact } from "@/content/landing";
+import { buildFaqJsonLd } from "@/lib/jsonld";
 
 const canonicalUrl = `${siteConfig.siteUrl}/iletisim`;
 
@@ -24,18 +25,7 @@ const telHref = `tel:${siteConfig.contactPhone.replace(/\s/g, "")}`;
 const mailHref = `mailto:${siteConfig.contactEmail}`;
 const waHref = `https://wa.me/${siteConfig.contactPhone.replace(/\D/g, "")}`;
 
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: contact.faq.items.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.a,
-    },
-  })),
-};
+const faqJsonLd = buildFaqJsonLd(contact.faq.items);
 
 export default function ContactPage() {
   return (

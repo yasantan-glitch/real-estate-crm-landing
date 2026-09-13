@@ -14,19 +14,9 @@ import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import MobileStickyCtaBar from "@/components/MobileStickyCtaBar";
 import { faq } from "@/content/landing";
+import { buildFaqJsonLd } from "@/lib/jsonld";
 
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faq.items.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.a,
-    },
-  })),
-};
+const faqJsonLd = buildFaqJsonLd(faq.items);
 
 export default function HomePage() {
   return (

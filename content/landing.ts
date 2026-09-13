@@ -21,7 +21,7 @@ export const nav = {
     { href: "/", label: "Ana Sayfa" },
     { href: "/ozellikler", label: "Özellikler" },
     { href: "/fiyatlandirma", label: "Paketler" },
-    { href: "/#kimler-icin", label: "Kimler İçin" },
+    { href: "/kimler-icin", label: "Kimler İçin" },
     { href: "/araclar", label: "Araçlar" },
     { href: "/blog", label: "Blog" },
     { href: "/iletisim", label: "İletişim" },
@@ -755,7 +755,7 @@ export const footer = {
       links: [
         { href: "/#ozellikler", label: "Özellikler" },
         { href: "/#paketler", label: "Paketler" },
-        { href: "/#kimler-icin", label: "Kimler İçin" },
+        { href: "/kimler-icin", label: "Kimler İçin" },
         { href: "/#sss", label: "SSS" },
         { href: "/blog", label: "Blog" },
       ],

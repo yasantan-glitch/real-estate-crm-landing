@@ -5,6 +5,7 @@ import PricingSection from "@/components/PricingSection";
 import SectionHeading from "@/components/SectionHeading";
 import { siteConfig } from "@/config/site";
 import { pricingPage, pricing, services } from "@/content/landing";
+import { buildFaqJsonLd } from "@/lib/jsonld";
 
 const canonicalUrl = `${siteConfig.siteUrl}/fiyatlandirma`;
 
@@ -22,18 +23,7 @@ export const metadata: Metadata = {
   },
 };
 
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: pricingPage.faq.items.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.a,
-    },
-  })),
-};
+const faqJsonLd = buildFaqJsonLd(pricingPage.faq.items);
 
 export default function PricingPage() {
   return (

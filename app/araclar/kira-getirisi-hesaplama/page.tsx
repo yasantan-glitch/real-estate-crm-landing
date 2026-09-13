@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import RentalYieldCalculator from "@/components/RentalYieldCalculator";
 import { siteConfig } from "@/config/site";
 import { rentalYieldCalculatorPage, toolsPageBackLink } from "@/content/landing";
+import { buildFaqJsonLd } from "@/lib/jsonld";
 
 const canonicalUrl = `${siteConfig.siteUrl}/araclar/kira-getirisi-hesaplama`;
 
@@ -21,18 +22,7 @@ export const metadata: Metadata = {
   },
 };
 
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: rentalYieldCalculatorPage.faq.items.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.a,
-    },
-  })),
-};
+const faqJsonLd = buildFaqJsonLd(rentalYieldCalculatorPage.faq.items);
 
 export default function RentalYieldCalculatorPage() {
   return (

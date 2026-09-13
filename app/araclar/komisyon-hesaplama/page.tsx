@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import CommissionCalculator from "@/components/CommissionCalculator";
 import { siteConfig } from "@/config/site";
 import { commissionCalculatorPage, toolsPageBackLink } from "@/content/landing";
+import { buildFaqJsonLd } from "@/lib/jsonld";
 
 const canonicalUrl = `${siteConfig.siteUrl}/araclar/komisyon-hesaplama`;
 
@@ -21,18 +22,7 @@ export const metadata: Metadata = {
   },
 };
 
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: commissionCalculatorPage.faq.items.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.a,
-    },
-  })),
-};
+const faqJsonLd = buildFaqJsonLd(commissionCalculatorPage.faq.items);
 
 export default function CommissionCalculatorPage() {
   return (
