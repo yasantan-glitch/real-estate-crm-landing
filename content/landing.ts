@@ -195,7 +195,7 @@ export const productPreview = {
       width: 3340,
       height: 1532,
       alt: "CRM'in coğrafi analiz ekranı: Antalya haritası üzerinde kümelenmiş portföy noktaları; yarıçap ve çokgen seçim araçları; seçili alandaki toplam portföy sayısı ile ortalama, en düşük ve en yüksek fiyatları gösteren alan analizi paneli",
-      title: "Portföyünüz, şehir haritasının üzerinde.",
+      title: "Portföyünüz, artık haritada.",
       text: "Coğrafi analiz ekranı portföylerinizi harita üzerinde kümeleyerek gösterir; yarıçap veya çokgen çizerek bölge seçer, seçtiğiniz alandaki portföy sayısını ve fiyat aralığını anında görürsünüz.",
     },
     {
@@ -747,7 +747,7 @@ export const contact = {
     text: "Türkiye genelinde çevrimiçi destek veriyoruz; sistem web tabanlı olduğu için ofisinizin bulunduğu şehir fark etmez.",
   },
   faq: {
-    title: "İletişimle ilgili sık sorulanlar",
+    title: "İletişimle ilgili merak edilenler",
     items: [
       {
         q: "Demo talebimden sonra ne kadar sürede dönüş alırım?",
