@@ -12,10 +12,28 @@ import DemoForm from "@/components/DemoForm";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import MobileStickyCtaBar from "@/components/MobileStickyCtaBar";
+import { faq } from "@/content/landing";
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.items.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <Header />
       <main>
         <Hero />
