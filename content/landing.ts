@@ -791,7 +791,7 @@ export const commissionCalculatorPage = {
     rentalNote:
       "Kiralama işlemlerinde komisyon, oran uygulanmadan, girilen tutarın (1 aylık kira bedelinin) tamamı olarak hesaplanır.",
     defaultRates: {
-      sale: "",
+      sale: 2,
       rental: "",
     },
     vatRate: 20,
@@ -812,11 +812,11 @@ export const commissionCalculatorPage = {
     items: [
       {
         q: "Emlak komisyon oranının yasal bir sınırı var mı?",
-        a: "Komisyon oranlarına ilişkin düzenlemeler mevzuata tabidir ve zaman içinde değişebilir. Güncel ve kesin sınır bilgisi için ilgili mevzuatı veya yetkili bir danışmanı kontrol etmenizi öneririz.",
+        a: "Satış işlemlerinde emlak komisyonu genellikle %2 civarında uygulanır ve hem alıcı hem satıcıdan ayrı ayrı tahsil edilir. Oranlar ofisler arasında farklılık gösterebileceğinden, kesin bilgi için ilgili emlak ofisiyle teyitleşmeniz önerilir.",
       },
       {
         q: "Komisyonu alıcı mı satıcı mı öder, kiracı mı ev sahibi mi öder?",
-        a: "Uygulama ve anlaşmaya göre değişebilir; taraflardan biri veya her iki taraf da komisyon ödeyebilir. Bu konu genellikle işlem öncesinde emlak ofisiyle netleştirilir.",
+        a: "Satışta hem alıcı hem satıcı kendi payına düşen komisyonu öder. Kiralamada ise komisyon kiracıdan bir aylık kira tutarı üzerinden alınır.",
       },
       {
         q: "Hesaplama sonucuna KDV dahil mi?",

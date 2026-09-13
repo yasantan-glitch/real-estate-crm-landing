@@ -27,13 +27,13 @@ function formatThousands(value: string): string {
 export default function CommissionCalculator() {
   const [transactionType, setTransactionType] = useState<TransactionType>("sale");
   const [rawAmount, setRawAmount] = useState("");
-  const [rate, setRate] = useState(
-    transactionType === "sale" ? calculator.defaultRates.sale : calculator.defaultRates.rental
+  const [rate, setRate] = useState<string>(
+    String(transactionType === "sale" ? calculator.defaultRates.sale : calculator.defaultRates.rental)
   );
 
   const handleTransactionTypeChange = (type: TransactionType) => {
     setTransactionType(type);
-    setRate(type === "sale" ? calculator.defaultRates.sale : calculator.defaultRates.rental);
+    setRate(String(type === "sale" ? calculator.defaultRates.sale : calculator.defaultRates.rental));
   };
 
   const { exVat, vatAmount, inVat } = useMemo(() => {
