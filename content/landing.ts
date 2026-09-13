@@ -222,6 +222,69 @@ export const productPreview = {
   ],
 };
 
+/**
+ * Gallery section directly under the static device composition — walks
+ * through all 8 source screenshots one at a time. Alt text describes only
+ * what is actually visible in each image (honesty constraint).
+ */
+export const productGallery = {
+  eyebrow: "Tüm ekranlar",
+  title: "Ürünü daha yakından inceleyin.",
+  carouselLabel: "Ürün ekran görüntüleri galerisi",
+  slideLabel: "Görsel",
+  slides: [
+    {
+      src: "/screenshots/hero-device-laptop.png",
+      width: 3360,
+      height: 1850,
+      alt: "CRM ana panel ekranı: Portföy, Toplam Müşteri, Bekleyen Onaylar, Aktif Talepler, Ofis Kasası ve Kira Artış Oranı kartları; son aktiviteler tablosu, hedef ilerlemesi ve portföy dağılımı grafiği",
+    },
+    {
+      src: "/screenshots/hero-device-tablet.png",
+      width: 3360,
+      height: 1854,
+      alt: "CRM portföy listesi ekranı (açık tema): filtre paneli ve galeri görünümünde portföy kartları — konum, fiyat, danışman ve durum etiketleriyle birlikte",
+    },
+    {
+      src: "/screenshots/hero-device-phone.png",
+      width: 3360,
+      height: 1850,
+      alt: "CRM ana panel ekranının sağ alt kısmı: hedef ilerlemesi ve portföy dağılımı grafiği",
+      objectPosition: "right bottom",
+    },
+    {
+      src: "/screenshots/hero-bg-1.png",
+      width: 3358,
+      height: 1852,
+      alt: "CRM portföy listesi ekranı (koyu tema): filtre paneli, portföy durumu özet kartları ve galeri görünümünde portföy kartları",
+    },
+    {
+      src: "/screenshots/hero-bg-2.png",
+      width: 3360,
+      height: 1850,
+      alt: "CRM muhasebe ekranı: toplam satış/kira cirosu, ofis ciro payı, danışmanlara ödenen ve ofis kasası kartları ile son işlemler tablosu",
+    },
+    {
+      src: "/screenshots/hero-bg-3.png",
+      width: 3360,
+      height: 1850,
+      alt: "CRM raporlar ekranı: danışman başına temas (telefon, yüz yüze, sunum, yetki) tablosu ile komisyon geliri ve aktivite sayısı grafikleri",
+    },
+    {
+      src: "/screenshots/hero-bg-4.png",
+      width: 3360,
+      height: 1856,
+      alt: "CRM raporlar — portföy ekranı: satılık/kiralık portföy sayıları, mülk türü dağılımı pasta grafiği ve statü dağılımı listesi",
+    },
+    {
+      src: "/screenshots/hero-bg-5.png",
+      width: 3360,
+      height: 1854,
+      alt: "CRM coğrafi analiz ekranı: Antalya haritası üzerinde konumlandırılmış portföyler ve seçili alandaki toplam, ortalama, en düşük ve en yüksek fiyatları gösteren alan analizi paneli",
+    },
+  ],
+};
+
 export const pipelineStages = {
   eyebrow: "Satış süreci",
   title: "Her fırsatın nerede olduğunu görün.",

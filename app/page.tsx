@@ -4,6 +4,7 @@ import ReferencesSection from "@/components/ReferencesSection";
 import ProblemSection from "@/components/ProblemSection";
 import SolutionSection from "@/components/SolutionSection";
 import ProductPreviewSection from "@/components/ProductPreviewSection";
+import ProductGallerySection from "@/components/ProductGallerySection";
 import AudienceSection from "@/components/AudienceSection";
 import PricingSection from "@/components/PricingSection";
 import ServicesSection from "@/components/ServicesSection";
@@ -41,6 +42,7 @@ export default function HomePage() {
         <ProblemSection />
         <SolutionSection />
         <ProductPreviewSection />
+        <ProductGallerySection />
         <AudienceSection />
         <PricingSection />
         <ServicesSection />
