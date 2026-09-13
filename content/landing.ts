@@ -18,19 +18,19 @@ export const ledgerLabels = {
 
 export const nav = {
   links: [
-    { href: "/#ozellikler", label: "Özellikler" },
+    { href: "/ozellikler", label: "Özellikler" },
+    { href: "/fiyatlandirma", label: "Paketler" },
     { href: "/#kimler-icin", label: "Kimler İçin" },
-    { href: "/#paketler", label: "Paketler" },
-    { href: "/#hizmetler", label: "Ek Hizmetler" },
-    { href: "/#sss", label: "SSS" },
+    { href: "/araclar/komisyon-hesaplama", label: "Araçlar" },
     { href: "/blog", label: "Blog" },
+    { href: "/iletisim", label: "İletişim" },
   ],
   cta: "Demo Talep Et",
 };
 
 /** Mobile-only sticky bar shown after the hero scrolls out of view. Reuses the header CTA copy/target. */
 export const stickyCta = {
-  href: "/#demo",
+  href: "/demo-talep",
   label: nav.cta,
   /** Accessible name for the bar landmark itself. */
   regionLabel: "Hızlı demo talebi",
@@ -695,7 +695,7 @@ export const footer = {
       title: "Hizmetler",
       links: [
         { href: "/#hizmetler", label: "Ek Profesyonel Hizmetler" },
-        { href: "/#demo", label: "Demo Talep Et" },
+        { href: "/demo-talep", label: "Demo Talep Et" },
       ],
     },
   ],

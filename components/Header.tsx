@@ -101,7 +101,7 @@ export default function Header() {
         </nav>
 
         <a
-          href="/#demo"
+          href="/demo-talep"
           className="btn-primary hidden !px-4 !py-2 !text-[13px] text-center md:!px-6 md:!py-[11px] md:!text-[14.5px] md:inline-flex"
         >
           {nav.cta}
@@ -139,7 +139,7 @@ export default function Header() {
               </li>
             ))}
             <li className="pt-2">
-              <a href="#demo" className="btn-primary w-full" onClick={() => setOpen(false)}>
+              <a href="/demo-talep" className="btn-primary w-full" onClick={() => setOpen(false)}>
                 {nav.cta}
               </a>
             </li>
