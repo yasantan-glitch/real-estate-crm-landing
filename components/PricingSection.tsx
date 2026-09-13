@@ -1,7 +1,7 @@
 import SectionHeading from "./SectionHeading";
 import { pricing } from "@/content/landing";
 
-export default function PricingSection() {
+export default function PricingSection({ ctaHref = "#demo" }: { ctaHref?: string }) {
   return (
     <section id="paketler" className="scroll-mt-24 bg-brand">
       <div className="section !pb-[110px]">
@@ -37,7 +37,7 @@ export default function PricingSection() {
                   </p>
                 )}
                 <a
-                  href="#demo"
+                  href={ctaHref}
                   className={`mb-5 block rounded-full py-3.5 text-center text-[15px] font-bold ${
                     featured ? "bg-brand text-white" : "bg-accent text-white"
                   }`}

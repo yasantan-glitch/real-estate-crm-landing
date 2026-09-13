@@ -38,15 +38,15 @@ export default function CommissionCalculator() {
 
   const { exVat, vatAmount, inVat } = useMemo(() => {
     const amount = Number(rawAmount) || 0;
-    const ratePercent = Number(rate.replace(",", ".")) || 0;
-    const commission = (amount * ratePercent) / 100;
+    const commission =
+      transactionType === "rental" ? amount : (amount * (Number(rate.replace(",", ".")) || 0)) / 100;
     const vat = commission * (calculator.vatRate / 100);
     return {
       exVat: commission,
       vatAmount: vat,
       inVat: commission + vat,
     };
-  }, [rawAmount, rate]);
+  }, [rawAmount, rate, transactionType]);
 
   const inputClass =
     "w-full rounded-[10px] border-[1.5px] border-line bg-white px-4 py-3 text-sm text-brand placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent";
@@ -71,7 +71,7 @@ export default function CommissionCalculator() {
         ))}
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className={`grid gap-4 ${transactionType === "sale" ? "sm:grid-cols-2" : ""}`}>
         <div>
           <label htmlFor="amount" className="mb-1.5 block text-xs font-semibold text-slate-600">
             {calculator.amountLabel} (₺)
@@ -85,22 +85,27 @@ export default function CommissionCalculator() {
             onChange={(e) => setRawAmount(digitsOnly(e.target.value))}
             className={inputClass}
           />
+          {transactionType === "rental" && (
+            <p className="mt-1.5 text-xs leading-relaxed text-slate-500">{calculator.rentalNote}</p>
+          )}
         </div>
-        <div>
-          <label htmlFor="rate" className="mb-1.5 block text-xs font-semibold text-slate-600">
-            {calculator.rateLabel}
-          </label>
-          <input
-            id="rate"
-            type="text"
-            inputMode="decimal"
-            placeholder="Örn. 2"
-            value={rate}
-            onChange={(e) => setRate(e.target.value.replace(/[^\d.,]/g, ""))}
-            className={inputClass}
-          />
-          <p className="mt-1.5 text-xs leading-relaxed text-slate-500">{calculator.rateNote}</p>
-        </div>
+        {transactionType === "sale" && (
+          <div>
+            <label htmlFor="rate" className="mb-1.5 block text-xs font-semibold text-slate-600">
+              {calculator.rateLabel}
+            </label>
+            <input
+              id="rate"
+              type="text"
+              inputMode="decimal"
+              placeholder="Örn. 2"
+              value={rate}
+              onChange={(e) => setRate(e.target.value.replace(/[^\d.,]/g, ""))}
+              className={inputClass}
+            />
+            <p className="mt-1.5 text-xs leading-relaxed text-slate-500">{calculator.rateNote}</p>
+          </div>
+        )}
       </div>
 
       <div className="mt-8 border-t border-line pt-6">

@@ -15,7 +15,7 @@ export default function Footer() {
               alt={siteConfig.productName}
               width={1996}
               height={384}
-              className="h-7 w-auto"
+              className="h-9 w-auto"
             />
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-zinc-400">{footer.tagline}</p>

@@ -84,7 +84,7 @@ export default function Header() {
             alt={siteConfig.productName}
             width={1996}
             height={384}
-            className="h-8 w-auto shrink-0"
+            className="h-10 w-auto shrink-0"
           />
         </a>
 

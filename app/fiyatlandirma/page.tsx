@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PricingSection from "@/components/PricingSection";
 import SectionHeading from "@/components/SectionHeading";
 import { siteConfig } from "@/config/site";
 import { pricingPage, pricing, services } from "@/content/landing";
@@ -63,6 +64,9 @@ export default function PricingPage() {
             </div>
           </div>
         </section>
+
+        {/* --- Pricing cards --- */}
+        <PricingSection ctaHref="/#demo" />
 
         {/* --- Comparison table --- */}
         <section className="bg-white">

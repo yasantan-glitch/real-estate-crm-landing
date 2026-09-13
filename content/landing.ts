@@ -18,6 +18,7 @@ export const ledgerLabels = {
 
 export const nav = {
   links: [
+    { href: "/", label: "Ana Sayfa" },
     { href: "/ozellikler", label: "Özellikler" },
     { href: "/fiyatlandirma", label: "Paketler" },
     { href: "/#kimler-icin", label: "Kimler İçin" },
@@ -495,8 +496,8 @@ export const pricingPage = {
     ],
   },
   comparison: {
-    eyebrow: "Karşılaştırma",
-    title: "Paketleri yan yana görün",
+    eyebrow: "Ayrıntılı karşılaştırma",
+    title: "Paketleri özellik özellik karşılaştırın",
     launchPriceLabel: "Lansman fiyatı",
     rowLabels: ["Kullanıcı sayısı", "Domain", "Destek", "Kurulum"],
   },
@@ -787,6 +788,8 @@ export const commissionCalculatorPage = {
     rateLabel: "Komisyon oranı (%)",
     rateNote:
       "Aşağıdaki oran bilgi amaçlıdır; ofisinizin uyguladığı güncel oranı girerek hesaplayabilirsiniz.",
+    rentalNote:
+      "Kiralama işlemlerinde komisyon, oran uygulanmadan, girilen tutarın (1 aylık kira bedelinin) tamamı olarak hesaplanır.",
     defaultRates: {
       sale: "",
       rental: "",
