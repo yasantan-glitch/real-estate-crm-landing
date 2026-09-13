@@ -767,3 +767,68 @@ export const contact = {
     ],
   },
 };
+
+export const commissionCalculatorPage = {
+  seo: {
+    title: "Emlak Komisyonu Hesaplama — Satış ve Kiralama İçin Ücretsiz Araç",
+    description:
+      "Satış veya kiralama işlemlerinde emlak komisyonu tutarını KDV dahil ve KDV hariç olarak saniyeler içinde hesaplayın.",
+  },
+  eyebrow: "Ücretsiz araç",
+  title: "Emlak Komisyonu Hesaplama",
+  intro:
+    "İşlem tutarını ve komisyon oranını girin; komisyon tutarını KDV dahil ve KDV hariç olarak anında görün.",
+  calculator: {
+    transactionTypeLabel: "İşlem tipi",
+    saleLabel: "Satış",
+    rentalLabel: "Kiralama",
+    amountLabel: "Tutar",
+    amountPlaceholder: "Örn. 2.500.000",
+    rateLabel: "Komisyon oranı (%)",
+    rateNote:
+      "Aşağıdaki oran bilgi amaçlıdır; ofisinizin uyguladığı güncel oranı girerek hesaplayabilirsiniz.",
+    defaultRates: {
+      sale: "",
+      rental: "",
+    },
+    vatRate: 20,
+    resultTitle: "Hesaplama sonucu",
+    resultLabels: {
+      exVat: "Komisyon tutarı (KDV hariç)",
+      vatAmount: "KDV (%20)",
+      inVat: "Komisyon tutarı (KDV dahil)",
+    },
+  },
+  explanation: {
+    title: "Emlak komisyonu nasıl hesaplanır?",
+    text: "Emlak komisyonu, işlem tutarı (satış bedeli veya kira bedeli) üzerinden belirlenen bir oranın uygulanmasıyla hesaplanır. Bulunan komisyon tutarına, mevzuata göre ayrıca KDV eklenir. Ofisler arasında uygulanan oran farklılık gösterebileceğinden, kesin tutar için ilgili emlak ofisiyle veya danışmanla teyitleşmeniz önerilir.",
+  },
+  faq: {
+    eyebrow: "Sık sorulanlar",
+    title: "Komisyon hesaplama hakkında sık sorulan sorular",
+    items: [
+      {
+        q: "Emlak komisyon oranının yasal bir sınırı var mı?",
+        a: "Komisyon oranlarına ilişkin düzenlemeler mevzuata tabidir ve zaman içinde değişebilir. Güncel ve kesin sınır bilgisi için ilgili mevzuatı veya yetkili bir danışmanı kontrol etmenizi öneririz.",
+      },
+      {
+        q: "Komisyonu alıcı mı satıcı mı öder, kiracı mı ev sahibi mi öder?",
+        a: "Uygulama ve anlaşmaya göre değişebilir; taraflardan biri veya her iki taraf da komisyon ödeyebilir. Bu konu genellikle işlem öncesinde emlak ofisiyle netleştirilir.",
+      },
+      {
+        q: "Hesaplama sonucuna KDV dahil mi?",
+        a: "Bu araç, girdiğiniz tutar üzerinden hesaplanan komisyonu hem KDV hariç hem de %20 KDV dahil olarak ayrı ayrı gösterir; hangi tutarın geçerli olduğunu ofisinizle teyit edin.",
+      },
+      {
+        q: "Hesaplama sonucu bağlayıcı bir teklif midir?",
+        a: "Hayır. Bu araç yalnızca bilgilendirme amaçlıdır; kesin komisyon tutarı ve koşulları için emlak ofisi veya danışmanla yazılı olarak anlaşmanız gerekir.",
+      },
+    ],
+  },
+  cta: {
+    title: "Ofisiniz için komisyon ve tahsilat takibini tek sistemde toplayın",
+    text: "Emlak CRM Pro ile komisyon hesaplamalarını, tahsilat takibini ve ofis performansınızı tek panelden yönetin.",
+    label: "Demo Talep Et",
+    href: "/demo-talep",
+  },
+};

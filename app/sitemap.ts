@@ -42,6 +42,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: `${siteConfig.siteUrl}/araclar/komisyon-hesaplama`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
     ...posts.map((post) => ({
       url: `${siteConfig.siteUrl}/blog/${post.slug}`,
       lastModified: new Date(post.date),
