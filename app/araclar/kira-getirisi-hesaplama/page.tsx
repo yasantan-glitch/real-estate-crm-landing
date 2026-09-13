@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import CommissionCalculator from "@/components/CommissionCalculator";
+import RentalYieldCalculator from "@/components/RentalYieldCalculator";
 import { siteConfig } from "@/config/site";
-import { commissionCalculatorPage, toolsPageBackLink } from "@/content/landing";
+import { rentalYieldCalculatorPage, toolsPageBackLink } from "@/content/landing";
 
-const canonicalUrl = `${siteConfig.siteUrl}/araclar/komisyon-hesaplama`;
+const canonicalUrl = `${siteConfig.siteUrl}/araclar/kira-getirisi-hesaplama`;
 
 export const metadata: Metadata = {
-  title: commissionCalculatorPage.seo.title,
-  description: commissionCalculatorPage.seo.description,
+  title: rentalYieldCalculatorPage.seo.title,
+  description: rentalYieldCalculatorPage.seo.description,
   alternates: {
     canonical: canonicalUrl,
   },
   openGraph: {
-    title: commissionCalculatorPage.seo.title,
-    description: commissionCalculatorPage.seo.description,
+    title: rentalYieldCalculatorPage.seo.title,
+    description: rentalYieldCalculatorPage.seo.description,
     url: canonicalUrl,
     siteName: siteConfig.productName,
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: commissionCalculatorPage.faq.items.map((item) => ({
+  mainEntity: rentalYieldCalculatorPage.faq.items.map((item) => ({
     "@type": "Question",
     name: item.q,
     acceptedAnswer: {
@@ -34,7 +34,7 @@ const faqJsonLd = {
   })),
 };
 
-export default function CommissionCalculatorPage() {
+export default function RentalYieldCalculatorPage() {
   return (
     <>
       <script
@@ -52,13 +52,13 @@ export default function CommissionCalculatorPage() {
               </a>
               <p className="mt-4 eyebrow justify-center">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
-                {commissionCalculatorPage.eyebrow}
+                {rentalYieldCalculatorPage.eyebrow}
               </p>
               <h1 className="font-display text-4xl font-extrabold tracking-tight text-brand md:text-5xl">
-                {commissionCalculatorPage.title}
+                {rentalYieldCalculatorPage.title}
               </h1>
               <p className="mt-4 text-base leading-relaxed text-slate-600">
-                {commissionCalculatorPage.intro}
+                {rentalYieldCalculatorPage.intro}
               </p>
             </div>
           </div>
@@ -68,7 +68,7 @@ export default function CommissionCalculatorPage() {
         <section className="border-y border-line bg-surface">
           <div className="section">
             <div className="mx-auto max-w-2xl">
-              <CommissionCalculator />
+              <RentalYieldCalculator />
             </div>
           </div>
         </section>
@@ -76,16 +76,16 @@ export default function CommissionCalculatorPage() {
         {/* --- Explanation --- */}
         <section className="bg-white">
           <div className="mx-auto w-full max-w-[720px] px-5 py-16 sm:px-8 md:py-20">
-            <h2 className="h2 text-center">{commissionCalculatorPage.explanation.title}</h2>
+            <h2 className="h2 text-center">{rentalYieldCalculatorPage.explanation.title}</h2>
             <p className="mt-5 text-[15px] leading-relaxed text-slate-600">
-              {commissionCalculatorPage.explanation.text}
+              {rentalYieldCalculatorPage.explanation.text}
             </p>
             <p className="mt-5 text-center text-[14.5px] leading-relaxed text-slate-500">
-              {commissionCalculatorPage.relatedTool.text}{" "}
-              <a href={commissionCalculatorPage.relatedTool.href} className="font-semibold text-accent underline">
-                {commissionCalculatorPage.relatedTool.linkLabel}
+              {rentalYieldCalculatorPage.relatedTool.text}{" "}
+              <a href={rentalYieldCalculatorPage.relatedTool.href} className="font-semibold text-accent underline">
+                {rentalYieldCalculatorPage.relatedTool.linkLabel}
               </a>
-              {commissionCalculatorPage.relatedTool.suffix}
+              {rentalYieldCalculatorPage.relatedTool.suffix}
             </p>
           </div>
         </section>
@@ -93,9 +93,9 @@ export default function CommissionCalculatorPage() {
         {/* --- FAQ --- */}
         <section className="border-t border-line bg-surface">
           <div className="mx-auto w-full max-w-[720px] px-5 py-16 sm:px-8 md:py-20">
-            <h2 className="h2 text-center">{commissionCalculatorPage.faq.title}</h2>
+            <h2 className="h2 text-center">{rentalYieldCalculatorPage.faq.title}</h2>
             <div className="mt-10 divide-y divide-line">
-              {commissionCalculatorPage.faq.items.map((item) => (
+              {rentalYieldCalculatorPage.faq.items.map((item) => (
                 <details key={item.q} className="group py-5">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-[15.5px] font-bold text-brand marker:content-none">
                     {item.q}
@@ -118,13 +118,13 @@ export default function CommissionCalculatorPage() {
         {/* --- Closing CTA --- */}
         <section className="border-t border-line bg-brand">
           <div className="section text-center">
-            <h2 className="h2 !text-white">{commissionCalculatorPage.cta.title}</h2>
+            <h2 className="h2 !text-white">{rentalYieldCalculatorPage.cta.title}</h2>
             <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-zinc-400">
-              {commissionCalculatorPage.cta.text}
+              {rentalYieldCalculatorPage.cta.text}
             </p>
             <div className="mt-8">
-              <a href={commissionCalculatorPage.cta.href} className="btn-primary">
-                {commissionCalculatorPage.cta.label}
+              <a href={rentalYieldCalculatorPage.cta.href} className="btn-primary">
+                {rentalYieldCalculatorPage.cta.label}
               </a>
             </div>
           </div>

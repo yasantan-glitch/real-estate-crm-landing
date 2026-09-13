@@ -22,7 +22,7 @@ export const nav = {
     { href: "/ozellikler", label: "Özellikler" },
     { href: "/fiyatlandirma", label: "Paketler" },
     { href: "/#kimler-icin", label: "Kimler İçin" },
-    { href: "/araclar/komisyon-hesaplama", label: "Araçlar" },
+    { href: "/araclar", label: "Araçlar" },
     { href: "/blog", label: "Blog" },
     { href: "/iletisim", label: "İletişim" },
   ],
@@ -834,4 +834,104 @@ export const commissionCalculatorPage = {
     label: "Demo Talep Et",
     href: "/demo-talep",
   },
+  relatedTool: {
+    text: "Komisyon tutarını hesaplamak için",
+    linkLabel: "Kira Getirisi Hesaplama aracına",
+    href: "/araclar/kira-getirisi-hesaplama",
+    suffix: "da göz atabilirsiniz.",
+  },
+};
+
+export const rentalYieldCalculatorPage = {
+  seo: {
+    title: "Kira Getirisi Hesaplama — Brüt Kira Getirisi ve Amortisman Süresi",
+    description:
+      "Gayrimenkul alış fiyatı ve aylık kira geliri üzerinden brüt kira getirisi oranını ve amortisman süresini saniyeler içinde hesaplayın.",
+  },
+  eyebrow: "Ücretsiz araç",
+  title: "Kira Getirisi Hesaplama",
+  intro:
+    "Gayrimenkulün alış fiyatını ve aylık kira gelirini girin; brüt kira getirisi oranını ve amortisman süresini anında görün.",
+  calculator: {
+    priceLabel: "Gayrimenkul alış fiyatı",
+    pricePlaceholder: "Örn. 3.500.000",
+    rentLabel: "Aylık kira geliri",
+    rentPlaceholder: "Örn. 15.000",
+    resultTitle: "Hesaplama sonucu",
+    resultLabels: {
+      grossYield: "Yıllık brüt kira getirisi",
+      paybackYears: "Amortisman süresi (yıl)",
+    },
+  },
+  explanation: {
+    title: "Kira getirisi nasıl hesaplanır?",
+    text: "Yıllık brüt kira getirisi, aylık kira gelirinin 12 ile çarpılıp alış fiyatına bölünmesiyle; amortisman süresi ise alış fiyatının yıllık kira gelirine bölünmesiyle hesaplanır. Bu araç yalnızca brüt getiriyi gösterir. Net getiri; aidat, vergi, bakım-onarım, boş kalma süresi gibi giderler düşüldükten sonraki gerçek kazancı ifade eder ve brüt getiriden her zaman daha düşüktür. Kesin bir yatırım kararı vermeden önce bu gider kalemlerini de hesaba katmanız önerilir.",
+  },
+  faq: {
+    eyebrow: "Sık sorulanlar",
+    title: "Kira getirisi hakkında sık sorulan sorular",
+    items: [
+      {
+        q: "İyi bir kira getirisi oranı nedir?",
+        a: "Bunun için sabit bir eşik değer yoktur; kabul edilebilir kira getirisi oranı bölgeye, gayrimenkul türüne ve piyasa koşullarına göre değişir. Karar vermeden önce bulunduğunuz bölgedeki benzer gayrimenkullerin getiri oranlarıyla karşılaştırma yapmanız önerilir.",
+      },
+      {
+        q: "Brüt ve net kira getirisi arasındaki fark nedir?",
+        a: "Brüt kira getirisi, yalnızca kira gelirinin alış fiyatına oranıdır ve hiçbir gider içermez. Net kira getirisi ise aidat, emlak vergisi, bakım-onarım masrafları ve boş kalma süresi gibi kalemler düşüldükten sonra kalan getiriyi gösterir; bu nedenle net getiri brüt getiriden daha düşük çıkar.",
+      },
+      {
+        q: "Amortisman süresi ne anlama gelir?",
+        a: "Amortisman süresi, gayrimenkulün alış fiyatının, elde edilen yıllık kira geliriyle kaç yılda karşılanacağını gösterir. Bu araçtaki hesaplama gider ve boş kalma süresi içermediğinden, gerçek geri ödeme süresi hesaplanandan daha uzun olabilir.",
+      },
+      {
+        q: "Bu hesaplama gider, vergi ve boş kalma süresini dikkate alıyor mu?",
+        a: "Hayır. Bu araç yalnızca brüt getiriyi ve amortisman süresini gösterir; aidat, vergi, bakım-onarım ve boş kalma süresi gibi kalemleri içermez. Kesin bir yatırım kararı için bu giderleri de hesaba katmanız gerekir.",
+      },
+    ],
+  },
+  cta: {
+    title: "Ofisiniz için portföy ve yatırım danışmanlığı süreçlerini tek sistemde toplayın",
+    text: "Emlak CRM Pro ile portföy verimliliğini, müşteri taleplerini ve ofis performansınızı tek panelden yönetin.",
+    label: "Demo Talep Et",
+    href: "/demo-talep",
+  },
+  relatedTool: {
+    text: "İşlem tutarı üzerinden komisyon hesaplamak için",
+    linkLabel: "Komisyon Hesaplama aracına",
+    href: "/araclar/komisyon-hesaplama",
+    suffix: "da göz atabilirsiniz.",
+  },
+};
+
+export const toolsPageBackLink = {
+  label: "← Tüm Araçlar",
+  href: "/araclar",
+};
+
+export const toolsIndexPage = {
+  seo: {
+    title: "Ücretsiz Emlak Araçları — Komisyon ve Kira Getirisi Hesaplama",
+    description:
+      "Emlak ofisleri için hazırlanan ücretsiz hesaplama araçlarına buradan ulaşın: komisyon hesaplama ve kira getirisi hesaplama.",
+  },
+  eyebrow: "Ücretsiz araçlar",
+  title: "Emlak Ofisleri İçin Ücretsiz Araçlar",
+  intro:
+    "Günlük işlerinizi kolaylaştıracak hesaplama araçlarımızı ücretsiz kullanın; kayıt gerekmez.",
+  tools: [
+    {
+      title: "Emlak Komisyonu Hesaplama",
+      description:
+        "Satış veya kiralama işlemlerinde komisyon tutarını KDV dahil ve KDV hariç olarak hesaplayın.",
+      detailHref: "/araclar/komisyon-hesaplama",
+      detailLabel: "Detaylı bilgi ve sık sorulan sorular →",
+    },
+    {
+      title: "Kira Getirisi Hesaplama",
+      description:
+        "Alış fiyatı ve aylık kira geliri üzerinden brüt kira getirisi oranını ve amortisman süresini hesaplayın.",
+      detailHref: "/araclar/kira-getirisi-hesaplama",
+      detailLabel: "Detaylı bilgi ve sık sorulan sorular →",
+    },
+  ],
 };
