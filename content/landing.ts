@@ -180,40 +180,45 @@ export const solution = {
 };
 
 /**
- * "Ürünü görün" section — real screenshots of the product, shown in a
- * visitor-controlled carousel. Each slide's alt text must only describe what
- * is actually visible in its image (honesty constraint). Slide dimensions are
- * the source files' true pixel sizes, consumed by next/image.
+ * "Ürünü görün" section — a static composition of real product screenshots
+ * inside device frames (laptop/tablet/phone), with a soft background collage.
+ * Alt text must only describe what is actually visible in each image/crop
+ * (honesty constraint). Dimensions are the source files' true pixel sizes,
+ * consumed by next/image.
  */
 export const productPreview = {
   eyebrow: "Ürünü görün",
-  carouselLabel: "Ürün ekran görüntüleri",
-  slideLabel: "Görsel",
-  slides: [
+  title: "Tüm ofisiniz, tek ekranda.",
+  text: "Dashboard, portföy listesi ve mobil erişim — RealtyWorld-CRM her cihazda aynı güncel veriyi gösterir.",
+  devices: [
     {
-      src: "/screenshots/product-preview-1.webp",
-      width: 3340,
-      height: 1532,
-      alt: "CRM'in coğrafi analiz ekranı: Antalya haritası üzerinde kümelenmiş portföy noktaları; yarıçap ve çokgen seçim araçları; seçili alandaki toplam portföy sayısı ile ortalama, en düşük ve en yüksek fiyatları gösteren alan analizi paneli",
-      title: "Portföyünüz, artık haritada.",
-      text: "Coğrafi analiz ekranı portföylerinizi harita üzerinde kümeleyerek gösterir; yarıçap veya çokgen çizerek bölge seçer, seçtiğiniz alandaki portföy sayısını ve fiyat aralığını anında görürsünüz.",
+      device: "laptop" as const,
+      src: "/screenshots/hero-device-laptop.png",
+      width: 3360,
+      height: 1850,
+      alt: "CRM ana panel ekranı: Portföy, Toplam Müşteri, Bekleyen Onaylar, Aktif Talepler, Ofis Kasası ve Kira Artış Oranı kartları; son aktiviteler tablosu, hedef ilerlemesi ve portföy dağılımı grafiği",
     },
     {
-      src: "/screenshots/product-preview-2.webp",
-      width: 3344,
-      height: 1528,
-      alt: "CRM ana paneli: Portföy, Toplam Müşteri, Takip Bekleyen, Aktif Talepler, Aylık Gelir ve Beklenen Ciro kartları; son aktiviteler tablosu ve hedef ilerleme göstergesi",
-      title: "Ofisin tamamı, tek bakışta.",
-      text: "Ana panel; portföy, müşteri, aktif talep ve aylık gelir göstergelerini, son aktiviteler ve hedef ilerlemesiyle birlikte tek ekranda toplar.",
+      device: "tablet" as const,
+      src: "/screenshots/hero-device-tablet.png",
+      width: 3360,
+      height: 1854,
+      alt: "CRM portföy listesi ekranı: filtre paneli ve galeri görünümünde portföy kartları — konum, fiyat, danışman ve durum etiketleriyle birlikte",
     },
     {
-      src: "/screenshots/product-preview-3.webp",
-      width: 3344,
-      height: 1528,
-      alt: "CRM raporlar ekranı: müşteri kazanım kaynaklarını — Eski Müşteri, Sosyal Medya, Referans, Portal, Ofis Ziyareti ve Diğer — oranlarıyla gösteren pasta grafik",
-      title: "Müşteri kaynaklarınızı görün.",
-      text: "Raporlar ekranı; eski müşteri, sosyal medya, referans, portal ve ofis ziyareti gibi kazanım kaynaklarını oranlarıyla gösterir.",
+      device: "phone" as const,
+      src: "/screenshots/hero-device-tablet.png",
+      width: 3360,
+      height: 1854,
+      alt: "CRM portföy listesinden bir portföy kartı: fotoğraf, başlık, konum, fiyat ve durum etiketi",
     },
+  ],
+  backgroundImages: [
+    "/screenshots/hero-bg-1.png",
+    "/screenshots/hero-bg-2.png",
+    "/screenshots/hero-bg-3.png",
+    "/screenshots/hero-bg-4.png",
+    "/screenshots/hero-bg-5.png",
   ],
 };
 
