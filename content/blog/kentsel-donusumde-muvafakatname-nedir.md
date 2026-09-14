@@ -4,6 +4,7 @@ slug: "kentsel-donusumde-muvafakatname-nedir"
 date: "2026-08-12"
 excerpt: "Kentsel dönüşüm sürecinde muvafakatname, tapu harcı ve devir işlemleri emlak danışmanlarını nasıl etkiler? Sürecin işleyişi ve dikkat edilmesi gereken noktalar."
 keywords: ["kentsel dönüşüm muvafakatname", "kentsel dönüşüm tapu harcı", "emlak danışmanı kentsel dönüşüm"]
+category: "hukuk-guvenlik"
 ---
 
 Kentsel dönüşüm kapsamındaki bir binada satış veya kiralama yapan emlak danışmanları, sık sık "muvafakatname" ve "tapu harcı" sorularıyla karşılaşır. Bu süreci doğru anlamak, hem müşteriyi doğru yönlendirmek hem de işlemleri geciktirmemek açısından önemli.

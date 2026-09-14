@@ -4,6 +4,7 @@ slug: "kapora-dolandiriciligi-uyari-isaretleri"
 date: "2026-08-12"
 excerpt: "Emlak sektöründe kapora dolandırıcılığı artıyor. Sahte ilan, acele baskısı ve kimliksiz ödeme talebi gibi uyarı işaretleri ve ofisinizi korumanın yolları."
 keywords: ["kapora dolandırıcılığı", "emlak dolandırıcılığı uyarı işaretleri", "emlak ofisi güvenlik"]
+category: "hukuk-guvenlik"
 ---
 
 Emlak sektöründe kapora dolandırıcılığı, hem alıcı/kiracıyı hem de aracı ofisi hedef alan yaygın bir dolandırıcılık türü. Dolandırıcı, gerçek olmayan ya da sahibi olmadığı bir mülk için "kapora" adı altında para talep eder, ödeme yapıldıktan sonra ortadan kaybolur.

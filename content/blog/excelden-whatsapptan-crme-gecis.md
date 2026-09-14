@@ -4,6 +4,7 @@ slug: "excelden-whatsapptan-crme-gecis"
 date: "2026-08-02"
 excerpt: "Portföyler Excel'de, müşteri talepleri WhatsApp'ta tutuluyorsa, CRM'e geçiş bir ihtiyaç haline gelir. Sorunsuz bir geçiş için adım adım yol haritası."
 keywords: ["excel'den crm'e geçiş", "emlak ofisi crm kurulumu", "whatsapp yerine crm"]
+category: "urun-rehberi"
 ---
 
 Çoğu emlak ofisi işini kurarken bir Excel tablosuyla başlar. Portföyler tabloya girilir, müşteri talepleri WhatsApp'ta tutulur, randevular danışmanların kendi ajandasında yaşar. Ofis birkaç danışmanken bu düzen bir şekilde işler. Ama ekip büyüdükçe, portföy sayısı artıkça bu dağınık sistem çatlamaya başlar: hangi müşteri hangi danışmanda, en son ne konuşuldu, hangi portföy hâlâ satılık — bu soruların cevabı artık kimsede net değildir. CRM'e geçiş bu noktada bir lüks değil, ihtiyaç haline gelir. Ama geçiş süreci doğru planlanmazsa, ekip yeni sistemi benimsemez ve eski alışkanlıklara geri döner. Aşağıda, bu geçişi sorunsuz yönetmek için adım adım bir yol haritası var.

@@ -4,6 +4,7 @@ slug: "gayrimenkul-ofisinde-komisyon-takibi"
 date: "2026-08-02"
 excerpt: "Paylaşımlı satışlarda komisyon hesabı hızla karmaşıklaşır. Bu karmaşanın kaynağını ve sistemli bir komisyon takibinin getirdiği somut faydayı ele alıyoruz."
 keywords: ["emlak komisyon takibi", "gayrimenkul ofisi komisyon hesaplama", "danışman hakediş takibi"]
+category: "operasyon"
 ---
 
 Bir emlak satışı kapandığında iş bitmiş gibi görünür, ama ofis içinde asıl tartışma çoğu zaman o noktada başlar: bu satıştan kim ne kadar alacak? Paylaşımlı satışlarda — portföyü bir danışman almışsa, müşteriyi başka bir danışman getirmişse — komisyon paylaşımı hızla karmaşık bir hesaba dönüşür. Ay sonunda bu hesap yeniden yapılır, danışmanlar kendi paylarını sorgular, broker ise elindeki dağınık notlarla doğru rakamı bulmaya çalışır. Bu yazıda komisyon takibinin neden bu kadar karmaşıklaştığını ve bu karmaşayı çözmenin yollarını ele alıyoruz. Bu konu, aslında [CRM sistemine bakılması gereken özellikler](/blog/emlak-ofisi-icin-crm-nasil-secilir)den biridir.

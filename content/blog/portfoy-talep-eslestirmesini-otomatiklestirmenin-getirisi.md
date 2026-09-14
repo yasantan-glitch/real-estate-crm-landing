@@ -4,6 +4,7 @@ slug: "portfoy-talep-eslestirmesini-otomatiklestirmenin-getirisi"
 date: "2026-08-02"
 excerpt: "Portföy ile müşteri talebini eşleştirmek çoğu ofiste hâlâ danışmanın hafızasına emanet. Bu eşleştirmeyi otomatikleştirmenin ofise gerçek getirisi nedir?"
 keywords: ["portföy talep eşleştirme", "emlak crm otomatik eşleştirme", "müşteri portföy eşleştirme sistemi"]
+category: "operasyon"
 ---
 
 Bir emlak ofisinde en sık tekrarlanan ama en az sistemleştirilen iş, portföy ile müşteri talebinin eşleştirilmesidir. "3+1, en fazla 8 milyon, Konyaaltı" diyen bir müşteri var; ofiste tam da bu kriterlere uyan bir portföy girildi — ama bu iki bilgiyi birbirine bağlayan çoğu zaman tek bir şey vardır: bir danışmanın hafızası. Danışman o gün izinliyse, o müşteriyi unutmuşsa ya da portföyü girenle talebi alan farklı kişilerse, eşleşme hiç gerçekleşmez. Bu yazıda, bu eşleştirmeyi manuel yapmanın gerçek maliyetini ve otomatikleştirmenin ofise ne kazandırdığını ele alıyoruz. Bu otomasyon, [emlak CRM'in temel iş modeli](/blog/emlak-ofisi-icin-crm-nasil-secilir)ni oluşturan parçalardan biridir.

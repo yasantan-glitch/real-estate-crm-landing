@@ -4,6 +4,7 @@ slug: "emlak-ofisi-icin-crm-nasil-secilir"
 date: "2026-08-02"
 excerpt: "Emlak sektöründe CRM arayışı genelde aynı noktada başlar: portföyler Excel'de, müşteri talepleri WhatsApp'ta. Doğru CRM'i seçerken bakılması gereken 7 kritik nokta."
 keywords: ["emlak ofisi için CRM", "emlak CRM seçimi", "gayrimenkul CRM programı"]
+category: "urun-rehberi"
 ---
 
 Emlak sektöründe CRM arayışı genelde aynı noktada başlar: portföyler Excel'de, müşteri talepleri WhatsApp'ta, randevular ise danışmanların kendi ajandasında dağınık şekilde duruyordur. Ofis büyüdükçe bu düzen tutmaz hale gelir — hangi müşterinin hangi danışmanda olduğunu, hangi portföyün hâlâ satılık olduğunu takip etmek gitgide zorlaşır. Bu noktada "bir CRM alalım" kararı kolay, ama doğru CRM'i seçmek daha zor bir iştir. Piyasada onlarca seçenek var ve çoğu ofis genel amaçlı bir satış CRM'i ile emlak sektörüne özel bir sistem arasındaki farkı geç fark ediyor. Aşağıda, bir emlak ofisinin CRM seçerken gerçekten bakması gereken yedi kriteri topladık.

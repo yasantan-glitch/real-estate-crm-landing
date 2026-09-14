@@ -4,6 +4,7 @@ slug: "emlak-sozlesmelerinde-e-imza"
 date: "2026-08-12"
 excerpt: "Emlak alım-satım ve kiralama sözleşmelerinde e-imza kullanımı yasal olarak geçerli mi? Emlak ofisleri için e-imza ve dijital sözleşme rehberi."
 keywords: ["emlak sözleşmesinde e-imza", "e-imza kira sözleşmesi", "dijital sözleşme emlak"]
+category: "hukuk-guvenlik"
 ---
 
 Emlak sektöründe alıcı, satıcı ve kiracıların farklı şehirlerde olması sık karşılaşılan bir durum. Bu durumda "sözleşmeyi e-imza ile imzalayabilir miyiz?" sorusu emlak danışmanlarının en çok karşılaştığı sorulardan biri.

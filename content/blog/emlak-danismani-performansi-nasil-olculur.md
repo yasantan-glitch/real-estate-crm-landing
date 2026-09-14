@@ -4,6 +4,7 @@ slug: "emlak-danismani-performansi-nasil-olculur"
 date: "2026-08-02"
 excerpt: "Danışman performansını sadece satış sayısıyla ölçmek yanıltıcıdır. Portföy üretimi, görüşme sıklığı ve talebe dönüş hızı gibi öncü göstergeler nelerdir?"
 keywords: ["emlak danışmanı performans takibi", "danışman performans raporu emlak", "emlak ofisi performans yönetimi"]
+category: "operasyon"
 ---
 
 "Bu ay kim ne kadar sattı?" sorusu çoğu emlak ofisinde cevabı net olan tek performans sorusudur. Oysa bir danışmanın gerçek performansı sadece kapanan satışlardan ibaret değildir: kaç yeni portföy aldı, kaç müşteri görüşmesi yaptı, kaç yer gösterme randevusuna çıktı, taleplere ne kadar hızlı geri döndü? Bu soruların cevabı elde yoksa, ofis yönetimi sezgiyle karar veriyor demektir — kim gerçekten iyi çalışıyor, kim şanslı bir satışla öne çıkmış, ayırt etmek zorlaşır. Bu yazıda emlak danışmanı performansını ölçerken bakılması gereken temel metrikleri ve bunları sistematik şekilde takip etmenin yollarını ele alıyoruz. Bu ölçümün sağlıklı yapılabilmesi, aslında [CRM seçerken bakılması gereken kriterler](/blog/emlak-ofisi-icin-crm-nasil-secilir)den biridir.

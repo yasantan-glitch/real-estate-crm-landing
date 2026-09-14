@@ -3,21 +3,71 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SectionHeading from "@/components/SectionHeading";
+import BlogPostGrid from "@/components/BlogPostGrid";
+import BlogCategoryPills from "@/components/BlogCategoryPills";
 import { siteConfig } from "@/config/site";
-import { getAllPostSlugs, getPostBySlug } from "@/lib/blog";
+import {
+  BLOG_CATEGORIES,
+  formatPostDate,
+  getAllPostSlugs,
+  getCategoryLabel,
+  getPostBySlug,
+  getPostsByCategory,
+} from "@/lib/blog";
+
+// This route serves two kinds of pages under one dynamic segment, because
+// Next.js does not allow sibling dynamic folders with different param names
+// (e.g. [slug] and [category]) at the same level: a category slug (one of
+// BLOG_CATEGORIES) renders the category listing, anything else is looked up
+// as a post slug.
 
 type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
+function isCategorySlug(slug: string) {
+  return BLOG_CATEGORIES.some((category) => category.slug === slug);
+}
+
 export function generateStaticParams() {
-  return getAllPostSlugs().map((slug) => ({ slug }));
+  const postParams = getAllPostSlugs().map((slug) => ({ slug }));
+  const categoryParams = BLOG_CATEGORIES.map((category) => ({
+    slug: category.slug,
+  }));
+  return [...postParams, ...categoryParams];
 }
 
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { slug } = await params;
+
+  if (isCategorySlug(slug)) {
+    const label = getCategoryLabel(slug);
+    const canonicalUrl = `${siteConfig.siteUrl}/blog/${slug}`;
+
+    return {
+      title: `${label} | Blog | ${siteConfig.productName}`,
+      description: `${label} kategorisindeki emlak CRM, portföy yönetimi ve satış süreçleri yazıları.`,
+      alternates: {
+        canonical: canonicalUrl,
+      },
+      openGraph: {
+        url: canonicalUrl,
+        siteName: siteConfig.productName,
+        images: [
+          {
+            url: `${siteConfig.siteUrl}/api/og?title=${encodeURIComponent(label)}&type=blog`,
+            width: 1200,
+            height: 630,
+            alt: siteConfig.productName,
+          },
+        ],
+      },
+    };
+  }
+
   const post = await getPostBySlug(slug);
 
   if (!post) {
@@ -46,28 +96,60 @@ export async function generateMetadata({
   };
 }
 
-/** "2026-08-02" -> "2 Ağustos 2026" (parsed as local calendar date, not UTC, to avoid off-by-one day shifts). */
-function formatDate(dateString: string) {
-  const [year, month, day] = dateString.split("-").map(Number);
-  return new Date(year, month - 1, day).toLocaleDateString("tr-TR", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-}
-
 /** "2026-08-02" -> "2026-08-02T00:00:00+03:00" (string concat, not a Date object, to avoid UTC conversion shifting the day). */
 function toIsoDateTime(dateString: string) {
   return `${dateString}T00:00:00+03:00`;
 }
 
-export default async function BlogPostPage({ params }: PageProps) {
+function BlogCategoryListing({ categorySlug }: { categorySlug: string }) {
+  const label = getCategoryLabel(categorySlug);
+  const posts = getPostsByCategory(categorySlug);
+
+  return (
+    <>
+      <Header />
+      <main>
+        <section className="bg-white">
+          <div className="section">
+            <h1 className="mb-6 text-center font-display text-2xl font-extrabold tracking-tight text-brand md:text-3xl">
+              {label}
+            </h1>
+            <SectionHeading
+              eyebrow="Blog"
+              title={`${label} kategorisindeki yazılar`}
+              center
+            />
+
+            <BlogCategoryPills activeSlug={categorySlug} />
+
+            <BlogPostGrid
+              posts={posts}
+              emptyMessage="Bu kategoride henüz yayınlanmış bir yazı yok."
+            />
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}
+
+export default async function BlogSlugPage({ params }: PageProps) {
   const { slug } = await params;
+
+  if (isCategorySlug(slug)) {
+    return <BlogCategoryListing categorySlug={slug} />;
+  }
+
   const post = await getPostBySlug(slug);
 
   if (!post) {
     notFound();
   }
+
+  const relatedPosts = getPostsByCategory(post.category)
+    .filter((p) => p.slug !== post.slug)
+    .slice(0, 3);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -111,9 +193,17 @@ export default async function BlogPostPage({ params }: PageProps) {
                 ← Blog&apos;a dön
               </Link>
 
-              <span className="mt-6 inline-flex items-center rounded-full bg-accent-tint px-3 py-1 text-xs font-bold text-accent">
-                {formatDate(post.date)}
-              </span>
+              <div className="mt-6 flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center rounded-full bg-accent-tint px-3 py-1 text-xs font-bold text-accent">
+                  {formatPostDate(post.date)}
+                </span>
+                <Link
+                  href={`/blog/${post.category}`}
+                  className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600 hover:bg-slate-200"
+                >
+                  {getCategoryLabel(post.category)}
+                </Link>
+              </div>
 
               <h1 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-brand md:text-4xl">
                 {post.title}
@@ -123,6 +213,26 @@ export default async function BlogPostPage({ params }: PageProps) {
                 className="prose-post mt-8 text-[15.5px] leading-relaxed text-slate-700 [&_a]:text-accent [&_a]:underline [&_a]:underline-offset-2 [&_h2]:mt-10 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-extrabold [&_h2]:tracking-tight [&_h2]:text-brand [&_h3]:mt-8 [&_h3]:font-display [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-brand [&_li]:mt-2 [&_ol]:mt-4 [&_ol]:list-decimal [&_ol]:pl-6 [&_p]:mt-4 [&_ul]:mt-4 [&_ul]:list-disc [&_ul]:pl-6"
                 dangerouslySetInnerHTML={{ __html: post.contentHtml }}
               />
+
+              {relatedPosts.length > 0 && (
+                <div className="mt-12 border-t border-line pt-8">
+                  <h2 className="font-display text-lg font-bold text-brand">
+                    {getCategoryLabel(post.category)} kategorisindeki diğer yazılar
+                  </h2>
+                  <ul className="mt-4 space-y-3">
+                    {relatedPosts.map((related) => (
+                      <li key={related.slug}>
+                        <Link
+                          href={`/blog/${related.slug}`}
+                          className="text-sm font-bold text-accent hover:underline"
+                        >
+                          {related.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
         </section>

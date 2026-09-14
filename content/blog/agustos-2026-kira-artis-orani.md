@@ -4,6 +4,7 @@ slug: "agustos-2026-kira-artis-orani"
 date: "2026-08-11"
 excerpt: "TÜİK'in açıkladığı Ağustos 2026 kira artış oranı %31,90. Konut ve iş yeri kira zammı nasıl hesaplanır, emlak ofisleri için ne anlama gelir?"
 keywords: ["kira artış oranı 2026", "TÜFE kira zammı", "emlak CRM kira takibi"]
+category: "piyasa-trendler"
 ---
 
 TÜİK, 3 Ağustos 2026'da Temmuz ayı enflasyon verilerini açıkladı. Buna göre Ağustos 2026'da yenilenen konut ve çatılı iş yeri kira sözleşmelerinde uygulanabilecek yasal tavan artış oranı %31,90 oldu.
