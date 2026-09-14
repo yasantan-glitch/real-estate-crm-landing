@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { footer } from "@/content/landing";
+import SocialIcons from "@/components/SocialIcons";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -23,6 +24,7 @@ export default function Footer() {
             <p>{siteConfig.contactEmail}</p>
             <p>{siteConfig.contactPhone}</p>
           </div>
+          <SocialIcons className="mt-5" />
         </div>
 
         {footer.columns.map((col) => (

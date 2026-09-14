@@ -14,6 +14,15 @@ export const siteConfig = {
   contactEmail: "crm@emlakcrmpro.com",
   contactPhone: "+90 530 691 3612",
 
+  // --- Social ---
+  socialLinks: {
+    instagram: "https://instagram.com/emlakcrmpro",
+    facebook: "https://facebook.com/emlakcrmpro",
+    x: "https://x.com/emlakcrmpro",
+    linkedin: "https://linkedin.com/company/emlak-crm-pro",
+    youtube: "https://youtube.com/@EmlakCRMPro",
+  },
+
   // --- Theme (mirrors the CSS variables in app/globals.css) ---
   primaryColor: "#1A1A1A", // warm charcoal ink
   accentColor: "#F99D1C", // amber
