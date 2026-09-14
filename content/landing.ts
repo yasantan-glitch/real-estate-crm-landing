@@ -232,6 +232,8 @@ export const productGallery = {
   title: "Ürünü daha yakından inceleyin.",
   carouselLabel: "Ürün ekran görüntüleri galerisi",
   slideLabel: "Görsel",
+  lightboxLabel: "Ürün ekran görüntüsü büyütülmüş görünüm",
+  closeLabel: "Kapat",
   slides: [
     {
       src: "/screenshots/hero-device-laptop.png",
