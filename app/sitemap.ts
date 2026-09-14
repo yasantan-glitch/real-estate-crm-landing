@@ -108,6 +108,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: `${siteConfig.siteUrl}/antalya`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
     ...BLOG_CATEGORIES.map((category) => ({
       url: `${siteConfig.siteUrl}/blog/${category.slug}`,
       lastModified: new Date(),

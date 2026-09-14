@@ -17,3 +17,29 @@ export function buildFaqJsonLd(items: FaqItem[]) {
     })),
   };
 }
+
+/**
+ * "Service" (not "LocalBusiness") — the product is a web-based SaaS with no
+ * physical office in the served city, so a LocalBusiness schema (which
+ * implies a street address/geo) would be inaccurate structured data.
+ */
+export function buildServiceJsonLd(params: {
+  serviceName: string;
+  areaServed: string;
+  description: string;
+  providerUrl: string;
+  providerName: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: params.serviceName,
+    areaServed: { "@type": "City", name: params.areaServed },
+    description: params.description,
+    provider: {
+      "@type": "Organization",
+      name: params.providerName,
+      url: params.providerUrl,
+    },
+  };
+}
