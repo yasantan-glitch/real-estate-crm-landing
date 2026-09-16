@@ -774,6 +774,10 @@ export const footer = {
     { href: "/kvkk", label: "Gizlilik Politikası" },
     { href: "/kullanim-kosullari", label: "Kullanım Koşulları" },
   ],
+  individualCta: {
+    text: "Antalya'da Ev Arıyorsanız →",
+    href: "https://talep.emlakcrmpro.com",
+  },
   rights: "Tüm hakları saklıdır.",
   designCredit: "Web sitesi tasarımı: Tan Yasan",
 };

@@ -38,6 +38,18 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
+              {col.title === "Hizmetler" && (
+                <li className="pt-1">
+                  <a
+                    href={footer.individualCta.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-accent/50 px-4 py-1.5 text-xs font-semibold text-accent transition-colors hover:border-accent hover:bg-accent/10"
+                  >
+                    {footer.individualCta.text}
+                  </a>
+                </li>
+              )}
             </ul>
           </nav>
         ))}
