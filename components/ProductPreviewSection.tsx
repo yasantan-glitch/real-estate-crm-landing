@@ -27,7 +27,6 @@ export default function ProductPreviewSection() {
       <div className="section">
         <div className="mx-auto mb-12 max-w-[820px] text-center">
           <p className="eyebrow justify-center">
-            <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
             {eyebrow}
           </p>
           <h2 className="h2 sm:whitespace-nowrap !text-[30px]">{title}</h2>

@@ -12,7 +12,6 @@ export default function SectionHeading({ eyebrow, title, intro, dark, center }: 
     <div className={`max-w-2xl ${center ? "mx-auto text-center" : ""}`}>
       {eyebrow && (
         <p className={`eyebrow ${dark ? "eyebrow-on-dark" : ""} ${center ? "justify-center" : ""}`}>
-          <span className={`h-1.5 w-1.5 rounded-full ${dark ? "bg-orange-300" : "bg-accent"}`} aria-hidden="true" />
           {eyebrow}
         </p>
       )}

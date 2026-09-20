@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ServicesSection from "@/components/ServicesSection";
 import { siteConfig } from "@/config/site";
 import { featuresPage } from "@/content/landing";
 
@@ -30,7 +31,6 @@ export default function FeaturesPage() {
           <div className="section !pb-10">
             <div className="mx-auto max-w-2xl text-center">
               <p className="eyebrow justify-center">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
                 {featuresPage.eyebrow}
               </p>
               <h1 className="font-display text-4xl font-extrabold tracking-tight text-brand md:text-5xl">
@@ -54,6 +54,8 @@ export default function FeaturesPage() {
             </div>
           </div>
         </section>
+
+        <ServicesSection />
 
         {/* --- Closing CTA --- */}
         <section className="border-t border-line bg-brand">

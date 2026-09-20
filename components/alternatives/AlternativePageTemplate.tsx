@@ -23,7 +23,6 @@ export default function AlternativePageTemplate({ content }: { content: Alternat
               {toolsPageBackLinkAlternatifler.label}
             </a>
             <p className="mt-4 eyebrow justify-center">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
               {content.eyebrow}
             </p>
             <h1 className="font-display text-4xl font-extrabold tracking-tight text-brand md:text-5xl">

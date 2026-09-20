@@ -7,7 +7,6 @@ import ProductPreviewSection from "@/components/ProductPreviewSection";
 import ProductGallerySection from "@/components/ProductGallerySection";
 import AudienceSection from "@/components/AudienceSection";
 import PricingSection from "@/components/PricingSection";
-import ServicesSection from "@/components/ServicesSection";
 import TrustSection from "@/components/TrustSection";
 import DemoForm from "@/components/DemoForm";
 import FAQ from "@/components/FAQ";
@@ -35,7 +34,6 @@ export default function HomePage() {
         <ProductGallerySection />
         <AudienceSection />
         <PricingSection />
-        <ServicesSection />
         <TrustSection />
         <DemoForm />
         <FAQ />

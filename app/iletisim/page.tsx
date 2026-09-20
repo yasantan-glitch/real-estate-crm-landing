@@ -41,7 +41,6 @@ export default function ContactPage() {
           <div className="section !pb-10">
             <div className="mx-auto max-w-2xl text-center">
               <p className="eyebrow justify-center">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
                 {contact.eyebrow}
               </p>
               <h1 className="font-display text-4xl font-extrabold tracking-tight text-brand md:text-5xl">

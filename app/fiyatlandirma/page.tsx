@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import PricingSection from "@/components/PricingSection";
 import SectionHeading from "@/components/SectionHeading";
 import { siteConfig } from "@/config/site";
-import { pricingPage, pricing, services } from "@/content/landing";
+import { pricingPage, pricing } from "@/content/landing";
 import { buildFaqJsonLd } from "@/lib/jsonld";
 
 const canonicalUrl = `${siteConfig.siteUrl}/fiyatlandirma`;
@@ -39,7 +39,6 @@ export default function PricingPage() {
           <div className="section !pb-10">
             <div className="mx-auto max-w-2xl text-center">
               <p className="eyebrow justify-center">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
                 {pricingPage.eyebrow}
               </p>
               <h1 className="font-display text-4xl font-extrabold tracking-tight text-brand md:text-5xl">
@@ -156,20 +155,17 @@ export default function PricingPage() {
           </div>
         </section>
 
-        {/* --- Additional services --- */}
+        {/* --- Services CTA --- */}
         <section className="border-t border-line bg-surface">
-          <div className="section">
-            <SectionHeading eyebrow={services.eyebrow} title={services.title} intro={services.intro} center />
-            <div className="mt-14 grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(250px,1fr))]">
-              {services.items.map((item) => (
-                <div key={item.title} className="rounded-2xl border border-line bg-white p-[22px]">
-                  <h3 className="text-[15px] font-bold text-brand">{item.title}</h3>
-                  <p className="mt-1.5 text-[13.5px] leading-relaxed text-slate-600">{item.text}</p>
-                  <p className="mt-3 inline-block rounded-full bg-accent-tint px-3 py-1 text-xs font-bold text-accent">
-                    {pricingPage.services.quoteNote}
-                  </p>
-                </div>
-              ))}
+          <div className="section text-center">
+            <h2 className="h2">{pricingPage.servicesCta.title}</h2>
+            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-slate-600">
+              {pricingPage.servicesCta.text}
+            </p>
+            <div className="mt-8">
+              <a href={pricingPage.servicesCta.href} className="btn-secondary">
+                {pricingPage.servicesCta.label}
+              </a>
             </div>
           </div>
         </section>

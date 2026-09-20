@@ -593,8 +593,11 @@ export const pricingPage = {
       },
     ],
   },
-  services: {
-    quoteNote: "Talep üzerine teklif",
+  servicesCta: {
+    title: "Ek profesyonel hizmetlerimize göz atın.",
+    text: "CRM kurulumu, reklam yönetimi, SEO ve kurumsal kimlik tasarımı gibi opsiyonel hizmetlerin tamamını Özellikler sayfasında bulabilirsiniz.",
+    label: "Ek Hizmetleri İncele",
+    href: "/ozellikler#hizmetler",
   },
   cta: {
     title: "Ofisiniz için doğru paketi birlikte belirleyelim.",
@@ -606,9 +609,10 @@ export const pricingPage = {
 
 export const services = {
   eyebrow: "Ek profesyonel hizmetler",
-  title: "CRM'in yanında, pazarlama tarafını da kuralım.",
+  title: "CRM yazılımının dışında ihtiyaç duyabilecekleriniz",
   intro:
     "Bu hizmetler abonelikten bağımsız, ihtiyaç halinde alınan opsiyonel hizmetlerdir. CRM'e geçen ofislerin en sık ihtiyaç duyduğu başlıklar:",
+  quoteNote: "Talep üzerine teklif",
   items: [
     { title: "CRM kurulum danışmanlığı", text: "Ofis akışınıza göre kurulum ve yapılandırma." },
     { title: "Veri aktarım desteği", text: "Excel ve eski sistemlerdeki kayıtların CRM'e taşınması." },
