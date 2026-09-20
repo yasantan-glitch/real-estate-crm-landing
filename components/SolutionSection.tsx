@@ -6,7 +6,7 @@ export default function SolutionSection() {
   return (
     <section className="bg-brand">
       <div className="section">
-        <SectionHeading eyebrow={solution.eyebrow} title={solution.title} intro={solution.intro} dark center />
+        <SectionHeading title={solution.title} intro={solution.intro} dark center />
         <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-[20px] border border-zinc-800 bg-zinc-800 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]">
           {solution.items.map((item) => (
             <div key={item.title} className="bg-zinc-900 p-7">

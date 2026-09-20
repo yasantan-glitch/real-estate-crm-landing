@@ -9,7 +9,7 @@ export default function ServicesSection() {
   return (
     <section id="hizmetler" className="scroll-mt-24 bg-white">
       <div className="section">
-        <SectionHeading eyebrow={services.eyebrow} title={services.title} intro={services.intro} center />
+        <SectionHeading title={services.title} intro={services.intro} center />
         <div className="mt-14 grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(250px,1fr))]">
           {services.items.map((item) => (
             <div key={item.title} className="rounded-2xl border border-line bg-surface p-[22px]">

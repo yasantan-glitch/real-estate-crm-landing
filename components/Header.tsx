@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { siteConfig } from "@/config/site";
 import { nav } from "@/content/landing";
 
@@ -39,6 +40,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [isOverDark, setIsOverDark] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     let ticking = false;
@@ -89,27 +91,33 @@ export default function Header() {
         </a>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Ana menü">
-          {nav.links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-[14.5px] font-semibold text-slate-700 transition-colors hover:text-accent"
-            >
-              {link.label}
-            </a>
-          ))}
+          {nav.links.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                aria-current={isActive ? "page" : undefined}
+                className={`text-[14.5px] font-semibold transition-colors hover:text-accent ${
+                  isActive ? "text-accent" : "text-slate-700"
+                }`}
+              >
+                {link.label}
+              </a>
+            );
+          })}
         </nav>
 
         <a
           href="/demo-talep"
-          className="btn-primary hidden !px-4 !py-2 !text-[13px] text-center md:!px-6 md:!py-[11px] md:!text-[14.5px] md:inline-flex"
+          className="btn-primary hidden !px-4 !py-2 !text-[13px] text-center md:!px-6 md:!py-3 md:!text-[14.5px] md:inline-flex"
         >
           {nav.cta}
         </a>
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-brand md:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-md text-brand md:hidden"
           aria-expanded={open}
           aria-label={open ? "Menüyü kapat" : "Menüyü aç"}
           onClick={() => setOpen(!open)}
@@ -127,17 +135,23 @@ export default function Header() {
       {open && (
         <nav className="border-t border-line bg-white px-5 py-4 md:hidden" aria-label="Mobil menü">
           <ul className="flex flex-col gap-1">
-            {nav.links.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="block rounded-md px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-surface"
-                  onClick={() => setOpen(false)}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {nav.links.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    aria-current={isActive ? "page" : undefined}
+                    className={`block rounded-md px-3 py-2.5 text-sm font-semibold hover:bg-surface ${
+                      isActive ? "text-accent" : "text-slate-700"
+                    }`}
+                    onClick={() => setOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              );
+            })}
             <li className="pt-2">
               <a href="/demo-talep" className="btn-primary w-full" onClick={() => setOpen(false)}>
                 {nav.cta}

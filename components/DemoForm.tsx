@@ -84,7 +84,7 @@ export default function DemoForm() {
 
   const inputClass = (name: FieldName) =>
     `w-full rounded-[10px] border-[1.5px] bg-white px-4 py-3 text-sm text-brand placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-accent ${
-      errors[name] ? "border-red-400" : "border-line"
+      errors[name] ? "border-red-500" : "border-line"
     }`;
 
   const errorAria = (name: FieldName) =>
@@ -94,7 +94,7 @@ export default function DemoForm() {
 
   const FieldError = ({ name }: { name: FieldName }) =>
     errors[name] ? (
-      <p id={`${name}-error`} className="mt-1 text-xs text-red-400" role="alert">
+      <p id={`${name}-error`} className="mt-1 text-xs text-red-600" role="alert">
         {errors[name]}
       </p>
     ) : null;
@@ -126,7 +126,7 @@ export default function DemoForm() {
           </div>
         </div>
 
-        <div className="rounded-[24px] bg-white p-8 shadow-[0_30px_70px_-24px_rgba(0,0,0,0.5)]">
+        <div className="rounded-[24px] bg-white p-8 shadow-elevated-dark">
           {status === "success" ? (
             <div className="flex h-full flex-col items-center justify-center py-10 text-center" role="status">
               <span className="mb-4 text-2xl text-accent" aria-hidden="true">
@@ -213,7 +213,7 @@ export default function DemoForm() {
               </div>
 
               {status === "error" && (
-                <p className="mt-4 border border-red-400/40 bg-red-50 px-4 py-3 text-sm text-red-600" role="alert">
+                <p className="mt-4 border border-red-500/40 bg-red-50 px-4 py-3 text-sm text-red-600" role="alert">
                   {demoForm.error}
                 </p>
               )}

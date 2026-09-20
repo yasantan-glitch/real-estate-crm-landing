@@ -14,8 +14,8 @@ export default function PricingSection({ ctaHref = "#demo" }: { ctaHref?: string
                 key={tier.name}
                 className={`relative rounded-[24px] border p-8 ${
                   featured
-                    ? "scale-[1.04] border-accent bg-accent shadow-[0_30px_60px_-20px_rgba(232,96,60,0.5)]"
-                    : "border-zinc-800 bg-brand-soft shadow-[0_1px_2px_rgba(0,0,0,0.2)]"
+                    ? "scale-[1.04] border-accent bg-gradient-to-br from-accent to-accent-hover shadow-accent-glow-lg"
+                    : "border-t-2 border-t-accent/30 border-x-zinc-800 border-b-zinc-800 bg-brand-soft shadow-flat-dark"
                 }`}
               >
                 {tier.badge && (

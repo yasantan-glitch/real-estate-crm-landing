@@ -45,7 +45,7 @@ export default function ProductPreviewSection() {
                   src={src}
                   alt=""
                   fill
-                  sizes="260px"
+                  sizes="(max-width: 640px) 120px, (max-width: 1024px) 220px, 300px"
                   className="object-cover opacity-20 blur-sm grayscale"
                 />
               </div>

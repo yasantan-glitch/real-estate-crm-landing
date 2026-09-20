@@ -10,7 +10,7 @@ export default function FAQ() {
   return (
     <section id="sss" className="scroll-mt-24 bg-white">
       <div className="mx-auto w-full max-w-[840px] px-5 py-16 sm:px-8 md:py-24">
-        <SectionHeading eyebrow={faq.eyebrow} title={faq.title} center />
+        <SectionHeading title={faq.title} center />
         <div className="mt-12">
           {faq.items.map((item, i) => {
             const isOpen = openIndex === i;

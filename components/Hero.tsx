@@ -19,7 +19,7 @@ export default function Hero() {
               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
               {hero.eyebrow}
             </p>
-            <h1 className="font-display text-5xl font-extrabold leading-[0.98] tracking-tight text-brand sm:text-6xl md:text-[72px]">
+            <h1 className="font-display text-4xl font-extrabold leading-[0.98] tracking-tight text-brand sm:text-5xl md:text-6xl lg:text-7xl">
               {headlineAfter === undefined ? (
                 hero.headline
               ) : (
@@ -41,7 +41,6 @@ export default function Hero() {
                 {hero.ctaSecondary}
               </a>
             </div>
-            <p className="mt-6 max-w-md text-[13.5px] text-slate-500">{hero.trustNote}</p>
           </div>
 
           <div>

@@ -8,7 +8,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-zinc-800 bg-brand">
-      <div className="section grid gap-10 !py-14 md:grid-cols-4">
+      <div className="section grid gap-10 !py-14 sm:grid-cols-2 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center">
             <Image

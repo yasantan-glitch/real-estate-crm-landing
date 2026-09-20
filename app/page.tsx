@@ -26,7 +26,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
         <ReferencesSection />
         <ProblemSection />

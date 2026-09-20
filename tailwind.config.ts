@@ -33,6 +33,10 @@ const config: Config = {
       boxShadow: {
         card: "0 1px 2px rgb(15 23 42 / 0.06), 0 8px 24px -8px rgb(15 23 42 / 0.12)",
         pop: "0 1px 2px rgb(15 23 42 / 0.05), 0 30px 60px -20px rgb(15 23 42 / 0.2)",
+        "accent-glow": "0 10px 24px -8px rgba(232,96,60,0.55)",
+        "accent-glow-lg": "0 30px 60px -20px rgba(232,96,60,0.5)",
+        "flat-dark": "0 1px 2px rgba(0,0,0,0.2)",
+        "elevated-dark": "0 30px 70px -24px rgba(0,0,0,0.5)",
       },
     },
   },
