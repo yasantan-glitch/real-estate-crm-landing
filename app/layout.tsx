@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     google: "nL1YlfEBKv61qq2YPr53hHbtx4Q1CunLVhnsPO3RSLo",
   },
   alternates: {
-    canonical: "/", // canonical resolves against metadataBase (final domain later)
+    canonical: "/", // resolves against metadataBase → https://www.emlakcrmpro.com/
   },
   openGraph: {
     title: siteConfig.seo.ogTitle,
