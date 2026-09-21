@@ -13,3 +13,4 @@ scripts/claude-free.sh
 scripts/claude-paid.sh
 
 .DS_Store
+.claude/settings.local.json
