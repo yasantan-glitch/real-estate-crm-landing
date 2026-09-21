@@ -43,7 +43,7 @@ export const siteConfig = {
   seo: {
     title: "Emlak CRM | Portföy, Müşteri ve Danışman Yönetim Yazılımı",
     description:
-      "Emlak CRM ile portföyünüzü, müşterilerinizi, taleplerinizi ve danışman performansını tek panelden yönetin. Satış pipeline ve komisyon takibi dahil. Demo talep edin.",
+      "Emlak CRM programı ile portföy, müşteri, talep ve danışman performansını tek panelden yönetin. Satış pipeline, komisyon takibi dahil — ücretsiz demo talep edin.",
     ogTitle: "Gayrimenkul Ofisiniz İçin Akıllı CRM Sistemi",
     ogDescription:
       "Portföy, müşteri, talep, danışman ve satış süreçlerinizi tek CRM panelinden yönetin. Excel ve WhatsApp karmaşasına son verin.",

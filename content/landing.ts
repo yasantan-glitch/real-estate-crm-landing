@@ -369,7 +369,7 @@ export const featuresPage = {
   seo: {
     title: "Emlak CRM Pro Özellikleri — Saha Testli Çözümler",
     description:
-      "Portföy yönetimi, müşteri takibi, satış pipeline, danışman performansı raporları ve komisyon takibi. Gayrimenkul ofisinin tüm operasyonu tek panelde.",
+      "Emlak CRM sistemi ile portföy yönetimi, müşteri takibi, satış pipeline, danışman performansı raporları ve komisyon takibi. Gayrimenkul ofisinin tüm operasyonu tek panelde.",
   },
   eyebrow: "Özellikler",
   title: "Emlak CRM'in Özellikleri: Ofisinizin Her Operasyonu Tek Panelde",
@@ -533,7 +533,7 @@ export const pricingPage = {
   seo: {
     title: "Fiyatlandırma — Emlak CRM Pro Paketleri",
     description:
-      "Emlak CRM Pro paket fiyatlarını karşılaştırın: Başlangıç, Profesyonel ve Kurumsal. Ofis büyüklüğünüze uygun paketi seçin, demo talep edin.",
+      "Emlak CRM programı paket fiyatlarını karşılaştırın: Başlangıç, Profesyonel ve Kurumsal. Ofis büyüklüğünüze uygun paketi seçin, ücretsiz demo talep edin.",
   },
   eyebrow: "Fiyatlandırma",
   title: "Şeffaf fiyatlandırma — ofisinizin ölçeğine göre",
@@ -642,7 +642,7 @@ export const trust = {
     },
     {
       title: "Demo ve pilot kullanıma hazır",
-      text: "Altyapı, pilot kullanım ve canlı demo sunumları için hazırdır. Görmeden karar vermeyin: demo talep edin.",
+      text: "Altyapı, pilot kullanım ve canlı demo sunumları için hazırdır. Görmeden karar vermeyin: ücretsiz ve taahhütsüz demo talep edin.",
     },
   ],
 };
@@ -708,7 +708,7 @@ export const faq = {
     },
     {
       q: "Demo talep ettikten sonra süreç nasıl ilerler?",
-      a: "Formu doldurduktan sonra sizinle iletişime geçilir, ofisinizin ihtiyacı dinlenir ve canlı bir demo planlanır. Ardından pilot kullanım ve paket teklifi ile devam edilir.",
+      a: "Demo tamamen ücretsizdir ve taahhüt gerektirmez. Formu doldurduktan sonra sizinle iletişime geçilir, ofisinizin ihtiyacı dinlenir ve canlı bir demo planlanır. Ardından pilot kullanım ve paket teklifi ile devam edilir.",
     },
   ],
 };
