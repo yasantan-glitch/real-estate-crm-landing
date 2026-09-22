@@ -19,7 +19,7 @@ Kentsel dönüşüm kapsamındaki bir mülkün satışında, alıcıya sürecin 
 
 ## Tapu harcı ve muafiyetler
 
-Kentsel dönüşüm kapsamında yapılan devirlerde bazı tapu harcı muafiyetleri uygulanabilir; bu, hak sahibinin durumuna ve devrin türüne göre değişir. Kesin oran ve muafiyet durumu için güncel mevzuat ve ilgili tapu müdürlüğü teyidi esastır.
+Kentsel dönüşüm kapsamında yapılan devirlerde bazı tapu harcı muafiyetleri uygulanabilir; bu, hak sahibinin durumuna ve devrin türüne göre değişir. Kesin oran ve muafiyet durumu için güncel mevzuat ve ilgili tapu müdürlüğü teyidi esastır. Muafiyet uygulanmayan durumlarda ödenecek tahmini tutarı [tapu harcı hesaplama aracıyla](/araclar/tapu-harci-hesaplama) hesaplayabilirsiniz.
 
 ## Emlak ofisi için pratik öneri
 

@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CommissionCalculator from "@/components/CommissionCalculator";
 import RentalYieldCalculator from "@/components/RentalYieldCalculator";
+import TapuHarciCalculator from "@/components/TapuHarciCalculator";
 import { siteConfig } from "@/config/site";
 import { toolsIndexPage } from "@/content/landing";
 
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   },
 };
 
-const [commissionTool, rentalYieldTool] = toolsIndexPage.tools;
+const [commissionTool, rentalYieldTool, tapuHarciTool] = toolsIndexPage.tools;
 
 export default function ToolsIndexPage() {
   return (
@@ -80,6 +81,26 @@ export default function ToolsIndexPage() {
               <p className="mt-5 text-center text-[14.5px] leading-relaxed text-slate-500">
                 <a href={rentalYieldTool.detailHref} className="font-semibold text-accent underline">
                   {rentalYieldTool.detailLabel}
+                </a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* --- Tapu harcı hesaplama --- */}
+        <section className="border-t border-line bg-surface">
+          <div className="section">
+            <div className="mx-auto max-w-2xl">
+              <h2 className="h2 text-center">{tapuHarciTool.title}</h2>
+              <p className="mx-auto mt-3 max-w-xl text-center text-[14.5px] leading-relaxed text-slate-600">
+                {tapuHarciTool.description}
+              </p>
+              <div className="mt-8">
+                <TapuHarciCalculator />
+              </div>
+              <p className="mt-5 text-center text-[14.5px] leading-relaxed text-slate-500">
+                <a href={tapuHarciTool.detailHref} className="font-semibold text-accent underline">
+                  {tapuHarciTool.detailLabel}
                 </a>
               </p>
             </div>

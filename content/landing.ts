@@ -912,12 +912,20 @@ export const commissionCalculatorPage = {
     label: "Demo Talep Et",
     href: "/demo-talep",
   },
-  relatedTool: {
-    text: "Komisyon tutarını hesaplamak için",
-    linkLabel: "Kira Getirisi Hesaplama aracına",
-    href: "/araclar/kira-getirisi-hesaplama",
-    suffix: "da göz atabilirsiniz.",
-  },
+  relatedTools: [
+    {
+      text: "Komisyon tutarını hesaplamak için",
+      linkLabel: "Kira Getirisi Hesaplama aracına",
+      href: "/araclar/kira-getirisi-hesaplama",
+      suffix: "da göz atabilirsiniz.",
+    },
+    {
+      text: "Satış işleminizin tapu harcını hesaplamak için",
+      linkLabel: "Tapu Harcı Hesaplama aracına",
+      href: "/araclar/tapu-harci-hesaplama",
+      suffix: "da göz atabilirsiniz.",
+    },
+  ],
 };
 
 export const rentalYieldCalculatorPage = {
@@ -973,12 +981,121 @@ export const rentalYieldCalculatorPage = {
     label: "Demo Talep Et",
     href: "/demo-talep",
   },
-  relatedTool: {
-    text: "İşlem tutarı üzerinden komisyon hesaplamak için",
-    linkLabel: "Komisyon Hesaplama aracına",
-    href: "/araclar/komisyon-hesaplama",
-    suffix: "da göz atabilirsiniz.",
+  relatedTools: [
+    {
+      text: "İşlem tutarı üzerinden komisyon hesaplamak için",
+      linkLabel: "Komisyon Hesaplama aracına",
+      href: "/araclar/komisyon-hesaplama",
+      suffix: "da göz atabilirsiniz.",
+    },
+    {
+      text: "Bu gayrimenkulü satın alırsanız ödeyeceğiniz tapu harcını hesaplamak için",
+      linkLabel: "Tapu Harcı Hesaplama aracına",
+      href: "/araclar/tapu-harci-hesaplama",
+      suffix: "da göz atabilirsiniz.",
+    },
+  ],
+};
+
+export const tapuHarciCalculatorPage = {
+  seo: {
+    title: "Tapu Harcı Hesaplama 2026 — Alıcı/Satıcı Payı ve Döner Sermaye",
+    description:
+      "2026 tarifesine göre tapu harcı tutarını, alıcı-satıcı paylaşımını ve döner sermaye ücretini saniyeler içinde hesaplayın.",
   },
+  eyebrow: "Ücretsiz araç",
+  title: "Tapu Harcı Hesaplama (2026)",
+  intro:
+    "Satış bedelini, işlem türünü ve harç paylaşım şeklini girin; toplam tapu harcını, alıcı/satıcı payını ve döner sermaye tutarını dahil toplam maliyeti anında görün.",
+  tariffInfo: {
+    year: 2026,
+    label: "2026 tarifesi",
+    lastUpdated: "Ocak 2026",
+  },
+  calculator: {
+    priceLabel: "Satış bedeli",
+    pricePlaceholder: "Örn. 3.500.000",
+    harcRateLabel: "Tapu harcı oranı",
+    harcRatePercent: 4,
+    transactionTypeLabel: "İşlem türü",
+    transactionTypes: [
+      { id: "standard", label: "Standart satış", doner: 6681 },
+      { id: "mortgage", label: "Kredili / ipotekli satış", doner: 13362 },
+      { id: "outOfJurisdiction", label: "Tapu müdürlüğü yetki alanı dışı işlem", doner: 13362 },
+      { id: "foreignBuyer", label: "Yabancı uyruklu alıcı", doner: 20870 },
+    ],
+    defaultTransactionType: "standard",
+    donerSermayeLabel: "Döner sermaye ücreti",
+    donerSermayeNote:
+      "Bu tutar ilçeye göre değişebilir; alan otomatik dolduruldu, gerekirse düzenleyebilirsiniz.",
+    payerSplitLabel: "Harcı kim ödeyecek?",
+    payerSplitOptions: [
+      { id: "half", label: "Yarı yarıya (alıcı %2 / satıcı %2)" },
+      { id: "buyer", label: "Tamamı alıcı" },
+      { id: "seller", label: "Tamamı satıcı" },
+    ],
+    defaultPayerSplit: "half",
+    resultTitle: "Hesaplama sonucu",
+    resultLabels: {
+      totalHarc: "Toplam tapu harcı (%4)",
+      buyerShare: "Alıcının payı",
+      sellerShare: "Satıcının payı",
+      donerSermaye: "Döner sermaye ücreti",
+      grandTotal: "Toplam maliyet (harç + döner sermaye)",
+    },
+    disclaimer:
+      "2026 tarifesine göre hesaplanmıştır. Döner sermaye ilçeye göre değişir; kesin tutar tapu müdürlüğünde hesaplanır. Bu araç bilgilendirme amaçlıdır.",
+  },
+  explanation: {
+    title: "Tapu harcı nasıl hesaplanır?",
+    text: "Tapu harcı, satış bedelinin %4'ü olarak hesaplanır ve mevzuata göre %2 alıcı, %2 satıcı tarafından ödenir; taraflar bu paylaşımı kendi aralarında farklı da belirleyebilir. Harcın hesaplanacağı taban, beyan edilen satış bedeli ile emlak vergisi değerinden hangisi yüksekse odur. Bunun yanında, işlem türüne göre değişen sabit bir döner sermaye ücreti de ödenir. Kesin tutar için tapu müdürlüğü ile teyitleşmeniz önerilir.",
+  },
+  faq: {
+    eyebrow: "Sık sorulanlar",
+    title: "Tapu harcı hesaplama hakkında sık sorulan sorular",
+    items: [
+      {
+        q: "Tapu harcı nedir?",
+        a: "Tapu harcı, bir gayrimenkulün alım-satım işlemi sırasında tapu devri için ödenen, satış bedeli üzerinden hesaplanan yasal bir bedeldir. Tapu müdürlüğünde işlem tamamlanmadan önce ödenmesi gerekir.",
+      },
+      {
+        q: "Tapu harcı oranı ve alıcı-satıcı paylaşımı nasıldır?",
+        a: "Güncel tarifeye göre tapu harcı, satış bedelinin %4'ü olarak hesaplanır ve mevzuata göre %2 alıcı, %2 satıcı tarafından ödenir. Uygulamada taraflar bu paylaşımı kendi aralarında farklı şekilde belirleyebilir; bu nedenle araçta paylaşım seçeneği sunulmuştur.",
+      },
+      {
+        q: "Tapu harcı, satış bedeli düşük gösterilerek azaltılabilir mi?",
+        a: "Hayır. Tapu harcının hesaplanacağı taban, beyan edilen satış bedeli ile gayrimenkulün belediyede kayıtlı emlak vergisi değerinden hangisi yüksekse odur; yani harç, emlak vergi değerinin altında bir tutar üzerinden hesaplanamaz. Bu bilgi genel bilgilendirme amaçlıdır, güncel uygulama için tapu müdürlüğü teyidi önerilir.",
+      },
+      {
+        q: "Döner sermaye ücreti neden ilçeye göre değişiyor?",
+        a: "Döner sermaye ücreti, merkezi bir gösterge tutarının bulunduğunuz ilçenin yöresel katsayısıyla çarpılmasıyla belirlenir; büyükşehirlerde bu katsayı farklı olabileceğinden tutar ilçeden ilçeye değişebilir. Bu araçtaki alan işlem türüne göre bir varsayılan değerle doldurulur ancak gerekirse elle düzeltebilirsiniz.",
+      },
+      {
+        q: "Bu araçtaki sonuç kesin ve bağlayıcı mıdır?",
+        a: "Hayır. Bu araç yalnızca bilgilendirme amaçlıdır; kesin tapu harcı ve döner sermaye tutarı, işlemin yapılacağı tapu müdürlüğünde belirlenir. Güncel tarife ve muafiyet durumları için tapu müdürlüğü veya bir uzmanla teyitleşmeniz önerilir.",
+      },
+    ],
+  },
+  cta: {
+    title: "Ofisiniz için satış sürecini ve komisyon takibini tek sistemde toplayın",
+    text: "Emlak CRM Pro ile satış pipeline'ınızı, komisyon ve tahsilat kayıtlarınızı ve ofis performansınızı tek panelden yönetin.",
+    label: "Demo Talep Et",
+    href: "/demo-talep",
+  },
+  relatedTools: [
+    {
+      text: "İşlem tutarınız üzerinden komisyon hesaplamak için",
+      linkLabel: "Emlak Komisyonu Hesaplama aracına",
+      href: "/araclar/komisyon-hesaplama",
+      suffix: "da göz atabilirsiniz.",
+    },
+    {
+      text: "Yatırım amaçlı aldığınız gayrimenkulün getirisini hesaplamak için",
+      linkLabel: "Kira Getirisi Hesaplama aracına",
+      href: "/araclar/kira-getirisi-hesaplama",
+      suffix: "da göz atabilirsiniz.",
+    },
+  ],
 };
 
 export const toolsPageBackLink = {
@@ -988,9 +1105,9 @@ export const toolsPageBackLink = {
 
 export const toolsIndexPage = {
   seo: {
-    title: "Ücretsiz Emlak Araçları — Komisyon ve Kira Getirisi Hesaplama",
+    title: "Ücretsiz Emlak Araçları — Komisyon, Kira Getirisi ve Tapu Harcı Hesaplama",
     description:
-      "Emlak ofisleri için hazırlanan ücretsiz hesaplama araçlarına buradan ulaşın: komisyon hesaplama ve kira getirisi hesaplama.",
+      "Emlak ofisleri için hazırlanan ücretsiz hesaplama araçlarına buradan ulaşın: komisyon hesaplama, kira getirisi hesaplama ve tapu harcı hesaplama.",
   },
   eyebrow: "Ücretsiz araçlar",
   title: "Emlak Ofisleri İçin Ücretsiz Araçlar",
@@ -1009,6 +1126,13 @@ export const toolsIndexPage = {
       description:
         "Alış fiyatı ve aylık kira geliri üzerinden brüt kira getirisi oranını ve amortisman süresini hesaplayın.",
       detailHref: "/araclar/kira-getirisi-hesaplama",
+      detailLabel: "Detaylı bilgi ve sık sorulan sorular →",
+    },
+    {
+      title: "Tapu Harcı Hesaplama",
+      description:
+        "Satış bedeli üzerinden tapu harcını, alıcı-satıcı payını ve döner sermaye ücretini hesaplayın.",
+      detailHref: "/araclar/tapu-harci-hesaplama",
       detailLabel: "Detaylı bilgi ve sık sorulan sorular →",
     },
   ],

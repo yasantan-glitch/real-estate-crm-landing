@@ -69,13 +69,18 @@ export default function CommissionCalculatorPage() {
             <p className="mt-5 text-[15px] leading-relaxed text-slate-600">
               {commissionCalculatorPage.explanation.text}
             </p>
-            <p className="mt-5 text-center text-[14.5px] leading-relaxed text-slate-500">
-              {commissionCalculatorPage.relatedTool.text}{" "}
-              <a href={commissionCalculatorPage.relatedTool.href} className="font-semibold text-accent underline">
-                {commissionCalculatorPage.relatedTool.linkLabel}
-              </a>
-              {commissionCalculatorPage.relatedTool.suffix}
-            </p>
+            {commissionCalculatorPage.relatedTools.map((relatedTool) => (
+              <p
+                key={relatedTool.href}
+                className="mt-5 text-center text-[14.5px] leading-relaxed text-slate-500"
+              >
+                {relatedTool.text}{" "}
+                <a href={relatedTool.href} className="font-semibold text-accent underline">
+                  {relatedTool.linkLabel}
+                </a>
+                {relatedTool.suffix}
+              </p>
+            ))}
           </div>
         </section>
 
