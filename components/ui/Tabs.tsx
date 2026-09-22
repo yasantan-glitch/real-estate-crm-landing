@@ -15,7 +15,10 @@ export default function Tabs({
   onChange: (id: string) => void;
 }) {
   return (
-    <div role="tablist" className="flex flex-wrap justify-center gap-2">
+    <div
+      role="tablist"
+      className="flex flex-nowrap justify-center gap-2 overflow-x-auto"
+    >
       {items.map((item) => (
         <button
           key={item.id}
@@ -23,7 +26,7 @@ export default function Tabs({
           role="tab"
           aria-selected={activeId === item.id}
           onClick={() => onChange(item.id)}
-          className={`rounded-full px-4 py-2.5 text-sm font-bold transition-colors ${
+          className={`shrink-0 whitespace-nowrap rounded-full px-3 py-2 text-xs font-bold transition-colors sm:px-4 sm:py-2.5 sm:text-sm ${
             activeId === item.id
               ? "bg-accent text-white"
               : "border-[1.5px] border-line bg-white text-brand hover:border-brand"
