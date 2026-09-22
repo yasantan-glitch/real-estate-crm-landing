@@ -2,27 +2,11 @@
 
 import { useMemo, useState } from "react";
 import { commissionCalculatorPage } from "@/content/landing";
+import { formatCurrency, digitsOnly, formatThousands } from "@/lib/format";
 
 type TransactionType = "sale" | "rental";
 
 const { calculator } = commissionCalculatorPage;
-
-function formatCurrency(value: number): string {
-  return value.toLocaleString("tr-TR", {
-    style: "currency",
-    currency: "TRY",
-    maximumFractionDigits: 2,
-  });
-}
-
-function digitsOnly(value: string): string {
-  return value.replace(/[^\d]/g, "");
-}
-
-function formatThousands(value: string): string {
-  if (!value) return "";
-  return Number(value).toLocaleString("tr-TR");
-}
 
 export default function CommissionCalculator() {
   const [transactionType, setTransactionType] = useState<TransactionType>("sale");

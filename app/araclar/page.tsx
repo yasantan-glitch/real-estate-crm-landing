@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import CommissionCalculator from "@/components/CommissionCalculator";
-import RentalYieldCalculator from "@/components/RentalYieldCalculator";
-import TapuHarciCalculator from "@/components/TapuHarciCalculator";
+import ToolsTabsSection from "@/components/ToolsTabsSection";
 import { siteConfig } from "@/config/site";
 import { toolsIndexPage } from "@/content/landing";
 
@@ -47,65 +45,11 @@ export default function ToolsIndexPage() {
           </div>
         </section>
 
-        {/* --- Komisyon hesaplama --- */}
-        <section className="border-t border-line bg-surface">
-          <div className="section">
-            <div className="mx-auto max-w-2xl">
-              <h2 className="h2 text-center">{commissionTool.title}</h2>
-              <p className="mx-auto mt-3 max-w-xl text-center text-[14.5px] leading-relaxed text-slate-600">
-                {commissionTool.description}
-              </p>
-              <div className="mt-8">
-                <CommissionCalculator />
-              </div>
-              <p className="mt-5 text-center text-[14.5px] leading-relaxed text-slate-500">
-                <a href={commissionTool.detailHref} className="font-semibold text-accent underline">
-                  {commissionTool.detailLabel}
-                </a>
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* --- Kira getirisi hesaplama --- */}
-        <section className="border-t border-line bg-white">
-          <div className="section">
-            <div className="mx-auto max-w-2xl">
-              <h2 className="h2 text-center">{rentalYieldTool.title}</h2>
-              <p className="mx-auto mt-3 max-w-xl text-center text-[14.5px] leading-relaxed text-slate-600">
-                {rentalYieldTool.description}
-              </p>
-              <div className="mt-8">
-                <RentalYieldCalculator />
-              </div>
-              <p className="mt-5 text-center text-[14.5px] leading-relaxed text-slate-500">
-                <a href={rentalYieldTool.detailHref} className="font-semibold text-accent underline">
-                  {rentalYieldTool.detailLabel}
-                </a>
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* --- Tapu harcı hesaplama --- */}
-        <section className="border-t border-line bg-surface">
-          <div className="section">
-            <div className="mx-auto max-w-2xl">
-              <h2 className="h2 text-center">{tapuHarciTool.title}</h2>
-              <p className="mx-auto mt-3 max-w-xl text-center text-[14.5px] leading-relaxed text-slate-600">
-                {tapuHarciTool.description}
-              </p>
-              <div className="mt-8">
-                <TapuHarciCalculator />
-              </div>
-              <p className="mt-5 text-center text-[14.5px] leading-relaxed text-slate-500">
-                <a href={tapuHarciTool.detailHref} className="font-semibold text-accent underline">
-                  {tapuHarciTool.detailLabel}
-                </a>
-              </p>
-            </div>
-          </div>
-        </section>
+        <ToolsTabsSection
+          commissionTool={commissionTool}
+          rentalYieldTool={rentalYieldTool}
+          tapuHarciTool={tapuHarciTool}
+        />
       </main>
       <Footer />
     </>

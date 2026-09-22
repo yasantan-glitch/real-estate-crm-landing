@@ -2,17 +2,9 @@
 
 import { useMemo, useState } from "react";
 import { rentalYieldCalculatorPage } from "@/content/landing";
+import { digitsOnly, formatThousands } from "@/lib/format";
 
 const { calculator } = rentalYieldCalculatorPage;
-
-function digitsOnly(value: string): string {
-  return value.replace(/[^\d]/g, "");
-}
-
-function formatThousands(value: string): string {
-  if (!value) return "";
-  return Number(value).toLocaleString("tr-TR");
-}
 
 function formatPercent(value: number): string {
   return `%${value.toLocaleString("tr-TR", { maximumFractionDigits: 2 })}`;

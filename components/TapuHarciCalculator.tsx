@@ -2,27 +2,11 @@
 
 import { useMemo, useState } from "react";
 import { tapuHarciCalculatorPage } from "@/content/landing";
+import { formatCurrency, digitsOnly, formatThousands } from "@/lib/format";
 
 type PayerSplit = "half" | "buyer" | "seller";
 
 const { calculator } = tapuHarciCalculatorPage;
-
-function formatCurrency(value: number): string {
-  return value.toLocaleString("tr-TR", {
-    style: "currency",
-    currency: "TRY",
-    maximumFractionDigits: 2,
-  });
-}
-
-function digitsOnly(value: string): string {
-  return value.replace(/[^\d]/g, "");
-}
-
-function formatThousands(value: string): string {
-  if (!value) return "";
-  return Number(value).toLocaleString("tr-TR");
-}
 
 export default function TapuHarciCalculator() {
   const [rawPrice, setRawPrice] = useState("");

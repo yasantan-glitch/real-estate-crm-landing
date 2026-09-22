@@ -1122,7 +1122,7 @@ export const toolsIndexPage = {
       detailLabel: "Detaylı bilgi ve sık sorulan sorular →",
     },
     {
-      title: "Kira Getirisi Hesaplama",
+      title: "Kira Getirisi ve Geri Dönüş (Amortisman)",
       description:
         "Alış fiyatı ve aylık kira geliri üzerinden brüt kira getirisi oranını ve amortisman süresini hesaplayın.",
       detailHref: "/araclar/kira-getirisi-hesaplama",
