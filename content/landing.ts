@@ -23,6 +23,7 @@ export const nav = {
     { href: "/fiyatlandirma", label: "Paketler" },
     { href: "/kimler-icin", label: "Kimler İçin" },
     { href: "/araclar", label: "Araçlar" },
+    { href: "/basari-hikayesi", label: "Başarı Hikayesi" },
     { href: "/blog", label: "Blog" },
     { href: "/iletisim", label: "İletişim" },
   ],
