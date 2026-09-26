@@ -27,6 +27,18 @@ export const nav = {
     { href: "/blog", label: "Blog" },
     { href: "/iletisim", label: "İletişim" },
   ],
+  /**
+   * Desktop menu layout, by href from `links`. "Ana Sayfa" is omitted (the logo links home)
+   * and secondary pages are grouped under a dropdown so the row fits at 1024px.
+   */
+  desktop: [
+    "/ozellikler",
+    "/fiyatlandirma",
+    "/kimler-icin",
+    { label: "Kaynaklar", children: ["/araclar", "/basari-hikayesi", "/blog"] },
+    "/iletisim",
+  ] as (string | { label: string; children: string[] })[],
+  homeLabel: "Ana sayfa",
   cta: "Demo Talep Et",
 };
 

@@ -6,81 +6,116 @@ import { usePathname } from "next/navigation";
 import { siteConfig } from "@/config/site";
 import { nav } from "@/content/landing";
 
-/** Below this relative luminance (0=black, 1=white), the background counts as "dark". */
-const DARK_LUMINANCE_THRESHOLD = 0.5;
+type NavLink = (typeof nav.links)[number];
 
-function relativeLuminance(r: number, g: number, b: number) {
-  const [rs, gs, bs] = [r, g, b].map((c) => {
-    const v = c / 255;
-    return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
-  });
-  return 0.2126 * rs + 0.7152 * gs + 0.0722 * bs;
+function linkByHref(href: string): NavLink {
+  const link = nav.links.find((l) => l.href === href);
+  if (!link) throw new Error(`nav.desktop references unknown href: ${href}`);
+  return link;
 }
 
-function parseRgb(color: string): [number, number, number] | null {
-  const match = color.match(/rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)\s*(?:,\s*([\d.]+)\s*)?\)/);
-  if (!match) return null;
-  const alpha = match[4] === undefined ? 1 : Number(match[4]);
-  if (alpha === 0) return null;
-  return [Number(match[1]), Number(match[2]), Number(match[3])];
+function isActivePath(pathname: string, href: string) {
+  return pathname === href || pathname.startsWith(`${href}/`);
 }
 
-/** Finds the nearest ancestor (from `el` upward) with a non-transparent background-color. */
-function findBackgroundColor(el: Element | null): [number, number, number] | null {
-  let current: Element | null = el;
-  while (current) {
-    const rgb = parseRgb(getComputedStyle(current).backgroundColor);
-    if (rgb) return rgb;
-    current = current.parentElement;
-  }
-  return null;
+const desktopLinkClass = (active: boolean) =>
+  `whitespace-nowrap text-[14.5px] font-semibold transition-colors hover:text-accent ${
+    active ? "text-accent" : "text-slate-700"
+  }`;
+
+function NavDropdown({ label, links, pathname }: { label: string; links: NavLink[]; pathname: string }) {
+  const [open, setOpen] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const panelId = "nav-dropdown-panel";
+  const isActive = links.some((l) => isActivePath(pathname, l.href));
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onPointerDown = (e: PointerEvent) => {
+      if (!rootRef.current?.contains(e.target as Node)) setOpen(false);
+    };
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        buttonRef.current?.focus();
+      }
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
+
+  return (
+    <div ref={rootRef} className="relative">
+      <button
+        ref={buttonRef}
+        type="button"
+        aria-expanded={open}
+        aria-controls={panelId}
+        onClick={() => setOpen(!open)}
+        className={`inline-flex items-center gap-1 ${desktopLinkClass(isActive)}`}
+      >
+        {label}
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+          className={`transition-transform ${open ? "rotate-180" : ""}`}
+        >
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </button>
+
+      {open && (
+        <ul
+          id={panelId}
+          className="absolute left-1/2 top-full mt-3 min-w-[200px] -translate-x-1/2 rounded-lg border border-line bg-white p-1.5 shadow-card"
+        >
+          {links.map((link) => {
+            const active = isActivePath(pathname, link.href);
+            return (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  aria-current={active ? "page" : undefined}
+                  onClick={() => setOpen(false)}
+                  className={`block whitespace-nowrap rounded-md px-3 py-2 text-sm font-semibold hover:bg-surface ${
+                    active ? "text-accent" : "text-slate-700"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </div>
+  );
 }
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const [isOverDark, setIsOverDark] = useState(false);
-  const headerRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
 
-  useEffect(() => {
-    let ticking = false;
-
-    const measure = () => {
-      ticking = false;
-      const header = headerRef.current;
-      if (!header) return;
-
-      const rect = header.getBoundingClientRect();
-      const x = window.innerWidth / 2;
-      const y = rect.bottom + 4;
-      const target = document.elementFromPoint(x, y);
-      const rgb = findBackgroundColor(target);
-      if (!rgb) return;
-
-      const luminance = relativeLuminance(...rgb);
-      setIsOverDark(luminance < DARK_LUMINANCE_THRESHOLD);
-    };
-
-    const onScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(measure);
-    };
-
-    measure();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <header
-      ref={headerRef}
-      className={`sticky top-0 z-50 border-b border-line backdrop-blur-md ${
-        isOverDark ? "bg-white/30" : "bg-white/92"
-      }`}
-    >
+    <header className="sticky top-0 z-50 border-b border-line bg-white/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-4 sm:px-8">
-        <a href="#" className="flex shrink-0 items-center">
+        <a href="/" aria-label={nav.homeLabel} className="flex shrink-0 items-center">
           <Image
             src="/logos/EmlakCRM-Logo.svg"
             alt={siteConfig.productName}
@@ -90,17 +125,26 @@ export default function Header() {
           />
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Ana menü">
-          {nav.links.map((link) => {
-            const isActive = pathname === link.href;
+        <nav className="hidden items-center lg:flex lg:gap-6 xl:gap-8" aria-label="Ana menü">
+          {nav.desktop.map((item) => {
+            if (typeof item !== "string") {
+              return (
+                <NavDropdown
+                  key={item.label}
+                  label={item.label}
+                  links={item.children.map(linkByHref)}
+                  pathname={pathname}
+                />
+              );
+            }
+            const link = linkByHref(item);
+            const isActive = isActivePath(pathname, link.href);
             return (
               <a
                 key={link.href}
                 href={link.href}
                 aria-current={isActive ? "page" : undefined}
-                className={`text-[14.5px] font-semibold transition-colors hover:text-accent ${
-                  isActive ? "text-accent" : "text-slate-700"
-                }`}
+                className={desktopLinkClass(isActive)}
               >
                 {link.label}
               </a>
@@ -108,16 +152,13 @@ export default function Header() {
           })}
         </nav>
 
-        <a
-          href="/demo-talep"
-          className="btn-primary hidden !px-4 !py-2 !text-[13px] text-center md:!px-6 md:!py-3 md:!text-[14.5px] md:inline-flex"
-        >
+        <a href="/demo-talep" className="btn-primary hidden whitespace-nowrap !px-6 !py-3 !text-[14.5px] lg:inline-flex">
           {nav.cta}
         </a>
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-md text-brand md:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-md text-brand lg:hidden"
           aria-expanded={open}
           aria-label={open ? "Menüyü kapat" : "Menüyü aç"}
           onClick={() => setOpen(!open)}
@@ -133,7 +174,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav className="border-t border-line bg-white px-5 py-4 md:hidden" aria-label="Mobil menü">
+        <nav className="border-t border-line bg-white px-5 py-4 lg:hidden" aria-label="Mobil menü">
           <ul className="flex flex-col gap-1">
             {nav.links.map((link) => {
               const isActive = pathname === link.href;
