@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { siteConfig } from "@/config/site";
 import { demoForm } from "@/content/landing";
+import { reveal, stagger } from "@/lib/motion";
 
 type FieldName =
   | "fullName"
@@ -102,7 +103,7 @@ export default function DemoForm() {
   return (
     <section id="demo" className="scroll-mt-24 bg-brand">
       <div className="section grid gap-14 md:grid-cols-2">
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center" {...stagger("up")}>
           <p className="eyebrow eyebrow-on-dark items-start">
             <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-red-400" aria-hidden="true" />
             {demoForm.eyebrow}
@@ -126,7 +127,7 @@ export default function DemoForm() {
           </div>
         </div>
 
-        <div className="rounded-[24px] bg-white p-8 shadow-elevated-dark">
+        <div className="rounded-[24px] bg-white p-8 shadow-elevated-dark" {...reveal("settle")}>
           {status === "success" ? (
             <div className="flex h-full flex-col items-center justify-center py-10 text-center" role="status">
               <span className="mb-4 text-2xl text-accent" aria-hidden="true">

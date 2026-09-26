@@ -1,12 +1,13 @@
 import SectionHeading from "./SectionHeading";
 import { trust } from "@/content/landing";
+import { stagger } from "@/lib/motion";
 
 export default function TrustSection() {
   return (
     <section className="border-y border-line bg-surface">
       <div className="section">
         <SectionHeading eyebrow={trust.eyebrow} title={trust.title} center />
-        <div className="mt-12 grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]">
+        <div className="mt-12 grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]" {...stagger("up")}>
           {trust.items.map((item) => (
             <div key={item.title} className="rounded-[20px] border border-line bg-white p-[30px] shadow-card">
               <h3 className="text-[17px] font-extrabold text-brand">{item.title}</h3>

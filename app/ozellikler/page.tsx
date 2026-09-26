@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import ServicesSection from "@/components/ServicesSection";
 import { siteConfig } from "@/config/site";
 import { featuresPage } from "@/content/landing";
+import { reveal, stagger } from "@/lib/motion";
 
 const canonicalUrl = `${siteConfig.siteUrl}/ozellikler`;
 
@@ -44,7 +45,7 @@ export default function FeaturesPage() {
         {/* --- Feature sections --- */}
         <section className="border-y border-line bg-surface">
           <div className="section">
-            <div className="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(300px,1fr))]">
+            <div className="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(300px,1fr))]" {...stagger("settle")}>
               {featuresPage.sections.map((item) => (
                 <div key={item.title} className="rounded-2xl border border-line bg-white p-[22px]">
                   <h2 className="text-[15.5px] font-bold text-brand">{item.title}</h2>
@@ -60,9 +61,9 @@ export default function FeaturesPage() {
         {/* --- Closing CTA --- */}
         <section className="border-t border-line bg-brand">
           <div className="section text-center">
-            <h2 className="h2 !text-white">{featuresPage.cta.title}</h2>
-            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-zinc-400">{featuresPage.cta.text}</p>
-            <div className="mt-8">
+            <h2 className="h2 !text-white" {...reveal("mask")}>{featuresPage.cta.title}</h2>
+            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-zinc-400" {...reveal("up")}>{featuresPage.cta.text}</p>
+            <div className="mt-8" {...reveal("settle")}>
               <a href={featuresPage.cta.href} className="btn-primary">
                 {featuresPage.cta.label}
               </a>

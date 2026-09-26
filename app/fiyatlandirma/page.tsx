@@ -6,6 +6,7 @@ import SectionHeading from "@/components/SectionHeading";
 import { siteConfig } from "@/config/site";
 import { pricingPage, pricing } from "@/content/landing";
 import { buildFaqJsonLd } from "@/lib/jsonld";
+import { reveal, stagger } from "@/lib/motion";
 
 const canonicalUrl = `${siteConfig.siteUrl}/fiyatlandirma`;
 
@@ -57,7 +58,7 @@ export default function PricingPage() {
               title={pricingPage.guide.title}
               center
             />
-            <div className="mt-12 grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(250px,1fr))]">
+            <div className="mt-12 grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(250px,1fr))]" {...stagger("settle")}>
               {pricingPage.guide.items.map((item) => (
                 <div key={item.officeType} className="rounded-2xl border border-line bg-white p-6">
                   <p className="inline-block rounded-full bg-accent-tint px-3 py-1 text-xs font-bold text-accent">
@@ -82,7 +83,7 @@ export default function PricingPage() {
               title={pricingPage.comparison.title}
               center
             />
-            <div className="mt-12 overflow-x-auto">
+            <div className="mt-12 overflow-x-auto" {...reveal("up")}>
               <table className="w-full min-w-[640px] border-collapse text-left">
                 <thead>
                   <tr>
@@ -158,11 +159,11 @@ export default function PricingPage() {
         {/* --- Services CTA --- */}
         <section className="border-t border-line bg-surface">
           <div className="section text-center">
-            <h2 className="h2">{pricingPage.servicesCta.title}</h2>
-            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-slate-600">
+            <h2 className="h2" {...reveal("mask")}>{pricingPage.servicesCta.title}</h2>
+            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-slate-600" {...reveal("up")}>
               {pricingPage.servicesCta.text}
             </p>
-            <div className="mt-8">
+            <div className="mt-8" {...reveal("settle")}>
               <a href={pricingPage.servicesCta.href} className="btn-secondary">
                 {pricingPage.servicesCta.label}
               </a>
@@ -173,8 +174,8 @@ export default function PricingPage() {
         {/* --- Pricing FAQ --- */}
         <section className="bg-white">
           <div className="mx-auto w-full max-w-[720px] px-5 py-16 sm:px-8 md:py-20">
-            <h2 className="h2 text-center">{pricingPage.faq.title}</h2>
-            <div className="mt-10 divide-y divide-line">
+            <h2 className="h2 text-center" {...reveal("mask")}>{pricingPage.faq.title}</h2>
+            <div className="mt-10 divide-y divide-line" {...stagger("fade")}>
               {pricingPage.faq.items.map((item) => (
                 <details key={item.q} className="group py-5">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-[15.5px] font-bold text-brand marker:content-none">
@@ -196,9 +197,9 @@ export default function PricingPage() {
         {/* --- Closing CTA --- */}
         <section className="border-t border-line bg-brand">
           <div className="section text-center">
-            <h2 className="h2 !text-white">{pricingPage.cta.title}</h2>
-            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-zinc-400">{pricingPage.cta.text}</p>
-            <div className="mt-8">
+            <h2 className="h2 !text-white" {...reveal("mask")}>{pricingPage.cta.title}</h2>
+            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-zinc-400" {...reveal("up")}>{pricingPage.cta.text}</p>
+            <div className="mt-8" {...reveal("settle")}>
               <a href={pricingPage.cta.href} className="btn-primary">
                 {pricingPage.cta.label}
               </a>

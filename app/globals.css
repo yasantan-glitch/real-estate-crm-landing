@@ -22,6 +22,29 @@
   --color-surface: 255 248 240;   /* cream section bg #FFF8F0 */
   --color-muted: 120 113 108;     /* warm stone-500 for secondary text */
   --color-line: 231 221 209;      /* warm light card/section border #E7DDD1 */
+
+  /* Scroll motion tokens (see "Scroll motion" at the end of this file) */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-settle: cubic-bezier(0.2, 0.9, 0.25, 1.12); /* slight overshoot: cards "land" */
+  --reveal-dist: 56px;
+  --dur-mask: 900ms;
+  --dur-settle: 850ms;
+  --dur-up: 800ms;
+  --dur-fade: 600ms;
+  /* Peak panel starts as a block the width of the content column (.section
+     max-w-6xl = 72rem), at least 3vw in from each edge, then opens to full bleed. */
+  --panel-inset: 6% max(3vw, calc((100% - 72rem) / 2)) 0;
+  --unveil-inset: 8% 6%;
+  --unveil-scale: 1.15;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --reveal-dist: 24px;
+    --panel-inset: 2% 3vw 0;
+    --unveil-inset: 3%;
+    --unveil-scale: 1.06;
+  }
 }
 
 html {
@@ -109,5 +132,239 @@ body {
         radial-gradient(ellipse 26% 38% at 100% 0%, transparent 20%, #000 100%);
       mask-composite: intersect;
     }
+  }
+}
+
+/*
+ * ---------------------------------------------------------------------------
+ * Scroll motion. Vocabulary: lib/motion.ts. Driver: components/motion/ScrollMotion.tsx.
+ *
+ * Everything is gated on html[data-motion], which the boot script in
+ * ScrollMotion sets only without a reduced-motion preference, so JS-off and
+ * reduced-motion visitors always get the final, static state. Only opacity,
+ * translate / scale / rotate / transform and clip-path animate (no layout, no
+ * CLS). Reveals use the individual `translate` / `scale` properties so they
+ * compose with Tailwind's `transform` utilities (hover lifts, the featured
+ * pricing card's scale) instead of overriding them, and keyframe animations
+ * (fill: backwards) so existing `transition-property` hovers keep working.
+ * Clip-paths are square on purpose: images stay square-cornered site-wide.
+ * ---------------------------------------------------------------------------
+ */
+
+/*
+ * Hidden until the observer sets data-in="" (then animated). Elements already
+ * inside the first viewport are marked by the end-of-body boot script
+ * (components/motion/ScrollMotion.tsx) before first paint and never hide: data-in="static" on
+ * reveal/scrub elements, data-static="k" on a stagger parent whose first k
+ * children are on screen (hydration-safe: it only touches attributes on
+ * elements that carry suppressHydrationWarning, see lib/motion.ts).
+ */
+html[data-motion] :is([data-reveal], [data-stagger] > *):not([data-in]) {
+  opacity: 0;
+}
+
+html[data-motion] :is(
+  [data-static="1"] > :nth-child(-n + 1),
+  [data-static="2"] > :nth-child(-n + 2),
+  [data-static="3"] > :nth-child(-n + 3),
+  [data-static="4"] > :nth-child(-n + 4),
+  [data-static="5"] > :nth-child(-n + 5),
+  [data-static="6"] > :nth-child(-n + 6),
+  [data-static="7"] > :nth-child(-n + 7),
+  [data-static="8"] > :nth-child(-n + 8),
+  [data-static="9"] > :nth-child(-n + 9),
+  [data-static="10"] > :nth-child(-n + 10),
+  [data-static="11"] > :nth-child(-n + 11),
+  [data-static="12"] > :nth-child(-n + 12),
+  [data-static="13"] > :nth-child(-n + 13),
+  [data-static="14"] > :nth-child(-n + 14),
+  [data-static="15"] > :nth-child(-n + 15),
+  [data-static="16"] > :nth-child(-n + 16)
+) {
+  opacity: 1;
+}
+
+html[data-motion] :is([data-reveal="mask"], [data-stagger="mask"] > *)[data-in=""] {
+  animation: reveal-mask var(--dur-mask) var(--ease-out-expo) var(--reveal-delay, 0ms) backwards;
+}
+
+html[data-motion] :is([data-reveal="up"], [data-stagger="up"] > *)[data-in=""] {
+  animation: reveal-up var(--dur-up) var(--ease-out-expo) var(--reveal-delay, 0ms) backwards;
+}
+
+html[data-motion] :is([data-reveal="settle"], [data-stagger="settle"] > *)[data-in=""] {
+  animation: reveal-settle var(--dur-settle) var(--ease-settle) var(--reveal-delay, 0ms) backwards;
+}
+
+html[data-motion] :is([data-reveal="fade"], [data-stagger="fade"] > *)[data-in=""] {
+  animation: reveal-fade var(--dur-fade) ease-out var(--reveal-delay, 0ms) backwards;
+}
+
+/* Pops in once its revealed ancestor has landed (inherits --reveal-delay). */
+html[data-motion] [data-in=""] [data-reveal-pop] {
+  animation: reveal-pop 500ms var(--ease-settle) calc(var(--reveal-delay, 0ms) + 380ms) backwards;
+}
+
+/* Scrub variants, time-based fallback (mobile, browsers without scroll timelines). */
+html[data-motion="timed"] [data-scrub]:not([data-scrub="panel"], [data-scrub="drift"]):not([data-in]) {
+  opacity: 0;
+}
+
+html[data-motion="timed"] [data-scrub="panel"]:not([data-in]) {
+  clip-path: inset(var(--panel-inset));
+}
+
+html[data-motion="timed"] [data-scrub="panel"][data-in=""] {
+  animation: panel-open 1100ms var(--ease-out-expo) backwards;
+}
+
+html[data-motion="timed"] [data-scrub^="unveil"][data-in=""] {
+  animation: unveil-open 1100ms var(--ease-out-expo) backwards;
+}
+
+html[data-motion="timed"] [data-scrub^="unveil"][data-in=""] [data-scrub-media] {
+  animation: unveil-zoom 1400ms var(--ease-out-expo) backwards;
+}
+
+html[data-motion="timed"] [data-scrub="tilt"][data-in=""] {
+  animation: reveal-settle var(--dur-settle) var(--ease-settle) backwards;
+}
+
+/* Scrub variants, scroll-linked (desktop, browsers with scroll timelines). */
+@supports (animation-timeline: view()) {
+  html[data-motion="scrub"] [data-scrub="panel"]:not([data-in="static"]) {
+    animation: panel-open linear both;
+    animation-timeline: view();
+    animation-range: entry 5% entry 75%;
+  }
+
+  html[data-motion="scrub"] [data-scrub^="unveil"]:not([data-in="static"]) {
+    animation: unveil-open linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 45%;
+  }
+
+  html[data-motion="scrub"] [data-scrub^="unveil"]:not([data-in="static"]) [data-scrub-media] {
+    animation: unveil-zoom linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+  }
+
+  html[data-motion="scrub"] [data-scrub="tilt"]:not([data-in="static"]) {
+    transform-origin: 50% 100%;
+    animation: tilt-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
+
+  /* Foreground copy drifting over a photo: the depth plane of "Ürünü görün".
+     Only from lg, where the copy actually sits on the photo. */
+  @media (min-width: 1024px) {
+    html[data-motion="scrub"] [data-scrub="drift"]:not([data-in="static"]) {
+      animation: drift linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+    }
+  }
+}
+
+[data-scrub="unveil-soft"] {
+  --unveil-inset: 4%;
+  --unveil-scale: 1.08;
+}
+
+@keyframes reveal-mask {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    translate: 0 0.4em;
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0);
+    translate: 0 0;
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    translate: 0 calc(var(--reveal-dist) / 2);
+  }
+}
+
+@keyframes reveal-settle {
+  from {
+    opacity: 0;
+    translate: 0 var(--reveal-dist);
+    scale: 0.95;
+  }
+}
+
+@keyframes reveal-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes reveal-pop {
+  from {
+    opacity: 0;
+    scale: 0;
+  }
+}
+
+@keyframes panel-open {
+  from {
+    clip-path: inset(var(--panel-inset));
+  }
+  to {
+    clip-path: inset(0);
+  }
+}
+
+@keyframes unveil-open {
+  0% {
+    opacity: 0;
+    clip-path: inset(var(--unveil-inset));
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0);
+  }
+}
+
+@keyframes unveil-zoom {
+  from {
+    scale: var(--unveil-scale);
+  }
+  to {
+    scale: 1;
+  }
+}
+
+@keyframes tilt-up {
+  0% {
+    opacity: 0;
+    transform: perspective(1400px) rotateX(14deg) translateY(64px) scale(0.94);
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes drift {
+  from {
+    translate: 0 40px;
+  }
+  to {
+    translate: 0 -40px;
   }
 }

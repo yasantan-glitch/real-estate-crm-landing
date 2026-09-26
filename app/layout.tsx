@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import { siteConfig } from "@/config/site";
 import { pricing } from "@/content/landing";
+import ScrollMotion from "@/components/motion/ScrollMotion";
 import "./globals.css";
 
 /**
@@ -71,6 +72,7 @@ export const metadata: Metadata = {
 const entryTier = pricing.tiers[0];
 const entryTierPriceDigits = entryTier.price.discountedPrice.replace(/[^0-9]/g, "");
 
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -94,7 +96,7 @@ export default function RootLayout({
   const { googleAnalyticsId, googleTagManagerId, metaPixelId } = siteConfig;
 
   return (
-    <html lang="tr" className={plusJakartaSans.variable}>
+    <html lang="tr" className={plusJakartaSans.variable} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -146,6 +148,8 @@ export default function RootLayout({
         )}
 
         {children}
+        {/* Last in <body>: its inline boot script must run after the page content is parsed. */}
+        <ScrollMotion />
       </body>
     </html>
   );

@@ -1,6 +1,14 @@
 import Link from "next/link";
 import type { BlogPostMeta } from "@/lib/blog";
 import { formatPostDate } from "@/lib/blog";
+import { reveal } from "@/lib/motion";
+
+/**
+ * The grid sits in the blog pages' first section, where the first cards are
+ * LCP candidates (a card excerpt is the largest text on mobile). Those stay
+ * static; only cards past the first row / first mobile screen reveal.
+ */
+const STATIC_CARDS = 3;
 
 type BlogPostGridProps = {
   posts: BlogPostMeta[];
@@ -18,9 +26,10 @@ export default function BlogPostGrid({ posts, emptyMessage }: BlogPostGridProps)
 
   return (
     <div className="mt-14 grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]">
-      {posts.map((post) => (
+      {posts.map((post, index) => (
         <Link
           key={post.slug}
+          {...(index >= STATIC_CARDS ? reveal("settle") : {})}
           href={`/blog/${post.slug}`}
           className="group rounded-2xl border border-line bg-white p-6 shadow-card transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-pop"
         >

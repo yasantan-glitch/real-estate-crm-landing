@@ -3,6 +3,7 @@
 import { useState } from "react";
 import SectionHeading from "./SectionHeading";
 import { faq } from "@/content/landing";
+import { stagger } from "@/lib/motion";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(-1);
@@ -11,7 +12,7 @@ export default function FAQ() {
     <section id="sss" className="scroll-mt-24 bg-white">
       <div className="mx-auto w-full max-w-[840px] px-5 py-16 sm:px-8 md:py-24">
         <SectionHeading title={faq.title} center />
-        <div className="mt-12">
+        <div className="mt-12" {...stagger("fade")}>
           {faq.items.map((item, i) => {
             const isOpen = openIndex === i;
             return (

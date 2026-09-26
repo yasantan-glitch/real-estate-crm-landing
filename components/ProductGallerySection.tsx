@@ -13,7 +13,9 @@
  * section sits well below the fold. Clicking the stage opens the lightbox,
  * which walks all images in order; closing it leaves the stage on the last
  * image viewed. On touch screens a horizontal swipe on the stage switches
- * module. Images are square-cornered by design (no rounded).
+ * module. Images are square-cornered by design (no rounded). On scroll the
+ * stage stands up from a 3D tilt (see lib/motion.ts); the motion sits on the
+ * wrapper, so tab switches never replay it.
  */
 
 import Image from "next/image";
@@ -23,6 +25,7 @@ import SectionHeading from "@/components/SectionHeading";
 import Tabs from "@/components/ui/Tabs";
 import { productGallery, type GalleryModuleId } from "@/content/product-gallery";
 import { useSwipe } from "@/lib/useSwipe";
+import { reveal, scrub } from "@/lib/motion";
 
 const { eyebrow, title, intro, tabsLabel, modules, images, labels } = productGallery;
 
@@ -84,7 +87,7 @@ export default function ProductGallerySection() {
       <div className="section">
         <SectionHeading eyebrow={eyebrow} title={title} intro={intro} titleId={`${ID_PREFIX}-baslik`} center />
 
-        <div className="mt-10">
+        <div className="mt-10" {...reveal("up")}>
           <Tabs
             items={modules}
             activeId={activeModule}
@@ -100,7 +103,7 @@ export default function ProductGallerySection() {
           aria-labelledby={`${ID_PREFIX}-tab-${activeModule}`}
           className="mt-8"
         >
-          <div className="-mx-5 sm:mx-0">
+          <div className="-mx-5 sm:mx-0" {...scrub("tilt")}>
             <button
               type="button"
               aria-label={`${labels.openImage}: ${current.title}`}

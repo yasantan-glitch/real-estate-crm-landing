@@ -1,12 +1,13 @@
 import SectionHeading from "./SectionHeading";
 import { audience } from "@/content/landing";
+import { stagger } from "@/lib/motion";
 
 export default function AudienceSection() {
   return (
     <section id="kimler-icin" className="scroll-mt-24 bg-white">
       <div className="section">
         <SectionHeading title={audience.title} center />
-        <div className="mt-14 grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]">
+        <div className="mt-14 grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]" {...stagger("settle")}>
           {audience.items.map((item) => (
             <div
               key={item.title}

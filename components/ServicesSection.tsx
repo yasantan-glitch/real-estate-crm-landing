@@ -4,13 +4,14 @@
  */
 import SectionHeading from "./SectionHeading";
 import { services } from "@/content/landing";
+import { stagger } from "@/lib/motion";
 
 export default function ServicesSection() {
   return (
     <section id="hizmetler" className="scroll-mt-24 border-t border-line bg-white">
       <div className="section">
         <SectionHeading eyebrow={services.eyebrow} title={services.title} intro={services.intro} center />
-        <div className="mt-14 grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(250px,1fr))]">
+        <div className="mt-14 grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(250px,1fr))]" {...stagger("settle")}>
           {services.items.map((item) => (
             <div key={item.title} className="rounded-2xl border border-line bg-surface p-[22px]">
               <h3 className="text-[15px] font-bold text-brand">{item.title}</h3>

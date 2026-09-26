@@ -118,6 +118,7 @@ function BlogCategoryListing({ categorySlug }: { categorySlug: string }) {
               eyebrow="Blog"
               title={`${label} kategorisindeki yazılar`}
               center
+              reveal={false}
             />
 
             <BlogCategoryPills activeSlug={categorySlug} />

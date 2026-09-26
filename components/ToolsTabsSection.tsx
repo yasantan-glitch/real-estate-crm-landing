@@ -6,6 +6,7 @@ import RentalYieldCalculator from "@/components/RentalYieldCalculator";
 import TapuHarciCalculator from "@/components/TapuHarciCalculator";
 import Tabs from "@/components/ui/Tabs";
 import type { toolsIndexPage } from "@/content/landing";
+import { reveal } from "@/lib/motion";
 
 type ToolContent = (typeof toolsIndexPage)["tools"][number];
 
@@ -38,7 +39,7 @@ export default function ToolsTabsSection({
   return (
     <section className="border-t border-line bg-surface">
       <div className="section">
-        <div className="mx-auto max-w-2xl">
+        <div className="mx-auto max-w-2xl" {...reveal("up")}>
           <Tabs items={tabs} activeId={activeTab} onChange={(id) => setActiveTab(id as TabId)} />
 
           <h2 className="h2 mt-8 text-center">{activeTool.title}</h2>

@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { siteConfig } from "@/config/site";
 import { useCasesHubPage, useCases } from "@/content/use-cases";
+import { stagger } from "@/lib/motion";
 
 const canonicalUrl = `${siteConfig.siteUrl}/kimler-icin`;
 
@@ -41,7 +42,7 @@ export default function UseCasesHubPage() {
 
         <section className="border-t border-line bg-surface">
           <div className="section">
-            <div className="grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]">
+            <div className="grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]" {...stagger("settle")}>
               {useCases.map((item) => (
                 <a
                   key={item.slug}

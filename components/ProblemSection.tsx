@@ -1,12 +1,17 @@
 import SectionHeading from "./SectionHeading";
 import { problems } from "@/content/landing";
+import { stagger } from "@/lib/motion";
 
 export default function ProblemSection() {
   return (
     <section className="bg-white">
       <div className="section">
         <SectionHeading eyebrow={problems.eyebrow} title={problems.title} intro={problems.intro} center />
-        <div className="mt-14 grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]">
+        {/* Shorter travel than the rest of the page: the quiet act before the Solution peak. */}
+        <div
+          className="mt-14 grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))] md:[--reveal-dist:36px]"
+          {...stagger("settle")}
+        >
           {problems.items.map((item) => (
             <div
               key={item.title}

@@ -47,6 +47,7 @@ export default function BlogPage() {
               eyebrow="Blog"
               title="Emlak CRM ve portföy yönetimi üzerine yazılar"
               center
+              reveal={false}
             />
 
             <BlogCategoryPills />

@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { hero, references } from "@/content/landing";
+import { reveal } from "@/lib/motion";
 
 /** Slim "Sahada kullanılıyor" trust strip directly under the Hero. */
 export default function ReferencesSection() {
   return (
     <section className="border-y border-line bg-surface">
-      <div className="mx-auto max-w-6xl px-5 py-7 text-center sm:px-8">
+      <div className="mx-auto max-w-6xl px-5 py-7 text-center sm:px-8" {...reveal("fade")}>
         <p className="mx-auto mb-3 max-w-md text-[13px] text-slate-500">{hero.trustNote}</p>
         <div className="flex flex-wrap items-center justify-center gap-3">
           <span className="sr-only">
