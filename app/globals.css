@@ -81,4 +81,33 @@ body {
   .btn-dark {
     @apply btn bg-brand text-white hover:bg-brand-soft;
   }
+
+  /*
+   * Feathers a light-background photo into the page: alpha-only mask, so it
+   * blends with whatever section background sits behind it. Top/bottom fade
+   * everywhere (the photo is full-bleed below lg). From lg the photo sits
+   * inside the container, so the left edge and a short right edge fade too;
+   * the right fade is kept narrow so it softens only the photo's outer frame
+   * without ghosting the phone near that edge; a corner fade dissolves the
+   * window / plant backdrop at the top right, above the tablet.
+   */
+  .photo-blend {
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 88%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 88%, transparent);
+  }
+
+  @media (min-width: 1024px) {
+    .photo-blend {
+      -webkit-mask-image:
+        linear-gradient(to bottom, transparent, #000 10%, #000 88%, transparent),
+        linear-gradient(to right, transparent, #000 14%, #000 97%, transparent),
+        radial-gradient(ellipse 26% 38% at 100% 0%, transparent 20%, #000 100%);
+      -webkit-mask-composite: source-in;
+      mask-image:
+        linear-gradient(to bottom, transparent, #000 10%, #000 88%, transparent),
+        linear-gradient(to right, transparent, #000 14%, #000 97%, transparent),
+        radial-gradient(ellipse 26% 38% at 100% 0%, transparent 20%, #000 100%);
+      mask-composite: intersect;
+    }
+  }
 }

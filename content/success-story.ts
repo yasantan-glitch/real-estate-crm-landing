@@ -1,8 +1,8 @@
 /**
  * /basari-hikayesi sayfasının içeriği. Tek statik vaka çalışması —
  * Poyraz Gayrimenkul, Emlak CRM Pro'nun canlı production müşterisi.
- * Modül görselleri content/landing.ts > productGallery.slides ile aynı
- * kaynak ekran görüntülerini (hero-device-*.png, hero-bg-*.png) paylaşır.
+ * Modül görselleri public/screenshots altındaki kaynak ekran
+ * görüntülerini (hero-device-*.png, hero-bg-*.png) kullanır.
  */
 
 export const successStoryBackLink = {

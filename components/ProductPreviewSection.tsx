@@ -1,68 +1,41 @@
 /**
- * "Ürünü görün" — static composition of real product screenshots inside
- * device frames (laptop centered/back, tablet right, phone left/front), with
- * a soft blurred screenshot collage in the background.
+ * "Ürünü görün" — hero-like composition: eyebrow + title + text on the left,
+ * the desk photo (laptop + tablet + phone) on the right, both inside the
+ * section container. From lg the photo spans the full container width and
+ * the copy sits on top of it, in the photo's empty top-left quadrant (left
+ * of the laptop screen, above the plant) — so the devices stay large and
+ * close to the text. `.photo-blend` feathers the photo's tinted edges into
+ * the white section. On mobile the copy stacks above a full-bleed crop that
+ * drops the empty area (object-right).
+ *
+ * Not `priority`: the section sits well below the fold, so it is never the
+ * LCP element and should lazy-load.
  */
 
 import Image from "next/image";
-import DeviceFrame from "@/components/DeviceFrame";
 import { productPreview } from "@/content/landing";
 
-const BG_LAYOUT = [
-  "left-[-6%] top-[2%] w-[30%] rotate-[-8deg]",
-  "right-[-4%] top-[-4%] w-[26%] rotate-[6deg]",
-  "left-[10%] bottom-[-6%] w-[24%] rotate-[4deg]",
-  "right-[6%] bottom-[-8%] w-[28%] rotate-[-5deg]",
-  "left-[38%] top-[38%] w-[22%] rotate-[10deg]",
-];
-
 export default function ProductPreviewSection() {
-  const { eyebrow, title, text, devices, backgroundImages } = productPreview;
-  const laptop = devices.find((d) => d.device === "laptop")!;
-  const tablet = devices.find((d) => d.device === "tablet")!;
-  const phone = devices.find((d) => d.device === "phone")!;
+  const { eyebrow, title, text, image } = productPreview;
 
   return (
     <section className="overflow-hidden bg-white">
-      <div className="section">
-        <div className="mx-auto mb-12 max-w-[820px] text-center">
-          <p className="eyebrow justify-center">
-            {eyebrow}
-          </p>
-          <h2 className="h2 sm:whitespace-nowrap !text-[30px]">{title}</h2>
-          <p className="mx-auto mt-4 max-w-[640px] text-base leading-relaxed text-slate-600">{text}</p>
+      <div className="section lg:grid lg:!pb-12">
+        <div className="relative z-10 max-w-[460px] lg:col-start-1 lg:row-start-1 lg:max-w-[38%] lg:self-start">
+          <p className="eyebrow">{eyebrow}</p>
+          <h2 className="h2">{title}</h2>
+          <p className="mt-4 text-base leading-relaxed text-slate-600">{text}</p>
         </div>
 
-        <div className="relative mx-auto max-w-[880px] px-4 py-10 sm:py-16">
-          <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
-            {backgroundImages.map((src, i) => (
-              <div
-                key={src}
-                className={`absolute aspect-video overflow-hidden rounded-2xl ${BG_LAYOUT[i]}`}
-              >
-                <Image
-                  src={src}
-                  alt=""
-                  fill
-                  sizes="(max-width: 640px) 120px, (max-width: 1024px) 220px, 300px"
-                  className="object-cover opacity-20 blur-sm grayscale"
-                />
-              </div>
-            ))}
-          </div>
-
-          <div className="relative flex items-center justify-center">
-            <div className="relative z-0 w-[74%] sm:w-[62%]">
-              <DeviceFrame priority {...laptop} />
-            </div>
-
-            <div className="absolute right-[-2%] top-[16%] z-10 w-[32%] rotate-[4deg] sm:w-[27%]">
-              <DeviceFrame imgClassName="object-top" {...tablet} />
-            </div>
-
-            <div className="absolute left-[-2%] bottom-[-4%] z-20 w-[24%] -rotate-6 sm:w-[20%]">
-              <DeviceFrame imgClassName="object-right" {...phone} />
-            </div>
+        <div className="-mx-5 mt-6 sm:-mx-8 lg:col-start-1 lg:row-start-1 lg:mx-0 lg:mt-10">
+          <div className="photo-blend relative aspect-[7/5] sm:aspect-[16/9] lg:aspect-[2/1]">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              sizes="(min-width: 1152px) 1088px, (min-width: 1024px) calc(100vw - 64px), 100vw"
+              className="object-cover object-right lg:object-center"
+            />
           </div>
         </div>
       </div>
