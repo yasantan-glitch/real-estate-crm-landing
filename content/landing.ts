@@ -34,9 +34,10 @@ export const nav = {
     "/ozellikler",
     "/fiyatlandirma",
     "/araclar",
-    { label: "Kaynaklar", children: ["/basari-hikayesi", "/blog"] },
+    "/basari-hikayesi",
+    "/blog",
     "/iletisim",
-  ] as (string | { label: string; children: string[] })[],
+  ] as string[],
   homeLabel: "Ana sayfa",
   cta: "Demo Talep Et",
 };

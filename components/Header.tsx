@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { siteConfig } from "@/config/site";
@@ -23,91 +23,6 @@ const desktopLinkClass = (active: boolean) =>
     active ? "text-accent" : "text-slate-700"
   }`;
 
-function NavDropdown({ label, links, pathname }: { label: string; links: NavLink[]; pathname: string }) {
-  const [open, setOpen] = useState(false);
-  const rootRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const panelId = "nav-dropdown-panel";
-  const isActive = links.some((l) => isActivePath(pathname, l.href));
-
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
-    if (!open) return;
-    const onPointerDown = (e: PointerEvent) => {
-      if (!rootRef.current?.contains(e.target as Node)) setOpen(false);
-    };
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setOpen(false);
-        buttonRef.current?.focus();
-      }
-    };
-    document.addEventListener("pointerdown", onPointerDown);
-    document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.removeEventListener("pointerdown", onPointerDown);
-      document.removeEventListener("keydown", onKeyDown);
-    };
-  }, [open]);
-
-  return (
-    <div ref={rootRef} className="relative">
-      <button
-        ref={buttonRef}
-        type="button"
-        aria-expanded={open}
-        aria-controls={panelId}
-        onClick={() => setOpen(!open)}
-        className={`inline-flex items-center gap-1 ${desktopLinkClass(isActive)}`}
-      >
-        {label}
-        <svg
-          width="14"
-          height="14"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          aria-hidden="true"
-          className={`transition-transform ${open ? "rotate-180" : ""}`}
-        >
-          <path d="M6 9l6 6 6-6" />
-        </svg>
-      </button>
-
-      {open && (
-        <ul
-          id={panelId}
-          className="absolute left-1/2 top-full mt-3 min-w-[200px] -translate-x-1/2 rounded-lg border border-line bg-white p-1.5 shadow-card"
-        >
-          {links.map((link) => {
-            const active = isActivePath(pathname, link.href);
-            return (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  aria-current={active ? "page" : undefined}
-                  onClick={() => setOpen(false)}
-                  className={`block whitespace-nowrap rounded-md px-3 py-2 text-sm font-semibold hover:bg-surface ${
-                    active ? "text-accent" : "text-slate-700"
-                  }`}
-                >
-                  {link.label}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-      )}
-    </div>
-  );
-}
-
 export default function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -127,16 +42,6 @@ export default function Header() {
 
         <nav className="hidden items-center lg:flex lg:gap-6 xl:gap-8" aria-label="Ana menü">
           {nav.desktop.map((item) => {
-            if (typeof item !== "string") {
-              return (
-                <NavDropdown
-                  key={item.label}
-                  label={item.label}
-                  links={item.children.map(linkByHref)}
-                  pathname={pathname}
-                />
-              );
-            }
             const link = linkByHref(item);
             const isActive = isActivePath(pathname, link.href);
             return (
