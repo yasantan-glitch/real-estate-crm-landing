@@ -39,23 +39,27 @@ export default function ToolsTabsSection({
   return (
     <section className="border-t border-line bg-surface">
       <div className="section">
-        <div className="mx-auto max-w-2xl" {...reveal("up")}>
-          <Tabs items={tabs} activeId={activeTab} onChange={(id) => setActiveTab(id as TabId)} />
-
-          <h2 className="h2 mt-8 text-center">{activeTool.title}</h2>
-          <p className="mx-auto mt-3 max-w-xl text-center text-[14.5px] leading-relaxed text-slate-600">
-            {activeTool.description}
-          </p>
-          <div className="mt-8">
-            {activeTab === "commission" && <CommissionCalculator />}
-            {activeTab === "rentalYield" && <RentalYieldCalculator />}
-            {activeTab === "tapuHarci" && <TapuHarciCalculator />}
+        <div {...reveal("up")}>
+          <div className="mx-auto max-w-3xl">
+            <Tabs items={tabs} activeId={activeTab} onChange={(id) => setActiveTab(id as TabId)} />
           </div>
-          <p className="mt-5 text-center text-[14.5px] leading-relaxed text-slate-500">
-            <a href={activeTool.detailHref} className="font-semibold text-accent underline">
-              {activeTool.detailLabel}
-            </a>
-          </p>
+
+          <div className="mx-auto max-w-2xl">
+            <h2 className="h2 mt-8 text-center">{activeTool.title}</h2>
+            <p className="mx-auto mt-3 max-w-xl text-center text-[14.5px] leading-relaxed text-slate-600">
+              {activeTool.description}
+            </p>
+            <div className="mt-8">
+              {activeTab === "commission" && <CommissionCalculator />}
+              {activeTab === "rentalYield" && <RentalYieldCalculator />}
+              {activeTab === "tapuHarci" && <TapuHarciCalculator />}
+            </div>
+            <p className="mt-5 text-center text-[14.5px] leading-relaxed text-slate-500">
+              <a href={activeTool.detailHref} className="font-semibold text-accent underline">
+                {activeTool.detailLabel}
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </section>

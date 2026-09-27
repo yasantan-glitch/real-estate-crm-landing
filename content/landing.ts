@@ -33,7 +33,8 @@ export const nav = {
   desktop: [
     "/ozellikler",
     "/fiyatlandirma",
-    { label: "Kaynaklar", children: ["/araclar", "/basari-hikayesi", "/blog"] },
+    "/araclar",
+    { label: "Kaynaklar", children: ["/basari-hikayesi", "/blog"] },
     "/iletisim",
   ] as (string | { label: string; children: string[] })[],
   homeLabel: "Ana sayfa",
@@ -1019,7 +1020,7 @@ export const toolsIndexPage = {
       detailLabel: "Detaylı bilgi ve sık sorulan sorular →",
     },
     {
-      title: "Kira Getirisi ve Geri Dönüş (Amortisman)",
+      title: "Kira Getirisi (Amortisman)",
       description:
         "Alış fiyatı ve aylık kira geliri üzerinden brüt kira getirisi oranını ve amortisman süresini hesaplayın.",
       detailHref: "/araclar/kira-getirisi-hesaplama",
