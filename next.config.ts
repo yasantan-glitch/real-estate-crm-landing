@@ -14,6 +14,11 @@ const nextConfig: NextConfig = {
         destination: "https://www.emlakcrmpro.com/:path*",
         permanent: true,
       },
+      // "Kimler İçin" merged into /fiyatlandirma as segment sections.
+      { source: "/kimler-icin", destination: "/fiyatlandirma", permanent: true },
+      { source: "/kimler-icin/bireysel-emlakci", destination: "/fiyatlandirma#bireysel-emlakci", permanent: true },
+      { source: "/kimler-icin/emlak-ofisi", destination: "/fiyatlandirma#emlak-ofisi", permanent: true },
+      { source: "/kimler-icin/franchise", destination: "/fiyatlandirma#franchise", permanent: true },
     ];
   },
 };

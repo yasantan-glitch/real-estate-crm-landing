@@ -91,7 +91,7 @@ export const alternatives: AlternativePageContent[] = [
         },
         {
           feature: "Çoklu ofis / franchise desteği",
-          us: "Kurumsal pakette mevcut",
+          us: "Pro pakette mevcut",
           competitor: "Üst pakette mevcut",
         },
       ],

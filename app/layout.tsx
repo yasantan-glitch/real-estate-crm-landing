@@ -68,7 +68,7 @@ export const metadata: Metadata = {
 
 // SoftwareApplication structured data (brand values come from config)
 // Offer price is derived from the lowest tier's discounted price in
-// content/landing.ts (pricing.tiers[0] = "Başlangıç") — no hardcoded price here.
+// content/landing.ts (pricing.tiers[0] = "Standart") — no hardcoded price here.
 const entryTier = pricing.tiers[0];
 const entryTierPriceDigits = entryTier.price.discountedPrice.replace(/[^0-9]/g, "");
 
@@ -85,7 +85,7 @@ const jsonLd = {
     "@type": "Offer",
     price: entryTierPriceDigits,
     priceCurrency: "TRY",
-    description: `${entryTier.name} paketi, aylık abonelik — Lansman fiyatı`,
+    description: `${entryTier.name} paketi, yıllık abonelik — peşin ödeme`,
   },
   publisher: { "@type": "Organization", name: siteConfig.companyName },
 };

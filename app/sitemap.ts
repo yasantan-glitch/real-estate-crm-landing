@@ -97,30 +97,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${siteConfig.siteUrl}/kimler-icin`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${siteConfig.siteUrl}/kimler-icin/bireysel-emlakci`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteConfig.siteUrl}/kimler-icin/emlak-ofisi`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteConfig.siteUrl}/kimler-icin/franchise`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
       url: `${siteConfig.siteUrl}/antalya`,
       lastModified: new Date(),
       changeFrequency: "monthly",

@@ -1,14 +1,10 @@
 /**
- * Segment bazlı ("kimler için") sayfaların içeriği.
- * relevantFeatures, content/landing.ts'teki features.items ile aynı doğruluk
- * kaynağını paylaşır — metin burada tekrar yazılmaz, sadece o segmente
- * en ilgili özellikler seçilip href ile /ozellikler sayfasına bağlanır.
+ * Segment bazlı içerik — artık /fiyatlandirma sayfasının alt bölümünde
+ * render edilir. relevantFeatures, content/landing.ts'teki features.items
+ * ile aynı doğruluk kaynağını paylaşır — metin burada tekrar yazılmaz,
+ * sadece o segmente en ilgili özellikler seçilip href ile /ozellikler
+ * sayfasına bağlanır.
  */
-
-export const toolsPageBackLinkKimlerIcin = {
-  label: "← Tüm Segmentler",
-  href: "/kimler-icin",
-};
 
 export interface PainPoint {
   title: string;
@@ -33,18 +29,6 @@ export interface UseCasePageContent {
   faq: { q: string; a: string }[];
   cta: { title: string; text: string; label: string; href: string };
 }
-
-export const useCasesHubPage = {
-  seo: {
-    title: "Kimler İçin — Emlak CRM Pro Kimlere Uygun?",
-    description:
-      "Emlak CRM Pro bireysel danışmandan emlak ofisine, franchise yapılarına kadar farklı ölçekte gayrimenkul ekipleri için tasarlandı. Size uygun kullanım senaryosunu bulun.",
-  },
-  eyebrow: "Kimler için",
-  title: "Ofisinizin Ölçeğine Göre Emlak CRM Pro",
-  intro:
-    "Tek başına çalışan bir danışmandan çok şubeli bir franchise yapısına kadar, her ölçekte gayrimenkul ekibinin farklı ihtiyaçları vardır. Aşağıda kendi durumunuza en yakın segmenti seçip detaylı bilgi alabilirsiniz.",
-};
 
 export const useCases: UseCasePageContent[] = [
   {
@@ -93,15 +77,15 @@ export const useCases: UseCasePageContent[] = [
     faq: [
       {
         q: "Tek kişi olarak sistemi kullanmak mantıklı mı?",
-        a: "Evet. Başlangıç paketi 1-5 kullanıcı için tasarlandı ve tek danışmanlık operasyonlar için yeterlidir.",
+        a: "Evet. Standart paket 1-9 kullanıcı için tasarlandı ve tek danışmanlık operasyonlar için yeterlidir.",
       },
       {
         q: "Kurulum için teknik bilgi gerekiyor mu?",
-        a: "Hayır, Başlangıç paketi kendi kendine kurulum akışıyla gelir; birkaç dakika içinde portföy girmeye başlayabilirsiniz.",
+        a: "Hayır, Standart paket rehberli kurulum desteğiyle gelir; birkaç dakika içinde portföy girmeye başlayabilirsiniz.",
       },
       {
         q: "İleride ekibim büyürse ne olur?",
-        a: "Paketler arası geçiş mümkündür; ekibiniz büyüdüğünde Profesyonel veya Kurumsal pakete yükseltebilirsiniz.",
+        a: "Paketler arası geçiş mümkündür; ekibiniz 10 kişiyi aştığında Pro pakete yükseltebilirsiniz.",
       },
     ],
     cta: {
@@ -162,7 +146,7 @@ export const useCases: UseCasePageContent[] = [
     faq: [
       {
         q: "Ofisimizde kaç danışman varsa o kadar kullanıcı mı gerekiyor?",
-        a: "Evet, her danışman kendi hesabıyla sisteme girer. Profesyonel paket 5-15 kullanıcıyı kapsar, ihtiyaç halinde kullanıcı eklenebilir.",
+        a: "Evet, her danışman kendi hesabıyla sisteme girer. Standart paket 1-9 kullanıcıyı kapsar, ihtiyaç halinde kullanıcı eklenebilir veya Pro pakete geçilebilir.",
       },
       {
         q: "Mevcut Excel verilerimizi aktarabilir miyiz?",
@@ -191,7 +175,7 @@ export const useCases: UseCasePageContent[] = [
     eyebrow: "Franchise Yapıları İçin",
     h1: "Çoklu Şubeli Emlak Franchise'ları İçin CRM",
     intro:
-      "Birden fazla şubesi olan bir franchise yapısında her şubenin kendi verisiyle çalışması ama merkezin tüm şubeleri tek yerden görebilmesi gerekir. Emlak CRM Pro'nun Kurumsal paketi bu ihtiyaca göre tasarlandı.",
+      "Birden fazla şubesi olan bir franchise yapısında her şubenin kendi verisiyle çalışması ama merkezin tüm şubeleri tek yerden görebilmesi gerekir. Emlak CRM Pro'nun Pro paketi bu ihtiyaca göre tasarlandı.",
     painPoints: [
       {
         title: "Şubeler farklı sistemler veya dosyalarla çalışıyor",
@@ -214,7 +198,7 @@ export const useCases: UseCasePageContent[] = [
       },
       {
         title: "Özel Domain Opsiyonu",
-        description: "Kurumsal pakette kendi alan adınızla, marka tutarlılığıyla kullanım.",
+        description: "Pro pakette kendi alan adınızla, marka tutarlılığıyla kullanım.",
         href: "/ozellikler",
       },
       {
@@ -231,15 +215,15 @@ export const useCases: UseCasePageContent[] = [
     faq: [
       {
         q: "Her şube için ayrı kurulum mu gerekiyor?",
-        a: "Kurumsal pakette talep halinde çoklu ofis desteği mevcuttur; şubeler kendi izole verileriyle çalışırken merkez genel görünümü takip edebilir.",
+        a: "Pro pakette talep halinde çoklu ofis desteği mevcuttur; şubeler kendi izole verileriyle çalışırken merkez genel görünümü takip edebilir.",
       },
       {
         q: "Özel domain kullanabilir miyiz?",
-        a: "Evet, Kurumsal pakette özel domain desteği mevcuttur.",
+        a: "Evet, Pro pakette özel domain desteği mevcuttur.",
       },
       {
         q: "Talebe özel geliştirme yapılabiliyor mu?",
-        a: "Kurumsal pakette talebe özel geliştirme opsiyonu bulunur; franchise yapınıza özgü ihtiyaçlar ayrıca değerlendirilir.",
+        a: "Pro pakette talebe özel geliştirme opsiyonu bulunur; franchise yapınıza özgü ihtiyaçlar ayrıca değerlendirilir.",
       },
     ],
     cta: {

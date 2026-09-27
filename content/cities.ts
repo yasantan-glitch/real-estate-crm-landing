@@ -123,7 +123,7 @@ export const cities: CityPageContent[] = [
       },
       {
         label: "Emlak ofisleri için CRM",
-        href: "/kimler-icin/emlak-ofisi",
+        href: "/fiyatlandirma#emlak-ofisi",
       },
       {
         label: "Ağustos 2026 kira artış oranı yazısı",

@@ -21,7 +21,6 @@ export const nav = {
     { href: "/", label: "Ana Sayfa" },
     { href: "/ozellikler", label: "Özellikler" },
     { href: "/fiyatlandirma", label: "Paketler" },
-    { href: "/kimler-icin", label: "Kimler İçin" },
     { href: "/araclar", label: "Araçlar" },
     { href: "/basari-hikayesi", label: "Başarı Hikayesi" },
     { href: "/blog", label: "Blog" },
@@ -34,7 +33,6 @@ export const nav = {
   desktop: [
     "/ozellikler",
     "/fiyatlandirma",
-    "/kimler-icin",
     { label: "Kaynaklar", children: ["/araclar", "/basari-hikayesi", "/blog"] },
     "/iletisim",
   ] as (string | { label: string; children: string[] })[],
@@ -285,7 +283,7 @@ export const features = {
     { title: "PDF Portföy Sunumu", text: "Müşteriye gönderilecek şık portföy sunumları tek tıkla." },
     { title: "Firma Bazlı Kullanım", text: "Her ofis kendi izole verisiyle çalışır." },
     { title: "Subdomain Modeli", text: "ofisiniz.[alan-adı] formatında hızlı açılış." },
-    { title: "Özel Domain Opsiyonu", text: "Kurumsal pakette kendi alan adınızla kullanım." },
+    { title: "Özel Domain Opsiyonu", text: "Pro pakette kendi alan adınızla kullanım." },
   ],
 };
 
@@ -399,50 +397,35 @@ export type PricingTierPrice = {
 export const pricing = {
   eyebrow: "Paketler",
   title: "Ofisinizin ölçeğine göre paket seçin.",
-  note: "Fiyatlar demo sonrası, kullanıcı sayısı ve ihtiyaca göre tekliflendirilir. Aylık abonelik modeliyle çalışır. CRM özellikleri her pakette aynıdır; farklılık kullanıcı sayısı ve destek seviyesindedir.",
+  note: "Fiyatlar yıllık peşin ödenir ve her yıl yenilenir. CRM özellikleri her pakette aynıdır; farklılık kullanıcı sayısı ve destek seviyesindedir.",
   cta: "Demo ve Teklif Al",
   tiers: [
     {
-      name: "Başlangıç",
-      badge: null,
-      target: "Bireysel danışmanlar ve küçük ofisler için",
-      price: {
-        discountedPrice: "2.400 TL/ay",
-        discountNote: "Lansman fiyatı",
-      } satisfies PricingTierPrice,
-      features: [
-        "1-5 kullanıcı",
-        "Subdomain kullanımı",
-        "E-posta destek",
-        "Kendi kendine kurulum",
-      ],
-    },
-    {
-      name: "Profesyonel",
+      name: "Standart",
       badge: "En çok tercih edilen kurgu",
-      target: "Büyüyen emlak ofisleri için",
+      target: "Bireysel danışmanlar ve emlak ofisleri için",
       price: {
-        discountedPrice: "4.900 TL/ay",
-        discountNote: "Lansman fiyatı",
+        discountedPrice: "50.000 TL/yıl",
+        discountNote: "Yıllık peşin ödeme",
       } satisfies PricingTierPrice,
       features: [
-        "5-15 kullanıcı",
+        "1-9 kullanıcı",
         "Subdomain kullanımı",
         "Öncelikli destek",
         "Rehberli kurulum desteği",
       ],
     },
     {
-      name: "Kurumsal",
+      name: "Pro",
       badge: null,
       target: "Broker ekipleri ve franchise yapıları için",
       price: {
-        discountedPrice: "9.900 TL/ay",
-        discountNote: "Lansman fiyatı",
+        discountedPrice: "80.000 TL/yıl",
+        discountNote: "Yıllık peşin ödeme",
         customQuoteNote: "Özel ihtiyaçlar için: İhtiyaca göre tekliflendirilir",
       } satisfies PricingTierPrice,
       features: [
-        "15+ kullanıcı (özel anlaşma)",
+        "10+ kullanıcı",
         "Özel domain desteği",
         "Premium destek",
         "Kapsamlı eğitim ve onboarding",
@@ -457,12 +440,12 @@ export const pricingPage = {
   seo: {
     title: "Fiyatlandırma — Emlak CRM Pro Paketleri",
     description:
-      "Emlak CRM programı paket fiyatlarını karşılaştırın: Başlangıç, Profesyonel ve Kurumsal. Ofis büyüklüğünüze uygun paketi seçin, ücretsiz demo talep edin.",
+      "Emlak CRM programı paket fiyatlarını karşılaştırın: Standart ve Pro. Ofis büyüklüğünüze uygun paketi seçin, ücretsiz demo talep edin.",
   },
   eyebrow: "Fiyatlandırma",
   title: "Şeffaf fiyatlandırma — ofisinizin ölçeğine göre",
   intro:
-    "Üç paket, aynı CRM özellikleri. Farklılık kullanıcı sayısı ve destek seviyesindedir. Aşağıda ofis büyüklüğünüze göre önerilen paketi ve tüm paketlerin karşılaştırmasını bulabilirsiniz.",
+    "İki paket, aynı CRM özellikleri. Farklılık kullanıcı sayısı ve destek seviyesindedir. Fiyatlar yıllık peşin ödenir ve her yıl yenilenir. Aşağıda ofis büyüklüğünüze göre önerilen paketi bulabilirsiniz.",
   guide: {
     eyebrow: "Hangi paket size uygun?",
     title: "Ofis büyüklüğünüze göre öneri",
@@ -470,46 +453,36 @@ export const pricingPage = {
       {
         officeType: "Bireysel danışman",
         text: "Portföy ve müşteri takibinizi tek başınıza, profesyonel bir sistemle yönetin.",
-        recommendedTier: "Başlangıç",
+        recommendedTier: "Standart",
       },
       {
-        officeType: "Küçük ofis (2-5 kişi)",
+        officeType: "Küçük ofis (2-9 kişi)",
         text: "Excel ve deftere veda edin; ekibiniz aynı veriyi tek panelden paylaşsın.",
-        recommendedTier: "Başlangıç",
+        recommendedTier: "Standart",
       },
       {
-        officeType: "Büyüyen ofis (5-15 kişi)",
-        text: "Yeni danışman eklemek dakikalar sürsün; öncelikli destekle süreçler standarda otursun.",
-        recommendedTier: "Profesyonel",
+        officeType: "Büyüyen ofis (10+ kişi)",
+        text: "Yeni danışman eklemek dakikalar sürsün; özel domain ve premium destekle süreçler standarda otursun.",
+        recommendedTier: "Pro",
       },
       {
         officeType: "Broker / Franchise yapısı",
         text: "Ofisin tamamını — portföy, talep, ciro, performans — tek panelden izleyin; kendi domaininizle kullanın.",
-        recommendedTier: "Kurumsal",
+        recommendedTier: "Pro",
       },
     ],
-  },
-  comparison: {
-    eyebrow: "Ayrıntılı karşılaştırma",
-    title: "Paketleri özellik özellik karşılaştırın",
-    launchPriceLabel: "Lansman fiyatı",
-    rowLabels: ["Kullanıcı sayısı", "Domain", "Destek", "Kurulum"],
   },
   faq: {
     eyebrow: "Sık sorulan sorular",
     title: "Fiyatlandırma hakkında merak edilenler",
     items: [
       {
-        q: "Lansman fiyatı ne kadar sürer, değişir mi?",
-        a: "Gösterilen fiyatlar sistemin güncel lansman fiyatlarıdır ve kalıcıdır; belirli bir kampanya süresine bağlı değildir.",
+        q: "Ödeme nasıl yapılıyor?",
+        a: "Sistem yıllık peşin ödeme modeliyle çalışır; paket her yıl aynı koşullarla yenilenir.",
       },
       {
         q: "Paket değişimi veya kullanıcı sayısı artırma mümkün mü?",
         a: "Evet. Ekibiniz büyüdükçe pakete yeni kullanıcı eklenebilir; paketler arası geçiş yapılabilir.",
-      },
-      {
-        q: "Ödeme nasıl yapılıyor?",
-        a: "Sistem aylık abonelik modeliyle çalışır.",
       },
       {
         q: "Veri güvenliği ve yedekleme nasıl sağlanıyor?",
@@ -600,7 +573,7 @@ export const faq = {
     },
     {
       q: "Kendi domainimle kullanabilir miyim?",
-      a: "Evet. Kurumsal pakette sistemi kendi alan adınız üzerinde kullanabilirsiniz.",
+      a: "Evet. Pro pakette sistemi kendi alan adınız üzerinde kullanabilirsiniz.",
     },
     {
       q: "Subdomain modeli var mı?",
@@ -612,7 +585,7 @@ export const faq = {
     },
     {
       q: "Eğitim veriliyor mu?",
-      a: "Evet. Kurulum sonrasında ekip için kullanım eğitimi verilir; Kurumsal pakette onboarding süreci standarttır.",
+      a: "Evet. Kurulum sonrasında ekip için kullanım eğitimi verilir; Pro pakette onboarding süreci standarttır.",
     },
     {
       q: "Verilerim güvende mi?",
@@ -685,7 +658,7 @@ export const footer = {
       links: [
         { href: "/#ozellikler", label: "Özellikler" },
         { href: "/#paketler", label: "Paketler" },
-        { href: "/kimler-icin", label: "Kimler İçin" },
+        { href: "/fiyatlandirma", label: "Kimler İçin" },
         { href: "/#sss", label: "SSS" },
         { href: "/blog", label: "Blog" },
       ],
