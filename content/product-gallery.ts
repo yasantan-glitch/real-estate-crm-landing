@@ -11,6 +11,7 @@ export type GalleryModuleId =
   | "dashboard"
   | "portfoy"
   | "musteriler"
+  | "eslestirme"
   | "harita"
   | "muhasebe"
   | "raporlar";
@@ -29,6 +30,7 @@ const modules: { id: GalleryModuleId; label: string }[] = [
   { id: "dashboard", label: "Dashboard" },
   { id: "portfoy", label: "Portföy" },
   { id: "musteriler", label: "Müşteriler" },
+  { id: "eslestirme", label: "Eşleştirme" },
   { id: "harita", label: "Harita / Coğrafi Analiz" },
   { id: "muhasebe", label: "Muhasebe" },
   { id: "raporlar", label: "Raporlar" },
@@ -103,6 +105,16 @@ const images: GalleryImage[] = [
     caption:
       "İletişim bilgileri, kimlik ve sözleşme evrakları, notlar ve atanan danışman tek sayfada; aktivite, portföy ve talep buradan eklenir.",
     alt: "Müşteri detay sayfası: iletişim bilgileri, fotoğraf ve evrak alanları, danışman ve sistem bilgisi, notlar ile Aktivite Ekle, Portföy Ekle ve Talep Oluştur butonları",
+  },
+  {
+    module: "eslestirme",
+    src: "/gallery/crm-talep-eslestirme.png",
+    width: 1903,
+    height: 990,
+    title: "Talep-portföy eşleştirme",
+    caption:
+      "Her portföy için uyumlu müşteri talepleri uyum puanıyla listelenir; müşteri, danışman, talep ve durum sütunlarından filtreleyip durumu tek tıkla güncelleyin.",
+    alt: "Eşleştirme ekranı: portföy, müşteri, talep ve danışman sütunlu bir tabloda uyum puanı (ör. 92 Mükemmel, 69 İyi, 62 Orta) ve durum güncelleme menüleriyle listelenen talep-portföy eşleşmeleri",
   },
   {
     module: "harita",

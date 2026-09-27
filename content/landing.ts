@@ -22,7 +22,7 @@ export const nav = {
     { href: "/ozellikler", label: "Özellikler" },
     { href: "/fiyatlandirma", label: "Paketler" },
     { href: "/araclar", label: "Araçlar" },
-    { href: "/basari-hikayesi", label: "Başarı Hikayesi" },
+    { href: "/basari-hikayesi", label: "CRM Galerisi" },
     { href: "/blog", label: "Blog" },
     { href: "/iletisim", label: "İletişim" },
   ],
