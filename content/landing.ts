@@ -674,7 +674,8 @@ export const footer = {
     },
   ],
   legal: [
-    { href: "/kvkk", label: "Gizlilik Politikası" },
+    { href: "/gizlilik-politikasi", label: "Gizlilik Politikası" },
+    { href: "/kvkk", label: "KVKK Aydınlatma Metni" },
     { href: "/kullanim-kosullari", label: "Kullanım Koşulları" },
   ],
   individualCta: {
