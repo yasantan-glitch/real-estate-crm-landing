@@ -84,7 +84,7 @@ export default function ProductGallerySection() {
     <section
       id="urun-galerisi"
       aria-labelledby={`${ID_PREFIX}-baslik`}
-      className="scroll-mt-24 border-y border-line bg-surface"
+      className="scroll-mt-24 border-y border-line bg-gallery-surface"
     >
       <div className="section">
         <SectionHeading eyebrow={eyebrow} title={title} intro={intro} titleId={`${ID_PREFIX}-baslik`} center />

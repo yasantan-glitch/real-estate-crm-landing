@@ -1,5 +1,5 @@
 /**
- * /basari-hikayesi sayfasının içeriği: "CRM Galerisi" — Emlak CRM Pro'nun
+ * /crm-galerisi sayfasının içeriği: "CRM Galerisi" — Emlak CRM Pro'nun
  * modül modül ekran görüntüleri. Görsel veri content/product-gallery.ts'ten
  * gelir (homepage'deki ürün galerisiyle paylaşılır); bu dosya sadece sayfaya
  * özel SEO ve giriş metnini tutar.

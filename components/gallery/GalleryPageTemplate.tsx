@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Full-page CRM gallery (/basari-hikayesi): every module from
+ * Full-page CRM gallery (/crm-galerisi): every module from
  * content/product-gallery.ts, one at a time, with every one of its
  * screenshots shown large (not a single stage image like the homepage
  * section). Tabs still pick the module; clicking any image opens the shared
@@ -81,7 +81,7 @@ export default function GalleryPageTemplate() {
       <section
         id="crm-galerisi"
         aria-labelledby={`${ID_PREFIX}-baslik`}
-        className="border-y border-line bg-surface"
+        className="border-y border-line bg-gallery-surface"
       >
         <div className="section">
           <SectionHeading title={productGallery.title} intro={productGallery.intro} titleId={`${ID_PREFIX}-baslik`} center />

@@ -8,7 +8,7 @@
  *
  * Some screens have a "koyu" (dark theme) counterpart: same title/caption,
  * same content, different src/theme/dimensions. The homepage section only
- * ever shows "acik" (light) images; the full /basari-hikayesi gallery pairs
+ * ever shows "acik" (light) images; the full /crm-galerisi gallery pairs
  * each acik image with its koyu twin when one exists.
  */
 

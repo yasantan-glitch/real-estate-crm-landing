@@ -5,7 +5,7 @@ import GalleryPageTemplate from "@/components/gallery/GalleryPageTemplate";
 import { siteConfig } from "@/config/site";
 import { galleryPage } from "@/content/gallery-page";
 
-const canonicalUrl = `${siteConfig.siteUrl}/basari-hikayesi`;
+const canonicalUrl = `${siteConfig.siteUrl}/crm-galerisi`;
 
 export const metadata: Metadata = {
   title: galleryPage.seo.title,

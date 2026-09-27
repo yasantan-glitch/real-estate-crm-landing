@@ -22,6 +22,7 @@
   --color-surface: 255 248 240;   /* cream section bg #FFF8F0 */
   --color-muted: 120 113 108;     /* warm stone-500 for secondary text */
   --color-line: 231 221 209;      /* warm light card/section border #E7DDD1 */
+  --color-gallery-surface: 238 240 242; /* cool neutral gray #EEF0F2, screenshot gallery sections only */
 
   /* Scroll motion tokens (see "Scroll motion" at the end of this file) */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);

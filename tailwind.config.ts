@@ -23,6 +23,7 @@ const config: Config = {
           tint: "rgb(var(--color-accent-tint) / <alpha-value>)",
         },
         surface: "rgb(var(--color-surface) / <alpha-value>)",
+        "gallery-surface": "rgb(var(--color-gallery-surface) / <alpha-value>)",
         muted: "rgb(var(--color-muted) / <alpha-value>)",
         line: "rgb(var(--color-line) / <alpha-value>)",
       },

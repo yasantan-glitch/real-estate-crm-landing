@@ -19,6 +19,7 @@ const nextConfig: NextConfig = {
       { source: "/kimler-icin/bireysel-emlakci", destination: "/fiyatlandirma#bireysel-emlakci", permanent: true },
       { source: "/kimler-icin/emlak-ofisi", destination: "/fiyatlandirma#emlak-ofisi", permanent: true },
       { source: "/kimler-icin/franchise", destination: "/fiyatlandirma#franchise", permanent: true },
+      { source: "/basari-hikayesi", destination: "/crm-galerisi", permanent: true },
     ];
   },
 };
