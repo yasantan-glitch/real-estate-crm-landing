@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { siteConfig } from "@/config/site";
 import { contact } from "@/content/landing";
 import { buildFaqJsonLd } from "@/lib/jsonld";
+import { reveal, stagger } from "@/lib/motion";
 
 const canonicalUrl = `${siteConfig.siteUrl}/iletisim`;
 
@@ -54,7 +55,7 @@ export default function ContactPage() {
         {/* --- Direct channels --- */}
         <section className="border-y border-line bg-surface">
           <div className="section">
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-3" {...stagger("settle")}>
               <a
                 href={telHref}
                 className="rounded-2xl border border-line bg-white p-6 text-center transition-colors hover:border-brand"
@@ -92,7 +93,7 @@ export default function ContactPage() {
         {/* --- Which department --- */}
         <section className="bg-white">
           <div className="section">
-            <div className="grid gap-5 sm:grid-cols-2">
+            <div className="grid gap-5 sm:grid-cols-2" {...stagger("up")}>
               {contact.categories.map((item) => (
                 <div key={item.title} className="rounded-[20px] border border-line bg-surface p-8 shadow-card">
                   <h2 className="font-display text-2xl font-extrabold tracking-tight text-brand">{item.title}</h2>
@@ -109,7 +110,7 @@ export default function ContactPage() {
               ))}
             </div>
 
-            <div className="mx-auto mt-10 max-w-2xl rounded-2xl border border-line bg-white p-6 text-center">
+            <div className="mx-auto mt-10 max-w-2xl rounded-2xl border border-line bg-white p-6 text-center" {...reveal("up")}>
               <h3 className="text-[15px] font-bold text-brand">{contact.serviceArea.title}</h3>
               <p className="mt-1.5 text-[13.5px] leading-relaxed text-slate-600">{contact.serviceArea.text}</p>
             </div>
@@ -119,8 +120,8 @@ export default function ContactPage() {
         {/* --- Contact FAQ --- */}
         <section className="border-t border-line bg-surface">
           <div className="mx-auto w-full max-w-[720px] px-5 py-16 sm:px-8 md:py-20">
-            <h2 className="h2 text-center">{contact.faq.title}</h2>
-            <div className="mt-10 divide-y divide-line">
+            <h2 className="h2 text-center" {...reveal("mask")}>{contact.faq.title}</h2>
+            <div className="mt-10 divide-y divide-line" {...stagger("fade")}>
               {contact.faq.items.map((item) => (
                 <details key={item.q} className="group py-5">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-[15.5px] font-bold text-brand marker:content-none">

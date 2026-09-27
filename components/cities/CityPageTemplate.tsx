@@ -1,4 +1,5 @@
 import type { CityPageContent } from "@/content/cities";
+import { reveal, stagger } from "@/lib/motion";
 
 export default function CityPageTemplate({ content }: { content: CityPageContent }) {
   return (
@@ -32,8 +33,8 @@ export default function CityPageTemplate({ content }: { content: CityPageContent
       {/* --- Market context (city-specific) --- */}
       <section className="border-y border-line bg-surface">
         <div className="section">
-          <h2 className="h2 text-center">{content.marketContext.title}</h2>
-          <div className="mt-10 grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]">
+          <h2 className="h2 text-center" {...reveal("mask")}>{content.marketContext.title}</h2>
+          <div className="mt-10 grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]" {...stagger("settle")}>
             {content.marketContext.items.map((item) => (
               <div key={item.title} className="rounded-[18px] border border-line bg-white p-6">
                 <h3 className="text-[16.5px] font-bold text-brand">{item.title}</h3>
@@ -47,8 +48,8 @@ export default function CityPageTemplate({ content }: { content: CityPageContent
       {/* --- Pain points --- */}
       <section className="bg-white">
         <div className="section">
-          <h2 className="h2 text-center">Karşılaştığınız Zorluklar</h2>
-          <div className="mt-10 grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]">
+          <h2 className="h2 text-center" {...reveal("mask")}>Karşılaştığınız Zorluklar</h2>
+          <div className="mt-10 grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]" {...stagger("settle")}>
             {content.painPoints.map((item) => (
               <div key={item.title} className="rounded-[18px] border border-line bg-surface p-6">
                 <h3 className="text-[16.5px] font-bold text-brand">{item.title}</h3>
@@ -62,8 +63,8 @@ export default function CityPageTemplate({ content }: { content: CityPageContent
       {/* --- Relevant features --- */}
       <section className="border-t border-line bg-white">
         <div className="section">
-          <h2 className="h2 text-center">Size Özel Özellikler</h2>
-          <div className="mt-10 grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]">
+          <h2 className="h2 text-center" {...reveal("mask")}>Size Özel Özellikler</h2>
+          <div className="mt-10 grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]" {...stagger("settle")}>
             {content.relevantFeatures.map((item) => (
               <div
                 key={item.title}
@@ -86,8 +87,8 @@ export default function CityPageTemplate({ content }: { content: CityPageContent
       {content.relatedLinks.length > 0 && (
         <section className="border-t border-line bg-surface">
           <div className="mx-auto w-full max-w-[720px] px-5 py-12 text-center sm:px-8">
-            <h2 className="h2">İlgili Kaynaklar</h2>
-            <ul className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <h2 className="h2" {...reveal("mask")}>İlgili Kaynaklar</h2>
+            <ul className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2" {...stagger("fade")}>
               {content.relatedLinks.map((link) => (
                 <li key={link.href}>
                   <a href={link.href} className="text-sm font-semibold text-accent underline">
@@ -103,8 +104,8 @@ export default function CityPageTemplate({ content }: { content: CityPageContent
       {/* --- FAQ --- */}
       <section className="border-t border-line bg-white">
         <div className="mx-auto w-full max-w-[720px] px-5 py-16 sm:px-8 md:py-20">
-          <h2 className="h2 text-center">Sık Sorulan Sorular</h2>
-          <div className="mt-10 divide-y divide-line">
+          <h2 className="h2 text-center" {...reveal("mask")}>Sık Sorulan Sorular</h2>
+          <div className="mt-10 divide-y divide-line" {...stagger("fade")}>
             {content.faq.map((item) => (
               <details key={item.q} className="group py-5">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-[15.5px] font-bold text-brand marker:content-none">
@@ -126,9 +127,9 @@ export default function CityPageTemplate({ content }: { content: CityPageContent
       {/* --- Closing CTA --- */}
       <section className="border-t border-line bg-brand">
         <div className="section text-center">
-          <h2 className="h2 !text-white">{content.cta.title}</h2>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-zinc-400">{content.cta.text}</p>
-          <div className="mt-8">
+          <h2 className="h2 !text-white" {...reveal("mask")}>{content.cta.title}</h2>
+          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-zinc-400" {...reveal("up")}>{content.cta.text}</p>
+          <div className="mt-8" {...reveal("settle")}>
             <a href={content.cta.href} className="btn-primary">
               {content.cta.label}
             </a>

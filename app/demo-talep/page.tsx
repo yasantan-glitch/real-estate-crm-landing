@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import DemoForm from "@/components/DemoForm";
 import { siteConfig } from "@/config/site";
 import { demoPage } from "@/content/landing";
+import { stagger } from "@/lib/motion";
 
 const canonicalUrl = `${siteConfig.siteUrl}/demo-talep`;
 
@@ -44,7 +45,7 @@ export default function DemoRequestPage() {
         {/* --- Process sections --- */}
         <section className="border-y border-line bg-surface">
           <div className="section">
-            <div className="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]">
+            <div className="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]" {...stagger("settle")}>
               {demoPage.sections.map((item) => (
                 <div key={item.title} className="rounded-2xl border border-line bg-white p-[22px]">
                   <h2 className="text-[15.5px] font-bold text-brand">{item.title}</h2>

@@ -1,5 +1,6 @@
 import type { AlternativePageContent } from "@/content/alternatives";
 import { toolsPageBackLinkAlternatifler } from "@/content/alternatives";
+import { reveal, stagger } from "@/lib/motion";
 
 function renderCell(value: string | boolean) {
   if (typeof value === "boolean") {
@@ -36,8 +37,8 @@ export default function AlternativePageTemplate({ content }: { content: Alternat
       {/* --- Comparison table --- */}
       <section className="border-y border-line bg-surface">
         <div className="mx-auto w-full max-w-[820px] px-5 py-16 sm:px-8 md:py-20">
-          <h2 className="h2 text-center">{content.comparisonTable.title}</h2>
-          <div className="mt-8 overflow-x-auto">
+          <h2 className="h2 text-center" {...reveal("mask")}>{content.comparisonTable.title}</h2>
+          <div className="mt-8 overflow-x-auto" {...reveal("up")}>
             <table className="w-full min-w-[560px] border-collapse text-left text-[14.5px]">
               <thead>
                 <tr className="border-b border-line">
@@ -69,7 +70,7 @@ export default function AlternativePageTemplate({ content }: { content: Alternat
       {/* --- Differentiators --- */}
       <section className="bg-white">
         <div className="section">
-          <div className="grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]">
+          <div className="grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]" {...stagger("settle")}>
             {content.differentiators.map((item) => (
               <div
                 key={item.title}
@@ -86,8 +87,8 @@ export default function AlternativePageTemplate({ content }: { content: Alternat
       {/* --- Who should choose --- */}
       <section className="border-t border-line bg-surface">
         <div className="mx-auto w-full max-w-[720px] px-5 py-16 sm:px-8 md:py-20">
-          <h2 className="h2 text-center">Hangisi Size Uygun?</h2>
-          <div className="mt-8 grid gap-5 sm:grid-cols-2">
+          <h2 className="h2 text-center" {...reveal("mask")}>Hangisi Size Uygun?</h2>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2" {...stagger("up")}>
             <div className="rounded-[18px] border border-accent bg-white p-6">
               <h3 className="text-[15.5px] font-bold text-brand">Emlak CRM Pro</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-600">{content.whoShouldChoose.us}</p>
@@ -103,8 +104,8 @@ export default function AlternativePageTemplate({ content }: { content: Alternat
       {/* --- FAQ --- */}
       <section className="border-t border-line bg-white">
         <div className="mx-auto w-full max-w-[720px] px-5 py-16 sm:px-8 md:py-20">
-          <h2 className="h2 text-center">Sık Sorulan Sorular</h2>
-          <div className="mt-10 divide-y divide-line">
+          <h2 className="h2 text-center" {...reveal("mask")}>Sık Sorulan Sorular</h2>
+          <div className="mt-10 divide-y divide-line" {...stagger("fade")}>
             {content.faq.map((item) => (
               <details key={item.q} className="group py-5">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-[15.5px] font-bold text-brand marker:content-none">
@@ -126,9 +127,9 @@ export default function AlternativePageTemplate({ content }: { content: Alternat
       {/* --- Closing CTA --- */}
       <section className="border-t border-line bg-brand">
         <div className="section text-center">
-          <h2 className="h2 !text-white">{content.cta.title}</h2>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-zinc-400">{content.cta.text}</p>
-          <div className="mt-8">
+          <h2 className="h2 !text-white" {...reveal("mask")}>{content.cta.title}</h2>
+          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-zinc-400" {...reveal("up")}>{content.cta.text}</p>
+          <div className="mt-8" {...reveal("settle")}>
             <a href={content.cta.href} className="btn-primary">
               {content.cta.label}
             </a>
