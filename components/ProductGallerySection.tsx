@@ -27,7 +27,9 @@ import { productGallery, type GalleryModuleId } from "@/content/product-gallery"
 import { useSwipe } from "@/lib/useSwipe";
 import { reveal, scrub } from "@/lib/motion";
 
-const { eyebrow, title, intro, tabsLabel, modules, images, labels } = productGallery;
+const { eyebrow, title, intro, tabsLabel, modules, images: allImages, labels } = productGallery;
+
+const images = allImages.filter((image) => image.theme === "acik");
 
 const ID_PREFIX = "urun-galerisi";
 const STAGE_SIZES = "(min-width: 1152px) 1088px, (min-width: 640px) calc(100vw - 64px), 100vw";

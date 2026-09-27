@@ -36,8 +36,31 @@ const lightboxSlides = images.map((image) => ({
 export default function GalleryPageTemplate() {
   const [activeModule, setActiveModule] = useState<GalleryModuleId>(modules[0].id);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [koyuTitles, setKoyuTitles] = useState<Set<string>>(new Set());
 
-  const moduleImages = images.filter((image) => image.module === activeModule);
+  const toggleTheme = (title: string) => {
+    setKoyuTitles((prev) => {
+      const next = new Set(prev);
+      if (next.has(title)) next.delete(title);
+      else next.add(title);
+      return next;
+    });
+  };
+
+  // Screens are grouped by title within a module: an "acik" image plus its
+  // optional "koyu" twin. Only one of the pair renders at a time, toggled by
+  // koyuTitles; the lightbox still walks every image (both themes).
+  const acikScreens = images.filter(
+    (image) => image.module === activeModule && image.theme === "acik"
+  );
+  const moduleImages = acikScreens.map((acikImage) => {
+    const koyuImage = images.find(
+      (image) =>
+        image.module === activeModule && image.theme === "koyu" && image.title === acikImage.title
+    );
+    const showKoyu = koyuImage && koyuTitles.has(acikImage.title);
+    return { display: showKoyu ? koyuImage : acikImage, koyuImage };
+  });
 
   return (
     <main>
@@ -80,8 +103,8 @@ export default function GalleryPageTemplate() {
             className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-2"
             {...stagger("settle")}
           >
-            {moduleImages.map((image) => (
-              <figure key={image.src}>
+            {moduleImages.map(({ display: image, koyuImage }) => (
+              <figure key={image.title}>
                 <button
                   type="button"
                   aria-label={`${labels.openImage}: ${image.title}`}
@@ -111,9 +134,21 @@ export default function GalleryPageTemplate() {
                     </svg>
                   </span>
                 </button>
-                <figcaption className="mt-4">
-                  <h3 className="text-[16.5px] font-bold text-brand">{image.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{image.caption}</p>
+                <figcaption className="mt-4 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="text-[16.5px] font-bold text-brand">{image.title}</h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{image.caption}</p>
+                  </div>
+                  {koyuImage && (
+                    <button
+                      type="button"
+                      onClick={() => toggleTheme(image.title)}
+                      aria-label={`${labels.theme[image.theme === "acik" ? "koyu" : "acik"]} ${labels.theme.switchTo}`}
+                      className="shrink-0 whitespace-nowrap border border-line px-3 py-1.5 text-xs font-semibold text-brand transition-colors hover:bg-brand-soft"
+                    >
+                      {image.theme === "acik" ? labels.theme.koyu : labels.theme.acik}
+                    </button>
+                  )}
                 </figcaption>
               </figure>
             ))}
