@@ -75,7 +75,7 @@ export default function PricingPage() {
         </section>
 
         {/* --- Pricing cards --- */}
-        <PricingSection ctaHref="/#demo" />
+        <PricingSection />
 
         {/* --- Kimler için (segment) blocks --- */}
         {useCases.map((content) => (

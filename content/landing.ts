@@ -337,7 +337,7 @@ export const demoPage = {
   seo: {
     title: "Emlak CRM Pro Demo Talep — Ofisiniz için Özel Sunum",
     description:
-      "Emlak CRM Pro'nun canlı demosunu talep edin. Ofisinizin ihtiyacına göre kişiselleştirilmiş sunum, kurulum ve fiyat teklifi. Hızlı ve ücretsiz.",
+      "Emlak CRM Pro'nun canlı demosunu talep edin. Ofisinizin ihtiyacına göre kişiselleştirilmiş sunum ve kurulum planı. Hızlı ve ücretsiz.",
   },
   eyebrow: "Demo talebi",
   title: "Sistemi Çalışırken Görmek İstiyoruz",
@@ -353,8 +353,8 @@ export const demoPage = {
       text: "Standart kurulum birkaç iş günü içinde tamamlanır. Veri aktarımı ve ekip eğitimi, ofisinizin büyüklüğü ve ihtiyaçlarına göre birlikte planlanır.",
     },
     {
-      title: "Fiyat Teklifi ve Paket Seçimi",
-      text: "Demo sonrasında, ofisinizin danışman sayısı ve ihtiyacını göz önüne alarak en uygun paketi öneriyoruz ve yazılı tekliflendirme yapıyoruz. Sorularınız cevaplandıktan sonra imzalama ve kurulum adımlarına geçilir.",
+      title: "Teklif ve Paket Seçimi",
+      text: "Demo sonrasında, ofisinizin danışman sayısı ve ihtiyacını göz önüne alarak en uygun paketi öneriyoruz ve size özel yazılı teklif sunuyoruz. Sorularınız cevaplandıktan sonra imzalama ve kurulum adımlarına geçilir.",
     },
   ],
 };
@@ -390,26 +390,18 @@ export const audience = {
   ],
 };
 
-export type PricingTierPrice = {
-  discountedPrice: string;
-  discountNote: string;
-  customQuoteNote?: string;
-};
-
 export const pricing = {
   eyebrow: "Paketler",
   title: "Ofisinizin ölçeğine göre paket seçin.",
-  note: "Fiyatlar yıllık peşin ödenir ve her yıl yenilenir. CRM özellikleri her pakette aynıdır; farklılık kullanıcı sayısı ve destek seviyesindedir.",
-  cta: "Demo ve Teklif Al",
+  note: "CRM özellikleri her pakette aynıdır; farklılık kullanıcı sayısı ve destek seviyesindedir. Size özel teklif için iletişime geçin.",
+  cta: "Fiyat Bilgisi Al",
+  ctaHref: "/iletisim",
+  ctaParam: "paket",
   tiers: [
     {
       name: "Standart",
       badge: "En çok tercih edilen kurgu",
       target: "Bireysel danışmanlar ve emlak ofisleri için",
-      price: {
-        discountedPrice: "50.000 TL/yıl",
-        discountNote: "Yıllık peşin ödeme",
-      } satisfies PricingTierPrice,
       features: [
         "1-9 kullanıcı",
         "Subdomain kullanımı",
@@ -421,11 +413,7 @@ export const pricing = {
       name: "Pro",
       badge: null,
       target: "Broker ekipleri ve franchise yapıları için",
-      price: {
-        discountedPrice: "80.000 TL/yıl",
-        discountNote: "Yıllık peşin ödeme",
-        customQuoteNote: "Özel ihtiyaçlar için: İhtiyaca göre tekliflendirilir",
-      } satisfies PricingTierPrice,
+      customQuoteNote: "Özel ihtiyaçlar için: İhtiyaca göre tekliflendirilir",
       features: [
         "10+ kullanıcı",
         "Özel domain desteği",
@@ -442,12 +430,12 @@ export const pricingPage = {
   seo: {
     title: "Fiyatlandırma — Emlak CRM Pro Paketleri",
     description:
-      "Emlak CRM programı paket fiyatlarını karşılaştırın: Standart ve Pro. Ofis büyüklüğünüze uygun paketi seçin, ücretsiz demo talep edin.",
+      "Emlak CRM programı paketlerini karşılaştırın: Standart ve Pro. Ofis büyüklüğünüze uygun paketi belirleyin, size özel teklif için iletişime geçin.",
   },
   eyebrow: "Fiyatlandırma",
-  title: "Şeffaf fiyatlandırma — ofisinizin ölçeğine göre",
+  title: "Ofisinizin ölçeğine göre paketler",
   intro:
-    "İki paket, aynı CRM özellikleri. Farklılık kullanıcı sayısı ve destek seviyesindedir. Fiyatlar yıllık peşin ödenir ve her yıl yenilenir. Aşağıda ofis büyüklüğünüze göre önerilen paketi bulabilirsiniz.",
+    "İki paket, aynı CRM özellikleri. Farklılık kullanıcı sayısı ve destek seviyesindedir. Fiyat bilgisi için bizimle iletişime geçin; size özel teklif sunalım. Aşağıda ofis büyüklüğünüze göre önerilen paketi bulabilirsiniz.",
   guide: {
     eyebrow: "Hangi paket size uygun?",
     title: "Ofis büyüklüğünüze göre öneri",
@@ -476,11 +464,11 @@ export const pricingPage = {
   },
   faq: {
     eyebrow: "Sık sorulan sorular",
-    title: "Fiyatlandırma hakkında merak edilenler",
+    title: "Paketler hakkında merak edilenler",
     items: [
       {
-        q: "Ödeme nasıl yapılıyor?",
-        a: "Sistem yıllık peşin ödeme modeliyle çalışır; paket her yıl aynı koşullarla yenilenir.",
+        q: "Paket fiyatlarını nereden öğrenebilirim?",
+        a: "Fiyatlar ofisinizin kullanıcı sayısı ve ihtiyacına göre belirlenir. Size özel teklif için iletişim sayfamızdan bize ulaşabilirsiniz.",
       },
       {
         q: "Paket değişimi veya kullanıcı sayısı artırma mümkün mü?",
@@ -737,7 +725,7 @@ export const contact = {
   seo: {
     title: "İletişim — Emlak CRM Pro Danışmanlarına Ulaşın",
     description:
-      "Emlak CRM Pro'ya demo, fiyat teklifi, teknik destek veya sorularınız için ulaşın. Telefon, e-posta, WhatsApp — tercih ettiğiniz kanaldan iletişime geçin.",
+      "Emlak CRM Pro'ya demo, size özel teklif, teknik destek veya sorularınız için ulaşın. Telefon, e-posta, WhatsApp — tercih ettiğiniz kanaldan iletişime geçin.",
   },
   eyebrow: "İletişim",
   title: "Bizimle konuşun — doğru çözüm için",
@@ -752,7 +740,7 @@ export const contact = {
   categories: [
     {
       title: "Satış & Demo",
-      text: "Paket seçimi, fiyat teklifi ve kurulum süreci hakkında konuşmak veya canlı bir demo planlamak için.",
+      text: "Paket seçimi, size özel teklif ve kurulum süreci hakkında konuşmak veya canlı bir demo planlamak için.",
       ctaLabel: "Demo Talep Et",
       href: "/#demo",
     },
@@ -779,8 +767,8 @@ export const contact = {
         a: "WhatsApp veya e-posta üzerinden Destek kanalından ulaşabilirsiniz; talebiniz ilgili ekibe yönlendirilir.",
       },
       {
-        q: "Fiyat teklifi almak için önce demo görmem gerekiyor mu?",
-        a: "Hayır, doğrudan Satış & Demo kanalından fiyat sorabilirsiniz; ancak sistemi görmeden karar vermemenizi öneririz.",
+        q: "Teklif almak için önce demo görmem gerekiyor mu?",
+        a: "Hayır, doğrudan Satış & Demo kanalından bize ulaşıp size özel teklif isteyebilirsiniz; ancak sistemi görmeden karar vermemenizi öneririz.",
       },
       {
         q: "Hangi bölgelere hizmet veriyorsunuz?",

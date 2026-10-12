@@ -49,7 +49,7 @@ export default function KullanimKosullariPage() {
                   Emlak CRM Pro, gayrimenkul ofisleri için portföy, müşteri,
                   talep, danışman performansı ve satış süreçlerinin tek panelden
                   yönetilmesini sağlayan web tabanlı bir CRM (Müşteri İlişkileri
-                  Yönetimi) yazılımıdır. Hizmet, aylık abonelik modeliyle sunulur.
+                  Yönetimi) yazılımıdır. Hizmet, abonelik modeliyle sunulur.
                 </p>
 
                 <h2>2.3 Fikri Mülkiyet</h2>

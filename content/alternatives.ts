@@ -18,7 +18,7 @@ export const alternativesHubLinks = {
   links: [
     { label: "Emlak ofisi için CRM nasıl seçilir?", href: "/blog/emlak-ofisi-icin-crm-nasil-secilir" },
     { label: "CRM ürün rehberi yazıları", href: "/blog/urun-rehberi" },
-    { label: "Emlak CRM Pro paketleri ve fiyatlar", href: "/fiyatlandirma" },
+    { label: "Emlak CRM Pro paketleri", href: "/fiyatlandirma" },
   ],
 };
 
@@ -52,7 +52,7 @@ export const alternativesHubPage = {
   seo: {
     title: "Emlak CRM Alternatifleri — Karşılaştırmalar",
     description:
-      "Emlak CRM Pro'yu diğer emlak CRM yazılımlarıyla karşılaştırın: özellik, fiyatlandırma modeli ve destek farkları.",
+      "Emlak CRM Pro'yu diğer emlak CRM yazılımlarıyla karşılaştırın: özellik ve destek farkları.",
   },
   eyebrow: "Karşılaştırmalar",
   title: "Emlak CRM Pro'yu Diğer Sistemlerle Karşılaştırın",
@@ -67,21 +67,15 @@ export const alternatives: AlternativePageContent[] = [
     seo: {
       title: "EmlakCRMx Alternatifi — Emlak CRM Pro Karşılaştırması",
       description:
-        "EmlakCRMx'e alternatif arıyorsanız Emlak CRM Pro'nun özellik, fiyatlandırma modeli ve destek farklarını inceleyin.",
+        "EmlakCRMx'e alternatif arıyorsanız Emlak CRM Pro'nun özellik ve destek farklarını inceleyin.",
     },
     eyebrow: "EmlakCRMx Alternatifi",
     h1: "Emlak CRM Pro vs EmlakCRMx: Emlak Ofisleri İçin Karşılaştırma",
     intro:
-      "EmlakCRMx'e alternatif değerlendiriyorsanız, aşağıda iki sistemin öne çıkan özelliklerini ve fiyatlandırma yaklaşımını yan yana bulabilirsiniz. Karşılaştırma, EmlakCRMx'in kamuya açık web sitesindeki bilgilere dayanır; kendi ihtiyacınıza göre karar vermeniz için hazırlanmıştır.",
+      "EmlakCRMx'e alternatif değerlendiriyorsanız, aşağıda iki sistemin öne çıkan özelliklerini yan yana bulabilirsiniz. Karşılaştırma, EmlakCRMx'in kamuya açık web sitesindeki bilgilere dayanır; kendi ihtiyacınıza göre karar vermeniz için hazırlanmıştır.",
     comparisonTable: {
       title: "Özellik Karşılaştırması",
       rows: [
-        {
-          feature: "Fiyatlandırma modeli",
-          us: "Aylık abonelik, taahhütsüz",
-          competitor: "Yıllık taahhüt gerektirir",
-          note: "Rakibin fiyatlandırma sayfasında belirtilen paket koşullarına dayanır.",
-        },
         {
           feature: "Kurulum süresi",
           us: "Kendi kendine kurulum, aynı gün başlangıç",
@@ -113,9 +107,9 @@ export const alternatives: AlternativePageContent[] = [
     },
     differentiators: [
       {
-        title: "Taahhütsüz aylık abonelik",
+        title: "Esnek paket yapısı",
         description:
-          "Yıllık sözleşmeye bağlı kalmadan, ihtiyacınız değiştiğinde paket değiştirebilir veya sonlandırabilirsiniz.",
+          "İhtiyacınız değiştiğinde kullanıcı ekleyebilir veya paketler arasında geçiş yapabilirsiniz.",
       },
       {
         title: "Aynı gün kurulum",
@@ -129,8 +123,8 @@ export const alternatives: AlternativePageContent[] = [
       },
     ],
     whoShouldChoose: {
-      us: "Hızlı başlamak isteyen, taahhüt altına girmeden deneyerek karar vermek isteyen bireysel danışmanlar ve ofisler için uygundur.",
-      competitor: "Uzun vadeli taahhüt karşılığında ek kurumsal hizmet almak isteyen büyük ekipler için de bir seçenek olabilir.",
+      us: "Hızlı başlamak isteyen, önce demoda deneyerek karar vermek isteyen bireysel danışmanlar ve ofisler için uygundur.",
+      competitor: "Ek kurumsal hizmet almak isteyen büyük ekipler için de bir seçenek olabilir.",
     },
     faq: [
       {
@@ -139,7 +133,7 @@ export const alternatives: AlternativePageContent[] = [
       },
       {
         q: "İki sistem arasındaki temel fark nedir?",
-        a: "En belirgin fark fiyatlandırma modelidir: Emlak CRM Pro aylık taahhütsüz çalışır, EmlakCRMx yıllık taahhüt gerektirir. Özellik seti büyük ölçüde örtüşür.",
+        a: "Özellik seti büyük ölçüde örtüşür; asıl fark Türkiye'deki emlak ofisi iş akışına uyum, Türkçe destek ve kurulum hızındadır.",
       },
       {
         q: "Bu karşılaştırma güncel mi?",
@@ -160,20 +154,15 @@ export const alternatives: AlternativePageContent[] = [
     seo: {
       title: "RE-OS.com Alternatifi — Emlak CRM Pro Karşılaştırması",
       description:
-        "RE-OS.com'a alternatif arıyorsanız Emlak CRM Pro'nun özellik, fiyatlandırma modeli ve destek farklarını inceleyin.",
+        "RE-OS.com'a alternatif arıyorsanız Emlak CRM Pro'nun özellik ve destek farklarını inceleyin.",
     },
     eyebrow: "RE-OS.com Alternatifi",
     h1: "Emlak CRM Pro vs RE-OS.com: Emlak Ofisleri İçin Karşılaştırma",
     intro:
-      "RE-OS.com'a alternatif değerlendiriyorsanız, aşağıda iki sistemin öne çıkan özelliklerini ve fiyatlandırma yaklaşımını yan yana bulabilirsiniz. Karşılaştırma, RE-OS.com'un kamuya açık web sitesindeki bilgilere dayanır.",
+      "RE-OS.com'a alternatif değerlendiriyorsanız, aşağıda iki sistemin öne çıkan özelliklerini yan yana bulabilirsiniz. Karşılaştırma, RE-OS.com'un kamuya açık web sitesindeki bilgilere dayanır.",
     comparisonTable: {
       title: "Özellik Karşılaştırması",
       rows: [
-        {
-          feature: "Fiyatlandırma modeli",
-          us: "Aylık abonelik, taahhütsüz",
-          competitor: "Kullanıcı bazlı katmanlı fiyatlandırma",
-        },
         {
           feature: "Türkçe arayüz ve destek",
           us: true,
@@ -210,9 +199,9 @@ export const alternatives: AlternativePageContent[] = [
           "Arayüz, terminoloji ve iş akışları Türkiye'deki emlak ofislerinin günlük çalışma şekline göre tasarlandı.",
       },
       {
-        title: "Şeffaf, öngörülebilir fiyatlandırma",
+        title: "Net paket yapısı",
         description:
-          "Kullanıcı sayısına göre net paketler; sürpriz ek ücret veya karmaşık katman yapısı yok.",
+          "Kullanıcı sayısına göre iki net paket; karmaşık katman yapısı yok. Size özel teklif için iletişime geçin.",
       },
       {
         title: "Hızlı devreye alma",
@@ -230,7 +219,7 @@ export const alternatives: AlternativePageContent[] = [
       },
       {
         q: "İki sistem arasındaki temel fark nedir?",
-        a: "Emlak CRM Pro, Türkiye'deki emlak ofislerinin iş akışına göre tasarlanmış Türkçe bir sistemdir ve daha basit, öngörülebilir bir fiyatlandırma modeli sunar.",
+        a: "Emlak CRM Pro, Türkiye'deki emlak ofislerinin iş akışına göre tasarlanmış Türkçe bir sistemdir ve daha basit, net bir paket yapısı sunar.",
       },
       {
         q: "Bu karşılaştırma güncel mi?",
@@ -251,7 +240,7 @@ export const alternatives: AlternativePageContent[] = [
     seo: {
       title: "crmprogrami.tr Alternatifi — Emlak CRM Pro Karşılaştırması",
       description:
-        "crmprogrami.tr'ye alternatif arıyorsanız Emlak CRM Pro'nun emlak sektörüne özel özellik ve fiyatlandırma farklarını inceleyin.",
+        "crmprogrami.tr'ye alternatif arıyorsanız Emlak CRM Pro'nun emlak sektörüne özel özellik farklarını inceleyin.",
     },
     eyebrow: "crmprogrami.tr Alternatifi",
     h1: "Emlak CRM Pro vs crmprogrami.tr: Emlak Ofisleri İçin Karşılaştırma",
@@ -274,11 +263,6 @@ export const alternatives: AlternativePageContent[] = [
           feature: "Emlak komisyonu ve hakediş takibi",
           us: true,
           competitor: "Dokümantasyonunda belirtilmemiş",
-        },
-        {
-          feature: "Fiyatlandırma modeli",
-          us: "Aylık abonelik, taahhütsüz",
-          competitor: "Kullanıcı bazlı katmanlı fiyatlandırma",
         },
         {
           feature: "PDF portföy sunumu",

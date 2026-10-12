@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import { siteConfig } from "@/config/site";
-import { pricing } from "@/content/landing";
 import ScrollMotion from "@/components/motion/ScrollMotion";
 import "./globals.css";
 
@@ -67,12 +66,6 @@ export const metadata: Metadata = {
 };
 
 // SoftwareApplication structured data (brand values come from config)
-// Offer price is derived from the lowest tier's discounted price in
-// content/landing.ts (pricing.tiers[0] = "Standart") — no hardcoded price here.
-const entryTier = pricing.tiers[0];
-const entryTierPriceDigits = entryTier.price.discountedPrice.replace(/[^0-9]/g, "");
-
-
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -81,12 +74,6 @@ const jsonLd = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Cloud",
   description: siteConfig.seo.description,
-  offers: {
-    "@type": "Offer",
-    price: entryTierPriceDigits,
-    priceCurrency: "TRY",
-    description: `${entryTier.name} paketi, yıllık abonelik — peşin ödeme`,
-  },
   publisher: { "@type": "Organization", name: siteConfig.companyName },
 };
 

@@ -2,7 +2,7 @@ import SectionHeading from "./SectionHeading";
 import { pricing } from "@/content/landing";
 import { stagger } from "@/lib/motion";
 
-export default function PricingSection({ ctaHref = "#demo" }: { ctaHref?: string }) {
+export default function PricingSection() {
   return (
     <section id="paketler" className="scroll-mt-24 bg-brand">
       <div className="section !pb-[110px]">
@@ -26,19 +26,13 @@ export default function PricingSection({ ctaHref = "#demo" }: { ctaHref?: string
                 )}
                 <p className={`text-[13px] font-bold ${featured ? "text-white/95" : "text-zinc-400"}`}>{tier.target}</p>
                 <h3 className="mb-[18px] mt-1.5 text-[22px] font-extrabold text-white">{tier.name}</h3>
-                <p className="mb-3.5 inline-block rounded-full bg-accent-tint px-3 py-1 text-xs font-bold text-accent">
-                  {tier.price.discountNote}
-                </p>
-                <p className="mb-5 mt-1 text-[38px] font-extrabold tracking-tight text-white">
-                  {tier.price.discountedPrice}
-                </p>
-                {tier.price.customQuoteNote && (
-                  <p className={`-mt-3 mb-5 text-[12.5px] ${featured ? "text-white/75" : "text-zinc-400"}`}>
-                    {tier.price.customQuoteNote}
+                {tier.customQuoteNote && (
+                  <p className={`mb-5 text-[12.5px] ${featured ? "text-white/75" : "text-zinc-400"}`}>
+                    {tier.customQuoteNote}
                   </p>
                 )}
                 <a
-                  href={ctaHref}
+                  href={`${pricing.ctaHref}?${pricing.ctaParam}=${encodeURIComponent(tier.name)}`}
                   className={`mb-5 block rounded-full py-3.5 text-center text-[15px] font-bold ${
                     featured ? "bg-brand text-white" : "bg-accent text-white"
                   }`}
