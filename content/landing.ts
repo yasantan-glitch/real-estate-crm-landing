@@ -953,7 +953,7 @@ export const tapuHarciCalculatorPage = {
       { id: "standard", label: "Standart satış", doner: 6681 },
       { id: "mortgage", label: "Kredili / ipotekli satış", doner: 13362 },
       { id: "outOfJurisdiction", label: "Tapu müdürlüğü yetki alanı dışı işlem", doner: 13362 },
-      { id: "foreignBuyer", label: "Yabancı uyruklu alıcı", doner: 20870 },
+      { id: "foreignBuyer", label: "Yabancı uyruklu alıcı", doner: 27551 },
     ],
     defaultTransactionType: "standard",
     donerSermayeLabel: "Döner sermaye ücreti",
