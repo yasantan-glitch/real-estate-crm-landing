@@ -10,9 +10,10 @@ import PricingSection from "@/components/PricingSection";
 import TrustSection from "@/components/TrustSection";
 import DemoForm from "@/components/DemoForm";
 import FAQ from "@/components/FAQ";
+import ContextLinks from "@/components/ContextLinks";
 import Footer from "@/components/Footer";
 import MobileStickyCtaBar from "@/components/MobileStickyCtaBar";
-import { faq } from "@/content/landing";
+import { contextLinks, faq } from "@/content/landing";
 import { buildFaqJsonLd } from "@/lib/jsonld";
 
 const faqJsonLd = buildFaqJsonLd(faq.items);
@@ -33,6 +34,7 @@ export default function HomePage() {
         <ProductPreviewSection />
         <ProductGallerySection />
         <AudienceSection />
+        <ContextLinks {...contextLinks.home} />
         <PricingSection />
         <TrustSection />
         <DemoForm />

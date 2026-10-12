@@ -15,7 +15,7 @@ Türk Borçlar Kanunu m.344 uyarınca kira artış tavanı, TÜFE'nin 12 aylık 
 
 ## Örnek hesaplama
 
-Mevcut kirası 20.000 TL olan bir sözleşmede: zam tutarı 6.380 TL, yeni kira 26.380 TL olur.
+Mevcut kirası 20.000 TL olan bir sözleşmede: zam tutarı 6.380 TL, yeni kira 26.380 TL olur. Yenilenen kiranın mülk değerine göre yıllık getirisini görmek için [kira getirisi hesaplama aracını](/araclar/kira-getirisi-hesaplama) kullanabilirsiniz.
 
 ## Emlak ofisi için ne anlama gelir?
 

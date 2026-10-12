@@ -651,6 +651,37 @@ export const demoForm = {
     "Gönderdiğiniz bilgiler yalnızca demo süreci için kullanılır; üçüncü taraflarla paylaşılmaz.",
 };
 
+/**
+ * Contextual "see also" link strips (components/ContextLinks.tsx) used to
+ * connect hub pages that are otherwise only reachable from the footer.
+ */
+export const contextLinks = {
+  home: {
+    intro: "Emlak CRM Pro'yu değerlendirirken işinize yarayabilecek kaynaklar:",
+    links: [
+      { label: "Emlak CRM alternatifleriyle karşılaştırma", href: "/alternatifler" },
+      { label: "Antalya'daki emlak ofisleri için CRM", href: "/antalya" },
+      { label: "Ücretsiz emlak hesaplama araçları", href: "/araclar" },
+    ],
+  },
+  features: {
+    intro: "Özelliklerin yanında şu sayfalara da göz atabilirsiniz:",
+    links: [
+      { label: "Komisyon hesaplama aracı", href: "/araclar/komisyon-hesaplama" },
+      { label: "Antalya emlak ofisleri için CRM", href: "/antalya" },
+      { label: "Diğer emlak CRM'leriyle karşılaştırma", href: "/alternatifler" },
+    ],
+  },
+  pricing: {
+    intro: "Paketleri başka bir sistemle karşılaştırıyorsanız:",
+    links: [
+      { label: "EmlakCRMx alternatifi", href: "/alternatifler/emlakcrmx-alternatifi" },
+      { label: "RE-OS.com alternatifi", href: "/alternatifler/re-os-alternatifi" },
+      { label: "crmprogrami.tr alternatifi", href: "/alternatifler/crmprogrami-alternatifi" },
+    ],
+  },
+};
+
 export const footer = {
   tagline:
     "Gayrimenkul ofisleri için portföy, müşteri, danışman ve satış yönetimini tek panelde toplayan web tabanlı CRM.",
@@ -662,7 +693,19 @@ export const footer = {
         { href: "/#paketler", label: "Paketler" },
         { href: "/fiyatlandirma", label: "Kimler İçin" },
         { href: "/#sss", label: "SSS" },
+      ],
+    },
+    {
+      title: "Kaynaklar",
+      links: [
         { href: "/blog", label: "Blog" },
+        { href: "/blog/urun-rehberi", label: "CRM Ürün Rehberleri" },
+        { href: "/araclar", label: "Ücretsiz Emlak Araçları" },
+        { href: "/araclar/komisyon-hesaplama", label: "Komisyon Hesaplama" },
+        { href: "/araclar/kira-getirisi-hesaplama", label: "Kira Getirisi Hesaplama" },
+        { href: "/araclar/tapu-harci-hesaplama", label: "Tapu Harcı Hesaplama" },
+        { href: "/alternatifler", label: "Emlak CRM Alternatifleri" },
+        { href: "/antalya", label: "Antalya Emlak CRM" },
       ],
     },
     {

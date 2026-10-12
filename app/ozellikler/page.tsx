@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
+import ContextLinks from "@/components/ContextLinks";
 import Footer from "@/components/Footer";
 import ServicesSection from "@/components/ServicesSection";
 import { siteConfig } from "@/config/site";
-import { featuresPage } from "@/content/landing";
+import { contextLinks, featuresPage } from "@/content/landing";
 import { reveal, stagger } from "@/lib/motion";
 
 const canonicalUrl = `${siteConfig.siteUrl}/ozellikler`;
@@ -57,6 +58,8 @@ export default function FeaturesPage() {
         </section>
 
         <ServicesSection />
+
+        <ContextLinks {...contextLinks.features} tone="surface" />
 
         {/* --- Closing CTA --- */}
         <section className="border-t border-line bg-brand">

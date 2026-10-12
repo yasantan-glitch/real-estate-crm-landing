@@ -1,5 +1,6 @@
 import type { AlternativePageContent } from "@/content/alternatives";
-import { toolsPageBackLinkAlternatifler } from "@/content/alternatives";
+import ContextLinks from "@/components/ContextLinks";
+import { alternatives, alternativesCrossLinks, toolsPageBackLinkAlternatifler } from "@/content/alternatives";
 import { reveal, stagger } from "@/lib/motion";
 
 function renderCell(value: string | boolean) {
@@ -123,6 +124,13 @@ export default function AlternativePageTemplate({ content }: { content: Alternat
           </div>
         </div>
       </section>
+
+      <ContextLinks
+        intro={alternativesCrossLinks.intro}
+        links={alternatives
+          .filter((item) => item.slug !== content.slug)
+          .map((item) => ({ label: item.eyebrow, href: `/alternatifler/${item.slug}` }))}
+      />
 
       {/* --- Closing CTA --- */}
       <section className="border-t border-line bg-brand">

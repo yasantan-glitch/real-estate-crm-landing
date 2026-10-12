@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
+import ContextLinks from "@/components/ContextLinks";
 import Footer from "@/components/Footer";
 import { siteConfig } from "@/config/site";
-import { alternativesHubPage, alternatives } from "@/content/alternatives";
+import { alternativesHubPage, alternativesHubLinks, alternatives } from "@/content/alternatives";
 import { stagger } from "@/lib/motion";
 
 const canonicalUrl = `${siteConfig.siteUrl}/alternatifler`;
@@ -57,6 +58,7 @@ export default function AlternativesHubPage() {
             </div>
           </div>
         </section>
+        <ContextLinks {...alternativesHubLinks} />
       </main>
       <Footer />
     </>

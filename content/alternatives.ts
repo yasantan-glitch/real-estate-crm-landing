@@ -9,6 +9,19 @@ export const toolsPageBackLinkAlternatifler = {
   href: "/alternatifler",
 };
 
+export const alternativesCrossLinks = {
+  intro: "Diğer sistemlerle karşılaştırmalara da bakabilirsiniz:",
+};
+
+export const alternativesHubLinks = {
+  intro: "Karar vermeden önce şu kaynaklar da işinize yarayabilir:",
+  links: [
+    { label: "Emlak ofisi için CRM nasıl seçilir?", href: "/blog/emlak-ofisi-icin-crm-nasil-secilir" },
+    { label: "CRM ürün rehberi yazıları", href: "/blog/urun-rehberi" },
+    { label: "Emlak CRM Pro paketleri ve fiyatlar", href: "/fiyatlandirma" },
+  ],
+};
+
 export interface ComparisonRow {
   feature: string;
   us: string | boolean;

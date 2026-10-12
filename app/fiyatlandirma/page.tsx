@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
+import ContextLinks from "@/components/ContextLinks";
 import Footer from "@/components/Footer";
 import PricingSection from "@/components/PricingSection";
 import SectionHeading from "@/components/SectionHeading";
 import { siteConfig } from "@/config/site";
-import { pricingPage } from "@/content/landing";
+import { contextLinks, pricingPage } from "@/content/landing";
 import { useCases } from "@/content/use-cases";
 import { buildFaqJsonLd } from "@/lib/jsonld";
 import { reveal, stagger } from "@/lib/motion";
@@ -175,6 +176,8 @@ export default function PricingPage() {
             </div>
           </div>
         </section>
+
+        <ContextLinks {...contextLinks.pricing} />
 
         {/* --- Closing CTA --- */}
         <section className="border-t border-line bg-brand">

@@ -11,7 +11,7 @@ Bir emlak satışı kapandığında iş bitmiş gibi görünür, ama ofis içind
 
 ## Karmaşanın kaynağı: birden fazla değişken, tek bir Excel hücresi
 
-Bir satışın komisyonunu hesaplamak basit bir çarpma işlemi gibi görünür, ama gerçekte birden fazla değişken devreye girer: satış bedeli, ofis komisyon oranı, portföyü getiren danışmanla müşteriyi getiren danışman arasındaki paylaşım oranı, varsa asistan payı, kampanyalı işlemlerde farklı oran uygulamaları. Bu değişkenlerin hepsi tek bir Excel hücresinde ya da danışmanın kafasında hesaplanmaya çalışıldığında, hata payı da o kadar artar.
+Bir satışın komisyonunu hesaplamak basit bir çarpma işlemi gibi görünür, ama gerçekte birden fazla değişken devreye girer: satış bedeli, ofis komisyon oranı, portföyü getiren danışmanla müşteriyi getiren danışman arasındaki paylaşım oranı, varsa asistan payı, kampanyalı işlemlerde farklı oran uygulamaları. Bu değişkenlerin hepsi tek bir Excel hücresinde ya da danışmanın kafasında hesaplanmaya çalışıldığında, hata payı da o kadar artar. Tek bir işlemin komisyon tutarını KDV dahil ve hariç görmek için [komisyon hesaplama aracından](/araclar/komisyon-hesaplama) yararlanabilirsiniz.
 
 ## Paylaşımlı satışlar: en çok anlaşmazlık burada çıkar
 
