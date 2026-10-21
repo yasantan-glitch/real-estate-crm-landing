@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site";
-import { demoForm } from "@/content/landing";
+import { demoForm, pricingForm, pricing } from "@/content/landing";
 import { reveal, stagger } from "@/lib/motion";
 
 type FieldName =
@@ -12,7 +12,8 @@ type FieldName =
   | "email"
   | "city"
   | "agentCount"
-  | "message";
+  | "message"
+  | "package";
 
 type FormState = Record<FieldName, string>;
 
@@ -30,6 +31,7 @@ const initialState: FormState = {
   city: "",
   agentCount: "",
   message: "",
+  package: "",
 };
 
 const REQUIRED: FieldName[] = ["fullName", "company", "phone", "email", "city", "agentCount"];
@@ -44,10 +46,21 @@ function validateField(name: FieldName, value: string): string | null {
   return null;
 }
 
-export default function DemoForm() {
+export default function DemoForm({ mode = "demo" }: { mode?: "demo" | "pricing" }) {
+  const isPricing = mode === "pricing";
+  const copy = isPricing ? { ...demoForm, ...pricingForm } : demoForm;
   const [form, setForm] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<Partial<FormState>>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+  useEffect(() => {
+    if (!isPricing) return;
+    const param = new URLSearchParams(window.location.search).get(pricing.ctaParam);
+    if (param && pricingForm.packageOptions.includes(param)) {
+      setForm((f) => ({ ...f, package: param }));
+      document.getElementById("teklif")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [isPricing]);
 
   const set = (name: FieldName) => (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -71,11 +84,11 @@ export default function DemoForm() {
       const res = await fetch(siteConfig.demoFormEndpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, source: "landing-page" }),
+        body: JSON.stringify({ ...form, source: isPricing ? "pricing-contact" : "landing-page" }),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: "demo_form_submit" });
+      window.dataLayer.push({ event: isPricing ? "pricing_form_submit" : "demo_form_submit" });
       setStatus("success");
       setForm(initialState);
     } catch {
@@ -101,16 +114,16 @@ export default function DemoForm() {
     ) : null;
 
   return (
-    <section id="demo" className="scroll-mt-24 bg-brand">
+    <section id={isPricing ? "teklif" : "demo"} className="scroll-mt-24 bg-brand">
       <div className="section grid gap-14 md:grid-cols-2">
         <div className="flex flex-col justify-center" {...stagger("up")}>
           <p className="eyebrow eyebrow-on-dark items-start">
             <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-red-400" aria-hidden="true" />
-            {demoForm.eyebrow}
+            {copy.eyebrow}
           </p>
-          <h2 className="h2 !text-[34px] !text-white">{demoForm.title}</h2>
-          <p className="mt-4 max-w-md text-[15.5px] leading-relaxed text-zinc-400">{demoForm.intro}</p>
-          <p className="mt-5 text-xs text-zinc-400">{demoForm.kvkkNote}</p>
+          <h2 className="h2 !text-[34px] !text-white">{copy.title}</h2>
+          <p className="mt-4 max-w-md text-[15.5px] leading-relaxed text-zinc-400">{copy.intro}</p>
+          <p className="mt-5 text-xs text-zinc-400">{copy.kvkkNote}</p>
           <div className="mt-8 space-y-1.5 border-t border-white/15 pt-6 text-sm text-zinc-400">
             <p>
               E-posta:{" "}
@@ -133,7 +146,7 @@ export default function DemoForm() {
               <span className="mb-4 text-2xl text-accent" aria-hidden="true">
                 ✓
               </span>
-              <p className="max-w-sm text-sm leading-relaxed text-slate-600">{demoForm.success}</p>
+              <p className="max-w-sm text-sm leading-relaxed text-slate-600">{copy.success}</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} noValidate>
@@ -202,6 +215,20 @@ export default function DemoForm() {
                   </select>
                   <FieldError name="agentCount" />
                 </div>
+                {isPricing && (
+                  <div className="sm:col-span-2">
+                    <label htmlFor="package" className="mb-1.5 block text-xs font-semibold text-slate-600">
+                      {pricingForm.packageLabel}
+                    </label>
+                    <select id="package" name="package"
+                      value={form.package} onChange={set("package")} className={inputClass("package")}>
+                      <option value="">{pricingForm.packagePlaceholder}</option>
+                      {pricingForm.packageOptions.map((opt) => (
+                        <option key={opt} value={opt}>{opt}</option>
+                      ))}
+                    </select>
+                  </div>
+                )}
                 <div className="sm:col-span-2">
                   <label htmlFor="message" className="mb-1.5 block text-xs font-semibold text-slate-600">
                     {demoForm.labels.message}
@@ -220,7 +247,7 @@ export default function DemoForm() {
               )}
 
               <button type="submit" disabled={status === "submitting"} className="btn-primary mt-6 w-full disabled:opacity-60">
-                {status === "submitting" ? demoForm.submitting : demoForm.submit}
+                {status === "submitting" ? demoForm.submitting : copy.submit}
               </button>
             </form>
           )}

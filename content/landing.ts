@@ -639,6 +639,22 @@ export const demoForm = {
     "Gönderdiğiniz bilgiler yalnızca demo süreci için kullanılır; üçüncü taraflarla paylaşılmaz.",
 };
 
+/** "Fiyat Bilgisi Al" variant of the lead form, shown on /iletisim (?paket= pre-selects the package). */
+export const pricingForm = {
+  eyebrow: "Fiyat bilgisi",
+  title: "Size özel teklifi hazırlayalım.",
+  intro:
+    "Formu doldurun; ofisinizin ölçeğine göre paket ve fiyat bilgisiyle sizi arayalım.",
+  packageLabel: "İlgilendiğiniz paket",
+  packagePlaceholder: "Henüz karar vermedim",
+  packageOptions: ["Standart", "Pro"],
+  submit: "Fiyat Bilgisi Al",
+  success:
+    "Talebiniz alındı. Size özel fiyat bilgisiyle en kısa sürede dönüş yapacağız. Teşekkürler!",
+  kvkkNote:
+    "Gönderdiğiniz bilgiler yalnızca fiyat teklifi için kullanılır; üçüncü taraflarla paylaşılmaz. Ayrıntılar için KVKK metnine bakabilirsiniz.",
+};
+
 /**
  * Contextual "see also" link strips (components/ContextLinks.tsx) used to
  * connect hub pages that are otherwise only reachable from the footer.

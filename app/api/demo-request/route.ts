@@ -21,6 +21,7 @@ type LeadPayload = {
   city: string;
   agentCount: string;
   message?: string;
+  package?: string;
   source?: string;
 };
 
@@ -57,8 +58,9 @@ async function deliverLead(lead: LeadPayload): Promise<void> {
   const to = process.env.DEMO_NOTIFY_TO || "demo@example.com";
   const from = process.env.DEMO_NOTIFY_FROM || "onboarding@resend.dev";
 
+  const isPricing = lead.source === "pricing-contact";
   const html = `
-    <h2>Yeni Demo Talebi</h2>
+    <h2>${isPricing ? "Yeni Fiyat Bilgisi Talebi" : "Yeni Demo Talebi"}</h2>
     <ul>
       <li><strong>Ad Soyad:</strong> ${escapeHtml(lead.fullName)}</li>
       <li><strong>Firma:</strong> ${escapeHtml(lead.company)}</li>
@@ -66,6 +68,7 @@ async function deliverLead(lead: LeadPayload): Promise<void> {
       <li><strong>E-posta:</strong> ${escapeHtml(lead.email)}</li>
       <li><strong>Şehir:</strong> ${escapeHtml(lead.city)}</li>
       <li><strong>Danışman Sayısı:</strong> ${escapeHtml(lead.agentCount)}</li>
+      ${isPricing ? `<li><strong>Paket:</strong> ${escapeHtml(lead.package || "-")}</li>` : ""}
       <li><strong>Mesaj:</strong> ${escapeHtml(lead.message || "-")}</li>
     </ul>
   `;
@@ -80,7 +83,7 @@ async function deliverLead(lead: LeadPayload): Promise<void> {
       from,
       to: [to],
       reply_to: lead.email,
-      subject: `Demo Talebi: ${lead.company} (${lead.city})`,
+      subject: `${isPricing ? "Fiyat Talebi" : "Demo Talebi"}: ${lead.company} (${lead.city})${isPricing && lead.package ? ` [${lead.package}]` : ""}`,
       html,
     }),
   });

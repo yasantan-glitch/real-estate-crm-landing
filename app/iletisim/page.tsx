@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import DemoForm from "@/components/DemoForm";
 import { siteConfig } from "@/config/site";
 import { contact } from "@/content/landing";
 import { buildFaqJsonLd } from "@/lib/jsonld";
@@ -116,6 +117,9 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
+
+        {/* --- Pricing / quote form (?paket= pre-selects package) --- */}
+        <DemoForm mode="pricing" />
 
         {/* --- Contact FAQ --- */}
         <section className="border-t border-line bg-surface">
