@@ -84,6 +84,8 @@ export const antalyaDistricts: CityPageContent[] = [
     relevantFeatures: sharedFeatures("Muratpaşa", "Kısa ve uzun dönem kiralıkları ayrı işaretleyebilirsiniz."),
     relatedLinks: [
       { label: "Antalya emlak ofisleri için CRM", href: "/antalya" },
+      { label: "Konyaaltı emlak ofisleri için CRM", href: "/antalya/konyaalti" },
+      { label: "Kepez emlak ofisleri için CRM", href: "/antalya/kepez" },
       { label: "Kira Getirisi Hesaplama aracı", href: "/araclar/kira-getirisi-hesaplama" },
       { label: "Komisyon Hesaplama aracı", href: "/araclar/komisyon-hesaplama" },
     ],
@@ -161,6 +163,8 @@ export const antalyaDistricts: CityPageContent[] = [
     relevantFeatures: sharedFeatures("Konyaaltı", "Sezon başında ve sonunda kiralama tipini hızla güncelleyin."),
     relatedLinks: [
       { label: "Antalya emlak ofisleri için CRM", href: "/antalya" },
+      { label: "Muratpaşa emlak ofisleri için CRM", href: "/antalya/muratpasa" },
+      { label: "Kepez emlak ofisleri için CRM", href: "/antalya/kepez" },
       { label: "Kira Getirisi Hesaplama aracı", href: "/araclar/kira-getirisi-hesaplama" },
       { label: "Tapu Harcı Hesaplama aracı", href: "/araclar/tapu-harci-hesaplama" },
     ],
@@ -238,6 +242,8 @@ export const antalyaDistricts: CityPageContent[] = [
     relevantFeatures: sharedFeatures("Kepez", "Satılan portföyü anında işaretleyip ekibin aynı bilgiyi görmesini sağlayın."),
     relatedLinks: [
       { label: "Antalya emlak ofisleri için CRM", href: "/antalya" },
+      { label: "Muratpaşa emlak ofisleri için CRM", href: "/antalya/muratpasa" },
+      { label: "Konyaaltı emlak ofisleri için CRM", href: "/antalya/konyaalti" },
       { label: "Komisyon Hesaplama aracı", href: "/araclar/komisyon-hesaplama" },
       { label: "Emlak ofisleri için CRM", href: "/fiyatlandirma#emlak-ofisi" },
     ],

@@ -17,14 +17,19 @@ export default function CityPageTemplate({ content }: { content: CityPageContent
             <p className="mt-4 text-base leading-relaxed text-slate-600">{content.intro}</p>
 
             <div className="mt-6 flex flex-wrap justify-center gap-2">
-              {content.districts.map((district) => (
-                <span
-                  key={district}
-                  className="rounded-full bg-accent-tint px-3 py-1 text-xs font-bold text-accent"
-                >
-                  {district}
-                </span>
-              ))}
+              {content.districts.map((district) => {
+                const href = content.districtHrefs?.[district];
+                const chipClass = "rounded-full bg-accent-tint px-3 py-1 text-xs font-bold text-accent";
+                return href ? (
+                  <a key={district} href={href} className={`${chipClass} underline underline-offset-2 hover:bg-accent hover:text-white`}>
+                    {district}
+                  </a>
+                ) : (
+                  <span key={district} className={chipClass}>
+                    {district}
+                  </span>
+                );
+              })}
             </div>
           </div>
         </div>

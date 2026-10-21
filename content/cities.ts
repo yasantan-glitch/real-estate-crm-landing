@@ -28,6 +28,8 @@ export interface CityPageContent {
   h1: string;
   intro: string;
   districts: string[];
+  /** İlçe adı -> sayfa yolu; tanımlı olanlar chip yerine link olarak gösterilir. */
+  districtHrefs?: Record<string, string>;
   marketContext: {
     title: string;
     items: MarketContextPoint[];
@@ -53,6 +55,11 @@ export const cities: CityPageContent[] = [
     intro:
       "Antalya, hem yerleşik nüfusun hem de turizm ve yabancı yatırımın iç içe geçtiği bir emlak pazarı. Konyaaltı'ndan Kepez'e, Lara'dan Döşemealtı'na uzanan geniş bir bölgede portföy ve talep yönetmek, tek bir merkezi sistem olmadan zamanla dağınıklaşır. Emlak CRM Pro, Antalya'da çalışan bireysel danışmanlardan çok şubeli ofislere kadar bu operasyonu tek panelde toplar.",
     districts: ["Konyaaltı", "Muratpaşa", "Lara", "Kepez", "Döşemealtı"],
+    districtHrefs: {
+      Konyaaltı: "/antalya/konyaalti",
+      Muratpaşa: "/antalya/muratpasa",
+      Kepez: "/antalya/kepez",
+    },
     marketContext: {
       title: "Antalya Emlak Piyasasında Dikkat Edilmesi Gereken Dinamikler",
       items: [
@@ -70,6 +77,16 @@ export const cities: CityPageContent[] = [
           title: "Çok ilçeli portföy yönetimi",
           description:
             "Konyaaltı'ndan Kepez'e geniş bir coğrafyaya yayılan portföyler ilçe bazında dağınık takip edildiğinde bütünsel bir görünüm kaybolur. Portföylerin bölge/ilçe bilgisiyle merkezi bir sistemde kayıtlı olması, hem danışman hem broker için işi kolaylaştırır.",
+        },
+        {
+          title: "Dağınık kanallardan gelen talepler",
+          description:
+            "İlan siteleri, sosyal medya, telefon ve WhatsApp üzerinden gelen talepler farklı yerlerde birikir. Hepsinin tek kayıtta toplanması, geri dönüşü hızlandırır ve unutulan talebi azaltır.",
+        },
+        {
+          title: "Büyüyen ekiplerde komisyon ve performans takibi",
+          description:
+            "Danışman sayısı arttıkça kim hangi portföyü aldı, hangi satışı kapattı ve komisyon nasıl paylaşılacak soruları elle yönetilemez hale gelir. Merkezi kayıt bu hesabı şeffaf tutar.",
         },
       ],
     },
@@ -145,6 +162,18 @@ export const cities: CityPageContent[] = [
       {
         q: "Yabancı müşterilerle ilgili süreçleri sistemde takip edebilir miyim?",
         a: "Evet. Müşteri kayıtlarına notlar ve görüşme geçmişi eklenebilir; bu, yabancı alıcı dosyalarının aşamasını takip etmek için de kullanılabilir.",
+      },
+      {
+        q: "Yabancı alıcı satışlarında harç hesabını nasıl yapabilirim?",
+        a: "Ücretsiz Tapu Harcı Hesaplama aracımızda yabancı uyruklu alıcı dahil farklı işlem türlerini seçip harcı hesaplayabilirsiniz. Araç tahmini bir hesap verir; kesin tutar için tapu müdürlüğüne danışmanız gerekir.",
+      },
+      {
+        q: "Paketler ve fiyatlar nasıl belirleniyor?",
+        a: "Paketler ofisinizin ölçeğine göre belirleniyor ve fiyat bilgisi size özel teklifle paylaşılıyor. Fiyatlandırma sayfasındaki formdan fiyat bilgisi talep edebilirsiniz.",
+      },
+      {
+        q: "Sisteme geçiş nasıl planlanıyor?",
+        a: "Geçiş planı ofisinizin mevcut düzenine göre değişir; demo görüşmesinde mevcut listelerinizi ve ekibinizin çalışma şeklini birlikte ele alıp planlıyoruz.",
       },
       {
         q: "Antalya dışında şubem varsa yine kullanabilir miyim?",
