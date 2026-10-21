@@ -125,6 +125,9 @@ export const cities: CityPageContent[] = [
         label: "Emlak ofisleri için CRM",
         href: "/fiyatlandirma#emlak-ofisi",
       },
+      { label: "Muratpaşa emlak ofisleri için CRM", href: "/antalya/muratpasa" },
+      { label: "Konyaaltı emlak ofisleri için CRM", href: "/antalya/konyaalti" },
+      { label: "Kepez emlak ofisleri için CRM", href: "/antalya/kepez" },
       {
         label: "Ağustos 2026 kira artış oranı yazısı",
         href: "/blog/agustos-2026-kira-artis-orani",

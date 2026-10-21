@@ -1,3 +1,4 @@
+import { antalyaDistricts } from "@/content/antalya-districts";
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 import { BLOG_CATEGORIES, getAllPosts } from "@/lib/blog";
@@ -102,6 +103,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    ...antalyaDistricts.map((d) => ({
+      url: `${siteConfig.siteUrl}/antalya/${d.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
     ...BLOG_CATEGORIES.map((category) => ({
       url: `${siteConfig.siteUrl}/blog/${category.slug}`,
       lastModified: new Date(),
